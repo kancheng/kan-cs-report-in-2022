@@ -17,3 +17,7 @@ During the second semester in my first year. (PKU)
 3. 数字媒体软件与系统开发 (Digital Media Software And System Development)
 
 4. 算法分析和复杂性理论 (Analysis of Algorithms and Theory of Computational Complexity)
+
+5. 模式识别导论 (Introduction to Pattern Recognition)
+
+
