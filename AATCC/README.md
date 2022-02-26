@@ -9,7 +9,7 @@ PKU 2022 個人實驗報告作業
 
 該課堂主要使用語言為 Python，但實際作答與作業不限於此語言。可任選任一種如 C、 C++、 Rust、 Go、 Java、 JS 等。
 
-期末考為紙本筆試，另外有為了自身能力去涉獵不同語言跟算法的學習計畫。
+期末考為紙本筆試，另外有為了自身能力去涉獵不同語言跟算法的學習計畫，詳見 `kancheng/learn-in-works`。
 
 https://github.com/kancheng/learn-in-works
 
