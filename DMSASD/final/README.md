@@ -805,3 +805,1195 @@ Note : 网络信息内容生态治理规定
 　　《网络信息内容生态治理规定》已经国家互联网信息办公室室务会议审议通过，现予公布，自2020年3月1日起施行。 
 ...
 ```
+
+31. Nataraj L, Mohammed TM, Chandrasekaran S, Flenner A, Bappy JH, Roy-Chowdhury AK, Manjunath BS. Detecting GAN generated fake images using co-occurrence matrices. Electronic Imaging, 2019,2019(5):532-1−532-7.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+32. Li H, Li B, Tan S, Huang J. Identification of deep network generated images using disparities in color components. arXiv preprint arXiv:1808.07276, 2018.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+33. Xuan X, Peng B, Wang W, Dong J. On the generalization of GAN image forensics. In: Proc. of the Chinese Conf. on Biometric Recognition. Cham: Springer-Verlag, 2019. 134−141.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+34. McCloskey S, Albright M. Detecting GAN-generated imagery using color cues. arXiv preprint arXiv:1812.08247, 2018.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+35. Marra F, Gragnaniello D, Verdoliva L, Poggi G. Do GANs leave artificial fingerprints? In: Proc. of the IEEE Conf. on Multimedia Information Processing and Retrieval (MIPR). IEEE, 2019. 506−511.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+36. Yu N, Davis LS, Fritz M. Attributing fake images to GANs: Learning and analyzing GAN fingerprints. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 7556−7566.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+37. Wang R, Ma L, Juefei-Xu F, Xie X, Wang J, Liu Y. Fakespotter: A simple baseline for spotting ai-synthesized fake faces. In: Proc. of the 29th Int’l Joint Conf. on Artifical Intelligence (IJCAI). 2020. 3444−3451.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+38. Chollet F. Xception: Deep learning with depthwise separable convolutions. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2017. 1251−1258.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+39. Songsri-in K, Zafeiriou S. Complement face forensic detection and localization with faciallandmarks. arXiv preprint arXiv:1910. 05455, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+40. Nguyen HH, Yamagishi J, Echizen I. Capsule-forensics: Using capsule networks to detect forged images and videos. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP 2019). IEEE, 2019. 2307−2311.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+41. Simonyan K, Zisserman A. Very deep convolutional networks for large-scale image recognition. In: Proc. of the 3rd Int’l Conf. on Learning Representations (ICLR). 2015.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+42. Mo H, Chen B, Luo W. Fake faces identification via convolutional neural network. In: Proc. of the 6th ACM Workshop on Information Hiding and Multimedia Security. 2018. 43−47.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+43. Durall R, Keuper M, Pfreundt FJ, Keuper J. Unmasking DeepFakes with simple features. arXiv preprint arXiv:1911.00686, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+44. Ding X, Raziei Z, Larson EC, Olinick EV, Krueger PS, Hahsler M. Swapped face detection using deep learning and subjective assessment. EURASIP Journal on Information Security, 2020(2020):Article No.6.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+45. Cozzolino D, Thies J, Rössler A, Riess C, Niebner M, Verdoliva L. Forensictransfer: Weakly-supervised domain adaptation for forgery detection. arXiv preprint arXiv:1812.02510, 2018.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+46. Nguyen HH, Fang F, Yamagishi J, Echizen I. Multi-task learning for detecting and segmenting manipulated facial images and videos. arXiv preprint arXiv:1906.06876, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+47. Hsu CC, Lee CY, Zhuang YX. Learning to detect fake face images in the wild. In: Proc. of the Int’l Symp. on Computer, Consumer and Control (IS3C). IEEE, 2018. 388−391.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+48. Hsu CC, Zhuang YX, Lee CY. Deep fake image detection based on pairwise learning. Applied Sciences, 2020,10(1):Article No.370.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+49. Dang LM, Hassan SI, Im S, Lee J, Lee S, Moon H. Deep learning based computer generated face identification using convolutional neural network. Applied Sciences, 2018,8(12):Article No.2610.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+50. Bayar B, Stamm MC. A deep learning approach to universal image manipulation detection using a new convolutional layer. In: Proc. of the 4th ACM Workshop on Information Hiding and Multimedia Security. 2016. 5−10.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+51. Dang H, Liu F, Stehouwer J, Liu X, Jain A. On the detection of digital face manipulation. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 5780−5789.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+52. Rahmouni N, Nozick V, Yamagishi J, Echizen I. Distinguishing computer graphics from natural images using convolution neural networks. In: Proc. of the IEEE Workshop on Information Forensics and Security (WIFS). IEEE, 2017. 1−6.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+53. Li X, Yu K, Ji S, Wang Y, Wu C, Xue H. Fighting against Deepfake: Patch&Pair convolutional neural networks (PPCNN). In: Proc. of the Companion Web Conf. 2020. 2020. 88−89.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+54. Brockschmidt J, Shang J, Wu J. On the generality of facial forgery detection. In: Proc. of the IEEE 16th Int’l Conf. on Mobile Ad Hoc and Sensor Systems Workshops (MASSW). IEEE, 2019. 43−47.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+55. Sohrawardi SJ, Chintha A, Thai B, Seng S, Hickerson A, Ptucha R, Wright M. Poster: Towards robust open-world detection of Deepfakes. In: Proc. of the ACM SIGSAC Conf. on Computer and Communications Security. 2019. 2613−2615.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+56. Agarwal S, Farid H, Gu Y, He M, Nagano K, Li H. Protecting world leaders against deep fakes. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops. 2019. 38−45.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+57. Amerini I, Galteri L, Caldelli R, Bimbo AD. Deepfake video detection through optical flow based CNN. In: Proc. of the IEEE Int’l Conf. on Computer Vision Workshops. 2019. 1205−1207.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+58. Güera D, Delp EJ. Deepfake video detection using recurrent neural networks. In: Proc. of the 15th IEEE Int’l Conf. on Advanced Video and Signal Based Surveillance (AVSS). IEEE, 2018. 1−6.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+59. Sabir E, Cheng J, Jaiswal A, AbdAlmageed W, Masi I, Natarajan P. Recurrent convolutional strategies for face manipulation detection in videos. arXiv preprint arXiv:1905.00582, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+60. Todisco M, Delgado H, Evans NWD. A new feature for automatic speaker verification anti-spoofing: Constant Q cepstral coefficients. In: Proc. of the Odyssey. 2016. 283−290.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+61. Rössler A, Cozzolino D, Verdoliva L, Christian R, Justus T, Matthias N. Faceforensics: A large-scale video dataset for forgery detection in human faces. arXiv preprint arXiv:1803.09179, 2018.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+62. Rossler A, Cozzolino D, Verdoliva L, Riess C, Thies J, Niessner M. Faceforensics++: Learning to detect manipulated facial images. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 1−11.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+63. Korshunov P, Marcel S. Deepfakes: A new threat to face recognition? Assessment and detection. arXiv preprint arXiv:1812.08685, 2018.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+64. VidTIMIT. 2019. http://conradsanderson.id.au/vidtimit/
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+65. Afchar D, Nozick V, Yamagishi J, Echizen I. Mesonet: A compact facial video forgery detection network. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2018. 1−7.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+66. Li Y, Yang X, Sun P, Qi H, Lyu S. Celeb-DF: A new dataset for Deepfake forensics. arXiv preprint arXiv:1909.12962, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+67. DeepfakeDetection. 2019. https://github.com/ondyari/FaceForensics
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+68. Dolhansky B, Howes R, Pflaum B, Baram N, Ferrer C. The Deepfake detection challenge (DFDC) preview dataset. arXiv preprint arXiv:1910.08854, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+69. DFDC. 2020. https://www.kaggle.com/c/deepfake-detection-challenge/data
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+70. Jiang L, Li R, Wu W, Qian C, Loy C. DeeperForensics-1.0: A large-scale dataset for real-world face forgery detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 2886−2895.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+71. ASVspoof 2015 database. 2020. https://datashare.is.ed.ac.uk/handle/10283/853
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+72. ASVspoof 2019 database. 2020. https://datashare.is.ed.ac.uk/handle/10283/3336
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+73. Abu-El-Haija S, Kothari N, Lee J, Natsev P, Toderici G, Varadarajan B, Vijayanarasimhan S. Youtube-8m: A large-scale video classification benchmark. arXiv preprint arXiv:1609.08675, 2016.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+74. Amerini I, Ballan L, Caldelli R, Bimbo AD, Serra G. A sift-based forensic method for copy-move attack detection and transformation recovery. IEEE Trans. on Information Forensics and Security, 2011,6(3):1099−1110.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+75. De Carvalho TJ, Riess C, Angelopoulou E, Pedrini H, Rocha A. Exposing digital image forgeries by illumination color classification. IEEE Trans. on Information Forensics and Security, 2013,8(7):1182−1194.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+76. Lukáš J, Fridrich J, Goljan M. Detecting digital image forgeries using sensor pattern noise. In: Proc. of the Security, Steganography, and Watermarking of Multimedia Contents VIII, Vol.6072. Int’l Society for Optics and Photonics, 2006.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+77. Chierchia G, Parrilli S, Poggi G, Verdoliva L, Sansone C. PRNU-based detection of small-size image forgeries. In: Proc. of the 17th Int’l Conf. on Digital Signal Processing (DSP). IEEE, 2011. 1−6. 
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+78. Fridrich J, Kodovsky J. Rich models for steganalysis of digital images. IEEE Trans. on Information Forensics and Security, 2012, 7(3):868−882.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+79. Wang W, Dong J, Tan T. Exploring DCT coefficient quantization effects for local tampering detection. IEEE Trans. on Information Forensics and Security, 2014,9(10):1653−1666.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+80. Nataraj L, Sarkar A, Manjunath BS. Adding gaussian noise to “denoise” JPEG for detecting image resizing. In: Proc. of the 16th IEEE Int’l Conf. on Image Processing (ICIP). IEEE, 2009. 1493−1496.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+81. Bianchi T, De Rosa A, Piva A. Improved DCT coefficient analysis for forgery localization in JPEG images. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2011. 2444−2447.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+82. Pan X, Zhang X, Lyu S. Exposing image splicing with inconsistent local noise variances. In: Proc. of the IEEE Int’l Conf. on Computational Photography (ICCP). IEEE, 2012. 1−10.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+83. Ferrara P, Bianchi T, De Rosa A, Piva A. Image forgery localization via fine-grained analysis of CFA artifacts. IEEE Trans. on Information Forensics and Security, 2012,7(5):1566−1577.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+84. Cozzolino D, Verdoliva L. Noiseprint: A CNN-based camera model fingerprint. IEEE Trans. on Information Forensics and Security, 2019,15:144−159.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+85. Zhou P, Han X, Morariu VI, Davis LS. Learning rich features for image manipulation detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 1053−1061.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+86. Rao Y, Ni J. A deep learning approach to detection of splicing and copy-move forgeries in images. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2016. 1−6.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+87. Liu B, Pun CM. Deep fusion network for splicing forgery localization. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 237−251.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+88. Huh M, Liu A, Owens A, Efros A. Fighting fake news: Image splice detection via learned self-consistency. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 101−117.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+89. Cun X, Pun CM. Image splicing localization via semi-global network and fully connected conditional random fields. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 252−266.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+90. Cozzolino D, Poggi G, Verdoliva L. Recasting residual-based local descriptors as convolutional neural networks: An application to image forgery detection. In: Proc. of the 5th ACM Workshop on Information Hiding and Multimedia Security. 2017. 159−164.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+91. Chen C, McCloskey S, Yu J. Focus manipulation detection via photometric histogram analysis. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 1674−1682.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+92. Zhou P, Han X, Morariu VI, Davis LS. Two-stream neural networks for tampered face detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops (CVPRW). IEEE, 2017. 1831−1839.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+93. Szegedy C, Liu W, Jia Y, Sermanet P, Reed S, Anguelov D, Erhan D, Vanhoucke V, Rabinovich A. Going deeper with convolutions. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2015. 1−9.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+94. Yang X, Li Y, Lyu S. Exposing deep fakes using inconsistent head poses. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2019. 8261−8265.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+95. Yang X, Li Y, Qi H, Lyu S. Exposing GAN-synthesized faces using landmark locations. In: Proc. of the ACM Workshop on Information Hiding and Multimedia Security. 2019. 113−118.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+96. Li Y, Chang MC, Lyu S. In ictu oculi: Exposing AI created fake videos by detecting eye blinking. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2018. 1−7.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+97. Ciftci UA, Demir I. FakeCatcher: Detection of synthetic portrait videos using biological signals. arXiv preprint arXiv:1901.02212, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+98. Fernandes S, Raj S, Ortiz E, Vintila I, Salter M, Urosevic G, Jha S. Predicting heart rate variations of Deepfake videos using neural ODE. In: Proc. of the IEEE Int’l Conf. on Computer Vision Workshops. 2019. 1721−1729.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+99. Li Y, Lyu S. Exposing Deepfake videos by detecting face warping artifacts. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR) Workshops, 2019. 46−52.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+100. He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2016. 770−778. 
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+101. Deepfakes. 2019. https://github.com/deepfakes/faceswap
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+102. Zao app. 2019. https://zao-app.com/
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+103. Deepfake detection challenge. 2020. https://www.kaggle.com/c/deepfake-detection-challenge
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+104. Girish N, Nandini C. A review on digital video forgery detection techniques in cyber forensics. Science, Technology and Development, 2019,3(6):235−239.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+105. Nguyen TT, Nguyen CM, Nguyen DT, Nguyen DT, Nahavandi S. Deep learning for Deepfakes creation and detection. arXiv preprint arXiv:1909.11573, 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+106. Zollhöfer M, Thies J, Garrido P, Bradley D, Beeler T, Perez P, Stamminger M, Niessner M, Theobalt C. State of the art on monocular 3D face reconstruction, tracking, and applications. Computer Graphics Forum, 2018,37(2):523−550.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+107. FaceSwap. 2019. https://github.com/MarekKowalski/FaceSwap/
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+108. Dale K, Sunkavalli K, Johnson MK, Vlasic D, Matusik W, Pfister H. Video face replacement. In: Proc. of the SIGGRAPH Asia Conf. 2011. 1−10.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+109. Garrido P, Valgaerts L, Rehmsen O, Thormae T, Perez P, Theobalt C. Automatic face reenactment. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2014. 4217−4224.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+110. Garrido P, Valgaerts L, Sarmadi H, Steiner I, Varanasi K, Perez P, Theobalt C. VDub: Modifying face video of actors for plausible visual alignment to a dubbed audio track. Computer Graphics Forum, 2015,34(2):193−204.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+111. Nirkin Y, Masi I, Tuan AT, Hassner T, Medioni G. On face segmentation, face swapping, and face perception. In: Proc. of the 13th IEEE Int’l Conf. on Automatic Face and Gesture Recognition (FG 2018). IEEE, 2018. 98−105.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+112. Lu Z, Li Z, Cao J, He R, Sun Z. Recent progress of face image synthesis. In: Proc. of the 4th IAPR Asian Conf. on Pattern Recognition (ACPR). IEEE, 2017. 7−12.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+113. Goodfellow I, Pouget-Abadie J, Mirza M, Xu B, Warde-Farley D, Ozair S, Courvile A, Bengio Y. Generative adversarial nets. In: Proc. of the Advances in Neural Information Processing Systems. 2014. 2672−2680.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+114. Faceswap-GAN. 2019. https://github.com/shaoanlu/faceswap-GAN
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+115. Korshunova I, Shi W, Dambre J, Theis L. Fast face-swap using convolutional neural networks. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2017. 3677−3685.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+116. Nirkin Y, Keller Y, Hassner T. FSGAN: Subject agnostic face swapping and reenactment. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 7184−7193.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+117. Choi Y, Choi M, Kim M, Ha J, Kin S, Choo J. StarGAN: Unified generative adversarial networks for multi-domain image-toimage translation. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 8789−8797.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+118. Zhang H, Xu T, Li H, Zhang S, Wang X, Huang X, Netaxas D. StackGAN++: Realistic image synthesis with stacked generative adversarial networks. IEEE Trans. on Pattern Analysis and Machine Intelligence, 2018,41(8):1947−1962.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+119. Karras T, Aila T, Laine S, Lehtinen J. Progressive growing of GANs for improved quality, stability, and variation. In: Proc. of the 6th Int’l Conf. on Learning Representations (ICLR). 2018.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+120. Antipov G, Baccouche M, Dugelay JL. Face aging with conditional generative adversarial networks. In: Proc. of the IEEE Int’l Conf. on Image Processing (ICIP). IEEE, 2017. 2089−2093.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+121. Mirza M, Osindero S. Conditional generative adversarial nets. arXiv preprint arXiv:1411.1784, 2014.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+122. Huang R, Zhang S, Li T, He R. Beyond face rotation: Global and local perception GAN for photorealistic and identity preserving frontal view synthesis. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2017. 2439−2448.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+123. Thies J, Zollhöfer M, Nießner M, Valgaerts L, Stamminger M, Theobalt C. Real-time expression transfer for facial reenactment. ACM Trans. on Graphics (TOG), 2015,34(6):Article No.183.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+124. Thies J, Zollhofer M, Stamminger M, Theobalt C, Niebner M. Face2face: Real-time face capture and reenactment of RGB videos. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2016. 2387−2395.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+125. Thies J, Zollhöfer M, Theobalt C, Stamminger M, Niessner M. Headon: Real-time reenactment of human portrait videos. ACM Trans. on Graphics (TOG), 2018,37(4):1−13.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+126. Kim H, Garrido P, Tewari A, Xu W, Thies J, Niessner M, Perez P, Richardt C, Zollhofer M, Theobalt C. Deep video portraits. ACM Trans. on Graphics (TOG), 2018,37(4):1−14.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+127. Thies J, Zollhöfer M, Nießner M. Deferred neural rendering: Image synthesis using neural textures. ACM Trans. on Graphics (TOG), 2019,38(4):1−12.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+128. Suwajanakorn S, Seitz SM, Kemelmacher-Shlizerman I. Synthesizing Obama: Learning lip sync from audio. ACM Trans. on Graphics (TOG), 2017,36(4):1−13.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+129. Zakharov E, Shysheya A, Burkov E, Lempitsky V. Few-shot adversarial learning of realistic neural talking head models. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 9459−9468.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+130. Fried O, Tewari A, Zollhöfer M, Finkelstein A, Shechtman E, Goldman D, Genova K, Jin Z, Theobalt C, Agrawala M. Text-based editing of talking-head video. ACM Trans. on Graphics (TOG), 2019,38(4):1−14.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+131. Averbuch-Elor H, Cohen-Or D, Kopf J, Cohen M. Bringing portraits to life. ACM Trans. on Graphics (TOG), 2017,36(6):Article No.196.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+132. Lample G, Zeghidour N, Usunier N, Bordes A, Denoyer L, Ranzato M. Fader networks: Manipulating images by sliding attributes. In: Proc. of the Advances in Neural Information Processing Systems. 2017. 5967−5976. 
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+133. Van Den Oord A, Dieleman S, Zen H, Simonyan K, Vinyals O, Graves A, Kalchbrenner N, Senior AW, Kavukcuoglu K. Wavenet: A generative model for raw audio. In: Proc. of the 9th Speech Synthesis Workshop. 2016.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+134. Arik S, Chrzanowski M, Coates A, Diamos G, Kang Y, Li X, Miller J, Ng A, Raiman J, Sengupta S, Shoeybi M. Deep voice: Real-time neural text-to-speech. In: Proc. of the 34th Int’l Conf. on Machine Learning. 2017. 195−204.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+135. Wang Y, Skerry-Ryan RJ, Stanton D, Wu Y, Weiss R, Jaitly N, Yang Z, Xiao Y, Chen Z, Bengio S, Le Q, Agiomyrgiannakis Y, Clark B, Saurous R. Tacotron: Towards end-to-end speech synthesis. In: Proc. of the Interspeech 2017, 18th Annual Conf. of the Int’l Speech Communication Association. 2017. 4006−4010.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+136. Arik S, Diamos G, Gibiansky A, Miller J, Peng K, Ping W, Raiman J, Zhou Y. Deep voice 2: Multi-speaker neural text-to-speech. In: Proc. of the Advances in Neural Information Processing Systems. 2017. 2962−2970.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+137. Ping W, Peng K, Gibiansky A, Arik S, Kannan A, Narang S. Deep voice 3: 2000-speaker neural text-to-speech. In: Proc. of the ICLR. 2018. 214−217.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+138. Pascual S, Bonafonte A, Serra J. SEGAN: Speech enhancement generative adversarial network. In: Proc. of the Interspeech 2017, 18th Annual Conf. of the Int’l Speech Communication Association. 2017. 3642−3646.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+139. Donahue C, McAuley J, Puckette M. Adversarial audio synthesis. In: Proc. of the 7th Int’l Conf. on Learning Representations (ICLR). 2019.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+140. Li XR, Yu K. A Deepfakes detection technique based on two-stream network. Journal of Cyber Security, 2020,5(2):84−91 (in Chinese with English abstract).
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+141. FakeApp. 2019. https://www.deepfakescn.com
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+142. Faceapp. 2019. https://www.faceapp.com/
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+143. DeepFaceLab. 2019. https://github.com/iperov/DeepFaceLab
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+144. Dfaker. 2019. https://github.com/dfaker/df
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+145. DeepFake-tf. 2019. https://github.com/StromWine/DeepFake-tf
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+146. Faceswap-Deepfake-Pytorch. 2019. https://github.com/Oldpan/Faceswap-Deepfake-Pytorch
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+147. Deep-voice-conversion. 2020. https://github.com/andabi/deep-voice-conversion
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+148. MelNet. 2020. https://sjvasquez.github.io/blog/melnet/
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+149. Matern F, Riess C, Stamminger M. Exploiting visual artifacts to expose Deepfakes and face manipulations. In: Proc. of the IEEE Winter Applications of Computer Vision Workshops (WACVW). IEEE, 2019. 83−92.
+
+Link : 
+
+Note : 
+
+```
+
+```
+
+
