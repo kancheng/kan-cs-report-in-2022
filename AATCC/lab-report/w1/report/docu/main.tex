@@ -191,20 +191,24 @@ LeetCode 1. Java 1
 \begin{lstlisting}[language={python}]
 class Solution {
     public int[] twoSum(int[] nums, int target) {
+        int l = nums.length;
         int[] ans = new int[2];
-        for(int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    ans[0] = nums[i];
-                    ans[1] = nums[j];
-                }                
+        int i,j;
+        for( i = 0; i < l - 1; i++) {
+            for( j = i + 1 ; j < l; j++) {
+                if( nums[i] + nums[j] == target)
+                {
+                    ans[0] = i;
+                    ans[1] = j;
+                }
             }
         }
         return ans;
     }
 }
 \end{lstlisting}
-Wrong Answer
+Runtime: 68 ms, faster than 29.45\% of Java online submissions for Two Sum.
+Memory Usage: 45.3 MB, less than 26.94\% of Java online submissions for Two Sum.
 
 LeetCode 1. Java 2
 
