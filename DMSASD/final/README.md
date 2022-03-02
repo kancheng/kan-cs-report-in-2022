@@ -27,6 +27,7 @@ PKU 2022 個人實驗報告作業
 
 5. https://github.com/HongguLiu/Deepfake-Detection
 
+6. https://cloud.tencent.com/developer/article/1386693
 
 
 ## Links
