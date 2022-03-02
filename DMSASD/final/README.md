@@ -15,11 +15,17 @@ PKU 2022 個人實驗報告作業
 近年來人工智能領域的蓬勃發展 ...
 
 
-## Reference Raw
+## Reference
 
-1.
+1. https://zhuanlan.zhihu.com/p/90316297
 
-2.
+2. https://zhuanlan.zhihu.com/p/92474937
+
+3. https://zhuanlan.zhihu.com/p/92853899
+
+4. https://zhuanlan.zhihu.com/p/115070797
+
+5. https://github.com/HongguLiu/Deepfake-Detection
 
 
 
