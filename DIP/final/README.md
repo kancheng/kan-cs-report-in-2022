@@ -26,7 +26,7 @@ PKU 2022 個人實驗報告作業
 
 7. https://iter01.com/489722.html
 
-### face
+### DL
 
 1. https://blog.csdn.net/weixin_42535423/article/details/103936905
 
@@ -35,6 +35,8 @@ PKU 2022 個人實驗報告作業
 3. https://www.youtube.com/watch?v=tFNJGim3FXw
 
 4. https://school.geekwall.in/p/zSLFygwb6
+
+5. https://www.hindawi.com/journals/cin/2020/7251280/
 
 
 
