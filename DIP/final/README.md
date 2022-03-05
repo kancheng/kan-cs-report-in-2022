@@ -10,6 +10,8 @@ PKU 2022 個人實驗報告作業
 
 ## Reference
 
+### Skill
+
 1. https://brainhub.eu/library/opencv-react-native-image-processing/
 
 2. https://github.com/ma-pe/react-native-opencv
@@ -23,6 +25,16 @@ PKU 2022 個人實驗報告作業
 6. https://github.com/Jaofeng/cctvAgent
 
 7. https://iter01.com/489722.html
+
+### face
+
+1. https://blog.csdn.net/weixin_42535423/article/details/103936905
+
+2. https://www.researchgate.net/publication/261074837_The_driver_fatigue_monitoring_system_based_on_face_recognition_technology
+
+3. https://www.youtube.com/watch?v=tFNJGim3FXw
+
+4. https://school.geekwall.in/p/zSLFygwb6
 
 
 
