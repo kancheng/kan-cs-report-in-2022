@@ -13,6 +13,10 @@ PKU 2022 個人實驗報告作業
 
 https://github.com/kancheng/learn-in-works
 
+## Python
+
+https://docs.python.org/
+
 
 ## Links
 
