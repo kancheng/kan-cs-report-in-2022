@@ -78,7 +78,7 @@ mp4box -add 1.mp4#video -add 2.mp4#audio -new test.mp4
 ```
 
 
-### Random Access 過程
+### Random Access 過程與說明
 
 尋找專案中有關 Random Access 的部分，利用 find 和 grep 指令。
 
@@ -86,37 +86,63 @@ mp4box -add 1.mp4#video -add 2.mp4#audio -new test.mp4
 find . -name "*.*" |xargs grep "random access" *.*
 ```
 
+```
+./applications/mp4box/fileimport.c
+./applications/mp4box/main.c
+./extra_lib/include/zlib/zlib.h
+./include/gpac/constants.h
+./include/gpac/filters.h:
+./include/gpac/html5_media.h:
+./include/gpac/ietf.h:
+./include/gpac/internal/swf_dev.h:
+./include/gpac/isomedia.h:
+./include/gpac/isomedia.h:
+./include/gpac/media_tools.h:
+./include/gpac/mpegts.h:
+./include/gpac/rtp_streamer.h:
+./include/gpac/scene_manager.h: 
+./share/doc/man/gpac-filters.1:mfra (bool, default: false):
+./share/doc/man/mp4box.1:
+./src/filters/mux_isom.c:
+./src/media_tools/html5_mse.c: 
+./src/media_tools/m2ts_mux.c:
+./src/scene_manager/text_to_bifs.c:
+```
+
 If you want to seek a given track to a time T,
+假如想要最一個文件進行隨機訪問，而該訪問進行為 T 時刻 EX : 第三分五十秒。
 
-- If the track contains an edit list, determine which edit contains the time T by iterating over the edits. T_movie = T_start + T’
+1. If the track contains an edit list, determine which edit contains the time T by iterating over the edits. T_movie = T_start + T’
 
-- Convert to media time scale T_media = T_start’ + T’’
+如果軌道包含編輯列表，則通過迭代編輯確定哪個編輯包含時間 T。 T_movie = T_start + T'
 
-- Use time-to-sample box to find the first sample prior to the given time
+先找當中有沒有 edit list，當中 edit list 實際上存著一段段的樣本信息，這裡面會有一個關鍵字段的有開始時刻(T_start)的連續樣本。這個過程就是將 T 換算成 T_start + T'，而這個 T' 就是換算出來的新的時間。
 
-- Consult the sync sample table to seek to which sample is closest to, but prior to, the sample found above
+2. Convert to media time scale T_media = T_start’ + T’’
 
-- Use the sample-to-chunk table to determine in which chunk this sample is located.
+然後再將原先的過程轉換為媒體時間尺度 T_media = T_start' + T''
 
-- use the chunk offset box to figure out where that chunk begins
 
-- Starting from this offset, you can use the information contained in the sample-to-chunk box and the sample size box to figure out where within this chunk the sample in question is located.
+3. Use time-to-sample box to find the first sample prior to the given time
 
-如果你想尋找一個給定的軌道到時間 T，
+使用 time-to-sample box 找到給定時間之前的第一個樣本，也就是對應的樣本編號。
 
-- 如果軌道包含編輯列表，則通過迭代編輯確定哪個編輯包含時間 T。 T_movie = T_start + T'
+4. Consult the sync sample table to seek to which sample is closest to, but prior to, the sample found above
 
-- 轉換為媒體時間尺度 T_media = T_start' + T''
+因為找到的樣本不一定是可以解的，為了保險會先查閱同步樣本表以尋找最接近但先於上面所找到的樣本的樣本編號。
 
-- 使用 time-to-sample 框找到給定時間之前的第一個樣本
+5. Use the sample-to-chunk table to determine in which chunk this sample is located.
 
-- 查閱同步樣本表以尋找最接近但先於上面找到的樣本的樣本
+使用 sample-to-chunk 來確定該樣本位於哪個 chunk 中。
 
-- 使用樣本到塊表來確定該樣本位於哪個塊中。
+6. use the chunk offset box to figure out where that chunk begins
 
-- 使用塊偏移框來確定該塊開始的位置
+找到後根據使用 the chunk offset box 來確定該 chunk 開始的物理存儲位置。
 
-- 從這個偏移量開始，您可以使用包含在樣本到塊框和样本大小框中的信息來確定有問題的樣本在這個塊中的位置。
+7. Starting from this offset, you can use the information contained in the sample-to-chunk box and the sample size box to figure out where within this chunk the sample in question is located.
+
+從這個偏移量開始，您可以使用包含在 sample-to-chunk box 和 the sample size box 中的信息來確定有問題的樣本在這個 chunk 中的位置。
+
 
 ## Reference
 
