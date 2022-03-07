@@ -45,6 +45,8 @@ https://github.com/goldknife6/algorithm
 
 3. https://github.com/youngyangyang04/leetcode-master
 
+4. https://github.com/hemantholani/Leet-Code-Problems-Python
+
 
 ## Reference
 
