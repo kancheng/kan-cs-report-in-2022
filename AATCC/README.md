@@ -18,6 +18,16 @@ https://github.com/kancheng/learn-in-works
 https://docs.python.org/
 
 
+## C
+
+https://feis.studio/
+
+
+## Algorithm
+
+https://github.com/goldknife6/algorithm
+
+
 ## Links
 
 1. https://leetcode.com/
