@@ -26,6 +26,8 @@ PKU 2022 個人實驗報告作業
 
 7. https://iter01.com/489722.html
 
+8. https://blog.csdn.net/qq_41358574/article/details/115392477
+
 ### DL
 
 1. https://blog.csdn.net/weixin_42535423/article/details/103936905
