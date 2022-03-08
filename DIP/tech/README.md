@@ -8,6 +8,12 @@ PKU 2022 個人實驗報告作業
 
 技術文件與紀錄
 
+## Cmd
+
+```
+tree  -I 'node_modules*'
+```
+
 ## Node.js & Npm
 
 
@@ -61,6 +67,33 @@ npm init vue@latest
 cd <your-project-name>
 npm install
 npm run dev
+```
+
+4. init
+
+```
+(base) HaoyeMacBookPro:vue-app kancheng$ tree  -I 'node_modules*' 
+.
+├── README.md
+├── babel.config.js
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── public
+│             ├── favicon.ico
+│             └── index.html
+├── src
+│             ├── App.vue
+│             ├── assets
+│             │             └── logo.png
+│             ├── components
+│             │             ├── HelloWorld.vue
+│             │             └── HelloWorldTest.vue
+│             └── main.js
+└── vue.config.js
+
+4 directories, 13 files
+(base) HaoyeMacBookPro:vue-app kancheng$ 
 ```
 
 ## Angualr
@@ -201,4 +234,106 @@ index.html
 https://www.djangoproject.com/
 
 
+## Java Spring Boot
+
+JDK 必須要對應上指定 Spring Boot 的版本。
+
+https://spring.io/projects/spring-boot
+
+https://start.spring.io/
+
+
+### Spring Boot 產生專案
+
+在此用 init 來產生專案，Maven 要設定好 !
+
+官網可以手動下載
+
+![](sprbt-pic/0.png)
+
+
+Install ItelliJ IDEA
+
+![](sprbt-pic/1.png)
+
+
+可以手動匯入新檔案，也可以用工具，在此用工具產生。
+
+![](sprbt-pic/2.png)
+
+
+安裝工具
+
+![](sprbt-pic/3.png)
+
+
+![](sprbt-pic/4.png)
+
+
+![](sprbt-pic/5.png)
+
+
+![](sprbt-pic/6.png)
+
+
+![](sprbt-pic/7.png)
+
+完成
+
+### Spring Boot Hello, World !
+
+
+在此用 demo 來產生專案，Maven 要設定好 !
+
+
+![](sprbt-pic/8.png)
+
+```
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@SpringBootApplication
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+	@GetMapping("/hello")
+	public String hello() {
+		return "Hello World";
+	}
+
+}
+```
+
+
+Port Number
+
+```
+server.port=9997
+```
+
+![](sprbt-pic/9.png)
+
+
+![](sprbt-pic/10.png)
+
+
+![](sprbt-pic/11.png)
+
+
+```
+java -jar [Name].jar
+```
+
+![](sprbt-pic/13.png)
+
+![](sprbt-pic/12.png)
+
+完成
 
