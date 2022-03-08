@@ -8,6 +8,15 @@ PKU 2022 個人實驗報告作業
 
 面向網路教學的聽課狀態視頻分析系統
 
+### 思路
+
+1. 使用疲勞駕駛的神經網路模型
+
+2. YOLO 辨識人臉
+
+3. Vue 前端 & Python 後端 & Go 後端 & Java Spring Boot 後端.(React or Angular or Vue) & Pytorch or Tensorflow Deep Learning.
+
+
 ## Reference
 
 ### Skill
@@ -28,6 +37,13 @@ PKU 2022 個人實驗報告作業
 
 8. https://blog.csdn.net/qq_41358574/article/details/115392477
 
+9. https://shengyu7697.github.io/python-tutorial/
+
+
+### Flask & OpenCV 
+
+1. https://shengyu7697.github.io/python-flask-camera-streaming/
+
 
 ### DL
 
@@ -39,10 +55,43 @@ PKU 2022 個人實驗報告作業
 
 4. https://www.hindawi.com/journals/cin/2020/7251280/
 
+5. https://www.rs-online.com/designspark/pytorchx-nvidia-jetsonnano-yolov5-cn
+
+6. https://cloud.tencent.com/developer/article/1880534
+
+7. https://tw511.com/a/01/29504.html
+
+
+### DL GitHub & Code
+
+1. https://github.com/navinkumar357/Driver-drowsiness-detection-CNN-Keras-OpenCV
+
+2. https://github.com/neelabhsinha/Drowsiness-Detection-in-Drivers-using-Deep-Learning
+
+3. https://towardsdatascience.com/drowsiness-detection-using-convolutional-neural-networks-face-recognition-and-tensorflow-56cdfc8315ad
+
+4. https://github.com/ooooxianyu/yoloV5-arcface_forlearn
+
+5. https://github.com/aayushrai/Driver_safety
+
+
+### Train Data
+
+1. http://cv.cs.nthu.edu.tw/php/callforpaper/datasets/DDD/
+
+2. http://parnec.nuaa.edu.cn/_upload/tpl/02/db/731/template731/pages/xtan/ClosedEyeDatabases.html
+
+3. http://vis-www.cs.umass.edu/lfw/
+
+
 
 ### Paper
 
 1. https://www.researchgate.net/publication/261074837_The_driver_fatigue_monitoring_system_based_on_face_recognition_technology
+
+2. https://github.com/neelabhsinha/Drowsiness-Detection-in-Drivers-using-Deep-Learning
+
+3. https://github.com/neelabhsinha/Drowsiness-Detection-in-Drivers-using-Deep-Learning
 
 
 
@@ -64,6 +113,10 @@ PKU 2022 個人實驗報告作業
 
 8. https://www.itread01.com/content/1542222326.html
 
+
+## News
+
+1. https://buzzorange.com/techorange/2020/11/04/yolo-v4-story/
 
 
 
