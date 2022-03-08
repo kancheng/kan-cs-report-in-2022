@@ -74,6 +74,17 @@ PKU 2022 個人實驗報告作業
 
 5. https://github.com/aayushrai/Driver_safety
 
+6. https://github.com/kpzhang93/MTCNN_face_detection_alignment
+
+
+## Web GitHub & Code
+
+1. https://github.com/oleg-agapov/flask-vue-spa/tree/master/frontend
+
+2. `*` https://github.com/Divya-1200/vuejs-flask
+
+3. https://github.com/Sharpiless/Yolov5-Flask-VUE
+
 
 ### Train Data
 
@@ -113,10 +124,23 @@ PKU 2022 個人實驗報告作業
 
 8. https://www.itread01.com/content/1542222326.html
 
+9. `*` https://medium.com/featurepreneur/connect-vuejs-with-flask-1316ea0afecf
+
+10. https://www.maxlist.xyz/2020/05/08/flask-cors/
+
+11. https://blog.csdn.net/weixin_43424730/article/details/116173820
+
 
 ## News
 
 1. https://buzzorange.com/techorange/2020/11/04/yolo-v4-story/
+
+
+## Face
+
+1. https://www.tpisoftware.com/tpu/articleDetails/950
+
+2. https://www.twblogs.net/a/5b7afe792b7177539c249bce
 
 
 
