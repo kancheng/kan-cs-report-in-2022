@@ -107,7 +107,6 @@ https://laravel.com/
 https://laravel.com/docs/9.x/installation
 
 
-
 ## Go
 
 https://go.dev/
@@ -124,7 +123,82 @@ https://pytorch.org/tutorials/
 https://pytorch.org/docs/stable/index.html
 
 
+## Python Flask
 
+https://flask.palletsprojects.com/en/2.0.x/
+
+https://flask.palletsprojects.com/en/2.0.x/installation/
+
+1. 啟動
+
+fap-dome.py
+
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "OwO//"
+
+app.run()
+```
+```
+python fap-dome.py
+```
+
+2. 加入 HTML
+
+f-app.py
+
+```
+from flask import Flask
+from flask import render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+app.run()
+```
+
+command
+```
+python fap-dome.py
+```
+
+the tree
+
+```
+.
+├── f-app.py
+└── templates
+    └── index.html
+```
+
+index.html
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Flask Test</h1>
+	<p>Python 後端測試</p>
+</body>
+</html>
+```
+
+## Python Django
+
+https://www.djangoproject.com/
 
 
 
