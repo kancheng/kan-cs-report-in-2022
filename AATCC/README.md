@@ -47,6 +47,20 @@ https://github.com/goldknife6/algorithm
 
 4. https://github.com/hemantholani/Leet-Code-Problems-Python
 
+## Tip
+
+```
+# Cloc 計算
+cloc .\[Dir Path]\
+
+# 找出有關特定檔案下的有 random access 字的檔案
+find . -name "*.*" |xargs grep "random access" *.*
+
+grep -r "random access" *
+
+# 統計有 random access 字的檔案出現字數
+grep -r "random access" *|wc -l
+```
 
 ## Reference
 
