@@ -8,11 +8,108 @@ PKU 2022 個人實驗報告作業
 
 下載 GPAC，理解並描述 random access 過程
 
+在此分别使⽤了 MP4Box 和 MP4Box.js 对 MP4 档案进⾏分析
+
+
 ### GPAC
 
 GPAC 是一個 LGPL v2.1 且在大多數情況下也可以在商業許可下使用的開源多媒體框架，其專案提供了使用者在處理、檢查、打包、流式傳輸、播放和與媒體內容交互的工具。此類內容可以為音頻、影像、字幕、元數據、可縮放圖形、加密媒體、2D/3D 圖形和 ECMAScript 等任意組合。GPAC 以其廣泛的 MP4/ISOBMFF 功能而聞名，深受影像愛好者、學術研究人員、標準化機構和專業廣播公司的歡迎。
 
 官方文件 : https://doxygen.gpac.io/
+
+
+```
+mp4box -info test.mp4
+```
+
+```
+(base) PS D:\gpac> mp4box -info test.mp4
+[isom/avcc] Missing REXT profile signaling, patching.
+# Movie Info - 2 tracks - TimeScale 1000
+Duration 00:03:21.550
+Fragmented: no
+Major Brand isom - version 512 - compatible brands: isom iso2 avc1 mp41
+Created: UNKNOWN DATE
+
+iTunes Info:
+        title: Xi ?/Main Theme (Orchestral Cover/Recreation) ??Mobile Suit Gundam Hathaway's Flash OST ???柴??萸?扼 
+        artist: itsthewhiteowl
+        created: 20210427
+        tool: Lavf58.45.100
+        comment: It seems like I can't get enough of doing Hathaway music, so here is the last one before the movie and soundtrack come out. This is a recreation/cover of the track from the first proper trailer for the movie in March of last year, which has since been confirmed to be the main theme of the movie as well as Xi's theme, as the title implies. I always thought it was neat how the organ and synth texture complimented Sawano's usual bombastic orchestration style, but recently they played the full version of the track during one of the promotional livestreams, and I was blown away by how good it was. Sawano himself stated that Shukou Murase had a sort of Hollywood-esque direction, specifically a "Futuristic Orchestra" mix of Interstellar, Star Wars and Blade Runner. With the organ, Sawano was screaming Interstellar in this theme. Love the inspiration he took.
+
+I tried to cover the track as accurately as I could from how much I could hear underneath all the talking in the livestream. I didn't do the soundscape-heavy intro part, though. Couldn't quite do the synth texture justice so I decided to leave it out and start right at the synth riff instead. There's also the slower arrangement, mSgH, which played in January's trailer and was likely going to be the 2nd half for ? based on how Sawano double track structures usually go. But with the original already being a little over 4 minutes long, it probably would have turned out too long. I didn't cover it here for similar reasons, and we've also heard very little of mSgH for me to call it a "recreation". But other than that, I'm quite happy with how this turned out.
+
+Also, the most massive of thanks to my buddy J4F for handling the mixing and mastering of this track and getting it to sound better than I possibly could have with how much of a behemoth it is production-wise.
+
+J4F:
+https://www.instagram.com/jonathan_jaf/
+
+-----------------------------------------------------------------
+
+MY ALBUM:
+https://itsthewhiteowl.bandcamp.com/releases
+https://open.spotify.com/album/4lqJrbWUOuHLzwziTWcIlA?si=HeC2AtKBT4imCPv8syggjg
+
+TWITTER:
+https://twitter.com/itsthewhiteowl??
+
+INSTAGRAM:
+https://www.instagram.com/itsthewhiteowl
+        sdesc: It seems like I can't get enough of doing Hathaway music, so here is the last one before the movie and soundtrack come out. This is a recreation/cover of the track from the first proper trailer for the movie in March of last year, which has since been confirmed to be the main theme of the movie as well as Xi's theme, as the title implies. I always thought it was neat how the organ and synth texture complimented Sawano's usual bombastic orchestration style, but recently they played the full version of the track during one of the promotional livestreams, and I was blown away by how good it was. Sawano himself stated that Shukou Murase had a sort of Hollywood-esque direction, specifically a "Futuristic Orchestra" mix of Interstellar, Star Wars and Blade Runner. With the organ, Sawano was screaming Interstellar in this theme. Love the inspiration he took.
+
+I tried to cover the track as accurately as I could from how much I could hear underneath all the talking in the livestream. I didn't do the soundscape-heavy intro part, though. Couldn't quite do the synth texture justice so I decided to leave it out and start right at the synth riff instead. There's also the slower arrangement, mSgH, which played in January's trailer and was likely going to be the 2nd half for ? based on how Sawano double track structures usually go. But with the original already being a little over 4 minutes long, it probably would have turned out too long. I didn't cover it here for similar reasons, and we've also heard very little of mSgH for me to call it a "recreation". But other than that, I'm quite happy with how this turned out.
+
+Also, the most massive of thanks to my buddy J4F for handling the mixing and mastering of this track and getting it to sound better than I possibly could have with how much of a behemoth it is production-wise.
+
+J4F:
+https://www.instagram.com/jonathan_jaf/
+
+-----------------------------------------------------------------
+
+MY ALBUM:
+https://itsthewhiteowl.bandcamp.com/releases
+https://open.spotify.com/album/4lqJrbWUOuHLzwziTWcIlA?si=HeC2AtKBT4imCPv8syggjg
+
+TWITTER:
+https://twitter.com/itsthewhiteowl??
+
+INSTAGRAM:
+https://www.instagram.com/itsthewhiteowl
+
+# Track 1 Info - ID 1 - TimeScale 15360
+Media Duration 00:03:21.483  (recomputed 00:03:21.500)
+Track has 1 edits: track duration is 00:03:21.484
+Track flags: Enabled In Movie
+Media Info: Language "Undetermined (und)" - Type "vide:avc1" - 12089 samples
+Visual Sample Entry Info: width=1920 height=1080 (depth=24 bits)
+Visual Track layout: x=0 y=0 width=1920 height=1080
+AVC/H264 Video - Visual Size 1920 x 1080
+        AVC Info: 1 SPS - 1 PPS - Profile High @ Level 4.2
+        NAL Unit length bits: 32
+        Pixel Aspect Ratio 1:1 - Indicated track size 1920 x 1080
+        Chroma format YUV 4:2:0 - Luma bit depth 8 - chroma bit depth 8
+        SPS#1 hash: B3FED58C4F26FD45CC7A1641DF0CFA83EC241ECD
+        PPS#1 hash: C43D6E8706EDFBB2A06353EA8731C9724B40CD24
+        RFC6381 Codec Parameters: avc1.64002A
+        Average GOP length: 318 samples
+        Max sample duration: 256 / 15360
+
+# Track 2 Info - ID 2 - TimeScale 44100
+Media Duration 00:03:21.549
+Track has 1 edits: track duration is 00:03:21.550
+Track flags: Enabled In Movie
+Media Info: Language "English (eng)" - Type "soun:mp4a" - 8680 samples
+Alternate Group ID 1
+MPEG-4 Audio AAC LC (AOT=2 implicit) - 2 Channel(s) - SampleRate 44100
+        RFC6381 Codec Parameters: mp4a.40.2
+        All samples are sync
+        Max sample duration: 1024 / 44100
+
+(base) PS D:\gpac>
+```
+
+可以看到結果有两个 Track，第⼀個是影像，第⼆個是⾳頻與其它資訊。
 
 ```
 mp4box -version
@@ -142,6 +239,44 @@ If you want to seek a given track to a time T,
 7. Starting from this offset, you can use the information contained in the sample-to-chunk box and the sample size box to figure out where within this chunk the sample in question is located.
 
 從這個偏移量開始，您可以使用包含在 sample-to-chunk box 和 the sample size box 中的信息來確定有問題的樣本在這個 chunk 中的位置。
+
+### Random Access 技術文件
+
+本節描述如何尋找。
+
+查找主要通過使⽤ sample table box 中的⼦ box 來完成。如果 edit list 存在，也必須查閱它。 如果你想尋找⼀個給定的軌道到⼀個時間 T，其中 T 是movie header box 的 time scale，執⾏以下操作:
+
+
+1. If the track contains an edit list, determine which edit contains the time T by iterating over the edits. The start time of the edit in the movie time scale must then be subtracted from the time T to generate T', the duration into the edit in the movie time scale. T' is next converted to the time scale of the track's media to generate T''. Finally, the time in the media scale to use is calculated by adding the media start time of the edit to T''.
+
+（如果 track 有 edit list，遍歷所有 edit，找到T在哪⼀個 track ⾥。將 edit 的開始時間轉換為 movie 的 time scale 為單位得到 edit_T，T 減去 edit_T，得到 T'，也就是在 edit ⾥⾯的持續時間。將 T' 轉換成 track 媒體 的 time scale，得到 T''。最後將 T'' 加上 edit_T，可以得到以 track 媒體 的 time scale 為單位的 T'''，⽽這個 T''' 就是後續⽤來求 sample 的時間）
+
+2. The time-to-sample box for a track indicates what times are associated with which sample for that track. Use this box to find the first sample prior to the given time.
+
+3. The sample that was located in step 1 may not be a random access point. Locating the nearest random access point requires consulting two boxes. The sync sample table indicates which samples are in fact random access points. Using this table, you can locate which is the first sync sample prior to the specified time. The absence of the sync sample table indicates that all samples are synchronization points, and makes this problem easy. The shadow sync box gives the opportunity for a content author to provide samples that are not delivered in the normal course of delivery, but which can be inserted to provide additional random access points. This improves random access without impacting bitrate during normal delivery. This box maps samples that are not random access points to alternate samples that are. You should also consult this table if present to find the first shadow sync sample prior to the sample in question. Having consulted the sync sample table and the shadow sync table, you probably wish to seek to whichever resultant sample is closest to, but prior to, the sample found in step 1.
+
+4. At this point you know the sample that will be used for random access. Use the sample-to-chunk table to determine in which chunk this sample is located.
+
+5. Knowing which chunk contained the sample in question, use the chunk offset box to figure out where that chunk begins.
+
+6. Starting from this offset, you can use the information contained in the sample-to-chunk box and the sample size box to figure out where within this chunk the sample in question is located. This is the desired information.
+
+
+### MP4 分析
+
+https://github.com/gpac/mp4box.js
+
+https://gpac.github.io/mp4box.js/test/filereader.html
+
+https://gpac.github.io/mp4box.js/
+
+
+### Code 分析
+
+```
+/ ... /gpac-master/src/isomedia/isom_read.c
+/ ... /gpac-master/src/isomedia/stbl_read.c
+```
 
 
 ## Reference
