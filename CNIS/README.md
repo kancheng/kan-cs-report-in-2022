@@ -4,7 +4,25 @@
 
 PKU 2022 個人實驗報告作業
 
+## Books
+
+1. 密碼編碼學與網路安全 - 原理與實踐, Cryptography and Network Security，William Stallings
+
+2. 應用密碼學, Applied Cryptography - Protocols, Algorithm, and Source Code in C，Bruce Schneier
+
+- https://github.com/bheesham/applied-cryptography-accompanying-source-code
+
+- https://www.schneier.com/books/applied-cryptography-source
+
+- https://www.schneier.com/
+
+
 ## Survey
+
+### Github
+
+1. https://github.com/pFarb/awesome-crypto-papers
+
 
 ### 差分隐私
 
@@ -19,3 +37,5 @@ PKU 2022 個人實驗報告作業
 5. https://sspai.com/post/68218
 
 6. https://pipelinedp.io/
+
+### Awsom
