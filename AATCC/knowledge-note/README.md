@@ -25,6 +25,27 @@ PKU 2022 個人實驗報告作業
 
 3. W3 :
 
+- LeetCode :
+
+LeetCode 16. 3Sum Closest 整数反转
+
+LeetCode 17. Letter Combinations of a Phone Number 电话号码的字母组合
+
+LeetCode 19. Remove Nth Node From End of List 删除链表的倒数第 N 个结点
+
+LeetCode 20. Valid Parentheses 有效的括号
+
+LeetCode 24. Swap Nodes in Pairs 两两交换链表中的节点
+
+LeetCode 206. Reverse Linked List 反转链表
+
+LeetCode 232. Implement Queue using Stacks 用栈实现队列
+
+LeetCode 239. Sliding Window Maximum 滑动窗口最大值
+
+LeetCode 242. Valid Anagram 有效的字母异位词
+
+- Knowledge Point : 堆疊、链表
 
 ## 平方根函數
 

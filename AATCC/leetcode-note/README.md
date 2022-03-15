@@ -25,6 +25,28 @@ PKU 2022 個人實驗報告作業
 
 3. W3 :
 
+- LeetCode :
+
+LeetCode 16. 3Sum Closest 整数反转
+
+LeetCode 17. Letter Combinations of a Phone Number 电话号码的字母组合
+
+LeetCode 19. Remove Nth Node From End of List 删除链表的倒数第 N 个结点
+
+LeetCode 20. Valid Parentheses 有效的括号
+
+LeetCode 24. Swap Nodes in Pairs 两两交换链表中的节点
+
+LeetCode 206. Reverse Linked List 反转链表
+
+LeetCode 232. Implement Queue using Stacks 用栈实现队列
+
+LeetCode 239. Sliding Window Maximum 滑动窗口最大值
+
+LeetCode 242. Valid Anagram 有效的字母异位词
+
+- Knowledge Point : 堆疊、链表
+
 
 
 ## LeetCode 1. Two Sum 兩數之和
@@ -330,6 +352,501 @@ ob2 = Solution2()
 print(ob2.romanToInt(x))
 ```
 
+## LeetCode 16. 3Sum Closest 整数反转
+
+Given an integer array nums of length n and an integer target, find three integers in nums such that the sum is closest to target.
+
+Return the sum of the three integers.
+
+You may assume that each input would have exactly one solution.
+
+给你一个长度为 n 的整数数组 nums 和 一个目标值 target。请你从 nums 中选出三个整数，使它们的和与 target 最接近。
+
+返回这三个数的和。
+
+假定每组输入只存在恰好一个解。
+
+
+Example 1:
+
+```
+Input: nums = [-1,2,1,-4], target = 1
+Output: 2
+Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+```
+
+Example 2:
+
+```
+Input: nums = [0,0,0], target = 1
+Output: 0
+```
+
+Constraints:
+
+- 3 <= nums.length <= 1000
+
+- -1000 <= nums[i] <= 1000
+
+- $-10^4 <= target <= 10^4$
+
+### 解题思路
+
+这一题的解法是用两个指针夹逼的方法。先对数组进行排序，i 从头开始往后面扫。这里同样需要注意数组中存在多个重复数字的问题。具体处理方法很多，可以用 map 计数去重。这里笔者简单的处理，i 在循环的时候和前一个数进行比较，如果相等，i 继续往后移，直到移到下一个和前一个数字不同的位置。j，k 两个指针开始一前一后夹逼。j 为 i 的下一个数字，k 为数组最后一个数字，由于经过排序，所以 k 的数字最大。j 往后移动，k 往前移动，逐渐夹逼出最接近 target 的值。
+
+这道题还可以用暴力解法，三层循环找到距离 target 最近的组合。
+
+```
+from typing import List
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        nums.sort()
+        re_min = 0 #存储当前最小的差值
+        for i in range(n):
+            low = i+1
+            high = n-1
+            while low < high:
+                three_sum = nums[i] + nums[low] + nums[high]
+                x = target - three_sum #当前三数的差值
+                if re_min == 0:
+                    re_min = abs(x)
+                    sum_min = three_sum #sum_min为当前最接近的和
+                if abs(x) < re_min:
+                    re_min = abs(x)
+                    sum_min = three_sum
+                if three_sum == target:
+                    return target
+                elif three_sum < target:
+                    low += 1
+                else:
+                    high -= 1
+        return sum_min
+```
+
+## LeetCode 17. Letter Combinations of a Phone Number 电话号码的字母组合
+
+
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+
+A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+
+给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。答案可以按 任意顺序 返回。
+
+给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
+
+![](lc-17-p-example.png)
+
+Example 1:
+
+```
+Input: digits = "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+```
+
+Example 2:
+
+```
+Input: digits = ""
+Output: []
+```
+
+Example 3:
+
+```
+Input: digits = "2"
+Output: ["a","b","c"]
+```
+
+
+Constraints:
+
+- 0 <= digits.length <= 4
+
+- digits[i] is a digit in the range ['2', '9'].(digits[i] 是范围 ['2', '9'] 的一个数字。)
+
+
+
+### 解题思路
+
+DFS 递归深搜
+
+### Reference
+
+1. https://www.bilibili.com/video/BV1cy4y167mM/
+
+```
+class Solution(object):
+    def letterCombinations(self, digits):
+        """
+        动态规划
+        dp[i]: 前i个字母的所有组合
+        由于dp[i]只与dp[i-1]有关,可以使用变量代替列表存储降低空间复杂度
+        :type digits: str
+        :rtype: List[str]
+        """
+        if not digits:
+            return []
+        d = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
+             '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+        n = len(digits)
+        dp = [[] for _ in range(n)]
+        dp[0] = [x for x in d[digits[0]]]
+        for i in range(1, n):
+            dp[i] = [x + y for x in dp[i - 1] for y in d[digits[i]]]
+        return dp[-1]
+
+    def letterCombinations2(self, digits):
+        """
+        使用变量代替上面的列表
+        降低空间复杂度
+        :type digits: str
+        :rtype: List[str]
+        """
+        if not digits:
+            return []
+        d = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
+             '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+        n = len(digits)
+        res = ['']
+        for i in range(n):
+            res = [x + y for x in res for y in d[digits[i]]]
+        return res
+
+    def letterCombinations3(self, digits):
+        """
+        递归
+        :param digits:
+        :return:
+        """
+        d = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
+             '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+        if not digits:
+            return []
+        if len(digits) == 1:
+            return [x for x in d[digits[0]]]
+        return [x + y for x in d[digits[0]] for y in self.letterCombinations3(digits[1:])]
+```
+
+```
+class Solution(object):
+    def letterCombinations(self, digits):
+        if not digits:
+            return []
+        d = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
+             '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+        n = len(digits)
+        dp = [[] for _ in range(n)]
+        dp[0] = [x for x in d[digits[0]]]
+        for i in range(1, n):
+            dp[i] = [x + y for x in dp[i - 1] for y in d[digits[i]]]
+        return dp[-1]
+```
+
+## LeetCode 19. Remove Nth Node From End of List 删除链表的倒数第 N 个结点
+
+Given the head of a linked list, remove the $n^{th}$ node from the end of the list and return its head.
+
+给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+
+![](lc-19-p-example.png)
+
+Example 1:
+
+```
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+```
+
+Example 2:
+
+```
+Input: head = [1], n = 1
+Output: []
+```
+
+Example 3:
+
+```
+Input: head = [1,2], n = 1
+Output: [1]
+```
+
+Constraints:
+
+- The number of nodes in the list is sz.(链表中结点的数目为 sz)
+
+- 1 <= sz <= 30
+
+- 0 <= Node.val <= 100
+
+- 1 <= n <= sz
+
+Follow up: Could you do this in one pass?(你能尝试使用一趟扫描实现吗？)
+
+### 解题思路
+
+- 先循环一次拿到链表的总长度，然后循环到要删除的结点的前一个结点开始删除操作。需要注意的一个特例是，有可能要删除头结点，要单独处理。
+
+- 这道题有一种特别简单的解法。设置 2 个指针，一个指针距离前一个指针 n 个距离。同时移动 2 个指针，2 个指针都移动相同的距离。当一个指针移动到了终点，那么前一个指针就是倒数第 n 个节点了。
+
+### Reference
+
+https://stackoverflow.com/questions/61610160/remove-nth-node-from-end-of-listleetcode-python
+
+```
+"""
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        head_dummy = ListNode()
+        head_dummy.next = head
+
+        slow, fast = head_dummy, head_dummy
+        while(n!=0): # fast先往前走n步
+            fast = fast.next
+            n -= 1
+        while(fast.next!=None):
+            slow = slow.next
+            fast = fast.next
+        # fast 走到结尾后，slow 的下一个节点为倒数第N个节点
+        slow.next = slow.next.next # 删除
+        return head_dummy.next
+"""
+class Solution:
+    def removeNthFromEnd(self, head, n):
+        fast = slow = head
+        for _ in range(n):
+            fast = fast.next
+        if not fast:
+            return head.next
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
+        return head
+```
+
+## LeetCode 20. Valid Parentheses 有效的括号
+
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+1. Open brackets must be closed by the same type of brackets.
+
+2. Open brackets must be closed in the correct order.
+
+
+给定一个只包括 '(', ')', '{', '}', '[' and ']' 的字符串 s ，判断字符串是否有效。
+
+有效字符串需满足：
+
+1. 左括号必须用相同类型的右括号闭合。
+
+2. 左括号必须以正确的顺序闭合。
+
+
+Example 1:
+
+```
+Input: s = "()"
+Output: true
+```
+
+Example 2:
+
+```
+Input: s = "()[]{}"
+Output: true
+```
+
+Example 3:
+
+```
+Input: s = "(]"
+Output: false
+```
+
+Constraints - 提示:
+
+- $1 <= s.length <= 10^4$
+- s consists of parentheses only '()[]{}'.
+
+s 仅由括号 '()[]{}' 组成
+
+
+### 解题思路
+
+- 遇到左括号就进栈push，遇到右括号并且栈顶为与之对应的左括号，就把栈顶元素出栈。最后看栈里面还有没有其他元素，如果为空，即匹配。
+
+- 需要注意，空字符串是满足括号匹配的，即输出 true。
+
+### 補充
+
+括號匹配是使用棧解決的經典問題。題意其實就像我們在寫代碼的過程中，要求括號的順序是一樣的，有左括號，相應的位置必須要有右括號。
+
+如果還記得編譯原理的話，編譯器在 詞法分析的過程中處理括號、花括號等這個符號的邏輯，也是使用了棧這種數據結構。
+
+再舉個例子，linux 系統中，cd 這個進入目錄的命令我們應該再熟悉不過了。
+
+```
+cd a/b/c/../../
+```
+
+這個命令最後進入a目錄，系統是如何知道進入了a目錄呢 ，即為棧的應用
+
+```
+class Solution(object):
+    def isValid(self, s):
+        stack = []
+        paren_map = {')': '(', ']':'[', '}':'{'}
+        for c in s:
+            if c not in paren_map:
+                stack.append(c)
+            elif not stack or paren_map[c] != stack.pop():
+                return False
+        return not stack
+x = "()"
+ob = Solution()
+print(ob.isValid(x))
+
+class Solution:
+    def isValid(self, s):
+        while '{}' in s or '()' in s or '[]' in s:
+            s = s.replace('{}', '')
+            s = s.replace('[]', '')
+            s = s.replace('()', '')
+        return s == ''
+x = "()"
+x1 = "([)]"
+x2 = "{{([][])}()}"
+
+ob = Solution()
+print(ob.isValid(x))
+print(ob.isValid(x1))
+print(ob.isValid(x2))
+
+# 使用栈
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []        
+        for item in s:
+            if item == '(':
+                stack.append(')')
+            elif item == '[':
+                stack.append(']')
+            elif item == '{':
+                stack.append('}')
+            elif not stack or stack[-1] != item:
+                return False
+            else:
+                stack.pop()        
+        return True if not stack else False
+x = "()"
+ob = Solution()
+print(ob.isValid(x))
+
+# 使用字典
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        mapping = {
+            '(': ')',
+            '[': ']',
+            '{': '}'
+        }
+        for item in s:
+            if item in mapping.keys():
+                stack.append(mapping[item])
+            elif not stack or stack[-1] != item: 
+                return False
+            else: 
+                stack.pop()
+        return True if not stack else False
+x = "()"
+ob = Solution()
+print(ob.isValid(x))
+```
+
+## LeetCode 24. Swap Nodes in Pairs 两两交换链表中的节点
+
+Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+
+给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+
+Example 1:
+
+```
+Input: head = [1,2,3,4]
+Output: [2,1,4,3]
+```
+
+Example 2:
+
+```
+Input: head = []
+Output: []
+```
+
+Example 3:
+
+```
+Input: head = [1]
+Output: [1]
+```
+
+Constraints - 提示:
+
+- The number of nodes in the list is in the range [0, 100]. (链表中节点的数目在范围 [0, 100] 内)
+
+- 0 <= Node.val <= 100
+
+
+### 解题思路
+
+两两相邻的元素，翻转链表
+
+`pre->a->b->b.next to pre->b->a->b.next`
+
+```
+# Knowledge Point
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+    def __repr__(self):
+        if self:
+            return "{} -> {}".format(self.val, repr(self.next))
+
+if __name__ == "__main__":
+    head = ListNode(1)
+    head.next = ListNode(2)
+    head.next.next = ListNode(3)
+    head.next.next.next = ListNode(4)
+    head.next.next.next.next = ListNode(5)
+    print(head)
+```
+
+### Reference
+
+1. https://ithelp.ithome.com.tw/m/articles/10271920
+
+2. https://ithelp.ithome.com.tw/articles/10263980
+
+```
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        pre, pre.next = self, head
+        while pre.next and pre.next.next:
+            a = pre.next
+            b = a.next
+            pre.next, b.next, a.next = b, a, b.next
+            pre = a
+        return self.next
+```
+
 
 ## LeetCode 69. Sqrt(x) x 的平方根
 
@@ -502,3 +1019,487 @@ print(ob1.climbStairs(x2))
 1. 動態規劃，遞迴公式 f(n-1) + f(n-2)，其結果就是費氏數列。來判斷該值有沒有在字典裡面。相對與第一種課堂範例來的理想。
 
 
+## LeetCode 206. Reverse Linked List 反转链表
+
+Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+
+Example 1:
+
+```
+Input: head = [1,2,3,4,5]
+Output: [5,4,3,2,1]
+```
+
+Example 2:
+
+```
+Input: head = [1,2]
+Output: [2,1]
+```
+
+Example 3:
+
+```
+Input: head = []
+Output: []
+```
+
+Constraints - 提示:
+
+- The number of nodes in the list is the range [0, 5000].(链表中节点的数目范围是 [0, 5000])
+
+- -5000 <= Node.val <= 5000
+
+
+Follow-up: 
+
+A linked list can be reversed either iteratively or recursively. Could you implement both?
+
+链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
+
+
+### 解题思路
+
+两种思路 1.后挂 2.交换
+
+```
+# Knowledge Point
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+    def __repr__(self):
+        if self:
+            return "{} -> {}".format(self.val, repr(self.next))
+
+    if __name__ == "__main__":
+        head = ListNode(1)
+        head.next = ListNode(2)
+        head.next.next = ListNode(3)
+        head.next.next.next = ListNode(4)
+        head.next.next.next.next = ListNode(5)
+        print(head)
+```
+
+### Reference
+
+1. https://ithelp.ithome.com.tw/m/articles/10271920
+
+2. https://ithelp.ithome.com.tw/articles/10263980
+
+```
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+    def __repr__(self):
+        if self:
+            return "{} -> {}".format(self.val, repr(self.next))
+
+class Solution:
+    def reverseList(self, head):
+        dummy = ListNode(float("-inf"))
+        while head:
+            dummy.next, head.next, head = head, dummy.next, head.next
+        return dummy.next
+
+# 交換法
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev = None
+        while head:
+            next = head.next
+            head.next = prev
+            prev = head
+            head = next
+        return prev
+
+# 遞迴法
+class Solution:
+    def reverseList(self, head: Optional[ListNode], prev=None) -> Optional[ListNode]:
+        if not head: return prev
+        next = head.next # 先把下一個記起來
+        head.next = prev # 將自己反過來指向前一個
+        return self.reverseList(next, head)
+```
+
+## LeetCode 232. Implement Queue using Stacks 用栈实现队列
+
+Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
+
+Implement the MyQueue class:
+
+- void push(int x) Pushes element x to the back of the queue.
+
+- int pop() Removes the element from the front of the queue and returns it.
+
+- int peek() Returns the element at the front of the queue.
+
+- boolean empty() Returns true if the queue is empty, false otherwise.
+
+Notes:
+
+- You must use only standard operations of a stack, which means only push to top, peek/pop from top, size, and is empty operations are valid.
+
+- Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.
+
+请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
+
+实现 MyQueue 类：
+
+- void push(int x) 将元素 x 推到队列的末尾
+- int pop() 从队列的开头移除并返回元素
+- int peek() 返回队列开头的元素
+- boolean empty() 如果队列为空，返回 true ；否则，返回 false
+
+说明：
+
+- 你 只能 使用标准的栈操作 —— 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。
+
+- 你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可
+
+
+Example 1:
+
+```
+Input
+["MyQueue", "push", "push", "peek", "pop", "empty"]
+[[], [1], [2], [], [], []]
+Output
+[null, null, null, 1, 1, false]
+
+Explanation
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1]
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
+```
+
+
+Constraints - 提示:
+
+- 1 <= x <= 9
+
+- At most 100 calls will be made to push, pop, peek, and empty. (最多调用 100 次 push、pop、peek 和 empty)
+
+- All the calls to pop and peek are valid. (假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）)
+
+
+Follow-up: 
+
+Can you implement the queue such that each operation is amortized O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer.
+
+你能否实现每个操作均摊时间复杂度为 O(1) 的队列？换句话说，执行 n 个操作的总时间复杂度为 O(n) ，即使其中一个操作可能花费较长时间。
+
+
+### 解题思路
+
+- 用栈实现一个队列的基本操作：push(x)、pop()、peek()、empty()。
+
+```
+class MyQueue:
+    def __init__(self):
+        """
+        in主要负责push，out主要负责pop
+        """
+        self.stack_in = []
+        self.stack_out = []
+    def push(self, x: int) -> None:
+        """
+        有新元素进来，就往in里面push
+        """
+        self.stack_in.append(x)
+    def pop(self) -> int:
+        """
+        Removes the element from in front of queue and returns that element.
+        """
+        if self.empty():
+            return None
+        
+        if self.stack_out:
+            return self.stack_out.pop()
+        else:
+            for i in range(len(self.stack_in)):
+                self.stack_out.append(self.stack_in.pop())
+            return self.stack_out.pop()
+    def peek(self) -> int:
+        """
+        Get the front element.
+        """
+        ans = self.pop()
+        self.stack_out.append(ans)
+        return ans
+    def empty(self) -> bool:
+        """
+        只要in或者out有元素，说明队列不为空
+        """
+        return not (self.stack_in or self.stack_out)
+    
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
+x = ["MyQueue","push","push","peek","pop","empty"]
+obj = MyQueue()
+print(obj.push(x))
+param_2 = obj.pop()
+param_3 = obj.peek()
+param_4 = obj.empty()
+print(param_2)
+print(param_3)
+print(param_4)
+    
+class MyQueue:
+    def __init__(self):
+        self.A, self.B =[], []
+    def push (self, x):
+        self.A.append(x)
+
+    def pop(self):
+        self.peek()
+        return self.B.pop()
+
+    def peek(self):
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        return self.B[-1]
+
+    def empty(self):
+        return not self.A and not self.B
+```
+
+## LeetCode 239. Sliding Window Maximum 滑动窗口最大值
+
+You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+
+Return the max sliding window.
+
+
+给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。
+
+滑动窗口每次只向右移动一位。返回 滑动窗口中的最大值 。
+
+
+Example 1:
+
+```
+Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+Output: [3,3,5,5,6,7]
+Explanation: 
+Window position                Max
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+```
+
+Example 2:
+
+```
+Input: nums = [1], k = 1
+Output: [1]
+```
+
+Constraints:
+
+- $1 <= nums.length <= 10^5$
+
+- $-10^4 <= nums[i] <= 10^4$
+
+- $1 <= k <= nums.length$
+
+
+### 解题思路
+
+- 給定一個數組和一個窗口為 K 的窗口，當窗口從數組的左邊滑動到數組右邊的時候，輸出每次移動窗口以後，在窗口內的最大值。
+
+- 這道題最暴力的方法就是 2 層循環，時間複雜度 O(n * K)。
+
+- 另一種思路是用優先隊列，每次窗口以後的時候都向優先隊列裡面新增一個節點，並刪除一個節點。時間複雜度是 O(n * log n)
+
+- 最優的解法是用雙端隊列，隊列的一邊永遠都存的是窗口的最大值，隊列的另外一個邊存的是比最大值小的值。隊列中最大值左邊的所有值都出隊。在保證了雙端隊列的一邊即是最大值以後，時間複雜度是 O(n)，空間複雜度是 O(K)
+
+```
+class Solution(object):
+    def maxSlidingWindow(self, nums, k):
+        win, ret = [], []
+        for i, v in enumerate(nums):
+            if i >= k and win[0] <= i - k: win.pop(0)
+            while win and nums[win[-1]] <= v: win.pop()
+            win.append(i)
+            if i >= k - 1: ret.append(nums[win[0]])
+        return ret
+# 思路：维护窗口，向右移动时左侧超出窗口的值弹出，
+# 因为需要的是窗口内的最大值，
+# 所以只要保证窗口内的值是递减的即可，小于新加入的值全部弹出。
+# 最左端即为窗口最大值 python解法：
+x = [1,3,-1,-3,5,3,6,7]
+kn = 3
+ob = Solution()
+print(ob.maxSlidingWindow(x, kn))
+```
+
+```
+/*
+  思路： 遍历数组 L R 为滑窗左右边界 只增不减
+        双向队列保存当前窗口中最大的值的数组下标 双向队列中的数从大到小排序，
+        新进来的数如果大于等于队列中的数 则将这些数弹出 再添加
+        当R-L+1=k 时 滑窗大小确定 每次R前进一步L也前进一步 保证此时滑窗中最大值的
+        数组下标在[L，R]中，并将当前最大值记录
+  举例： nums[1，3，-1，-3，5，3，6，7] k=3
+     1：L=0，R=0，队列【0】 R-L+1 < k
+            队列代表值【1】
+     2: L=0,R=1, 队列【1】 R-L+1 < k
+            队列代表值【3】
+     解释：当前数为3 队列中的数为【1】 要保证队列中的数从大到小 弹出1 加入3
+          但队列中保存的是值对应的数组下标 所以队列为【1】 窗口长度为2 不添加记录
+     3: L=0,R=2, 队列【1，2】 R-L+1 = k ,result={3}
+            队列代表值【3，-1】
+     解释：当前数为-1 队列中的数为【3】 比队列尾值小 直接加入 队列为【3，-1】
+          窗口长度为3 添加记录记录为队首元素对应的值 result[0]=3
+     4: L=1,R=3, 队列【1，2，3】 R-L+1 = k ,result={3，3}
+            队列代表值【3，-1,-3】
+     解释：当前数为-3 队列中的数为【3，-1】 比队列尾值小 直接加入 队列为【3，-1，-3】
+          窗口长度为4 要保证窗口大小为3 L+1=1 此时队首元素下标为1 没有失效
+          添加记录记录为队首元素对应的值 result[1]=3
+     5: L=2,R=4, 队列【4】 R-L+1 = k ,result={3，3，5}
+            队列代表值【5】
+     解释：当前数为5 队列中的数为【3，-1，-3】 保证从大到小 依次弹出添加 队列为【5】
+          窗口长度为4 要保证窗口大小为3 L+1=2 此时队首元素下标为4 没有失效
+          添加记录记录为队首元素对应的值 result[2]=5
+    依次类推 如果队首元素小于L说明此时值失效 需要弹出
+*/
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if(nums==null||nums.length<2) return nums;
+        // 双向队列 保存当前窗口最大值的数组位置 保证队列中数组位置的数按从大到小排序
+        LinkedList<Integer> list = new LinkedList();
+        // 结果数组
+        int[] result = new int[nums.length-k+1];
+        for(int i=0;i<nums.length;i++){
+            // 保证从大到小 如果前面数小 弹出
+            while(!list.isEmpty()&&nums[list.peekLast()]<=nums[i]){
+                list.pollLast();
+            }
+            // 添加当前值对应的数组下标
+            list.addLast(i);
+            // 初始化窗口 等到窗口长度为k时 下次移动在删除过期数值
+            if(list.peek()<=i-k){
+                list.poll();   
+            } 
+            // 窗口长度为k时 再保存当前窗口中最大值
+            if(i-k+1>=0){
+                result[i-k+1] = nums[list.peek()];
+            }
+        }
+        return result;
+    }
+}
+```
+
+## LeetCode 242. Valid Anagram 有效的字母异位词
+
+有效的字母异位词 : 两个单词包含相同的字母，但是次序不同
+
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+
+注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。
+
+Example 1:
+
+```
+Input: s = "anagram", t = "nagaram"
+Output: true
+```
+
+Example 2:
+
+```
+Input: s = "rat", t = "car"
+Output: false
+```
+
+Constraints - 提示:
+
+- 1 <= s.length, t.length <= 5 * 10^4
+
+- s and t consist of lowercase English letters.(s 和 t 仅包含小写字母)
+
+Follow up - 进阶: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
+
+如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+
+
+### 解题思路
+
+- 可用打表的方式做。先把 s 中的每个字母都存在一个 26 个容量的数组里面，每个下标依次对应 26 个字母。s 中每个字母都对应表中一个字母，每出现一次就加 1。然后再扫字符串 t，每出现一个字母就在表里面减一。如果都出现了，最终表里面的值肯定都是 0 。最终判断表里面的值是否都是 0 即可，有非 0 的数都输出 false 。
+
+```
+# defaultdict 解
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        from collections import defaultdict
+        s_dict = defaultdict(int)
+        t_dict = defaultdict(int)
+        for x in s:
+            s_dict[x] += 1
+        for x in t:
+            t_dict[x] += 1
+        return s_dict == t_dict
+
+# dic 解
+class Solutiont:
+    def isAnagram(self, s, t):
+        dic1, dic2 = {}, {}
+        for item in s:
+            dic1[item] = dic1.get(item, 0) + 1
+        for item in t:
+            dic2[item] = dic2.get(item, 0) + 1
+        return dic1 == dic2
+
+s = "anagram"
+t = "nagaram"
+ob = Solution()
+print(ob.isAnagram(s, t))
+
+# ASCII 解
+class Solutiont:
+    def isAnagram(self, s, t):
+        dic1, dic2 = [0]*26, [0]*26
+        for item in s:
+            dic1[ord(item) - ord('a')] += 1
+        for item in t:
+            dic2[ord(item) - ord('a')] += 1
+        return dic1 == dic2
+
+s = "anagram"
+t = "nagaram"
+ob = Solution()
+print(ob.isAnagram(s, t))
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
+s = "anagram"
+t = "nagaram"
+ob = Solution()
+print(ob.isAnagram(s, t))
+```
