@@ -8,9 +8,9 @@ PKU 2022 個人實驗報告作業
 
 Arsenal 中文素材
 
-## Links
+## Survey & New Works
 
-1. Deep Learning for Deepfakes Creation and Detection: A Survey
+0. Deep Learning for Deepfakes Creation and Detection: A Survey
 
 https://www.researchgate.net/publication/336055871_Deep_Learning_for_Deepfakes_Creation_and_Detection_A_Survey
 
@@ -35,7 +35,7 @@ By reviewing the background of deep-fakes and state-of-the-art deepfake detectio
 深度學習已成功應用於解決從大數據分析到計算機視覺和人類水平控制的各種複雜問題，其技術也可能會被用於創造出可能對隱私、民主體制和國家安全造成威脅的軟體應用。 而近來出現的基於深度學習的應用程序則是 “deepfake”，其演算法可以做出人類用肉眼無法將它們與真品區分開來的假影像和影片。因此，擁有能夠自動檢測和評估數位視覺媒體完整性等技術的提議是必不可少的。本研究介紹了用於創造深度偽造的演算法的調查，更重要的是，介紹了迄今為止文獻中提出的用於檢測深度偽造的方法。同時對與深度偽造技術相關的挑戰、研究趨勢和方向進行了廣泛的討論。通過回顧深造假的背景和最先進的深造假檢測方法，本研究提供了深造假技術的全面概述，並有助於開發新的、更強大的方法來應對日益具有挑戰性的深度偽造局面。
 
 
-2. Deepfakes Detection Techniques Using Deep Learning: A Survey
+1. Deepfakes Detection Techniques Using Deep Learning: A Survey
 
 https://www.scirp.org/journal/paperinformation.aspx?paperid=109149
 
@@ -58,7 +58,7 @@ In addition, it will help comparison with the existing works because of the deta
 深度學習是一種有效且已廣泛應用於各種領域的有用技術，其領域包括計算機視覺、機器視覺和自然語言處理，Deepfakes 則是使用深度學習技術來處理人類無法將其與真人區分開來的人的圖像和影片。近年來，已經有許多研究來了解深度偽造的工作原理，並且引入了許多基於深度學習的方法來檢測深度偽造的影像或圖像。在該研究中，研究者使用深度學習方法對深度偽造創建和檢測技術進行了全面審視，同時對各種技術及其在深度偽造檢測中的應用進行了深入分析，其研究成果將對該領域的研究人員有所幫助，因為它將涵蓋最近發現社交內容中的深度偽造影像或圖像的最先進的方法。此外，由於對該領域使用的最新方法和資料集的詳細描述，它將有助於與現有工作進行比較。
 
 
-3. M2TR: Multi-modal Multi-scale Transformers for Deepfake Detection
+2. M2TR: Multi-modal Multi-scale Transformers for Deepfake Detection
 
 https://arxiv.org/abs/2104.09770
 
@@ -86,7 +86,7 @@ On three Deepfake datasets, we conduct extensive experiments to verify the effec
 
 Deepfake 技術所產生的偽造圖像廣泛傳播對數位資訊的可信度構成了嚴重威脅，這需要有效的方法來檢測由先進技術所生成具有感知力的 Deepfake 成果。大多數現有方法通過將輸入圖像對應到二進制預測而不捕獲不同像素之間的一致性來使用深度神經網絡來對抗 Deepfakes 技術。在該研究中，研究者旨在為 Deepfake 檢測捕獲不同尺度的細微操作偽影，並通過轉換器模型實現了這一點，該模型最近在為計算機視覺中的各種識別任務建模像素之間的依賴關係方面表現出卓越的性能。同時研究者介紹了一種多模態多尺度變換器（M2TR），它使用多尺度變換器對不同大小的補丁進行操作，以檢測不同空間級別的局部不一致性，為了改善檢測結果並增強我們方法對圖像壓縮的魯棒性，M2TR 還獲取頻率信息，並使用交叉模態融合模塊將其與 RGB 特徵進一步結合。開發和評估 Deepfake 檢測方法需要大規模的數據集。此研究觀察到現有基準中的樣本包含嚴重的偽影並且缺乏多樣性，這促使此研究引入了一個高品質的 Deepfake 資料集 SR-DF，它由 4,000 個由最先進的面部交換和面部重演方法去生成的 DeepFake 組成影像，最後在三個 Deepfake 資料集上，研究者進行了廣泛的實驗來驗證所提出方法的有效性，該方法優於最先進的 Deepfake 檢測方法。
 
-4. Combining EfficientNet and Vision Transformers for Video Deepfake Detection
+3. Combining EfficientNet and Vision Transformers for Video Deepfake Detection
 
 https://arxiv.org/abs/2107.02612
 
@@ -116,7 +116,7 @@ Deepfakes 是用數位的方式去操作跟偽造出逼真但虛假圖像的結�
 
 具體來說，該研究將各種類型的視覺轉換器與用作特徵提取器的卷積 EfficientNet B0 相結合，同時與一些使用視覺轉換器的最新方法獲得了可比較的結果。而本研究最先進的方法不同，研究者既不使用蒸餾也不使用集成方法。研究者也提出了一個基於簡單投票方案的簡單推理程序，用於處理同一影像鏡頭中的多個人臉。同時最佳模型的 AUC 為 0.951，F1 得分為 88.0%，非常接近 DeepFake 檢測挑戰賽 (DFDC) 的最新水平。
 
-5. Video Transformer for Deepfake Detection with Incremental Learning
+4. Video Transformer for Deepfake Detection with Incremental Learning
 
 https://dl.acm.org/doi/abs/10.1145/3474085.3475332?sid=SCITRUS
 
@@ -143,40 +143,39 @@ Deepfake 的面部偽造在互聯網上廣泛傳播，這引起了嚴重的社�
 ```
 Link : https://www.angle.com.tw/book.asp?BKID=12196
 
-1. 人工智慧時代的法學研究路徑初探，劉靜怡
+0. 人工智慧時代的法學研究路徑初探，劉靜怡
 
-2. 第二波人工智慧知識學習與生產對法學的挑戰 — 資訊、科技與社會研究及法學的對話，邱文聰
+1. 第二波人工智慧知識學習與生產對法學的挑戰 — 資訊、科技與社會研究及法學的對話，邱文聰
 
-3. 初探人工智慧與生命倫理之關係，吳全峰
+2. 初探人工智慧與生命倫理之關係，吳全峰
 
-4. 初探目的解釋在法律人工智慧系統之運用可能，陳弘儒
+3. 初探目的解釋在法律人工智慧系統之運用可能，陳弘儒
 
-5. AI 時代之分裂社會與民主—以美國法之表意自由與觀念市場自由競爭理論為中心，陳柏良
+4. AI 時代之分裂社會與民主—以美國法之表意自由與觀念市場自由競爭理論為中心，陳柏良
 
-6. AI 個資爭議在英國與歐盟之經驗 — 以Google DeepMind一案為例，何之行、廖貞
+5. AI 個資爭議在英國與歐盟之經驗 — 以Google DeepMind一案為例，何之行、廖貞
 
 Note : Google 醫療體系與歐盟法規之間發生的問題
 
-7. 人工智慧在金融業的應用—論數位金融與一般個人資料保護規則之適用與衝突，黃相博
+6. 人工智慧在金融業的應用—論數位金融與一般個人資料保護規則之適用與衝突，黃相博
 
-8. 人工智慧時代下的國際人權法 ─ 規範與制度的韌性探索與再建構，林勤富、李怡俐
+7. 人工智慧時代下的國際人權法 ─ 規範與制度的韌性探索與再建構，林勤富、李怡俐
 
-9. 人工智慧時代下的金融監理議題 ─ 以理財機器人監理為例，楊岳平
+8. 人工智慧時代下的金融監理議題 ─ 以理財機器人監理為例，楊岳平
 
-10. 人工智慧時代下的證券監理 ─ 以智能合約在區塊鏈技術的應用出發，鄭瑞健
+9. 人工智慧時代下的證券監理 ─ 以智能合約在區塊鏈技術的應用出發，鄭瑞健
 
-11. 人工智慧科技對於專利侵權法制的衝擊與因應之道 ─ 以責任歸屬為中心，沈宗倫
+10. 人工智慧科技對於專利侵權法制的衝擊與因應之道 ─ 以責任歸屬為中心，沈宗倫
 
-12. 人工智慧創作與著作權之相關問題，王怡蘋
+11. 人工智慧創作與著作權之相關問題，王怡蘋
 
-## lists
-
+## lists 1.
 
 0. Li XR, Ji SL, Wu CM, Liu ZG, Deng SG, Cheng P, Yang M, Kong XW. Survey on deepfakes and detection techniques. Ruan Jian Xue Bao/Journal of Software, 2021,32(2):496−518 (in Chinese). http://www.jos.org.cn/1000-9825/6140.htm 
 
 Link : http://www.jos.org.cn/josen/article/abstract/6140
 
-Note : 深度偽造與檢測綜述
+Note : `*` 深度偽造與檢測綜述
 
 ```
 Deep learning has achieved great success in the field of computer vision, surpassing many traditional methods. 
@@ -233,6 +232,7 @@ The results indicate that both conversion techniques can increase the false acce
 
 語音轉換技術將一個說話者的聲音修改為聽起來像另一個說話者，這對自動說話者驗證功能構成了威脅。該研究首先展示了評估當前最先進的說話人驗證系統的脆弱性的新結果：具有聯合因子分析 (GMM-JFA) 和概率線性判別分析 (PLDA) 系統的高斯混合模型，以防止欺騙攻擊。而所謂的欺騙攻擊則是通過兩種語音轉換技術模擬：基於高斯混合模型的轉換和基於單元選擇的轉換。為了降低由欺騙攻擊引起的錯誤接受率，研究者提出了一種用於說話人驗證系統的通用反欺騙攻擊框架，其中採用轉換後的語音檢測器作為說話人驗證系統接受決策的後處理模塊，其檢測器決定接受的聲明是人類語音還是轉換後的語音。NIST SRE 2006 語料庫中的核心任務子集用於評估說話人驗證系統的脆弱性和轉換後的語音檢測器的性能。其研究結果表明，兩種轉換技術都可以提高 GMM-JFA 和 PLDA 系統的誤認率，而轉換後的語音檢測器可以將 GMM-JFA 和 PLDA 的誤認率從 31.54% 和 41.25% 降低到 1.64% 和 1.71%基於單元選擇的轉換語音系統。
 
+
 2. Wu Z, Chng ES, Li H. Detecting converted speech and natural speech for anti-spoofing attack in speaker recognition. In: Proc. of the 13th Annual Conf. of the Int’l Speech Communication Association. 2012. 1700−1703.
 
 Link : https://www.researchgate.net/publication/260343013_Detecting_Converted_Speech_and_Natural_Speech_for_anti-Spoofing_Attack_in_Speaker_Recognition
@@ -252,6 +252,7 @@ Experi-ments conducted on the National Institute of Standards and Technology (NI
 ```
 
 語音轉換技術對說話人驗證系統構成威脅，此研究為了增強說話人驗證系統的安全性，研究者進行如何自動區分自然語音和合成/轉換後的語音。受語音感知中相位譜研究的啟發，在該研究中，研究者建議使用從相位譜中獲得的特徵來檢測轉換後的語音。這些特徵在轉換後的語音檢測器的三種不同訓練情況下進行測試： a) 只有基於高斯混合模型 (GMM) 的轉換後的語音數據可用； b) 只有基於單元選擇的轉換語音數據可用； c) 沒有轉換後的語音數據可用於訓練轉換後的語音模型。而在美國國家標準與技術研究院 (NIST) 2006 說話人識別評估 (SRE) 語料庫上進行的實驗表明，從相位譜派生的特徵的性能大大優於梅爾頻率倒譜係數 (MFCC)：即使沒有經過轉換的語音進行訓練，等錯誤率 (EER) 從 MFCC 的 20.20% 降低到 2.35%。
+
 
 3. Das RK, Yang J, Li H. Long range acoustic and deep features perspective on ASVspoof 2019. In: Proc. of the IEEE Automatic Speech Recognition and Understanding Workshop (ASRU). IEEE, 2019. 1018−1025.
 
@@ -274,6 +275,9 @@ In this paper, we summarize the findings from the perspective of long range acou
 
 We make a comprehensive analysis on the nature of different kinds of spoofing attacks and system development.
 ```
+
+為了保護自動說話者驗證 (ASV) 系統免受入侵者的侵害，需要針對欺騙攻擊檢測採取穩健的對策，而 ASVspoof 系列挑戰提供了一個共享的反欺騙工作。其中最近的版本 ASVspoof 2019 側重於合成語音和重放語音的攻擊，分別稱為邏輯訪問攻擊和物理訪問攻擊，在 ASVspoof 2019 提交的論文中，研究者考慮了基於遠程聲學特徵的新對策，這些對策在許多方面都是獨一無二的，因為它們是使用倍頻程功率譜和子帶得出的，而不是常用的線性功率譜，在挑戰後研究中，研究者進一步研究了使用深度特徵來增強真實和欺騙性語音之間的區分能力。而該研究在從遠程聲學和深度特徵的角度總結了欺騙檢測的發現，並從不同類型的欺騙攻擊的性質和系統開發進行了綜合分析。
+
 
 4. Zeinali H, Stafylakis T, Athanasopoulou G, Rohdin J, Gkinis I, Burget L, Cernocky JH. Detecting spoofing attacks using VGG and SincNet: BUT-Omilia submission to ASVspoof 2019 challenge. In: Proc. of the 20th Annual Conf. of the Int’l Speech Communication Association. 2019. 1073−1077.
 
