@@ -34,6 +34,11 @@ By reviewing the background of deep-fakes and state-of-the-art deepfake detectio
 
 深度學習已成功應用於解決從大數據分析到計算機視覺和人類水平控制的各種複雜問題，其技術也可能會被用於創造出可能對隱私、民主體制和國家安全造成威脅的軟體應用。 而近來出現的基於深度學習的應用程序則是 “deepfake”，其演算法可以做出人類用肉眼無法將它們與真品區分開來的假影像和影片。因此，擁有能夠自動檢測和評估數位視覺媒體完整性等技術的提議是必不可少的。本研究介紹了用於創造深度偽造的演算法的調查，更重要的是，介紹了迄今為止文獻中提出的用於檢測深度偽造的方法。同時對與深度偽造技術相關的挑戰、研究趨勢和方向進行了廣泛的討論。通過回顧深造假的背景和最先進的深造假檢測方法，本研究提供了深造假技術的全面概述，並有助於開發新的、更強大的方法來應對日益具有挑戰性的深度偽造局面。
 
+Bibliography
+
+```
+```
+
 
 1. Deepfakes Detection Techniques Using Deep Learning: A Survey
 
@@ -56,6 +61,11 @@ In addition, it will help comparison with the existing works because of the deta
 ```
 
 深度學習是一種有效且已廣泛應用於各種領域的有用技術，其領域包括計算機視覺、機器視覺和自然語言處理，Deepfakes 則是使用深度學習技術來處理人類無法將其與真人區分開來的人的圖像和影片。近年來，已經有許多研究來了解深度偽造的工作原理，並且引入了許多基於深度學習的方法來檢測深度偽造的影像或圖像。在該研究中，研究者使用深度學習方法對深度偽造創建和檢測技術進行了全面審視，同時對各種技術及其在深度偽造檢測中的應用進行了深入分析，其研究成果將對該領域的研究人員有所幫助，因為它將涵蓋最近發現社交內容中的深度偽造影像或圖像的最先進的方法。此外，由於對該領域使用的最新方法和資料集的詳細描述，它將有助於與現有工作進行比較。
+
+Bibliography
+
+```
+```
 
 
 2. M2TR: Multi-modal Multi-scale Transformers for Deepfake Detection
@@ -85,6 +95,12 @@ On three Deepfake datasets, we conduct extensive experiments to verify the effec
 ```
 
 Deepfake 技術所產生的偽造圖像廣泛傳播對數位資訊的可信度構成了嚴重威脅，這需要有效的方法來檢測由先進技術所生成具有感知力的 Deepfake 成果。大多數現有方法通過將輸入圖像對應到二進制預測而不捕獲不同像素之間的一致性來使用深度神經網絡來對抗 Deepfakes 技術。在該研究中，研究者旨在為 Deepfake 檢測捕獲不同尺度的細微操作偽影，並通過轉換器模型實現了這一點，該模型最近在為計算機視覺中的各種識別任務建模像素之間的依賴關係方面表現出卓越的性能。同時研究者介紹了一種多模態多尺度變換器（M2TR），它使用多尺度變換器對不同大小的補丁進行操作，以檢測不同空間級別的局部不一致性，為了改善檢測結果並增強我們方法對圖像壓縮的魯棒性，M2TR 還獲取頻率信息，並使用交叉模態融合模塊將其與 RGB 特徵進一步結合。開發和評估 Deepfake 檢測方法需要大規模的數據集。此研究觀察到現有基準中的樣本包含嚴重的偽影並且缺乏多樣性，這促使此研究引入了一個高品質的 Deepfake 資料集 SR-DF，它由 4,000 個由最先進的面部交換和面部重演方法去生成的 DeepFake 組成影像，最後在三個 Deepfake 資料集上，研究者進行了廣泛的實驗來驗證所提出方法的有效性，該方法優於最先進的 Deepfake 檢測方法。
+
+Bibliography
+
+```
+```
+
 
 3. Combining EfficientNet and Vision Transformers for Video Deepfake Detection
 
@@ -116,6 +132,12 @@ Deepfakes 是用數位的方式去操作跟偽造出逼真但虛假圖像的結�
 
 具體來說，該研究將各種類型的視覺轉換器與用作特徵提取器的卷積 EfficientNet B0 相結合，同時與一些使用視覺轉換器的最新方法獲得了可比較的結果。而本研究最先進的方法不同，研究者既不使用蒸餾也不使用集成方法。研究者也提出了一個基於簡單投票方案的簡單推理程序，用於處理同一影像鏡頭中的多個人臉。同時最佳模型的 AUC 為 0.951，F1 得分為 88.0%，非常接近 DeepFake 檢測挑戰賽 (DFDC) 的最新水平。
 
+Bibliography
+
+```
+```
+
+
 4. Video Transformer for Deepfake Detection with Incremental Learning
 
 https://dl.acm.org/doi/abs/10.1145/3474085.3475332?sid=SCITRUS
@@ -135,6 +157,12 @@ The comprehensive experiments on various public deepfake datasets demonstrate th
 ```
 
 Deepfake 的面部偽造在互聯網上廣泛傳播，這引起了嚴重的社會擔憂，在該研究中，研究者提出了一種具有增量學習功能的新型影像轉換器，用於檢測深度偽造影像，而為了更好地對齊輸入人臉圖像，我們使用 3D 人臉重建方法從單個輸入人臉圖像生成 UV 紋理。其對齊的人臉圖像還可以提供在 UV 紋理圖像中無法感知的姿勢、眨眼和嘴巴運動資訊，因此研究者使用人臉圖像及其 UV 紋理圖來提取圖像特徵。最後研究者提出了一種增量學習策略，可以在更少量的資料上微調所提出的模型，並實現更好的深度偽造檢測性能。對各種公共 deepfake 數據集的綜合實驗表明，所提出的具有增量學習的視頻轉換器模型通過對序列數據的增強特徵學習，在 deepfake 視頻檢測任務中實現了最先進的性能。
+
+Bibliography
+
+```
+```
+
 
 ## Laws
 
@@ -157,6 +185,12 @@ Link : https://www.angle.com.tw/book.asp?BKID=12196
 
 關鍵詞:機器學習、監督式學習、非監督式學習、直覺、默會知識、專業知能、規範論證、涵攝、內部證立、外部證立
 
+Bibliography
+
+```
+```
+
+
 2. 初探人工智慧與生命倫理之關係，吳全峰
 
 人工智慧(artificial intelligence, Al)在醫療産業之應用,不論被视為協助完善醫療專業人員判斷之工具·或被視為可能取代醫師並自主執行診斷與治療之醫療機器人 (medical robots)，均可能引起醫療本質之改變，甚至影響生命倫理之價值；
@@ -164,6 +198,12 @@ Link : https://www.angle.com.tw/book.asp?BKID=12196
 但相關事議往往被視為傳统生命倫理議題之延伸或變形，並未得到應之重視與討論。本文主張醫療人工智慧之影響 - 尤其是醫療機器人之發展 - 已超過傳統生命倫理架構所預設處理之議題範園，甚至可能涉及社會對醫病關係之重新定義，並分別從自主(autonomy)、受益 (beneticence)、正義(justice)、隱私(privacy)等面向出發，分析生命倫理與機器倫理間、醫療專業與資訊專業間、專業人員與病人間之價值衡突,並重新思考生命倫理在醫療人工智慧年代所應具備之規範內容。
 
 關鍵詞:人工智、醫療機器人、生命倫理
+
+Bibliography
+
+```
+```
+
 
 3. 初探目的解釋在法律人工智慧系統之運用可能，陳弘儒
 
@@ -173,46 +213,60 @@ Link : https://www.angle.com.tw/book.asp?BKID=12196
 
 關鍵詞 :人工智慧與法律、目的解釋、法律推理的電腦模型、規範性、工具理性
 
+Bibliography
+
+```
+```
+
+
 4. AI 時代之分裂社會與民主—以美國法之表意自由與觀念市場自由競爭理論為中心，陳柏良
 
 美國聯邦最高法院自 1920 年代起所形塑之之表意自由權,建立於三個法社會基礎:一、資訊稀缺性:二、閱聽者具備充分的資訊審議時間；三、政府是意見自由競爭市場的主要威脅。
 
-然自 1990 年代起·随著 AI 與網路科技發展及資訊產業結構變遷,言論與閱聽者關注的相對稀缺關係，出現結構性地逆轉。廉價言論的大量出現，造成資訊氾濫 (information flood) 的現象、閱聽者關注産業 (attention industry) 崛起，雖能協助使用者快過濾資訊, 但其詳細蒐集並處理使用者習慣後，呈現閱聽人所好之資訊，也產生過濾氣泡現象(同溫層效應)。
-
-依此，個體在虛擬空間中的各小群體內，習於接受特定來源含特定值觀之訊息，進而造成社會共識分歧與政治社群碎片化,使人民對民主產生系統性信任危機。
+然自 1990 年代起·随著 AI 與網路科技發展及資訊產業結構變遷,言論與閱聽者關注的相對稀缺關係，出現結構性地逆轉。廉價言論的大量出現，造成資訊氾濫 (information flood) 的現象、閱聽者關注産業 (attention industry) 崛起，雖能協助使用者快過濾資訊, 但其詳細蒐集並處理使用者習慣後，呈現閱聽人所好之資訊，也產生過濾氣泡現象(同溫層效應)。依此，個體在虛擬空間中的各小群體內，習於接受特定來源含特定值觀之訊息，進而造成社會共識分歧與政治社群碎片化,使人民對民主產生系統性信任危機。
 
 本文認為:若從保障閱聽人的角度出發, 得在特定脈絡下, 肯認 AI 的演算輸出,屬於機器表意，受到憲法表意自由權保障。然為避免公民之政治偏好與世界觀形成過程，遭到大量且真偽難辨之資訊所曲，應立法強制揭露 AI 為機器表意之發言者身分與來源，提供閱聽者辨識資訊之初步線索，以保障閱聽者的資訊辨識利益，確保民主憲政秩序中的核心元素: 公民政治偏好的形成與審議程序，不致在動態的資訊流動結構中遭到系統性扭曲，以促進社會多元發展，鞏固民主價值!
 
 關鍵詞:社會變遷與法律、人工智慧(AI)、資訊社育、廉價言論、表意自由權、觀念市場自由競爭理論、審議式民主、共和主義圖像
 
+Bibliography
+
+```
+```
+
+
 5. AI 個資爭議在英國與歐盟之經驗 — 以Google DeepMind一案為例，何之行、廖貞
 
 本文分析英國國家健保局(NHS)下轄之 Royl Free 公立醫院於 2016 年 1 月起薪由身 Google DecpMnd 公司所簽署之
-資料分享協議·移轉超過 160 萬未去識別化之病患個資于 Google DeepMind 作為急性腎衰竭診断軟體開發之用，從而引發個資保護之爭議。文章首先剖析 Google DeepMind 一案之案例事及背景，而探討人工智演算法所仰賴大量資料之應用與個資保護間文衝突。最後則藉由 Google DeepMind 一案，進一步分析甫於 2018 年 5 月施行之歐盟一般資料保護規則(EUGeneral Data Protection Regulation, GDPR)，
-
-其就巨量資料發展所訂定關於科學例外條款及拒絕自動化決策之適用範圍及其限制，盼能由 Google DeepMind 一案之探討，就展人工慧醫療領域所可能面臨之相關個資保護議題以為參酌和借鏡。
+資料分享協議·移轉超過 160 萬未去識別化之病患個資于 Google DeepMind 作為急性腎衰竭診断軟體開發之用，從而引發個資保護之爭議。文章首先剖析 Google DeepMind 一案之案例事及背景，而探討人工智演算法所仰賴大量資料之應用與個資保護間文衝突。最後則藉由 Google DeepMind 一案，進一步分析甫於 2018 年 5 月施行之歐盟一般資料保護規則(EUGeneral Data Protection Regulation, GDPR)，其就巨量資料發展所訂定關於科學例外條款及拒絕自動化決策之適用範圍及其限制，盼能由 Google DeepMind 一案之探討，就展人工慧醫療領域所可能面臨之相關個資保護議題以為參酌和借鏡。
 
 關鍵詞: Google DeepMind、人工智能 (AI)、英國資訊委員辦公室 (ICO)、歐盟一般資料保護規則 (GDPR) 科學例外條款 (Scientific Exemptions)
 
 Note : Google 醫療體系與歐盟法規之間發生的問題
 
+Bibliography
+
+```
+```
+
+
 6. 人工智慧在金融業的應用—論數位金融與一般個人資料保護規則之適用與衝突，黃相博
 
-由於數位科技的發展，對個人資料保護帶來新的挑戰，一方面，因為數位化而產生巨大商業契機，另一方面又要保護數位化的個人資料，兩者密不可分的緊張關係，有必要制定一個法律框架，以確保在個人資料主權與使用個人資料的合法經濟利益之間保持一個適當的平衡。歐盟針對金融機構所發布第二號支付服務指令，有助於降低第三方支付服務提供者進入金融市場的成本，讓更多人得以享受到便利的金融服務。
-
-但在 2018 年實施的一般個人資料保護規則，在某些個人資料保護核心關鍵點上的要求，會比第二號支付服務指令更嚴格。而且一般個人資料保護規則是以拥有資料主權的客戶角度進行規範，無疑地對於個人資料有更周全的保護。但是，其中某些新增賦予的當事人權利，例如匿名化、被遺忘及拒絕權等，在金融服務上恐難一體適用，而有「原則適用」，「法定例外排除」之必要。因此，在接受金融服務時，個人資料保護必须有某個程度的退讓，以求取在個人資料保護與金融服務間之平衡。
+由於數位科技的發展，對個人資料保護帶來新的挑戰，一方面，因為數位化而產生巨大商業契機，另一方面又要保護數位化的個人資料，兩者密不可分的緊張關係，有必要制定一個法律框架，以確保在個人資料主權與使用個人資料的合法經濟利益之間保持一個適當的平衡。歐盟針對金融機構所發布第二號支付服務指令，有助於降低第三方支付服務提供者進入金融市場的成本，讓更多人得以享受到便利的金融服務。但在 2018 年實施的一般個人資料保護規則，在某些個人資料保護核心關鍵點上的要求，會比第二號支付服務指令更嚴格。而且一般個人資料保護規則是以拥有資料主權的客戶角度進行規範，無疑地對於個人資料有更周全的保護。但是，其中某些新增賦予的當事人權利，例如匿名化、被遺忘及拒絕權等，在金融服務上恐難一體適用，而有「原則適用」，「法定例外排除」之必要。因此，在接受金融服務時，個人資料保護必须有某個程度的退讓，以求取在個人資料保護與金融服務間之平衡。
 
 關鍵詞:數位金融、普惠金融、開放銀行、個資主權、第二號支付服務指令、一般個人資料保護規則
 
+Bibliography
+
+```
+```
+
+
 7. 人工智慧時代下的國際人權法 ─ 規範與制度的韌性探索與再建構，林勤富、李怡俐
 
-隨著數據分析、計算能力和機器學習的快速發展,以人工智慧(artificial intelligence)或複雑演算法為基礎的預測、分類或決策系統越來越受各國政府機關運用(如社會福利部門、執法單位和法院等)以協助甚至取代公部門的日常功能，或制定得影響人民基本權利與義務之決策。如此公部門的「演算法化」(algorithmization) 趨势，涉及諸多社會、經濟、政治與法律層面之制度選擇與基本人權問題,往往引起高度關注與爭議。
+隨著數據分析、計算能力和機器學習的快速發展,以人工智慧(artificial intelligence)或複雑演算法為基礎的預測、分類或決策系統越來越受各國政府機關運用(如社會福利部門、執法單位和法院等)以協助甚至取代公部門的日常功能，或制定得影響人民基本權利與義務之決策。如此公部門的「演算法化」(algorithmization) 趨势，涉及諸多社會、經濟、政治與法律層面之制度選擇與基本人權問題,往往引起高度關注與爭議。例如，由於複雜演算法系統缺乏透明性以及對弱勢族群之系統性偏見，美國數州刑事司法系統所使用之 COMPAS 風險評估工具演算法即引起若干法律辦論，在 State v. Loomis 案中威斯康辛州最高法院認為，即使 COMPAS 的演算法受營業秘密保護而從未對外公開，初審法院據其報告所探納之量刑決定未侵害被告正當法律程序的憲法權利。然，此判決顯示刑事司法程序越發依賴欠缺透明性的演算法系統時，可能带來刑享基本人權有被犧牲或剝奪的疑慮。此外，中國政府近年所建立之社會信用系统，亦有以人工智慧與其他新興科技強化其社會控制與個人監控的色彩，對言論自由、隱私保護和反歧視等基本人權甚至法治原則造成嚴重侵害。
 
-例如，由於複雜演算法系統缺乏透明性以及對弱勢族群之系統性偏見，美國數州刑事司法系統所使用之 COMPAS 風險評估工具演算法即引起若干法律辦論，在 State v. Loomis 案中威斯康辛州最高法院認為，即使 COMPAS 的演算法受營業秘密保護而從未對外公開，初審法院據其報告所探納之量刑決定未侵害被告正當法律程序的憲法權利。然，此判決顯示刑事司法程序越發依賴欠缺透明性的演算法系統時，可能带來刑享基本人權有被犧牲或剝奪的疑慮。此外，中國政府近年所建立之社會信用系统，亦有以人工智慧與其他新興科技強化其社會控制與個人監控的色彩，對言論自由、隱私保護和反歧視等基本人權甚至法治原則造成嚴重侵害。
-
-同樣地，私部門亦大量應用人工智慧以提升業務産能與效率,如 Googl蒐集分析個人數據、網頁搜尋及座標歴史等資料，投放客製化廣告及資訊；又如 Facebook 過濾新聞源與分析使用者行為的社交生態系統，或中國芝麻信用以評分系统提供貸款與電子商務優惠等。然而，這些私部門人工智慧系統之運作亦可能引發歧視、隱私侵害及分配正義等隱憂。
-
-人工智慧發展與應用上之潛在人爭議亦引起聯合國人權機構之關注。聯合國人權事務高級專具辨事處、聯合國人權理事會和聯合國言論自由權特別調查事務官接連提出相關報告，警示 AI 運用可能造成各種人權侵犯現象，特别是深化歧視或侵害隱私與言論自由等權利，有鑑此國际法層次之發展，本文試圖探討國際人權規範與機制在人工智慧規範議題上的治理功能與潜在挑戰本文認為，當代國際人權規範框架與機制擁有諸多治理功能，能在人工智慧所衍生之人權議題上作為具國際共識的風險評估與權利害認定具體標準，
+同樣地，私部門亦大量應用人工智慧以提升業務産能與效率,如 Googl蒐集分析個人數據、網頁搜尋及座標歴史等資料，投放客製化廣告及資訊；又如 Facebook 過濾新聞源與分析使用者行為的社交生態系統，或中國芝麻信用以評分系统提供貸款與電子商務優惠等。然而，這些私部門人工智慧系統之運作亦可能引發歧視、隱私侵害及分配正義等隱憂。人工智慧發展與應用上之潛在人爭議亦引起聯合國人權機構之關注。聯合國人權事務高級專具辨事處、聯合國人權理事會和聯合國言論自由權特別調查事務官接連提出相關報告，警示 AI 運用可能造成各種人權侵犯現象，特别是深化歧視或侵害隱私與言論自由等權利，有鑑此國际法層次之發展，本文試圖探討國際人權規範與機制在人工智慧規範議題上的治理功能與潜在挑戰本文認為，當代國際人權規範框架與機制擁有諸多治理功能，能在人工智慧所衍生之人權議題上作為具國際共識的風險評估與權利害認定具體標準，
 
 明確建立公、私部門人權保障之義務，更能作為審議平台以提供不同利害关际者對话与參与之共通语言。基此，當前國際人權法的規範框架與機制係回應人工智慧相關人權優害之有力治理工具。
 然而，本文亦發現此國際公認之法律框架仍有其內在規範缺陷與不足，如缺乏承認數位權利之積極規範變遷,以及過於以國家為中心之治理局限。
@@ -221,23 +275,36 @@ Note : Google 醫療體系與歐盟法規之間發生的問題
 
 關鍵詞:人工智慧、演算法、國際人權法、全球治理、跨國風險管制
 
+Bibliography
+
+```
+```
+
+
 8. 人工智慧時代下的金融監理議題 ─ 以理財機器人監理為例，楊岳平
 
-理財機器人利用人工智慧取代傳統理財專員提供投資顧問服務，衍生出不同於傳統證期投顧服務的金融消費者保護與金融系统性風險的監管考量，同時也需要不同的監理模式以確保監管的有效執行，因此對我國的證券投資願問与期貨投資顧問法制帶來一定挑戰。
-
-本文以人工智慧的特性為基礎，指出理財機器人業者需要有別於現行證期投顧法制的内部组織要求、技術測試要求、受托人責任追究重點、資本市場穩定控管的監理法制，並建議在理財機器人發展初期，透過加強外部稽核的方式，循序漸進強化對理財機器人的監管。
+理財機器人利用人工智慧取代傳統理財專員提供投資顧問服務，衍生出不同於傳統證期投顧服務的金融消費者保護與金融系统性風險的監管考量，同時也需要不同的監理模式以確保監管的有效執行，因此對我國的證券投資願問与期貨投資顧問法制帶來一定挑戰。本文以人工智慧的特性為基礎，指出理財機器人業者需要有別於現行證期投顧法制的内部组織要求、技術測試要求、受托人責任追究重點、資本市場穩定控管的監理法制，並建議在理財機器人發展初期，透過加強外部稽核的方式，循序漸進強化對理財機器人的監管。
 
 關鍵詞:人工智慧、理財機器人、演算法、投資顧問、普惠金融
+
+Bibliography
+
+```
+```
+
 
 9. 人工智慧時代下的證券監理 ─ 以智能合約在區塊鏈技術的應用出發，鄭瑞健
 
 由中本聰最早所發布的區塊白皮書論之，區塊鏈應用技術的主要功能在於借重其分散式帳本的功能解決雙重消費的難題，以建立比特幣的虚擬通貨體系。
-
-後人在其基礎上不斷創新，甚至結合智能合約的功能，讓區塊鏈技術的應用提升至另一層次:例如創造証券型代幣以為投資工具、然此賦予區塊無限可能的應用技術卻很可能因智能合約自身的設計缺陷，而讓不可逆且無法竄改的區塊技術產生破口;
-
-2016 年著名之 DAO 事件即為適例，此促使了美國聯邦證券監督管理委員於 2017 年發布 DAO 報告，以 1946 年聯邦最高法院作成之 Howey Test 檢視購買 DAO 代幣是否為投資契約，遂正式將此議題檯面化，復引發學術界和實務界的熱烈討論與持續關注。
+後人在其基礎上不斷創新，甚至結合智能合約的功能，讓區塊鏈技術的應用提升至另一層次:例如創造証券型代幣以為投資工具、然此賦予區塊無限可能的應用技術卻很可能因智能合約自身的設計缺陷，而讓不可逆且無法竄改的區塊技術產生破口; 2016 年著名之 DAO 事件即為適例，此促使了美國聯邦證券監督管理委員於 2017 年發布 DAO 報告，以 1946 年聯邦最高法院作成之 Howey Test 檢視購買 DAO 代幣是否為投資契約，遂正式將此議題檯面化，復引發學術界和實務界的熱烈討論與持續關注。
 
 關鍵詞:人工智慧、區塊鏈、智能合約、Howey測試、投資契約、初次代幣發行、證券代幣發行、證券監理
+
+Bibliography
+
+```
+```
+
 
 10. 人工智慧科技對於專利侵權法制的衝擊與因應之道 ─ 以責任歸屬為中心，沈宗倫
 
@@ -245,14 +312,22 @@ Note : Google 醫療體系與歐盟法規之間發生的問題
 
 關鍵詞:人工智慧、專利侵權、可預見性、專利權價值、責任歸屬、全要件原則
 
+Bibliography
+
+```
+```
+
+
 11. 人工智慧創作與著作權之相關問題，王怡蘋
 
-近年來人工智慧的科技發展突飛猛進，研究團隊致力於將其運用於各種領域，其中一項則是發展得以獨立創作的人工智慧。然而人工智慧獨立創作之成果是否受到保護，卻挑戰著著作權法的基本原則，即著作權法保護人類精神創作。本文嘗試從著作權法的立法精神出發，探討以著作權法保護人工智慧創作之可能性，並在此基礎之上，進一步討論保護制度之設計。
-
-其次是訓練人工智慧創作需先建置學習資料庫，而建置過程需要將非數位資料數位，並將數化資料儲存於資料庫中，此種行為均屬於著作權法意義下之重製，而應得著作權人之同意，由此行生出的問題在於此行為在評價上是否屬於權利限制之範疇。最後則是人工智慧可能產生與既有創作雷同之創作，此種現象是否應該避免，防免義務與義務人應如何建構,亦有討論之必要。
+近年來人工智慧的科技發展突飛猛進，研究團隊致力於將其運用於各種領域，其中一項則是發展得以獨立創作的人工智慧。然而人工智慧獨立創作之成果是否受到保護，卻挑戰著著作權法的基本原則，即著作權法保護人類精神創作。本文嘗試從著作權法的立法精神出發，探討以著作權法保護人工智慧創作之可能性，並在此基礎之上，進一步討論保護制度之設計。其次是訓練人工智慧創作需先建置學習資料庫，而建置過程需要將非數位資料數位，並將數化資料儲存於資料庫中，此種行為均屬於著作權法意義下之重製，而應得著作權人之同意，由此行生出的問題在於此行為在評價上是否屬於權利限制之範疇。最後則是人工智慧可能產生與既有創作雷同之創作，此種現象是否應該避免，防免義務與義務人應如何建構,亦有討論之必要。
 
 關鍵詞:人類精神創作、人工智慧創作、學習資料庫、權利限制、抄襲、自我審查系統
 
+Bibliography
+
+```
+```
 
 ## lists 1.
 
@@ -292,6 +367,10 @@ Finally, the social risks posed by the spread of Deepfakes technology are discus
 
 同時不同的研究人員也從不同的角度處理這個問題，但各方使用的資料集和評價指標並不統一，至目前為止，多數人對深度偽造和檢測技術仍然缺乏統一的認識且深度偽造和檢測技術研究的架構尚不清楚。在這篇綜述中，對深度偽造和檢測技術的發展進行了綜述，並對現有研究工作進行了系統總結和科學分類。最後，討論了 Deepfakes 技術傳播帶來的社會風險，分析了檢測技術的局限性，探討了檢測技術面臨的挑戰和潛在的研究方向，旨在為後續研究人員進一步推動發展提供指導。並部署 Deepfakes 檢測技術。
 
+Bibliography
+
+```
+```
 
 1. Wu Z, Kinnunen T, Chng ES, Li H, Ambikairajah E. A study on spoofing attack in state-of-the-art speaker verification: The telephone speech case. In: Proc. of the Asia Pacific Signal and Information Processing Association Annual Summit and Conf. IEEE, 2012. 1−5.
 
@@ -317,6 +396,11 @@ The results indicate that both conversion techniques can increase the false acce
 
 語音轉換技術將一個說話者的聲音修改為聽起來像另一個說話者，這對自動說話者驗證功能構成了威脅。該研究首先展示了評估當前最先進的說話人驗證系統的脆弱性的新結果：具有聯合因子分析 (GMM-JFA) 和概率線性判別分析 (PLDA) 系統的高斯混合模型，以防止欺騙攻擊。而所謂的欺騙攻擊則是通過兩種語音轉換技術模擬：基於高斯混合模型的轉換和基於單元選擇的轉換。為了降低由欺騙攻擊引起的錯誤接受率，研究者提出了一種用於說話人驗證系統的通用反欺騙攻擊框架，其中採用轉換後的語音檢測器作為說話人驗證系統接受決策的後處理模塊，其檢測器決定接受的聲明是人類語音還是轉換後的語音。NIST SRE 2006 語料庫中的核心任務子集用於評估說話人驗證系統的脆弱性和轉換後的語音檢測器的性能。其研究結果表明，兩種轉換技術都可以提高 GMM-JFA 和 PLDA 系統的誤認率，而轉換後的語音檢測器可以將 GMM-JFA 和 PLDA 的誤認率從 31.54% 和 41.25% 降低到 1.64% 和 1.71%基於單元選擇的轉換語音系統。
 
+Bibliography
+
+```
+```
+
 
 2. Wu Z, Chng ES, Li H. Detecting converted speech and natural speech for anti-spoofing attack in speaker recognition. In: Proc. of the 13th Annual Conf. of the Int’l Speech Communication Association. 2012. 1700−1703.
 
@@ -337,6 +421,11 @@ Experi-ments conducted on the National Institute of Standards and Technology (NI
 ```
 
 語音轉換技術對說話人驗證系統構成威脅，此研究為了增強說話人驗證系統的安全性，研究者進行如何自動區分自然語音和合成/轉換後的語音。受語音感知中相位譜研究的啟發，在該研究中，研究者建議使用從相位譜中獲得的特徵來檢測轉換後的語音。這些特徵在轉換後的語音檢測器的三種不同訓練情況下進行測試： a) 只有基於高斯混合模型 (GMM) 的轉換後的語音數據可用； b) 只有基於單元選擇的轉換語音數據可用； c) 沒有轉換後的語音數據可用於訓練轉換後的語音模型。而在美國國家標準與技術研究院 (NIST) 2006 說話人識別評估 (SRE) 語料庫上進行的實驗表明，從相位譜派生的特徵的性能大大優於梅爾頻率倒譜係數 (MFCC)：即使沒有經過轉換的語音進行訓練，等錯誤率 (EER) 從 MFCC 的 20.20% 降低到 2.35%。
+
+Bibliography
+
+```
+```
 
 
 3. Das RK, Yang J, Li H. Long range acoustic and deep features perspective on ASVspoof 2019. In: Proc. of the IEEE Automatic Speech Recognition and Understanding Workshop (ASRU). IEEE, 2019. 1018−1025.
@@ -363,6 +452,11 @@ We make a comprehensive analysis on the nature of different kinds of spoofing at
 
 為了保護自動說話者驗證 (ASV) 系統免受入侵者的侵害，需要針對欺騙攻擊檢測採取穩健的對策，而 ASVspoof 系列挑戰提供了一個共享的反欺騙工作。其中最近的版本 ASVspoof 2019 側重於合成語音和重放語音的攻擊，分別稱為邏輯訪問攻擊和物理訪問攻擊，在 ASVspoof 2019 提交的論文中，研究者考慮了基於遠程聲學特徵的新對策，這些對策在許多方面都是獨一無二的，因為它們是使用倍頻程功率譜和子帶得出的，而不是常用的線性功率譜，在挑戰後研究中，研究者進一步研究了使用深度特徵來增強真實和欺騙性語音之間的區分能力。而該研究在從遠程聲學和深度特徵的角度總結了欺騙檢測的發現，並從不同類型的欺騙攻擊的性質和系統開發進行了綜合分析。
 
+Bibliography
+
+```
+```
+
 
 4. Zeinali H, Stafylakis T, Athanasopoulou G, Rohdin J, Gkinis I, Burget L, Cernocky JH. Detecting spoofing attacks using VGG and SincNet: BUT-Omilia submission to ASVspoof 2019 challenge. In: Proc. of the 20th Annual Conf. of the Int’l Speech Communication Association. 2019. 1073−1077.
 
@@ -386,6 +480,14 @@ On the other hand, the results on LA showed that although the proposed architect
 
 ```
 
+該研究介紹了布爾諾理工大學 (BUT) 和 Omilia 共同努力的系統描述 — ASVSpoof2019 Spoofing and Countermeasures Challenge 的對話智能，其物理訪問（PA）的主要提交是兩個 VGG 網絡的融合，並在單通道和雙通道特徵上進行了訓練。對於邏輯訪問 (LA)，研究者的主要系統是 VGG 和最近引入的 SincNet 架構的融合，其 PA 上的結果表明，所提出的網絡在所有條件下都產生了非常有競爭力的性能，並且與官方基線相比實現了 86\:\% 的相對改進。另一方面，LA 上的結果表明，儘管所提出的架構和訓練策略在某些欺騙攻擊上表現得非常好，但它無法推廣到在訓練期間看不見的某些攻擊下。
+
+Bibliography
+
+```
+```
+
+
 5. Schörkhuber C, Klapuri A. Constant-Q transform toolbox for music processing. In: Proc. of the 7th Sound and Music Computing Conf. Barcelona, 2010. 3−64.
 
 Link : https://core.ac.uk/download/pdf/144846462.pdf
@@ -408,6 +510,14 @@ A reference implementation of the proposed methods is published as a Matlab tool
 The toolbox includes user-interface tools that facilitate spectral data visualization and the indexing and working with the data structure produced by the CQT.
 ```
 
+本文提出了一種計算時域信號恆定 Q 變換 (CQT) 的高效計算方法。CQT 指的是一種時頻表示，其中頻率區間是幾何間隔的，並且所有區間的 Q 因子（中心頻率與帶寬的比率）相等，該研究提出了一種逆變換，它能夠根據其 CQT 係數對原始信號進行合理質量（大約 55dB 信噪比）的重構。在這裡，具有高 Q 因子的 CQT（相當於每倍頻程 12-96 個 bin）特別令人感興趣。所提出的方法在每倍頻程的 bin 數量、應用的窗口函數和 Q 因子方面是靈活的，並且特別適用於音樂信號的分析。而提出方法的參考實現作為 Matlab 工具箱發布，該工具箱包括用戶界面工具，可促進光譜數據可視化以及索引和使用 CQT 生成的數據結構。
+
+Bibliography
+
+```
+```
+
+
 6. Gomez-Alanis A, Peinado AM, Gonzalez JA, Gomez AM. A light convolutional GRU-RNN deep feature extractor for ASV spoofing detection. In: Proc. of the Interspeech 2019. 2019. 1068−1072.
 
 Link : https://www.isca-speech.org/archive_v0/Interspeech_2019/pdfs/2212.pdf
@@ -425,6 +535,14 @@ The proposed system has been presented as a contribution to the ASVspoof 2019 Ch
 
 Moreover, experiments were also carried out on the ASVspoof 2015 and 2017 corpora, and the results indicate that our proposal clearly outperforms other popular methods recently proposed and other similar deep feature based systems.
 ```
+
+這項工作的目的是開發一個單一的反欺騙系統，該系統可用於有效檢測 ASVspoof 2019 挑戰賽中考慮的所有類型的欺騙攻擊：從文本到語音、語音轉換和基於重放的攻擊，而該研究為了實現這一點，研究者們建議使用輕卷積門控循環神經網絡 (LC-GRNN) 作為深度特徵提取器，以穩健地將語音信號表示為話語級嵌入，稍後由後端識別器使用，該識別器執行最終的真實/欺騙分類，這種新穎的架構結合了輕卷積層在幀級別提取判別特徵的能力與基於門控循環單元的 RNN 學習後續深度特徵的長期依賴關係的能力。所提出的系統已作為對 ASVspoof 2019 挑戰賽的貢獻而提出，與基線系統相比，結果顯示出顯著改進。此外，還在 ASVspoof 2015 和 2017 語料庫上進行了實驗，結果表明我們的提議明顯優於最近提出的其他流行方法和其他類似的基於深度特徵的系統。
+
+Bibliography
+
+```
+```
+
 
 7. Chen T, Kumar A, Nagarsheth P, Sivaraman G, Khoury E. Generalization of audio Deepfake detection. In: Proc. of the Odyssey 2020 Speaker and Language Recognition Workshop. 2020. 132−137.
 
@@ -447,11 +565,18 @@ Additionally, we evaluate it on a noisy version of the ASVspoof 2019 dataset usi
 
 Finally, we evaluate the proposed system on a copy of the dataset that is logically replayed through the telephony channel to simulate spoofing attacks in the call center scenario.
 
-Our baseline system is based on residual neural network, and has achieved the lowest equal error rate (EER) of 4.04% among all single-system submissions during the ASVspoof
-2019 challenge.
+Our baseline system is based on residual neural network, and has achieved the lowest equal error rate (EER) of 4.04% among all single-system submissions during the ASVspoof 2019 challenge.
 
 Furthermore, the additional improvements proposed in this paper reduce the EER to 1.26%.
 ```
+
+由於最近語音合成和語音轉換技術的突破，Audio Deepfakes，在技術上被稱為邏輯訪問語音欺騙技術，已經成為語音接口上越來越大的威脅。為了有效檢測這些攻擊對於包括自動說話人驗證系統在內的許多語音應用程序至關重要，同時隨著新型語音合成和語音轉換技術的迅速出現，欺騙對策的泛化能力正成為越來越關鍵的挑戰。該研究重點通過使用大餘量餘弦損失函數 (LMCL) 和在線頻率掩蔽增強來強制神經網絡學習更穩健的特徵嵌入來克服這個問題，而研究者在 ASVspoof 2019 邏輯訪問 (LA) 數據集上評估了擬議系統的性能。此外，研究者使用公開可用的噪聲在 ASVspoof 2019 數據集的噪聲版本上對其進行評估，以模擬更真實的場景，最後在通過電話通道邏輯重放的資料集副本上評估所提出的系統，以模擬呼叫中心場景中的欺騙攻擊。研究者們的基線系統基於殘差神經網絡，並在 ASVspoof 2019 挑戰期間的所有單系統提交中實現了 4.04% 的最低等錯誤率 (EER)，此外，該研究提出的額外改進將 EER 降低到 1.26%。
+
+Bibliography
+
+```
+```
+
 
 8. Li R, Zhao M, Li Z, Li L, Hong Q. Anti-spoofing speaker verification system with multi-feature integration and multi-task learning. In: Proc. of the Interspeech. 2019. 1048−1052.
 
@@ -474,6 +599,14 @@ Our proposed system yieldedan EER of 9.01% on ASVspoof 2017, while the best sing
 
 Index Terms: multi-feature integration, multi-task learning,stitching layer, butterﬂy unit, anti-spooﬁng, speaker veriﬁcation
 ```
+
+當說話人驗證系統遇到來自高級語音合成算法和高保真回放設備的欺騙攻擊時，說話人反欺騙對於防止安全漏洞至關重要。在該研究中中，研究者提出了一種基於多特徵集成和多任務學習（MFMT）的框架，用於提高反欺騙性能。同時因為整合網絡內多個光譜特徵的互補信息非常重要，例如 MFCC、C-QCC、Fbank 等，因為通常單一的特徵不足以掌握全局欺騙線索，它概括得很差。此外，研究者提出了一個有用的蝴蝶單元（BU），用於多任務學習，以傳播二元決策任務和其他輔助任務之間的共享表示，其 BU 可以在前向傳播過程中獲得其他分支的任務表示，並防止梯度在反向傳播過程中同化該分支。該研究所提出的系統在 ASVspoof 2017 上的 EER 為 9.01%，而最佳單系統和平均分數融合在 ASVspoof 2019 PA 上分別獲得了 2.39% 和 0.96% 的評估 EER。
+
+Bibliography
+
+```
+```
+
 
 9. Goswami G, Ratha N, Agarwal A, Singh R, Vatsa M. Unravelling robustness of deep learning based face recognition against adversarial attacks. In: Proc. of the 32nd AAAI Conf. on Artificial Intelligence. 2018. 6829−6836.
 
@@ -504,6 +637,14 @@ The proposed method is also compared with existing detection algorithms and the 
 Finally, we present several effective countermeasures to mitigate the impact of adversarial attacks and improve the overall robustness of DNN-based face recognition.
 ```
 
+基於深度神經網絡 (DNN) 架構的模型具有很高的表達能力和學習能力，然而，它們本質上是一種黑盒方法，因為在其多層表示中學習到的函數在數學上表示並不容易。意識到這一點後，許多研究人員已經開始設計方法來利用基於深度學習的演算法的缺點，質疑它們的魯棒性並暴露它們的奇點。在在此研究中，研究者們試圖解開與 DNN 在人臉識別方面的魯棒性相關的三個方面：(i) 評估深度架構對人臉識別的影響，以應對攻擊的脆弱性，這些攻擊受到現實世界中普遍觀察到的扭曲的啟發，淺層學習方法和基於學習的對手可以很好地處理這些扭曲；(ii) 通過表徵深層網絡隱藏層中的異常濾波器響應行為來檢測奇異點；和(iii) 對處理管道進行更正以緩解問題。該研究則使用多個開源的基於 DNN 的人臉識別網絡（包括 OpenFace 和 VGG-Face）以及兩個公開可用的資料庫（MEDS 和 PaSC）的實驗評估表明，基於深度學習的人臉識別算法的性能在存在這樣的扭曲。同時該方法還與現有的檢測算法進行了比較，結果表明，通過使用網絡中隱藏層的響應適當地設計分類器，它能夠以非常高的精度檢測攻擊。最後，研究提出了幾種有效的對策來減輕對抗性攻擊的影響並提高基於 DNN 的人臉識別的整體魯棒性。
+
+Bibliography
+
+```
+```
+
+
 10. Parkhi OM, Vedaldi A, Zisserman A. Deep face recognition. In: Proc. of the British Machine Vision Conf. (BMVC). BMVA Press, 2015. 41.1−41.12.
 
 Link : https://www.robots.ox.ac.uk/~vgg/publications/2015/Parkhi15/parkhi15.pdf
@@ -527,6 +668,14 @@ in the loop, and discuss the trade off between data purity and time;
 second, we traverse through the complexities of deep network training and face recognition to present methods and procedures to achieve comparable state of the art results on the standard LFW and YTF face benchmarks.
 ```
 
+本文的目標是人臉識別——來自單張照片或視頻中跟踪的一組人臉，該領域的最新進展歸因於兩個因素：(i) 使用卷積神經網絡 (CNN) 對任務進行端到端學習，以及(ii) 超大規模訓練數據集的可用性。該研究做出了兩個貢獻：首先，研究者們展示瞭如何通過自動化和人工的組合來組裝一個非常大規模的資料集（260 萬張圖像，超過 260 萬人），同時在循環中，並討論數據純度和時間之間的權衡；其次，該研究遍歷了深度網絡訓練和人臉識別的複雜性，提出了在標準 LFW 和 YTF 人臉基准上實現可比的最先進結果的方法和程序。
+
+Bibliography
+
+```
+```
+
+
 11. Baltrušaitis T, Robinson P, Morency LP. Openface: An open source facial behavior analysis toolkit. In: Proc. of the IEEE Winter Conf. on Applications of Computer Vision (WACV). IEEE, 2016. 1−10.
 
 Link : https://ieeexplore.ieee.org/document/7477553
@@ -546,6 +695,14 @@ Furthermore, our tool is capable of real-time performance and is able to run fro
 
 Finally, OpenFace allows for easy integration with other applications and devices through a lightweight messaging system.
 ```
+
+在過去的幾年裡中，人們對自動面部行為分析和理解越來越感興趣。其研究者展示了一種名為 OpenFace 的開源工具，適用於計算機視覺和機器學習研究人員、情感計算社區以及對基於面部行為分析構建交互式應用程序感興趣的人們。OpenFace 是第一個能夠進行面部標誌檢測、頭部姿勢估計、面部動作單元識別和眼睛注視估計的開源工具。代表 OpenFace 核心的計算機視覺演算法在上述在所有任務中展示了最先進的結果。此外，該研究的工具具有實時性能，無需任何專業硬件即可從簡單的網絡攝像頭運行。最後，OpenFace 允許通過輕量級消息傳遞系統與其他應用程序和設備輕鬆集成。
+
+Bibliography
+
+```
+```
+
 
 12. Li X, Ji S, Han M, Ji J, Ren Z, Liu Y, Wu C. Adversarial examples versus cloud-based detectors: A black-box empirical study. arXiv preprint arXiv:1901.01223, 2019.
 
@@ -573,6 +730,14 @@ AWS, Azure, Google Cloud, Baidu Cloud, and Alibaba Cloud, we demonstrate that ou
 We also proposed several possible defense strategies for these security challenges in the real-life situation.
 ```
 
+深度學習已被谷歌、AWS和百度等主要雲提供商廣泛利用，提供各種計算機視覺相關服務，包括圖像分類、對象識別、非法圖像檢測等。雖然最近的工作廣泛表明深度學習分類模型容易受到對抗性示例的攻擊，但比分類器更複雜的基於雲的圖像檢測模型也可能具有類似的安全問題，但尚未得到足夠的關注。在該研究中，研究者主要關注現實世界基於雲的圖像檢測器的安全問題。具體來說，(1) 基於有效的語義分割，研究者提出了四種攻擊，僅通過與黑盒 API 交互來生成語義感知的對抗樣本；和 (2) 研究者首次嘗試對針對現實世界基於雲的圖像檢測器的黑盒攻擊進行廣泛的實證研究。通過對 5 大雲平台的綜合評價：AWS、Azure、谷歌云、百度雲和阿里雲，研究者證明了該研究基於圖像處理的攻擊可以達到大約 100% 的成功率，基於語義分割的攻擊在不同的檢測服務中成功率超過 90%，例如暴力、政治和色情檢測。同時研究者還針對現實生活中的這些安全挑戰提出了幾種可能的防禦策略。
+
+Bibliography
+
+```
+```
+
+
 13. Dong Y, Su H, Wu B, Li Z, Liu W, Zhang T, Zhu J. Efficient decision-based black-box adversarial attacks on face recognition. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2019. 7714−7722.
 
 Link : https://arxiv.org/abs/1904.04433
@@ -580,7 +745,7 @@ Link : https://arxiv.org/abs/1904.04433
 Note : 利用查询优化的方式对人脸图片进行加噪, 以此来绕过人脸识别引擎
 
 ```
-ace recognition has obtained remarkable progress in recent years due to the great improvement of deep convolutional neural networks (CNNs).
+Face recognition has obtained remarkable progress in recent years due to the great improvement of deep convolutional neural networks (CNNs).
 
 However, deep CNNs are vulnerable to adversarial examples, which can cause fateful consequences in real-world face recognition applications with security-sensitive purposes.
 
@@ -596,6 +761,14 @@ Extensive experiments demonstrate the effectiveness of the proposed method that 
 
 We also apply the proposed method to attack a real-world face recognition system successfully.
 ```
+
+由於深度卷積神經網絡（CNN）的巨大改進，人臉識別近年來取得了顯著進展。然而，深度 CNN 容易受到對抗樣本的攻擊，這可能會在具有安全敏感目的的現實世界人臉識別應用中造成致命的後果，因為對抗性攻擊被廣泛研究之故，有心人可以在部署模型之前識別模型的漏洞。在該研究中，研究者評估了基於決策的黑盒攻擊設置中最先進的人臉識別模型的魯棒性，其中攻擊者無法訪問模型參數和梯度，但只能獲取硬標籤通過向目標模型發送查詢來進行預測，這種攻擊設置在現實世界的人臉識別系統中更實用。為了提高先前方法的效率，研究者提出了一種進化攻擊演算法，該演算法可以對搜索方向的局部幾何進行建模並降低搜索空間的維度。大量實驗證明了所提出的方法的有效性，該方法可以通過較少的查詢對輸入人臉圖像產生最小的擾動，同時研究者還應用所提出的方法成功地攻擊了現實世界的人臉識別系統。
+
+Bibliography
+
+```
+```
+
 
 14. Song Q, Wu Y, Yang L. Attacks on state-of-the-art face recognition using attentional adversarial attack generative network. arXiv preprint arXiv:1811.12026, 2018.
 
@@ -618,6 +791,14 @@ Unlike traditional two-player GAN, this work introduces face recognition network
 
 The generated faces which are hard to arouse the notice of onlookers can evade recognition by state-of-the-art networks and most of them are recognized as the target person.
 ```
+
+隨著人臉識別的廣泛應用，它的弱點也逐漸暴露出來，即容易被攻擊。因此研究人臉識別網絡如何受到攻擊非常重要。在研究中，研究者專注於一種對人臉識別網絡進行攻擊的新穎方法，該方法會誤導網絡將某人識別為目標人，而不是不明顯地錯誤分類，同時，因為此緣故，研究者引入了一個特定的注意力對抗攻擊生成網絡來生成假人臉圖像。為了捕獲目標人的語義信息，這項工作添加了條件變分自動編碼器和注意模塊來學習人臉之間的實例級對應關係。與傳統的雙人 GAN 不同，這項工作引入了人臉識別網絡作為第三個參與者參與生成器和判別器之間的競爭，這使得攻擊者可以更好地模仿目標人。生成的結果難以引起旁觀者註意的人臉可以逃避最先進網絡的識別，並且大多數人都被識別為目標人。
+
+Bibliography
+
+```
+```
+
 
 15. Majumdar P, Agarwal A, Singh R, Vatsa M. Evading face recognition via partial tampering of faces. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops. 2019. 11−20.
 
@@ -645,6 +826,14 @@ The network captures the inconsistencies among the original and tampered images 
 The proposed network surpasses the performance of the existing baseline deep neural networks for tampered image detection.
 ```
 
+機器學習和深度學習技術的進步導致了複雜和準確的人臉識別系統的發展。然而，在過去的幾年裡中研究人員們正探索這些系統對數位攻擊的脆弱性，而隨著各種圖像編輯工具和移動應用程序（如 Snapchat）的出現，創造出經過數位修改的圖像已成為一項簡單的任務。基於變形的數位攻擊用於通過欺騙深層網絡來逃避和獲取合法用戶的身份。在該項研究中，研究者們提出了部分面部篡改攻擊，其中面部區域被替換或變形以生成篡改樣本，而在 CMU-MultiPIE 數據集上使用兩個最先進的人臉識別系統 VGG-Face 和 OpenFace 進行的人臉驗證實驗表明了這些系統對攻擊的脆弱性。此外，該研究提出了一種部分人臉篡改檢測（PFTD）網絡來檢測所提出的攻擊，該網絡通過結合輸入圖像的原始信息和高頻信息來捕獲原始圖像和篡改圖像之間的不一致性，以檢測篡改圖像。所提出的網絡在篡改圖像檢測方面超越了現有基線深度神經網絡的性能。
+
+Bibliography
+
+```
+```
+
+
 16. Korshunov P, Marcel S. Vulnerability of face recognition to deep morphing. arXiv preprint arXiv:1910.01933, 2019.
 
 Link : https://arxiv.org/abs/1910.01933
@@ -669,6 +858,14 @@ We consider several baseline approaches for detecting deep morphs and find that 
 
 Our experiments demonstrate that GAN-generated deep morph videos are challenging for both face recognition systems and existing detection methods, and the further development of deep morphing technologies will make it even more so.
 ```
+
+使用生成對抗網絡 (GAN) 自動交換圖像和視頻中的人臉或將兩張人臉變成一張人臉變得越來越容易，由此產生的深度變形的高質量提出了一個問題，即當前的人臉識別系統對此類虛假圖像和影像前是脆弱的。有很高的需求，需要採用自動化方法來檢測這些 GAN 生成的人臉。在此研究中，研究者展示了 Deepfake 視頻的公開數據集，其中的人臉使用基於 GAN 的算法變形，同時為了生成這些影像，研究者使用了基於 GAN 的開源軟件，並且我們強調訓練和混合參數可以顯著影響生成影像的品質，該研究表明，基於 VGG 和 Facenet 神經網絡的最先進的人臉識別系統容易受到深度變形視頻的影響，錯誤接受率分別為 85.62 和 95.00，這意味著檢測這些視頻的方法是必要的。同時研究也考慮了幾種檢測深度變形的基線方法，並發現基於視覺品質指標的方法（通常用於演示攻擊檢測領域）導致最佳性能，錯誤率為 8.97。而最後研究者的實驗表明，GAN 生成的深度變形視頻對人臉識別系統和現有檢測方法都具有挑戰性，而深度變形技術的進一步發展將使其更加如此。
+
+Bibliography
+
+```
+```
+
 
 17. Schroff F, Kalenichenko D, Philbin J. Facenet: A unified embedding for face recognition and clustering. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2015. 815−823.
 
@@ -696,6 +893,17 @@ Our system cuts the error rate in comparison to the best published result by 30%
 We also introduce the concept of harmonic embeddings, and a harmonic triplet loss, which describe different versions of face embeddings (produced by different networks) that are compatible to each other and allow for direct comparison between each other.
 ```
 
+儘管人臉識別領域最近取得了重大進展，但當下大規模有效地實施人臉驗證和識別對當前方法對此提出了嚴峻挑戰，在該研究中，研究者們提出了一個稱為 FaceNet 的系統，它直接學習從人臉圖像到緊湊歐幾里得空間的映射，其中距離直接對應於人臉相似度的度量。
+
+一旦產生了這個空間，就可以使用將 FaceNet 嵌入作為特徵向量的標準技術輕鬆實現人臉識別、驗證和聚類等任務，研究者的方法使用經過訓練的深度卷積網絡直接優化嵌入本身，而不是像以前的深度學習方法那樣使用中間瓶頸層。
+
+為了訓練，研究者使用了使用一種新穎的在線三元組挖掘方法生成的大致對齊匹配/非匹配面塊的三元組，其方法的好處是更高的表示效率：我們實現了最先進的人臉識別性能，每張人臉僅使用 128 字節。在廣泛使用的野外標記人臉 (LFW) 數據集上，研究者的系統達到了 99.63% 的新記錄準確率。在 YouTube Faces DB 上，它達到了 95.12%。其系統在兩個數據集上都將錯誤率與發布的最佳結果相比降低了 30%。同時研究者還介紹了諧波嵌入的概念和諧波三元組損失，它們描述了相互兼容的不同版本的人臉嵌入（由不同的網絡產生），並允許相互直接比較。
+
+Bibliography
+
+```
+```
+
 18. Szegedy C, Zaremba W, Sutskever I, Bruna J. Intriguing properties of neural networks. In: Proc. of the 2nd Int’l Conf. on Leaning Representations (ICLR). 2014.
 
 Link : https://arxiv.org/abs/1312.6199
@@ -720,6 +928,13 @@ We can cause the network to misclassify an image by applying a certain impercept
 In addition, the specific nature of these perturbations is not a random artifact of learning: the same perturbation can cause a different network, that was trained on a different subset of the dataset, to misclassify the same input.
 ```
 
+深度神經網絡是高度表達模型，最近在語音和視覺識別任務上取得了最先進的性能，雖然他們的表現力是他們成功的原因，但它也使他們學習無法解釋的解決方案，這些解決方案可能具有違反直覺的特性。在該研究中，研究者們報告了兩個這樣的屬性。首先，根據單元分析的各種方法，該研究發現單個高級單元和高級單元的隨機線性組合之間沒有區別。其研究表明，在神經網絡的高層中，包含語義信息的是空間，而不是單個單元。其次，研究者們發現深度神經網絡學習的輸入-輸出映射在很大程度上是不連續的。可以通過應用某種不可察覺的擾動來導致網絡對圖像進行錯誤分類，這種擾動是通過最大化網絡的預測誤差來發現的。此外，這些擾動的具體性質並不是學習的隨機偽影：相同的擾動可能導致在數據集的不同子集上訓練的不同網絡對相同的輸入進行錯誤分類。
+
+Bibliography
+
+```
+```
+
 19. Goodfellow IJ, Shlens J, Szegedy C. Explaining and harnessing adversarial examples. In: Proc. of the 3rd Int’l Conf. on Leaning Representations (ICLR). 2015.
 
 Link : https://arxiv.org/abs/1412.6572
@@ -739,6 +954,14 @@ Moreover, this view yields a simple and fast method of generating adversarial ex
 
 Using this approach to provide examples for adversarial training, we reduce the test set error of a maxout network on the MNIST dataset.
 ```
+
+包括神經網絡在內的一些機器學習模型一直錯誤分類對抗性示例輸入，這些輸入是通過對數據集中的示例應用小的但故意最壞情況的擾動形成的，這樣擾動的輸入會導致模型以高置信度輸出不正確的答案。解釋這種現象的早期嘗試集中在非線性和過度擬合上。相反，該研究的研究者們認為神經網絡易受對抗性擾動影響的主要原因是它們的線性性質，這種解釋得到了新的定量結果的支持，同時給出了關於它們最有趣的事實的第一個解釋：它們在架構和訓練集上的泛化。此外，這種觀點產生了一種簡單而快速的生成對抗樣本的方法。使用這種方法為對抗性訓練提供示例，該研究減少了 MNIST 數據集上 maxout 網絡的測試集誤差。
+
+Bibliography
+
+```
+```
+
 
 20. Kurakin A, Goodfellow I, Bengio S. Adversarial examples in the physical world. In: Proc. of the 5th Int’l Conf. on Leaning Representations (ICLR) Workshop. 2017.
 
@@ -766,6 +989,14 @@ We demonstrate this by feeding adversarial images obtained from cell-phone camer
 We find that a large fraction of adversarial examples are classified incorrectly even when perceived through the camera.
 ```
 
+大多數現有的機器學習分類器都非常容易受到對抗性示例的影響，對抗性示例是輸入數據的樣本，該樣本經過了非常輕微的修改，旨在導致機器學習分類器對其進行錯誤分類。在許多情況下，這些修改可能非常微妙，以至於人類觀察者甚至根本沒有註意到修改，但分類器仍然會出錯。對抗性示例會帶來安全問題，因為它們可用於對機器學習系統進行攻擊，即使對手無法訪問底層模型。到目前為止，所有先前的工作都假設了一個威脅模型，其中攻擊者可以將數據直接輸入機器學習分類器。在物理世界中運行的系統並非總是如此，例如那些使用來自相機和其他傳感器的信號作為輸入的系統。該研究表明，即使在這樣的物理世界場景中，機器學習系統也容易受到對抗性示例的影響。研究者們通過將從手機攝像頭獲得的對抗性圖像饋送到 ImageNet Inception 分類器並測量系統的分類精度來證明這一點，最後研究者也發現，即使通過攝像頭感知，大部分對抗性示例也被錯誤分類。
+
+Bibliography
+
+```
+```
+
+
 21. Wang SY, Wang O, Zhang R, Owens A, Efros AA. CNN-generated images are surprisingly easy to spot for now. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 8692−8701.
 
 Link : https://arxiv.org/abs/1912.11035
@@ -785,6 +1016,14 @@ Code and pre-trained networks are available at this https URL .
 
 https://peterwang512.github.io/CNNDetection/
 ```
+
+在這項工作中，研究嘗試是否有可能創造一個“通用”檢測器，用於將真實圖像與 CNN 生成的圖像區分開來，無論使用何種架構或數據集。為了測試這一點，研究者們收集了一個數據集，該數據集由 11 種不同的基於 CNN 的圖像生成器模型生成的假圖像組成，這些模型跨越當今常用架構的空間（ProGAN、StyleGAN、BigGAN、CycleGAN、StarGAN、GauGAN、DeepFakes、級聯細化網絡，隱式最大似然估計，二階注意力超分辨率，在黑暗中看到）。其研究者證明，通過仔細的預處理和後處理以及數據增強，僅在一個特定的 CNN 生成器 (ProGAN) 上訓練的標準圖像分類器能夠很好地泛化到看不見的架構、數據集和訓練方法（包括剛剛發布的風格GAN2）。而研究者的研究結果表明，當今 CNN 生成的圖像存在一些常見的系統缺陷，從而阻止它們實現逼真的圖像合成，這一有趣的可能性。
+
+Bibliography
+
+```
+```
+
 
 22. Neves JC, Tolosana R, Vera-Rodriguez R, Vera-Rodriguez R, Lopes V, Proena H, Fierrez J. Ganprintr: Improved fakes and evaluation of the state-of-the-art in face manipulation detection. IEEE Journal of Selected Topics in Signal Processing, 2020,14(5): 1038−1048.
 
@@ -812,6 +1051,14 @@ iv) we announce a novel public database, named iFakeFaceDB, yielding from the ap
 The results obtained in our empirical evaluation show that additional efforts are required to develop robust facial manipulation detection systems against unseen conditions and spoof techniques, such as the one proposed in this study.
 ```
 
+大規模面部數據庫的可用性，以及深度學習技術的顯著進步，特別是生成對抗網絡 (GAN)，導致了極其逼真的虛假面部內容的產生，引發了對濫用可能性的明顯擔憂，這種擔憂促進了對操縱檢測方法的研究，這些方法與人類相反，已經在各種場景中取得了驚人的成果。在這項研究中，研究者們專注於整個面部圖像的合成，這是一種特定類型的面部操作。該研究的主要貢獻有四方面：i) 描述了一種從基於自動編碼器的合成假圖像中去除 GAN“指紋”的新策略，以欺騙面部操作檢測系統，同時保持結果圖像的視覺質量；ii) 對近期面部操作檢測文獻的深入分析；iii) 對這種類型的面部操作進行完整的實驗評估，考慮到最先進的假檢測系統（基於整體深度網絡、隱寫分析和局部偽影），並指出這項任務在不受約束的場景中的挑戰性；最後 iv) 研究者們宣布了一個名為 iFakeFaceDB 的新型公共數據庫，該數據庫將該研究所提出的 GAN 指紋去除方法 (GANprintR) 應用於已經非常逼真的合成假圖像。在該研究的實證評估中獲得的結果表明，需要額外的努力來開發針對看不見的條件和欺騙技術的強大的面部操作檢測系統，例如本研究中提出的技術。
+
+Bibliography
+
+```
+```
+
+
 23. Marra F, Gragnaniello D, Cozzolino D, Verdoliva L. Detection of GAN-generated fake images over social networks. In: Proc. of the IEEE Conf. on Multimedia Information Processing and Retrieval (MIPR). IEEE, 2018. 384−389.
 
 Link : https://ieeexplore.ieee.org/document/8397040
@@ -832,6 +1079,14 @@ In this paper, we study the performance of several image forgery detectors again
 The study, carried out on a dataset of 36302 images, shows that detection accuracies up to 95% can be achieved by both conventional and deep learning detectors, but only the latter keep providing a high accuracy, up to 89%, on compressed data.
 ```
 
+社交網絡上虛假圖像和視頻的傳播是一個快速增長的問題，商業媒體編輯工具允許任何人刪除、添加或克隆人和對象，以生成虛假圖像。已經提出了許多技術來檢測這種傳統的偽造品，但新的攻擊每天都在出現。基於生成對抗網絡 (GAN) 的圖像到圖像轉換似乎是最危險的方法之一，因為它允許人們以非常現實的方式修改圖像的上下文和語義。在該研究中，研究者們研究了幾種圖像偽造檢測器對圖像到圖像轉換的性能，無論是在理想條件下，還是在存在壓縮的情況下，通常在上傳到社交網絡時執行。該研究在 36302 張圖像的數據集上進行，表明傳統和深度學習檢測器都可以實現高達 95% 的檢測精度，但只有後者在壓縮數據上保持高達 89% 的高精度。
+
+Bibliography
+
+```
+```
+
+
 24. Zhang X, Karaman S, Chang SF. Detecting and simulating artifacts in GAN fake images. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). 2019. 1−6.
 
 Link : https://arxiv.org/pdf/1907.06515.pdf
@@ -851,6 +1106,14 @@ We show theoretically such artifacts are manifested as replications of spectra i
 
 By using the simulated images to train a spectrum based classifier, even without seeing the fake images produced by the targeted GAN model during training, our approach achieves state-of-the-art performances on detecting fake images generated by popular GAN models such as CycleGAN.
 ```
+
+為了檢測 GAN 生成的圖像，傳統的監督機器學習算法需要從目標 GAN 模型中收集大量真實和虛假圖像。但是，攻擊者使用的特定模型通常是不可用的。為了解決這個問題，該研究提出了一個 GAN 模擬器 AutoGAN，它可以模擬由幾個流行的 GAN 模型共享的公共管道產生的偽影，此外，研究者確定了由通用 GAN 管道中包含的上採樣組件引起的獨特偽影。該研究從理論上表明，這種偽影表現為頻域中光譜的複制，因此提出了一種基於光譜輸入而不是像素輸入的分類器模型。通過使用模擬圖像來訓練基於頻譜的分類器，即使在訓練期間沒有看到目標 GAN 模型產生的假圖像，此研究的方法在檢測由流行 GAN 模型（如 CycleGAN）生成的假圖像方面也取得了最先進的性能 .
+
+Bibliography
+
+```
+```
+
 
 25. Du M, Pentyala S, Li Y, Hu X. Towards generalizable forgery detection with locality-aware autoencoder. arXiv preprint arXiv: 1909.05999, 2019.
 
@@ -875,6 +1138,14 @@ Experimental results on three deepfake detection tasks indicate that LAE could f
 
 The analysis further shows that LAE outperforms the state-of-the-arts by 6.52%, 12.03%, and 3.08% respectively on three deepfake detection tasks in terms of generalization accuracy on previously unseen manipulations.
 ```
+
+隨著深度學習技術的進步，現在可以生成超逼真的圖像和影像，即深度偽造。這些深度偽造可能會接觸到大量受眾，並對我們的社會產生不利影響。儘管已經付出了很多努力來檢測 deepfake，但它們的性能在以前看不見但相關的操作和檢測泛化能力上顯著下降，仍然是一個問題。受 deepfakes 的細粒度性質和空間局部性特徵的啟發，研究者們提出了 Locality-Aware AutoEncoder (LAE) 來彌補泛化差距。在訓練過程中，研究者使用像素級掩碼來規範 LAE 的局部解釋，以強制模型從偽造區域學習內在表示，而不是在訓練集中捕獲偽影並學習表面相關性來執行檢測。而該研究進一步提出了一個主動學習框架來選擇具有挑戰性的標籤候選者，該框架需要不到 3% 的訓練數據使用人工蒙版，從而大大減少了規範化解釋的註釋工作。三個 deepfake 檢測任務的實驗結果表明，LAE 可以專注於偽造區域來做出決策。分析進一步表明，就先前未見過的操作的泛化精度而言，LAE 在三個深度偽造檢測任務上的性能分別優於現有技術 6.52%、12.03% 和 3.08%。
+
+Bibliography
+
+```
+```
+
 
 26. Huang R, Fang F, Nguyen HH, Yamagishi J, Echizen I. Security of facial forensics models against adversarial attacks. arXiv preprint arXiv:1911.00660, 2019.
 
@@ -901,6 +1172,15 @@ Moreover, we conducted subjective assessment for imperceptibility of the adversa
 
 These findings provide a baseline for evaluating the adversarial security of FFMs.
 ```
+
+深度神經網絡 (DNN) 已在數字取證中用於識別虛假的面部圖像，該研究研究了幾個基於 DNN 的偽造取證模型 (FFM)，以檢查它們是否能夠抵禦對抗性攻擊。研究者們通過實驗證明了個體對抗性擾動 (IAP) 和普遍對抗性擾動 (UAP) 的存在，它們可能導致表現良好的 FFM 行為不端。基於迭代過程，梯度信息用於生成兩種可用於製造分類和分割輸出的 IAP。相比之下，UAP 是在過火的基礎上生成的。研究者們設計了一個新的目標函數，鼓勵神經元過度激發，即使不使用訓練數據也可以生成 UAP，實驗證明了 UAP 在未見數據集和未見 FFM 之間的可轉移性。此外，研究者對對抗性擾動的不可察覺性進行了主觀評估，表明精心製作的 UAP 在視覺上可以忽略不計。這些發現為評估 FFM 的對抗性安全性提供了基準。
+
+Bibliography
+
+```
+```
+
+
 27. Hall HK. Deepfake videos: When seeing isn’t believing. Catholic University Journal of Law and Technology, 2018,27(1):Article No.51.
 
 Link : https://scholarship.law.edu/jlt/vol27/iss1/4/#:~:text=Videos%2C%20known%20as%20deepfakes%2C%20use,videos%20are%20fact%20or%20fiction.
@@ -916,6 +1196,14 @@ Given the hasty acceptance of other forms of fake news in society, deepfake vide
 
 This study examines the potential use of deepfake videos in the democratic process, analyzes the challenges in regulating this area due to the First Amendment, questions the practicality of the marketplace of ideas metaphor in today’s news and information environment, and explores possible responses to the spread of deepfakes.
 ```
+
+被稱為 deepfakes 的影像使用現成的軟件來製作作品，展示人們所說和所做的事情，他們可能從未說過或參與過。使視頻看起來非常真實的技術正在以這樣的速度發展，人們可能無法檢測到視頻是事實還是虛構。鑑於社會對其他形式的假新聞的倉促接受，deepfake 視頻有能力影響公眾收到的有關候選人和政策的信息的性質。該研究考察了深度偽造視頻在民主進程中的潛在用途，分析了第一修正案在規範這一領域所面臨的挑戰，質疑思想市場隱喻在當今新聞和信息環境中的實用性，並探討了對傳播的可能反應。
+
+Bibliography
+
+```
+```
+
 
 28. Hasan HR, Salah K. Combating deepfake videos using blockchain and smart contracts. IEEE Access, 2019,7:41596−41606.
 
@@ -943,6 +1231,16 @@ Our solution relies on the principle that if the content can be credibly traced 
 The full code of the smart contract has been made publicly available at Github.
 ```
 
+隨著人工智能 (AI) 和深度學習技術的興起，近年來虛假數字內容激增。假鏡頭、圖像、音頻和視頻（稱為 deepfakes）可能是一種可怕且危險的現象，並且有可能通過提供虛假現實來改變真相並削弱信任，數位媒體的真實性證明 (PoA) 對於幫助消除偽造內容的流行至關重要，而當前的解決方案缺乏提供數字媒體的歷史跟踪和出處的能力。
+
+在該研究中，研究者們提供了一個解決方案和一個通用框架，使用以太坊智能合約來追踪和跟踪數字內容的出處和歷史到其原始來源，即使數字內容被複製多次，其智能合約利用用於存儲數字內容及其元數據的行星際文件系統 (IPFS) 的哈希值。解決方案專注於視頻內容，且此研究提供的解決方案框架足夠通用，可以應用於任何其他形式的數位內容。其解決方案依賴於這樣一個原則，即如果內容可以可靠地追溯到可信或有信譽的來源，那麼內容就可以是真實的和真實的。
+
+Bibliography
+
+```
+```
+
+
 29. The law of California to Deepfake. 2019. https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB730
 
 Link : https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB730
@@ -954,6 +1252,12 @@ AB 730, Berman. Elections: deceptive audio or visual media.
 
 Existing law prohibits a person or specified entity from, with actual malice, producing, distributing, publishing, or broadcasting campaign material, as defined, that contains (1) a picture or photograph of a person or persons into which the image of a candidate for public office is superimposed or (2) a picture or photograph of a candidate for public office into which the image of another person or persons is superimposed, unless the campaign material contains a specified disclosure.
 ```
+
+Bibliography
+
+```
+```
+
 
 30. Regulations of China Internet Information Office on the control of online content. 2020 (in Chinese). http://www.cac.gov.cn/2019-12/20/c_1578375159509309.htm
 
@@ -969,6 +1273,12 @@ Note : 网络信息内容生态治理规定
 　　《网络信息内容生态治理规定》已经国家互联网信息办公室室务会议审议通过，现予公布，自2020年3月1日起施行。 
 ...
 ```
+
+Bibliography
+
+```
+```
+
 
 31. Nataraj L, Mohammed TM, Chandrasekaran S, Flenner A, Bappy JH, Roy-Chowdhury AK, Manjunath BS. Detecting GAN generated fake images using co-occurrence matrices. Electronic Imaging, 2019,2019(5):532-1−532-7.
 
@@ -989,6 +1299,14 @@ Experimental results on two diverse and challenging GAN datasets comprising more
 
 Further, our approach also generalizes well and achieves good results when trained on one dataset and tested on the other.
 ```
+
+生成對抗網絡 (GAN) 的出現帶來了全新的方式來轉換和操縱數位圖像中的像素，而基於 GAN 的技術，如圖像到圖像的轉換、DeepFakes 和其他自動化方法在創建假圖像方面變得越來越流行。在該研究中，研究者們提出了一種結合共現矩陣和深度學習來檢測 GAN 生成的假圖像的新方法，也就是在像素域中的三個顏色通道上提取共現矩陣，並使用深度卷積神經網絡 (CNN) 框架訓練模型。基於未配對的圖像到圖像轉換（cycleGAN ）和面部屬性/表情（StarGAN ）的兩個多樣化且具有挑戰性的 GAN 數據集包含超過 56,000 張圖像的實驗結果表明，該研究的方法很有前景，並取得了超過兩個數據集中的分類準確率為 99%。此外，當在一個數據集上訓練並在另一個數據集上進行測試時，此研究的方法也可以很好地泛化並取得良好的結果。
+
+Bibliography
+
+```
+```
+
 
 32. Li H, Li B, Tan S, Huang J. Identification of deep network generated images using disparities in color components. arXiv preprint arXiv:1808.07276, 2018.
 
@@ -1016,6 +1334,12 @@ Extensive experimental results show that the proposed method can accurately iden
 Moreover, when the GAN model is unknown, our methods also achieves good performance with one-class classification by using only real images for training.
 ```
 
+Bibliography
+
+```
+```
+
+
 33. Xuan X, Peng B, Wang W, Dong J. On the generalization of GAN image forensics. In: Proc. of the Chinese Conf. on Biometric Recognition. Cham: Springer-Verlag, 2019. 134−141.
 
 Link : https://paperswithcode.com/paper/on-the-generalization-of-gan-image-forensics
@@ -1038,6 +1362,12 @@ By applying similar image level preprocessing to both real and fake training ima
 Our experimental results also prove the effectiveness of the proposed method.
 ```
 
+Bibliography
+
+```
+```
+
+
 34. McCloskey S, Albright M. Detecting GAN-generated imagery using color cues. arXiv preprint arXiv:1812.08247, 2018.
 
 Link : https://arxiv.org/abs/1812.08247
@@ -1056,6 +1386,12 @@ We analyze the structure of the generating network of a popular GAN implementati
 We further show that these two cues can be used to distinguish GAN-generated imagery from camera imagery, demonstrating effective discrimination between GAN imagery and real camera images used to train the GAN.
 ```
 
+Bibliography
+
+```
+```
+
+
 35. Marra F, Gragnaniello D, Verdoliva L, Poggi G. Do GANs leave artificial fingerprints? In: Proc. of the IEEE Conf. on Multimedia Information Processing and Retrieval (MIPR). IEEE, 2019. 506−511.
 
 Link : https://arxiv.org/abs/1812.11842
@@ -1073,6 +1409,12 @@ In this work, we show that each GAN leaves its specific fingerprint in the image
 
 Source identification experiments with several popular GANs show such fingerprints to represent a precious asset for forensic analyses.
 ```
+
+Bibliography
+
+```
+```
+
 
 36. Yu N, Davis LS, Fritz M. Attributing fake images to GANs: Learning and analyzing GAN fingerprints. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 7556−7566.
 
@@ -1100,6 +1442,12 @@ Our experiments show that (1) GANs carry distinct model fingerprints and leave s
  and (5) comparisons also show our learned fingerprints consistently outperform several baselines in a variety of setups.
 ```
 
+Bibliography
+
+```
+```
+
+
 37. Wang R, Ma L, Juefei-Xu F, Xie X, Wang J, Liu Y. Fakespotter: A simple baseline for spotting ai-synthesized fake faces. In: Proc. of the 29th Int’l Joint Conf. on Artifical Intelligence (IJCAI). 2020. 3444−3451.
 
 Link : https://arxiv.org/abs/1909.06122
@@ -1123,6 +1471,12 @@ Here, we conjecture that monitoring neuron behavior can also serve as an asset i
 Experimental results on detecting four types of fake faces synthesized with the state-of-the-art GANs and evading four perturbation attacks show the effectiveness and robustness of our approach.
 ```
 
+Bibliography
+
+```
+```
+
+
 38. Chollet F. Xception: Deep learning with depthwise separable convolutions. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2017. 1251−1258.
 
 Link : https://arxiv.org/abs/1610.02357
@@ -1140,6 +1494,12 @@ We show that this architecture, dubbed Xception, slightly outperforms Inception 
 
 Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
 ```
+
+Bibliography
+
+```
+```
+
 
 39. Songsri-in K, Zafeiriou S. Complement face forensic detection and localization with faciallandmarks. arXiv preprint arXiv:1910. 05455, 2019.
 
@@ -1163,6 +1523,12 @@ Based on the proposed dataset, we demonstrated that explicit adding facial landm
 In addition, our proposed method consists of two branches and can coherently predict face forensic detection and localization to outperform the previous state-of-the-art techniques on the newly proposed dataset as well as the faceforecsic++ dataset especially on low-quality videos.
 ```
 
+Bibliography
+
+```
+```
+
+
 40. Nguyen HH, Yamagishi J, Echizen I. Capsule-forensics: Using capsule networks to detect forged images and videos. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP 2019). IEEE, 2019. 2307−2311.
 
 Link : https://arxiv.org/pdf/1810.11215.pdf?ref=https://githubhelp.com
@@ -1180,6 +1546,12 @@ The method introduced in this paper uses a capsule network to detect various kin
 
 It extends the application of capsule networks beyond their original intention to the solving of inverse graphics problems.
 ```
+
+Bibliography
+
+```
+```
+
 
 41. Simonyan K, Zisserman A. Very deep convolutional networks for large-scale image recognition. In: Proc. of the 3rd Int’l Conf. on Learning Representations (ICLR). 2015.
 
@@ -1199,6 +1571,12 @@ We also show that our representations generalise well to other datasets, where t
 We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
 ```
 
+Bibliography
+
+```
+```
+
+
 42. Mo H, Chen B, Luo W. Fake faces identification via convolutional neural network. In: Proc. of the 6th ACM Workshop on Information Hiding and Multimedia Security. 2018. 43−47.
 
 Link : https://dl.acm.org/doi/10.1145/3206004.3206009
@@ -1216,6 +1594,12 @@ In this paper, therefore, we first propose a Convolutional Neural Network (CNN) 
 
 In addition, we provide comparative results evaluated on some variants of the proposed CNN architecture, including the high pass filter, the number of the layer groups and the activation function, to further verify the rationality of our method.
 ```
+
+Bibliography
+
+```
+```
+
 
 43. Durall R, Keuper M, Pfreundt FJ, Keuper J. Unmasking DeepFakes with simple features. arXiv preprint arXiv:1911.00686, 2019.
 
@@ -1240,6 +1624,12 @@ In a second experiment, in the evaluation of the medium-resolution images of the
 
 Finally, evaluating a low-resolution video sequences of the FaceForensics++ dataset, our method achieves 91% accuracy detecting manipulated videos.
 ```
+
+Bibliography
+
+```
+```
+
 
 44. Ding X, Raziei Z, Larson EC, Olinick EV, Krueger PS, Hahsler M. Swapped face detection using deep learning and subjective assessment. EURASIP Journal on Information Security, 2020(2020):Article No.6.
 
@@ -1271,6 +1661,12 @@ This dataset will be available for academic research use per request.
 Our goal of this study is to inspire more research in the field of image forensics through the creation of a dataset and initial analysis.
 ```
 
+Bibliography
+
+```
+```
+
+
 45. Cozzolino D, Thies J, Rössler A, Riess C, Niebner M, Verdoliva L. Forensictransfer: Weakly-supervised domain adaptation for forgery detection. arXiv preprint arXiv:1812.02510, 2018.
 
 Link : https://arxiv.org/abs/1812.02510
@@ -1296,6 +1692,12 @@ Comparing to prior works, FT shows significant improvements in transferability, 
 
 For instance, on unseen examples, we achieve up to 85% in terms of accuracy, and with only a handful of seen examples, our performance already reaches around 95%.
 ```
+
+Bibliography
+
+```
+```
+
 
 46. Nguyen HH, Fang F, Yamagishi J, Echizen I. Multi-task learning for detecting and segmenting manipulated facial images and videos. arXiv preprint arXiv:1906.06876, 2019.
 
@@ -1326,6 +1728,12 @@ Moreover, fine-tuning using just a small amount of data enables the network to d
 
 ```
 
+Bibliography
+
+```
+```
+
+
 47. Hsu CC, Lee CY, Zhuang YX. Learning to detect fake face images in the wild. In: Proc. of the Int’l Symp. on Computer, Consumer and Control (IS3C). IEEE, 2018. 388−391.
 
 Link : https://arxiv.org/abs/1809.08754
@@ -1345,6 +1753,12 @@ To address this shortcoming, we adopt contrastive loss in seeking the typical fe
 
 Experimental results demonstrate that the proposed DeepFD successfully detected 94.7% fake images generated by several state-of-the-art GANs.
 ```
+
+Bibliography
+
+```
+```
+
 
 48. Hsu CC, Zhuang YX, Lee CY. Deep fake image detection based on pairwise learning. Applied Sciences, 2020,10(1):Article No.370.
 
@@ -1371,6 +1785,12 @@ Finally, a classification layer is concatenated to the proposed common fake feat
 
 The experimental results demonstrated that the proposed method significantly outperformed other state-of-the-art fake image detectors.
 ```
+
+Bibliography
+
+```
+```
+
 
 49. Dang LM, Hassan SI, Im S, Lee J, Lee S, Moon H. Deep learning based computer generated face identification using convolutional neural network. Applied Sciences, 2018,8(12):Article No.2610.
 
@@ -1400,6 +1820,12 @@ Then, various experiments are carried out to show that the proposed model with a
 Finally, we provided comparative results by applying the proposed CNN architecture on images generated by other GAN researches.
 ```
 
+Bibliography
+
+```
+```
+
+
 50. Bayar B, Stamm MC. A deep learning approach to universal image manipulation detection using a new convolutional layer. In: Proc. of the 4th ACM Workshop on Information Hiding and Multimedia Security. 2016. 5−10.
 
 Link : https://misl.ece.drexel.edu/wp-content/uploads/2017/07/Bayar_IHMMSec_2016.pdf
@@ -1423,6 +1849,12 @@ Through a series of experiments, we demonstrate that our proposed approach can a
 
 The results of these experiments show that our proposed approach can automatically detect several different manipulations with an average accuracy of 99.10%.
 ```
+
+Bibliography
+
+```
+```
+
 
 51. Dang H, Liu F, Stehouwer J, Liu X, Jain A. On the detection of digital face manipulation. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 5780−5789.
 
@@ -1448,6 +1880,12 @@ With this dataset, we perform a thorough analysis of data-driven fake face detec
 We show that the use of an attention mechanism improves facial forgery detection and manipulated region localization.
 ```
 
+Bibliography
+
+```
+```
+
+
 52. Rahmouni N, Nozick V, Yamagishi J, Echizen I. Distinguishing computer graphics from natural images using convolution neural networks. In: Proc. of the IEEE Workshop on Information Forensics and Security (WIFS). IEEE, 2017. 1−6.
 
 Link : http://www-igm.univ-mlv.fr/~vnozick/publications/Rahmouni_WIFS_2017/Rahmouni_WIFS_2017.pdf
@@ -1464,6 +1902,12 @@ Local estimates of class probabilities are computed and aggregated to predict th
 We evaluate our work on recent photo-realistic computer graphics and show that it outperforms state of the art methods for both local and full image classification.
 ```
 
+Bibliography
+
+```
+```
+
+
 53. Li X, Yu K, Ji S, Wang Y, Wu C, Xue H. Fighting against Deepfake: Patch&Pair convolutional neural networks (PPCNN). In: Proc. of the Companion Web Conf. 2020. 2020. 88−89.
 
 Link : https://dl.acm.org/doi/fullHtml/10.1145/3366424.3382711
@@ -1475,6 +1919,12 @@ In this paper, we propose a novel Patch&Pair Convolutional Neural Networks (PPCN
 
 Through the comprehensive evaluations on public datasets, we demonstrate that our model performs better than existing detection methods and show better generalization.
 ```
+
+Bibliography
+
+```
+```
+
 
 54. Brockschmidt J, Shang J, Wu J. On the generality of facial forgery detection. In: Proc. of the IEEE 16th Int’l Conf. on Mobile Ad Hoc and Sensor Systems Workshops (MASSW). IEEE, 2019. 43−47.
 
@@ -1505,6 +1955,12 @@ We find MesoNet and XceptionNet show potential to generalize to multiple spoofin
 We loosely extrapolate these results to similar CNN architectures and emphasize the need for better architectures to meet the challenges of generality.
 ```
 
+Bibliography
+
+```
+```
+
+
 55. Sohrawardi SJ, Chintha A, Thai B, Seng S, Hickerson A, Ptucha R, Wright M. Poster: Towards robust open-world detection of Deepfakes. In: Proc. of the ACM SIGSAC Conf. on Computer and Communications Security. 2019. 2613−2615.
 
 Link : https://www.researchgate.net/publication/337092099_Poster_Towards_Robust_Open-World_Detection_of_Deepfakes
@@ -1527,6 +1983,12 @@ We approach the problem from the journalists' perspective and work towards devel
 Results demonstrate accurate detection on both within and mismatched datasets.
 ```
 
+Bibliography
+
+```
+```
+
+
 56. Agarwal S, Farid H, Gu Y, He M, Nagano K, Li H. Protecting world leaders against deep fakes. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops. 2019. 38−45.
 
 Link : https://openaccess.thecvf.com/content_CVPRW_2019/papers/Media%20Forensics/Agarwal_Protecting_World_Leaders_Against_Deep_Fakes_CVPRW_2019_paper.pdf
@@ -1548,6 +2010,12 @@ To contend with this growing threat, we describe a forensic technique that model
 Although not visually apparent, these correlations are often violated by the nature of how deep-fake videos are created and can, therefore, be used for authentication
 ```
 
+Bibliography
+
+```
+```
+
+
 57. Amerini I, Galteri L, Caldelli R, Bimbo AD. Deepfake video detection through optical flow based CNN. In: Proc. of the IEEE Int’l Conf. on Computer Vision Workshops. 2019. 1205−1207.
 
 Link : https://openaccess.thecvf.com/content_ICCVW_2019/papers/HBU/Amerini_Deepfake_Video_Detection_through_Optical_Flow_Based_CNN_ICCVW_2019_paper.pdf
@@ -1565,6 +2033,12 @@ In this work, a new forensic technique able to discern between fake and original
 
 Such a clue is then used as feature to be learned by CNN classifiers. Preliminary results obtained on FaceForensics++ dataset highlight very promising performances.
 ```
+
+Bibliography
+
+```
+```
+
 
 58. Güera D, Delp EJ. Deepfake video detection using recurrent neural networks. In: Proc. of the 15th IEEE Int’l Conf. on Advanced Video and Signal Based Surveillance (AVSS). IEEE, 2018. 1−6.
 
@@ -1587,6 +2061,12 @@ We evaluate our method against a large set of deepfake videos collected from mul
 We show how our system can achieve competitive results in this task while using a simple architecture.
 ```
 
+Bibliography
+
+```
+```
+
+
 59. Sabir E, Cheng J, Jaiswal A, AbdAlmageed W, Masi I, Natarajan P. Recurrent convolutional strategies for face manipulation detection in videos. arXiv preprint arXiv:1905.00582, 2019.
 
 Link : https://arxiv.org/abs/1905.00582
@@ -1607,6 +2087,12 @@ Specifically, we attempt to detect Deepfake, Face2Face and FaceSwap tampered fac
 Evaluation is performed on the recently introduced FaceForensics++ dataset, improving the previous state-of-the-art by up to 4.55% in accuracy.
 ```
 
+Bibliography
+
+```
+```
+
+
 60. Todisco M, Delgado H, Evans NWD. A new feature for automatic speaker verification anti-spoofing: Constant Q cepstral coefficients. In: Proc. of the Odyssey. 2016. 283−290.
 
 Link : https://www.eurecom.fr/publication/4855
@@ -1624,6 +2110,12 @@ Experimental results obtained using the standard ASVspoof 2015 database show tha
 
 In particular, those for a subset of unknown spoofing attacks (for which no matched training data was used) is 0.46%, a relative improvement of 72% over the best, previously reported results. 
 ```
+
+Bibliography
+
+```
+```
+
 
 61. Rössler A, Cozzolino D, Verdoliva L, Christian R, Justus T, Matthias N. Faceforensics: A large-scale video dataset for forgery detection in human faces. arXiv preprint arXiv:1803.09179, 2018.
 
@@ -1651,6 +2143,12 @@ Using our new dataset, we introduce benchmarks for classical image forensic task
 In addition, we introduce a benchmark evaluation for creating indistinguishable forgeries with known ground truth; for instance with generative refinement models.
 ```
 
+Bibliography
+
+```
+```
+
+
 62. Rossler A, Cozzolino D, Verdoliva L, Riess C, Thies J, Niessner M. Faceforensics++: Learning to detect manipulated facial images. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 1−11.
 
 Link : https://arxiv.org/abs/1901.08971
@@ -1676,6 +2174,12 @@ Based on this data, we performed a thorough analysis of data-driven forgery dete
 
 We show that the use of additional domainspecific knowledge improves forgery detection to unprecedented accuracy, even in the presence of strong compression, and clearly outperforms human observers.
 ```
+
+Bibliography
+
+```
+```
+
 
 63. Korshunov P, Marcel S. Deepfakes: A new threat to face recognition? Assessment and detection. arXiv preprint arXiv:1812.08685, 2018.
 
@@ -1703,6 +2207,12 @@ The best performing method, which is based on visual quality metrics and is ofte
 Our experiments demonstrate that GAN-generated Deepfake videos are challenging for both face recognition systems and existing detection methods, and the further development of face swapping technology will make it even more so.
 ```
 
+Bibliography
+
+```
+```
+
+
 64. VidTIMIT. 2019. http://conradsanderson.id.au/vidtimit/
 
 Link : http://conradsanderson.id.au/vidtimit/
@@ -1728,6 +2238,12 @@ We evaluate those fast networks on both an existing dataset and a dataset we hav
 The tests demonstrate a very successful detection rate with more than 98% for Deepfake and 95% for Face2Face.
 ```
 
+Bibliography
+
+```
+```
+
+
 66. Li Y, Yang X, Sun P, Qi H, Lyu S. Celeb-DF: A new dataset for Deepfake forensics. arXiv preprint arXiv:1909.12962, 2019.
 
 Link : https://arxiv.org/abs/1909.12962
@@ -1746,11 +2262,23 @@ We present a new large-scale challenging DeepFake video dataset, Celeb-DF, which
 We conduct a comprehensive evaluation of DeepFake detection methods and datasets to demonstrate the escalated level of challenges posed by Celeb-DF.
 ```
 
+Bibliography
+
+```
+```
+
+
 67. DeepfakeDetection. 2019. https://github.com/ondyari/FaceForensics
 
 Link : https://github.com/ondyari/FaceForensics
 
 Note : 深度伪造开源数据集,DeepfakeDetection(DFD),363 个不同场景下的原视频,然后进行换脸.篡改视频均 C0,C23,C40 这 3 种参数压缩
+
+
+Bibliography
+
+```
+```
 
 
 68. Dolhansky B, Howes R, Pflaum B, Baram N, Ferrer C. The Deepfake detection challenge (DFDC) preview dataset. arXiv preprint arXiv:1910.08854, 2019.
@@ -1772,11 +2300,23 @@ Finally, a set of specific metrics to evaluate the performance have been defined
 The DFDC dataset preview can be downloaded at: this http URL(http://deepfakedetectionchallenge.ai/)
 ```
 
+Bibliography
+
+```
+```
+
+
 69. DFDC. 2020. https://www.kaggle.com/c/deepfake-detection-challenge/data
 
 Link : https://www.kaggle.com/c/deepfake-detection-challenge/data
 
 Note : DFDC Unknown Deepfakes 竞赛的正式全部数据
+
+Bibliography
+
+```
+```
+
 
 70. Jiang L, Li R, Wu W, Qian C, Loy C. DeeperForensics-1.0: A large-scale dataset for real-world face forgery detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 2886−2895.
 
@@ -1802,12 +2342,22 @@ The benchmark features a hidden test set, which contains manipulated videos achi
 We further contribute a comprehensive study that evaluates five representative detection baselines and make a thorough analysis of different settings.
 ```
 
+Bibliography
+
+```
+```
+
+
 71. ASVspoof 2015 database. 2020. https://datashare.is.ed.ac.uk/handle/10283/853
 
 Link : https://datashare.is.ed.ac.uk/handle/10283/853
 
 Note : 深度伪造开源数据集, synthetic and converted speech, 106 speakers
 
+Bibliography
+
+```
+```
 
 
 72. ASVspoof 2019 database. 2020. https://datashare.is.ed.ac.uk/handle/10283/3336
@@ -1816,6 +2366,10 @@ Link : https://datashare.is.ed.ac.uk/handle/10283/3336
 
 Note : 深度伪造开源数据集, synthetic and converted speech, 107 speakers
 
+Bibliography
+
+```
+```
 
 
 73. Abu-El-Haija S, Kothari N, Lee J, Natsev P, Toderici G, Varadarajan B, Vijayanarasimhan S. Youtube-8m: A large-scale video classification benchmark. arXiv preprint arXiv:1609.08675, 2016.
@@ -1854,6 +2408,12 @@ Despite the size of the dataset, some of our models train to convergence in less
 We plan to release code for training a TensorFlow model and for computing metrics.
 ```
 
+Bibliography
+
+```
+```
+
+
 74. Amerini I, Ballan L, Caldelli R, Bimbo AD, Serra G. A sift-based forensic method for copy-move attack detection and transformation recovery. IEEE Trans. on Information Forensics and Security, 2011,6(3):1099−1110.
 
 Link : https://www.researchgate.net/publication/224225329_A_SIFT-Based_Forensic_Method_for_Copy-Move_Attack_Detection_and_Transformation_Recovery
@@ -1877,6 +2437,12 @@ Extensive experimental results are presented to confirm that the technique is ab
 
 The method also deals with multiple cloning.
 ```
+
+Bibliography
+
+```
+```
+
 
 75. De Carvalho TJ, Riess C, Angelopoulou E, Pedrini H, Rocha A. Exposing digital image forgeries by illumination color classification. IEEE Trans. on Information Forensics and Security, 2013,8(7):1182−1194.
 
@@ -1904,6 +2470,12 @@ From these illuminant estimates, we extract texture- and edge-based features whi
 The classification performance using an SVM meta-fusion classifier is promising. It yields detection rates of 86% on a new benchmark dataset consisting of 200 images, and 83% on 50 images that were collected from the Internet.
 ```
 
+Bibliography
+
+```
+```
+
+
 76. Lukáš J, Fridrich J, Goljan M. Detecting digital image forgeries using sensor pattern noise. In: Proc. of the Security, Steganography, and Watermarking of Multimedia Contents VIII, Vol.6072. Int’l Society for Optics and Photonics, 2006.
 
 Link : https://www.spiedigitallibrary.org/conference-proceedings-of-spie/6072/60720Y/Detecting-digital-image-forgeries-using-sensor-pattern-noise/10.1117/12.640109.short?SSO=1
@@ -1930,6 +2502,12 @@ The methods are tested both on examples of real forgeries and on non-forged imag
 We also investigate how further image processing applied to the forged image, such as lossy compression or filtering, influences our ability to verify image integrity.
 ```
 
+Bibliography
+
+```
+```
+
+
 77. Chierchia G, Parrilli S, Poggi G, Verdoliva L, Sansone C. PRNU-based detection of small-size image forgeries. In: Proc. of the 17th Int’l Conf. on Digital Signal Processing (DSP). IEEE, 2011. 1−6. 
 
 Link : https://ieeexplore.ieee.org/document/6004957
@@ -1943,6 +2521,12 @@ In spite of its effectiveness in many scenarios, the proposed method fails to de
 
 In this work we propose a modified version of the detection algorithm described in, based on a preliminary segmentation of the image, which guarantees a better detection performance for small size additive forgeries.
 ```
+
+Bibliography
+
+```
+```
+
 
 78. Fridrich J, Kodovsky J. Rich models for steganalysis of digital images. IEEE Trans. on Information Forensics and Security, 2012, 7(3):868−882.
 
@@ -1969,6 +2553,12 @@ Steganalysis built around rich image models combined with ensemble classifiers i
 
 ```
 
+Bibliography
+
+```
+```
+
+
 79. Wang W, Dong J, Tan T. Exploring DCT coefficient quantization effects for local tampering detection. IEEE Trans. on Information Forensics and Security, 2014,9(10):1653−1666.
 
 Link : https://ieeexplore.ieee.org/document/6871380
@@ -1993,6 +2583,12 @@ For a tampered image which is saved in lossless compressed format, we also propo
 Extensive experiments on large scale databases prove the effectiveness of our proposed method and demonstrate that our method is suitable for locating tampered regions with different scales.
 ```
 
+Bibliography
+
+```
+```
+
+
 80. Nataraj L, Sarkar A, Manjunath BS. Adding gaussian noise to “denoise” JPEG for detecting image resizing. In: Proc. of the 16th IEEE Int’l Conf. on Image Processing (ICIP). IEEE, 2009. 1493−1496.
 
 Link : https://ieeexplore.ieee.org/document/5414609
@@ -2011,6 +2607,12 @@ We add a suitable amount of Gaussian noise to a resized and JPEG compressed imag
 The controlled Gaussian noise addition works better than median filtering and weighted averaging based filtering for suppressing the JPEG induced periodicity.
 ```
 
+Bibliography
+
+```
+```
+
+
 81. Bianchi T, De Rosa A, Piva A. Improved DCT coefficient analysis for forgery localization in JPEG images. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2011. 2444−2447.
 
 Link : https://ieeexplore.ieee.org/document/5946978
@@ -2024,6 +2626,12 @@ New probability models for the DCT coefficients of singly and doubly compressed 
 
 Based on such models, the probability for each DCT block to be forged is derived. Experimental results demonstrate a better discriminating behavior with respect to previously proposed methods.
 ```
+
+Bibliography
+
+```
+```
+
 
 82. Pan X, Zhang X, Lyu S. Exposing image splicing with inconsistent local noise variances. In: Proc. of the IEEE Int’l Conf. on Computational Photography (ICCP). IEEE, 2012. 1−10.
 
@@ -2041,6 +2649,12 @@ Our method estimates local noise variances based on an observation that kurtosis
 We demonstrate the efficacy and robustness of our method based on several sets of forged images generated with image splicing.
 ```
 
+Bibliography
+
+```
+```
+
+
 83. Ferrara P, Bianchi T, De Rosa A, Piva A. Image forgery localization via fine-grained analysis of CFA artifacts. IEEE Trans. on Information Forensics and Security, 2012,7(5):1566−1577.
 
 Link : https://ieeexplore.ieee.org/document/6210378
@@ -2057,6 +2671,12 @@ The proposed method is based on a new feature measuring the presence of demosaic
 
 Experimental results on different cameras equipped with different demosaicking algorithms demonstrate both the validity of the theoretical model and the effectiveness of our scheme.
 ```
+
+Bibliography
+
+```
+```
+
 
 84. Cozzolino D, Verdoliva L. Noiseprint: A CNN-based camera model fingerprint. IEEE Trans. on Information Forensics and Security, 2019,15:144−159.
 
@@ -2082,6 +2702,12 @@ Although noiseprints can be used for a large variety of forensic tasks, here we 
 Experiments on several datasets widespread in the forensic community show noiseprint-based methods to provide state-of-the-art performance.
 ```
 
+Bibliography
+
+```
+```
+
+
 85. Zhou P, Han X, Morariu VI, Davis LS. Learning rich features for image manipulation detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 1053−1061.
 
 Link : https://openaccess.thecvf.com/content_cvpr_2018/html/Zhou_Learning_Rich_Features_CVPR_2018_paper.html
@@ -2102,6 +2728,12 @@ We then fuse features from the two streams through a bilinear pooling layer to f
 Experiments on four standard image manipulation datasets demonstrate that our two-stream framework outperforms each individual stream, and also achieves state-of-the-art performance compared to alternative methods with robustness to resizing and compression.
 ```
 
+Bibliography
+
+```
+```
+
+
 86. Rao Y, Ni J. A deep learning approach to detection of splicing and copy-move forgeries in images. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2016. 1−6.
 
 Link : https://ieeexplore.ieee.org/document/7823911
@@ -2119,6 +2751,12 @@ The pre-trained CNN is used as patch descriptor to extract dense features from t
 
 The experimental results on several public datasets show that the proposed CNN based model outperforms some state-of-the-art methods.
 ```
+
+Bibliography
+
+```
+```
+
 
 87. Liu B, Pun CM. Deep fusion network for splicing forgery localization. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 237−251.
 
@@ -2142,6 +2780,12 @@ After fine-tuning by a very small number of pictures, Fusion-Net is able to disc
 Experiments on the benchmark datasets show that our method is effective in various situations and outperform state-of-the-art methods
 ```
 
+Bibliography
+
+```
+```
+
+
 88. Huh M, Liu A, Owens A, Efros A. Fighting fake news: Image splice detection via learned self-consistency. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 101−117.
 
 Link : https://openaccess.thecvf.com/content_ECCV_2018/html/Jacob_Huh_Fighting_Fake_News_ECCV_2018_paper.html
@@ -2161,6 +2805,12 @@ Our forensics model achieves state of the art results on many benchmarks, despit
 
 Beyond handcrafted benchmarks, we also show promising results spotting fakes on Reddit and The Onion, as well as detecting computer-generated splices.
 ```
+
+Bibliography
+
+```
+```
+
 
 89. Cun X, Pun CM. Image splicing localization via semi-global network and fully connected conditional random fields. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 252−266.
 
@@ -2182,6 +2832,12 @@ Furthermore, we first integrate Fully Connected Conditional Random Fields as pos
 We show that our method outperforms other state-of-the-art methods in three popular datasets.
 ```
 
+Bibliography
+
+```
+```
+
+
 90. Cozzolino D, Poggi G, Verdoliva L. Recasting residual-based local descriptors as convolutional neural networks: An application to image forgery detection. In: Proc. of the 5th ACM Workshop on Information Hiding and Multimedia Security. 2017. 159−164.
 
 Link : https://arxiv.org/abs/1703.04615
@@ -2197,6 +2853,12 @@ In this paper we show that a class of residual-based descriptors can be actually
 
 Then, by relaxing the constraints, and fine-tuning the net on a relatively small training set, we obtain a significant performance improvement with respect to the conventional detector.
 ```
+
+Bibliography
+
+```
+```
+
 
 91. Chen C, McCloskey S, Yu J. Focus manipulation detection via photometric histogram analysis. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 1674−1682.
 
@@ -2221,6 +2883,12 @@ Such manipulations are now easily generated, for instance, by smartphone cameras
 We also demonstrate good performance on a challenge dataset evaluating a wider range of manipulations in imagery representing ‘in the wild’ conditions.
 ```
 
+Bibliography
+
+```
+```
+
+
 92. Zhou P, Han X, Morariu VI, Davis LS. Two-stream neural networks for tampered face detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops (CVPRW). IEEE, 2017. 1831−1839.
 
 Link : https://arxiv.org/abs/1803.11276
@@ -2236,6 +2904,12 @@ In addition, we use two different online face swapping applications to create a 
 
 We evaluate the proposed two-stream network on our newly collected dataset. Experimental results demonstrate the effectiveness of our method.
 ```
+
+Bibliography
+
+```
+```
+
 
 93. Szegedy C, Liu W, Jia Y, Sermanet P, Reed S, Anguelov D, Erhan D, Vanhoucke V, Rabinovich A. Going deeper with convolutions. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2015. 1−9.
 
@@ -2254,6 +2928,12 @@ To optimize quality, the architectural decisions were based on the Hebbian princ
 
 One particular incarnation used in our submission for ILSVRC 2014 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.
 ```
+
+Bibliography
+
+```
+```
+
 
 94. Yang X, Li Y, Lyu S. Exposing deep fakes using inconsistent head poses. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2019. 8261−8265.
 
@@ -2274,6 +2954,12 @@ We perform experiments to demonstrate this phenomenon and further develop a clas
 Using features based on this cue, an SVM classifier is evaluated using a set of real face images and Deep Fakes.
 ```
 
+Bibliography
+
+```
+```
+
+
 95. Yang X, Li Y, Qi H, Lyu S. Exposing GAN-synthesized faces using landmark locations. In: Proc. of the ACM Workshop on Information Hiding and Multimedia Security. 2019. 113−118.
 
 Link : https://arxiv.org/abs/1904.00167
@@ -2290,6 +2976,12 @@ Our method is based on the observations that the facial parts configuration gene
 We perform experiments demonstrating this phenomenon, and show that an SVM classifier trained using the locations of facial landmark points is sufficient to achieve good classification performance for GAN-synthesized faces.
 ```
 
+Bibliography
+
+```
+```
+
+
 96. Li Y, Chang MC, Lyu S. In ictu oculi: Exposing AI created fake videos by detecting eye blinking. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2018. 1−7.
 
 Link : https://ieeexplore.ieee.org/document/8630787
@@ -2305,6 +2997,12 @@ Our method is based on detection of eye blinking in the videos, which is a physi
 
 Our method is evaluated over benchmarks of eye-blinking detection datasets and shows promising performance on detecting videos generated with DNN based software DeepFake.
 ```
+
+Bibliography
+
+```
+```
+
 
 97. Ciftci UA, Demir I. FakeCatcher: Detection of synthetic portrait videos using biological signals. arXiv preprint arXiv:1901.02212, 2019.
 
@@ -2336,6 +3034,12 @@ We evaluate FakeCatcher on several datasets, resulting with 96%, 94.65%, 91.50%,
 We also analyze signals from various facial regions, under image distortions, with varying segment durations, from different generators, against unseen datasets, and under several dimensionality reduction techniques.
 ```
 
+Bibliography
+
+```
+```
+
+
 98. Fernandes S, Raj S, Ortiz E, Vintila I, Salter M, Urosevic G, Jha S. Predicting heart rate variations of Deepfake videos using neural ODE. In: Proc. of the IEEE Int’l Conf. on Computer Vision Workshops. 2019. 1721−1729.
 
 Link : https://ieeexplore.ieee.org/document/9022055
@@ -2366,6 +3070,12 @@ The trained Neural-ODE was able to predict the heart rate of our 10 deepfake vid
 To best of our knowledge, this is the first attempt to train a Neural-ODE on original videos to predict the heart rate of fake videos.
 ```
 
+Bibliography
+
+```
+```
+
+
 99. Li Y, Lyu S. Exposing Deepfake videos by detecting face warping artifacts. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR) Workshops, 2019. 46−52.
 
 Link : https://arxiv.org/abs/1811.00656
@@ -2387,6 +3097,12 @@ Since training a DeepFake model to generate negative examples is time-consuming 
 
 Our method is evaluated on two sets of DeepFake video datasets for its effectiveness in practice.
 ```
+
+Bibliography
+
+```
+```
+
 
 100. He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2016. 770−778. 
 
@@ -2416,11 +3132,22 @@ Solely due to our extremely deep representations, we obtain a 28% relative impro
 Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
 ```
 
+Bibliography
+
+```
+```
+
+
 101. Deepfakes. 2019. https://github.com/deepfakes/faceswap
 
 Link : https://github.com/deepfakes/faceswap
 
 Note : Deepfakes 换脸技术
+
+Bibliography
+
+```
+```
 
 
 102. Zao app. 2019. https://zao-app.com/
@@ -2429,12 +3156,22 @@ Link : https://zao-app.com/
 
 Note : Zao APP 提供大众换脸娱乐服务等
 
+Bibliography
+
+```
+```
+
 
 103. Deepfake detection challenge. 2020. https://www.kaggle.com/c/deepfake-detection-challenge
 
 Link : https://www.kaggle.com/c/deepfake-detection-challenge
 
 Note : Deepfakes 检测竞赛
+
+Bibliography
+
+```
+```
 
 
 104. Girish N, Nandini C. A review on digital video forgery detection techniques in cyber forensics. Science, Technology and Development, 2019,3(6):235−239.
@@ -2463,6 +3200,12 @@ Video Forensics continues to develop new technologies to verify the authenticity
 While most of the existing methods are based on the analysis of video data flow, recently, a new line of research was introduced to investigate the video life cycle based on video container analysis.
 ```
 
+Bibliography
+
+```
+```
+
+
 105. Nguyen TT, Nguyen CM, Nguyen DT, Nguyen DT, Nahavandi S. Deep learning for Deepfakes creation and detection. arXiv preprint arXiv:1909.11573, 2019.
 
 Link : https://arxiv.org/abs/1909.11573
@@ -2486,6 +3229,12 @@ We present extensive discussions on challenges, research trends and directions r
 
 By reviewing the background of deepfakes and state-of-the-art deepfake detection methods, this study provides a comprehensive overview of deepfake techniques and facilitates the development of new and more robust methods to deal with the increasingly challenging deepfakes.
 ```
+
+Bibliography
+
+```
+```
+
 
 106. Zollhöfer M, Thies J, Garrido P, Bradley D, Beeler T, Perez P, Stamminger M, Niessner M, Theobalt C. State of the art on monocular 3D face reconstruction, tracking, and applications. Computer Graphics Forum, 2018,37(2):523−550.
 
@@ -2511,11 +3260,22 @@ In addition, we extensively cover the priors that are used to better constrain t
 Finally, we discuss a variety of use cases for the reviewed algorithms in the context of motion capture, facial animation, as well as image and video editing.
 ```
 
+Bibliography
+
+```
+```
+
+
 107. FaceSwap. 2019. https://github.com/MarekKowalski/FaceSwap/
 
 Link : https://github.com/MarekKowalski/FaceSwap/
 
 Note : FaceSwap 是基于图形学的换脸方法,首先获取人脸关键点,然后通过 3D 模型对获取到的人脸关键点位置进行渲染,不断缩小目标形状和关键点定位间的差异,最后将渲染模型的图像进行混合,并利用色彩校正技术获取最终的图像
+
+Bibliography
+
+```
+```
 
 
 108. Dale K, Sunkavalli K, Johnson MK, Vlasic D, Matusik W, Pfister H. Video face replacement. In: Proc. of the SIGGRAPH Asia Conf. 2011. 1−10.
@@ -2540,6 +3300,12 @@ We then compute an optimal seam through the video volume that maintains temporal
 We showcase the use of our method on a variety of examples and present the result of a user study that suggests our results are difficult to distinguish from real video footage.
 ```
 
+Bibliography
+
+```
+```
+
+
 109. Garrido P, Valgaerts L, Rehmsen O, Thormae T, Perez P, Theobalt C. Automatic face reenactment. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2014. 4217−4224.
 
 Link : https://vcai.mpi-inf.mpg.de/projects/FaceReenactment/files/FaceReenactment.pdf
@@ -2563,6 +3329,12 @@ Our system excels in simplicity as it does not rely on a 3D face model, it is ro
 We show convincing reenactment results for videos that we recorded ourselves and for low-quality footage taken from the Internet.
 ```
 
+Bibliography
+
+```
+```
+
+
 110. Garrido P, Valgaerts L, Sarmadi H, Steiner I, Varanasi K, Perez P, Theobalt C. VDub: Modifying face video of actors for plausible visual alignment to a dubbed audio track. Computer Graphics Forum, 2015,34(2):193−204.
 
 Link : https://vcai.mpi-inf.mpg.de/files/EuroGraphics2015/dubbing_high.pdf
@@ -2582,6 +3354,12 @@ Our paper builds on high-quality monocular capture of 3D facial performance, lig
 
 We demonstrate plausible visual quality of our results compared to footage that has been professionally dubbed in the traditional way, both qualitatively and through a user study.
 ```
+
+Bibliography
+
+```
+```
+
 
 111. Nirkin Y, Masi I, Tuan AT, Hassner T, Medioni G. On face segmentation, face swapping, and face perception. In: Proc. of the 13th IEEE Int’l Conf. on Automatic Face and Gesture Recognition (FG 2018). IEEE, 2018. 98−105.
 
@@ -2607,6 +3385,12 @@ To this end, we use the Labeled Faces in the Wild (LFW) benchmark and measure th
 We show that our intra-subject swapped faces remain as recognizable as their sources, testifying to the effectiveness of our method. In line with well known perceptual studies, we show that better face swapping produces less recognizable inter-subject results. This is the first time this effect was quantitatively demonstrated for machine vision systems.
 ```
 
+Bibliography
+
+```
+```
+
+
 112. Lu Z, Li Z, Cao J, He R, Sun Z. Recent progress of face image synthesis. In: Proc. of the 4th IAPR Asian Conf. on Pattern Recognition (ACPR). IEEE, 2017. 7−12.
 
 Link : https://arxiv.org/abs/1706.04717
@@ -2628,6 +3412,12 @@ Furthermore, the public available databases and evaluation metrics are introduce
 
 We end the review with discussing unsolved difficulties and promising directions for future research.
 ```
+
+Bibliography
+
+```
+```
+
 
 113. Goodfellow I, Pouget-Abadie J, Mirza M, Xu B, Warde-Farley D, Ozair S, Courvile A, Bengio Y. Generative adversarial nets. In: Proc. of the Advances in Neural Information Processing Systems. 2014. 2672−2680.
 
@@ -2653,11 +3443,22 @@ There is no need for any Markov chains or unrolled approximate inference network
 Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples.
 ```
 
+Bibliography
+
+```
+```
+
+
 114. Faceswap-GAN. 2019. https://github.com/shaoanlu/faceswap-GAN
 
 Link : https://github.com/shaoanlu/faceswap-GAN
 
 Note : Faceswap-GAN 就是增加了 GAN 技术的 Deepfakes,引入判别器的对抗损失函数,在生成的时候判别生成图像和原图的相似度,使得生成的图像质量有大幅度提高,另外引入了感知损失函数增加眼珠的转动效果
+
+Bibliography
+
+```
+```
 
 
 115. Korshunova I, Shi W, Dambre J, Theis L. Fast face-swap using convolutional neural networks. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2017. 3677−3685.
@@ -2678,6 +3479,12 @@ Building on recent advances in this area, we devise a new loss function that ena
 
 By combining neural networks with simple pre- and post-processing steps, we aim at making face swap work in real-time with no input from the user.
 ```
+
+Bibliography
+
+```
+```
+
 
 116. Nirkin Y, Keller Y, Hassner T. FSGAN: Subject agnostic face swapping and reenactment. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 7184−7193.
 
@@ -2703,6 +3510,12 @@ Finally, we use a face blending network for seamless blending of the two faces w
 This network uses a novel Poisson blending loss which combines Poisson optimization with perceptual loss. We compare our approach to existing state-of-the-art systems and show our results to be both qualitatively and quantitatively superior.
 ```
 
+Bibliography
+
+```
+```
+
+
 117. Choi Y, Choi M, Kim M, Ha J, Kin S, Choo J. StarGAN: Unified generative adversarial networks for multi-domain image-toimage translation. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 8789−8797.
 
 Link : https://arxiv.org/abs/1711.09020
@@ -2722,6 +3535,12 @@ This leads to StarGAN's superior quality of translated images compared to existi
 
 We empirically demonstrate the effectiveness of our approach on a facial attribute transfer and a facial expression synthesis tasks.
 ```
+
+Bibliography
+
+```
+```
+
 
 118. Zhang H, Xu T, Li H, Zhang S, Wang X, Huang X, Netaxas D. StackGAN++: Realistic image synthesis with stacked generative adversarial networks. IEEE Trans. on Pattern Analysis and Machine Intelligence, 2018,41(8):1947−1962.
 
@@ -2749,6 +3568,12 @@ StackGAN-v2 shows more stable training behavior than StackGAN-v1 by jointly appr
 Extensive experiments demonstrate that the proposed stacked generative adversarial networks significantly outperform other state-of-the-art methods in generating photo-realistic images.
 ```
 
+Bibliography
+
+```
+```
+
+
 119. Karras T, Aila T, Laine S, Lehtinen J. Progressive growing of GANs for improved quality, stability, and variation. In: Proc. of the 6th Int’l Conf. on Learning Representations (ICLR). 2018.
 
 Link : https://arxiv.org/abs/1710.10196
@@ -2773,6 +3598,12 @@ Finally, we suggest a new metric for evaluating GAN results, both in terms of im
 As an additional contribution, we construct a higher-quality version of the CelebA dataset.
 ```
 
+Bibliography
+
+```
+```
+
+
 120. Antipov G, Baccouche M, Dugelay JL. Face aging with conditional generative adversarial networks. In: Proc. of the IEEE Int’l Conf. on Image Processing (ICIP). IEEE, 2017. 2089−2093.
 
 Link : https://arxiv.org/abs/1702.01983
@@ -2791,6 +3622,12 @@ To this end, we introduce a novel approach for "Identity-Preserving" optimizatio
 The objective evaluation of the resulting aged and rejuvenated face images by the state-of-the-art face recognition and age estimation solutions demonstrate the high potential of the proposed method.
 ```
 
+Bibliography
+
+```
+```
+
+
 121. Mirza M, Osindero S. Conditional generative adversarial nets. arXiv preprint arXiv:1411.1784, 2014.
 
 Link : https://arxiv.org/abs/1411.1784
@@ -2806,6 +3643,12 @@ We show that this model can generate MNIST digits conditioned on class labels.
 
 We also illustrate how this model could be used to learn a multi-modal model, and provide preliminary examples of an application to image tagging in which we demonstrate how this approach can generate descriptive tags which are not part of training labels.
 ```
+
+Bibliography
+
+```
+```
+
 
 122. Huang R, Zhang S, Li T, He R. Beyond face rotation: Global and local perception GAN for photorealistic and identity preserving frontal view synthesis. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2017. 2439−2448.
 
@@ -2831,6 +3674,12 @@ Different from previous deep learning methods that mainly rely on intermediate f
 Experimental results demonstrate that our method not only presents compelling perceptual results but also outperforms state-of-the-art results on large pose face recognition.
 ```
 
+Bibliography
+
+```
+```
+
+
 123. Thies J, Zollhöfer M, Nießner M, Valgaerts L, Stamminger M, Theobalt C. Real-time expression transfer for facial reenactment. ACM Trans. on Graphics (TOG), 2015,34(6):Article No.183.
 
 Link : http://www.graphics.stanford.edu/~niessner/papers/2015/10face/thies2015realtime.pdf
@@ -2854,6 +3703,12 @@ This requires a careful consideration of the lighting and shading design, which 
 
 We demonstrate our method in a live setup, where we modify a video conference feed such that the facial expressions of a different person (e.g., translator) are matched in real-time.
 ```
+
+Bibliography
+
+```
+```
+
 
 124. Thies J, Zollhofer M, Stamminger M, Theobalt C, Niebner M. Face2face: Real-time face capture and reenactment of RGB videos. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2016. 2387−2395.
 
@@ -2881,6 +3736,12 @@ Finally, we convincingly re-render the synthesized target face on top of the cor
 We demonstrate our method in a live setup, where Youtube videos are reenacted in real time.
 ```
 
+Bibliography
+
+```
+```
+
+
 125. Thies J, Zollhöfer M, Theobalt C, Stamminger M, Niessner M. Headon: Real-time reenactment of human portrait videos. ACM Trans. on Graphics (TOG), 2018,37(4):1−13.
 
 Link : https://arxiv.org/pdf/1805.11729.pdf
@@ -2900,6 +3761,12 @@ To this end, we propose a robust tracking of the face and torso of the source ac
 
 We extensively evaluate our approach and show significant improvements in enabling much greater flexibility in creating realistic reenacted output videos.
 ```
+
+Bibliography
+
+```
+```
+
 
 126. Kim H, Garrido P, Tewari A, Xu W, Thies J, Niessner M, Perez P, Richardt C, Zollhofer M, Theobalt C. Deep video portraits. ACM Trans. on Graphics (TOG), 2018,37(4):1−14.
 
@@ -2926,6 +3793,12 @@ For instance, we can reenact the full head using interactive user-controlled edi
 
 To demonstrate the high quality of our output, we conduct an extensive series of experiments and evaluations, where for instance a user study shows that our video edits are hard to detect.
 ```
+
+Bibliography
+
+```
+```
+
 
 127. Thies J, Zollhöfer M, Nießner M. Deferred neural rendering: Image synthesis using neural textures. ACM Trans. on Graphics (TOG), 2019,38(4):1−12.
 
@@ -2957,6 +3830,12 @@ This way, neural textures can be utilized to coherently re-render or manipulate 
 We show the effectiveness of our approach in several experiments on novel view synthesis, scene editing, and facial reenactment, and compare to state-of-the-art approaches that leverage the standard graphics pipeline as well as conventional generative neural networks.
 ```
 
+Bibliography
+
+```
+```
+
+
 128. Suwajanakorn S, Seitz SM, Kemelmacher-Shlizerman I. Synthesizing Obama: Learning lip sync from audio. ACM Trans. on Graphics (TOG), 2017,36(4):1−13.
 
 Link : https://grail.cs.washington.edu/projects/AudioToObama/
@@ -2972,6 +3851,12 @@ Given the mouth shape at each time instant, we synthesize high quality mouth tex
 
 Our approach produces photorealistic results.
 ```
+
+Bibliography
+
+```
+```
+
 
 129. Zakharov E, Shysheya A, Burkov E, Lempitsky V. Few-shot adversarial learning of realistic neural talking head models. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 9459−9468.
 
@@ -2992,6 +3877,12 @@ Crucially, the system is able to initialize the parameters of both the generator
 
 We show that such an approach is able to learn highly realistic and personalized talking head models of new people and even portrait paintings.
 ```
+
+Bibliography
+
+```
+```
+
 
 130. Fried O, Tewari A, Zollhöfer M, Finkelstein A, Shechtman E, Goldman D, Genova K, Jin Z, Theobalt C, Agrawala M. Text-based editing of talking-head video. ACM Trans. on Graphics (TOG), 2019,38(4):1−14.
 
@@ -3014,6 +3905,12 @@ Finally, a recurrent video generation network transforms this representation to 
 
 We demonstrate a large variety of edits, such as the addition, removal, and alteration of words, as well as convincing language translation and full sentence synthesis.
 ```
+
+Bibliography
+
+```
+```
+
 
 131. Averbuch-Elor H, Cohen-Or D, Kopf J, Cohen M. Bringing portraits to life. ACM Trans. on Graphics (TOG), 2017,36(6):Article No.196.
 
@@ -3039,6 +3936,12 @@ Our technique gives rise to reactive profiles, where people in still images can 
 We demonstrate our technique operating on numerous still portraits from the internet.
 ```
 
+Bibliography
+
+```
+```
+
+
 132. Lample G, Zeghidour N, Usunier N, Bordes A, Denoyer L, Ranzato M. Fader networks: Manipulating images by sliding attributes. In: Proc. of the Advances in Neural Information Processing Systems. 2017. 5967−5976. 
 
 Link : https://arxiv.org/abs/1706.00409
@@ -3059,6 +3962,12 @@ Compared to the state-of-the-art which mostly relies on training adversarial net
 We present evidence that our model can significantly change the perceived value of the attributes while preserving the naturalness of images.
 ```
 
+Bibliography
+
+```
+```
+
+
 133. Van Den Oord A, Dieleman S, Zen H, Simonyan K, Vinyals O, Graves A, Kalchbrenner N, Senior AW, Kavukcuoglu K. Wavenet: A generative model for raw audio. In: Proc. of the 9th Speech Synthesis Workshop. 2016.
 
 Link : https://arxiv.org/abs/1609.03499
@@ -3078,6 +3987,12 @@ A single WaveNet can capture the characteristics of many different speakers with
 
 When trained to model music, we find that it generates novel and often highly realistic musical fragments. We also show that it can be employed as a discriminative model, returning promising results for phoneme recognition.
 ```
+
+Bibliography
+
+```
+```
+
 
 134. Arik S, Chrzanowski M, Coates A, Diamos G, Kang Y, Li X, Miller J, Ng A, Raiman J, Sengupta S, Shoeybi M. Deep voice: Real-time neural text-to-speech. In: Proc. of the 34th Int’l Conf. on Machine Learning. 2017. 195−204.
 
@@ -3101,6 +4016,12 @@ By using a neural network for each component, our system is simpler and more fle
 Finally, we show that inference with our system can be performed faster than real time and describe optimized WaveNet inference kernels on both CPU and GPU that achieve up to 400x speedups over existing implementations.
 ```
 
+Bibliography
+
+```
+```
+
+
 135. Wang Y, Skerry-Ryan RJ, Stanton D, Wu Y, Weiss R, Jaitly N, Yang Z, Xiao Y, Chen Z, Bengio S, Le Q, Agiomyrgiannakis Y, Clark B, Saurous R. Tacotron: Towards end-to-end speech synthesis. In: Proc. of the Interspeech 2017, 18th Annual Conf. of the Int’l Speech Communication Association. 2017. 4006−4010.
 
 Link : https://arxiv.org/abs/1703.10135
@@ -3121,6 +4042,12 @@ Tacotron achieves a 3.82 subjective 5-scale mean opinion score on US English, ou
 In addition, since Tacotron generates speech at the frame level, it's substantially faster than sample-level autoregressive methods.
 ```
 
+Bibliography
+
+```
+```
+
+
 136. Arik S, Diamos G, Gibiansky A, Miller J, Peng K, Ping W, Raiman J, Zhou Y. Deep voice 2: Multi-speaker neural text-to-speech. In: Proc. of the Advances in Neural Information Processing Systems. 2017. 2962−2970.
 
 Link : https://arxiv.org/abs/1705.08947
@@ -3139,6 +4066,12 @@ We improve Tacotron by introducing a post-processing neural vocoder, and demonst
 We then demonstrate our technique for multi-speaker speech synthesis for both Deep Voice 2 and Tacotron on two multi-speaker TTS datasets. We show that a single neural TTS system can learn hundreds of unique voices from less than half an hour of data per speaker, while achieving high audio quality synthesis and preserving the speaker identities almost perfectly.
 ```
 
+Bibliography
+
+```
+```
+
+
 137. Ping W, Peng K, Gibiansky A, Arik S, Kannan A, Narang S. Deep voice 3: 2000-speaker neural text-to-speech. In: Proc. of the ICLR. 2018. 214−217.
 
 Link : https://arxiv.org/abs/1710.07654
@@ -3154,6 +4087,12 @@ In addition, we identify common error modes of attention-based speech synthesis 
 
 We also describe how to scale inference to ten million queries per day on one single-GPU server.
 ```
+
+Bibliography
+
+```
+```
+
 
 138. Pascual S, Bonafonte A, Serra J. SEGAN: Speech enhancement generative adversarial network. In: Proc. of the Interspeech 2017, 18th Annual Conf. of the Int’l Speech Communication Association. 2017. 3642−3646.
 
@@ -3179,6 +4118,12 @@ The enhanced samples confirm the viability of the proposed model, and both objec
 With that, we open the exploration of generative architectures for speech enhancement, which may progressively incorporate further speech-centric design choices to improve their performance.
 ```
 
+Bibliography
+
+```
+```
+
+
 139. Donahue C, McAuley J, Puckette M. Adversarial audio synthesis. In: Proc. of the 7th Int’l Conf. on Learning Representations (ICLR). 2019.
 
 Link : https://arxiv.org/abs/1802.04208
@@ -3198,6 +4143,12 @@ Our experiments demonstrate that, without labels, WaveGAN learns to produce inte
 
 We compare WaveGAN to a method which applies GANs designed for image generation on image-like audio feature representations, finding both approaches to be promising.
 ```
+
+Bibliography
+
+```
+```
+
 
 140. Li XR, Yu K. A Deepfakes detection technique based on two-stream network. Journal of Cyber Security, 2020,5(2):84−91 (in Chinese with English abstract).
 
@@ -3220,11 +4171,23 @@ By testing on a large open source dataset, FaceForensics++, our detection method
 
 ```
 
+Bibliography
+
+```
+```
+
+
 141. FakeApp. 2019. https://www.deepfakescn.com
 
 Link : https://www.deepfakescn.com
 
 Note : 商业化工具, 深度伪造生成技术
+
+
+Bibliography
+
+```
+```
 
 
 142. Faceapp. 2019. https://www.faceapp.com/
@@ -3234,11 +4197,23 @@ Link : https://www.faceapp.com/
 Note : 商业化工具, 深度伪造生成技术
 
 
+Bibliography
+
+```
+```
+
+
 143. DeepFaceLab. 2019. https://github.com/iperov/DeepFaceLab
 
 Link : https://github.com/iperov/DeepFaceLab
 
 Note : DeepfaceLab 对 Faceswap 项目的模型进行扩充,对人脸模型进行扩充
+
+
+Bibliography
+
+```
+```
 
 
 144. Dfaker. 2019. https://github.com/dfaker/df
@@ -3247,6 +4222,11 @@ Link : https://github.com/dfaker/df
 
 Note : DFaker, 使用 DSSIM loss 函数
 
+Bibliography
+
+```
+```
+
 
 145. DeepFake-tf. 2019. https://github.com/StromWine/DeepFake-tf
 
@@ -3254,12 +4234,23 @@ Link : https://github.com/StromWine/DeepFake-tf
 
 Note : DeepFake-tf,同 Dfakeer 项目,使用 tensorflow 实现
 
+Bibliography
+
+```
+```
+
 
 146. Faceswap-Deepfake-Pytorch. 2019. https://github.com/Oldpan/Faceswap-Deepfake-Pytorch
 
 Link :  https://github.com/Oldpan/Faceswap-Deepfake-Pytorch
 
 Note : Faceswap-DeepfakePytorch,原理同 Faceswap 项目,使用 Pytorch 实现
+
+Bibliography
+
+```
+```
+
 
 
 147. Deep-voice-conversion. 2020. https://github.com/andabi/deep-voice-conversion
@@ -3269,12 +4260,23 @@ Link : https://github.com/andabi/deep-voice-conversion
 Note : Deep-voicevconversion, 只需要目标说话者的音波素材, 即可转换成特定目标人物的声音
 
 
+Bibliography
+
+```
+```
+
 
 148. MelNet. 2020. https://sjvasquez.github.io/blog/melnet/
 
 Link : https://sjvasquez.github.io/blog/melnet/
 
 Note : MelNet 基于频谱图的端到端语音生成
+
+
+Bibliography
+
+```
+```
 
 
 149. Matern F, Riess C, Stamminger M. Exploiting visual artifacts to expose Deepfakes and face manipulations. In: Proc. of the IEEE Winter Applications of Computer Vision Workshops (WACVW). IEEE, 2019. 83−92.
@@ -3299,6 +4301,11 @@ Since the methods are based on visual features, they are easily explicable also 
 The methods are easy to implement and offer capabilities for rapid adjustment to new manipulation types with little data available. 
 
 Despite their simplicity, the methods are able to achieve AUC values of up to 0.866.
+```
+
+Bibliography
+
+```
 ```
 
 
