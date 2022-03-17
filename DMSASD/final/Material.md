@@ -1334,6 +1334,8 @@ Extensive experimental results show that the proposed method can accurately iden
 Moreover, when the GAN model is unknown, our methods also achieves good performance with one-class classification by using only real images for training.
 ```
 
+借助強大的深度網絡架構，例如生成對抗網絡，人們可以輕鬆生成逼真的圖像。儘管生成的圖像並非專門用於欺騙人類或欺騙生物特徵認證系統，但研究界和公共媒體對這些圖像引起的安全問題表示了極大的關注。該研究解決了識別深度網絡生成 (DNG) 圖像的問題，考慮到相機成像和DNG圖像生成之間的差異，研究者分析了不同顏色分量的DNG圖像和真實圖像之間的差異。其研究觀察到 DNG 圖像在色度分量中與真實圖像更容易區分，尤其是在殘差域中。基於這些觀察，研究者們提出了一個特徵集來捕獲用於識別 DNG 圖像的彩色圖像統計信息。此外，研究者評估了幾種檢測情況，包括訓練測試數據在圖像源或生成模型中匹配或不匹配，以及僅使用真實圖像進行檢測。大量實驗結果表明，該方法可以準確識別 DNG 圖像，並且在訓練和測試數據不匹配時優於現有方法。此外，當 GAN 模型未知時，研究者的方法也通過僅使用真實圖像進行訓練，實現了一類分類的良好性能。
+
 Bibliography
 
 ```
@@ -1362,6 +1364,8 @@ By applying similar image level preprocessing to both real and fake training ima
 Our experimental results also prove the effectiveness of the proposed method.
 ```
 
+最近 GAN 生成的人臉圖像越來越逼真，質量越來越高，甚至人眼也很難檢測到，另一方面，取證社區不斷開發檢測這些生成的虛假圖像的方法，並試圖保證視覺內容的可信度。儘管研究人員已經開發了一些檢測生成圖像的方法，但很少有人探索取證模型泛化能力的重要問題。隨著新型 GAN 的快速湧現，取證模型檢測新型 GAN 圖像的泛化能力絕對是一個必不可少的研究課題。在該研究中，研究者們探討了這個問題，並建議使用預處理圖像來訓練取證 CNN 模型。通過對真實和虛假的訓練圖像應用相似的圖像級預處理，取證模型被迫學習更多的內在特徵來對生成的和真實的人臉圖像進行分類。而其的實驗結果也證明了所提方法的有效性。
+
 Bibliography
 
 ```
@@ -1386,6 +1390,8 @@ We analyze the structure of the generating network of a popular GAN implementati
 We further show that these two cues can be used to distinguish GAN-generated imagery from camera imagery, demonstrating effective discrimination between GAN imagery and real camera images used to train the GAN.
 ```
 
+圖像取證是一個越來越相關的問題，因為它可以潛在地解決在線虛假信息活動並減輕社交媒體的問題方面。鑑於其最近的成功，特別令人感興趣的是由生成對抗網絡 (GAN) 生成的圖像的檢測，例如 '深度偽造'，其利用大型訓練集和廣泛的計算資源，最近的工作表明，可以訓練 GAN 生成合成圖像，這（在某些方面）與真實圖像無法區分，研究者們分析了一個流行的 GAN 實現的生成網絡的結構，並表明該網絡對顏色的處理在兩個方面與真實相機明顯不同。該研究進一步表明，這兩個線索可用於區分 GAN 生成的圖像和相機圖像，證明了 GAN 圖像和用於訓練 GAN 的真實相機圖像之間的有效區分。
+
 Bibliography
 
 ```
@@ -1409,6 +1415,8 @@ In this work, we show that each GAN leaves its specific fingerprint in the image
 
 Source identification experiments with several popular GANs show such fingerprints to represent a precious asset for forensic analyses.
 ```
+
+在過去的幾年裡，生成對抗網絡（GAN）在計算機視覺和相關領域的許多應用中顯示出巨大的潛力，以目前的發展速度，可以肯定的是，GAN 很快就能生成與真實圖像和視頻幾乎無法區分的高質量圖像和視頻。不幸的是，真實的 GAN 生成的圖像對安全構成了嚴重威脅，首先可能出現大量虛假多媒體，因此迫切需要多媒體取證對策。在該項工作中，研究者們展示了每個 GAN 在其生成的圖像中留下其特定的指紋，就像現實世界的相機用它們的照片響應非均勻模式的痕跡標記所獲取的圖像一樣。幾種流行的 GAN 的源識別實驗表明，這種指紋代表了類似於法醫分析的寶貴資產。
 
 Bibliography
 
@@ -1442,6 +1450,8 @@ Our experiments show that (1) GANs carry distinct model fingerprints and leave s
  and (5) comparisons also show our learned fingerprints consistently outperform several baselines in a variety of setups.
 ```
 
+生成對抗網絡 (GAN) 的最新進展表明，在生成逼真的圖像方面取得了越來越大的成功，但 GAN 也對視覺取證和模型歸因提出了挑戰。該研究提出了學習 GAN 指紋對圖像屬性的第一項研究，並使用它們將圖像分類為真實圖像或 GAN 生成的圖像，而對於 GAN 生成的圖像，研究者進一步識別它們的來源，其研究的實驗表明（1）GAN 帶有不同的模型指紋，並在其生成的圖像中留下穩定的指紋，從而支持圖像屬性；(2) GAN 訓練中即使是微小的差異也會導致不同的指紋，從而實現細粒度的模型認證；(3) 指紋在不同的圖像頻率和補丁上持續存在，並且不受 GAN 偽影的影響； (4) 指紋微調對五種對抗性圖像擾動有效免疫；(5) 比較還表明，研究者的學習的指紋在各種設置中始終優於幾個基線。
+
 Bibliography
 
 ```
@@ -1471,6 +1481,8 @@ Here, we conjecture that monitoring neuron behavior can also serve as an asset i
 Experimental results on detecting four types of fake faces synthesized with the state-of-the-art GANs and evading four perturbation attacks show the effectiveness and robustness of our approach.
 ```
 
+近年來，生成對抗網絡（GAN）及其變體在圖像合成方面取得了前所未有的成功，它們被廣泛用於合成面部圖像，這會給人類帶來潛在的安全問題，因為其假的成果會傳播並助長錯誤信息。然而，這些人工智能合成的假人臉的強大檢測器仍處於起步階段，還沒有準備好完全應對這一新興挑戰。在這項工作中，研究者們提出了一種名為 FakeSpotter 的新方法，該方法基於監視神經元行為來發現 AI 合成的假臉，對神經元覆蓋和交互的研究已經成功地表明，它們可以作為深度學習系統的測試標準，尤其是在暴露於對抗性攻擊的情況下。在這裡，研究者們推測監控神經元行為也可以作為檢測假臉的資產，因為逐層神經元激活模式可能會捕獲對假人檢測器很重要的更細微的特徵。檢測用最先進的 GAN 合成的四種假人臉並避免四種擾動攻擊的實驗結果表明了該研究方法的有效性和魯棒性。
+
 Bibliography
 
 ```
@@ -1494,6 +1506,8 @@ We show that this architecture, dubbed Xception, slightly outperforms Inception 
 
 Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
 ```
+
+該研究將捲積神經網絡中的 Inception 模塊解釋為介於常規卷積和深度可分離卷積操作（深度卷積後跟點卷積）之間的中間步驟，從這個角度來看，深度可分離卷積可以理解為具有最大數量的塔的 Inception 模塊，這一觀察使研究者提出了一種受 Inception 啟發的新型深度卷積神經網絡架構，其中 Inception 模塊已被深度可分離卷積取代。其研究表明，這種被稱為 Xception 的架構在 ImageNet 數據集（Inception V3 的設計目標）上略微優於 Inception V3，並且在包含 3.5 億張圖像和 17,000 個類別的更大圖像分類數據集上顯著優於 Inception V3。由於 Xception 架構與 Inception V3 具有相同數量的參數，因此性能提升不是由於容量增加，而是更有效地使用模型參數。
 
 Bibliography
 
@@ -1523,6 +1537,8 @@ Based on the proposed dataset, we demonstrated that explicit adding facial landm
 In addition, our proposed method consists of two branches and can coherently predict face forensic detection and localization to outperform the previous state-of-the-art techniques on the newly proposed dataset as well as the faceforecsic++ dataset especially on low-quality videos.
 ```
 
+最近，生成對抗網絡 (GAN) 和圖像處理方法變得越來越強大，可以產生超出人類識別範圍的高度逼真的人臉圖像，這引起了人們對數字媒體真實性的嚴重關注，儘管有一些先前的工作可以解決人臉取證分類問題，但從分類預測中估計編輯位置並非易事。在該研究中的研究者們所知，此研究是提出了第一個嚴格的人臉取證定位數據集，該數據集由真實的、生成的和經過處理的人臉圖像組成。特別是，原始部分包含來自 CelebA 和 FFHQ 數據集的人臉圖像。假圖像是由各種 GANs 方法生成的，即 DCGANs、LSGANs、BEGANs、WGAN-GP、ProGANs 和 StyleGANs。最後，編輯的子集是基於自由形式掩碼從 StarGAN 和 SEFCGAN 生成的。該數據集總共包含大約 130 萬張用相應的二進制掩碼標記的面部圖像。基於所提出的數據集，研究者們證明了在輸入圖像之外顯式添加面部標誌信息可以提高性能。此外，該研究提出的方法由兩個分支組成，可以連貫地預測人臉取證檢測和定位，以優於以前在新提出的數據集以及 faceforecsic++ 數據集上的最新技術，尤其是在低質量視頻上。
+
 Bibliography
 
 ```
@@ -1546,6 +1562,8 @@ The method introduced in this paper uses a capsule network to detect various kin
 
 It extends the application of capsule networks beyond their original intention to the solving of inverse graphics problems.
 ```
+
+媒體生成技術的最新進展使攻擊者更容易創建偽造的圖像和視頻，其最先進的方法可以實時創建從社交網絡獲得的單個視頻的偽造版本。儘管已經開發了許多用於檢測偽造圖像和視頻的方法，但它們通常針對某些領域，並且隨著新型攻擊的出現很快就過時了。該研究介紹的方法使用膠囊網絡來檢測各種欺騙，從使用打印圖像或錄製視頻的重放攻擊到使用深度卷積神經網絡的計算機生成視頻，它將膠囊網絡的應用擴展到解決逆圖形問題的初衷之外。
 
 Bibliography
 
@@ -1571,6 +1589,8 @@ We also show that our representations generalise well to other datasets, where t
 We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
 ```
 
+在這項工作中，研究者們研究了卷積網絡深度對其在大規模圖像識別設置中的準確性的影響，該研究的主要貢獻是使用具有非常小的 (3x3) 卷積濾波器的架構對深度增加的網絡進行了全面評估，這表明通過將深度提升到 16-19 個權重層可以實現對現有技術配置的顯著改進，這些發現是研究者們提交 2014 年 ImageNet 挑戰賽的基礎，該研究團隊分別獲得了定位和分類軌道的第一和第二名。該研究還表明，其表示可以很好地推廣到其他數據集，並在這些數據集上取得了最先進的結果。
+
 Bibliography
 
 ```
@@ -1594,6 +1614,8 @@ In this paper, therefore, we first propose a Convolutional Neural Network (CNN) 
 
 In addition, we provide comparative results evaluated on some variants of the proposed CNN architecture, including the high pass filter, the number of the layer groups and the activation function, to further verify the rationality of our method.
 ```
+
+生成對抗網絡 (GAN) 是一種突出的生成模型，廣泛用於各種應用，最近的研究表明，基於這種新穎的模型可以獲得具有高視覺質量的假人臉圖像。如果這些假臉被濫用於圖像篡改，將導致一些潛在的道德、倫理和法律問題。因此，在該研究的研究者們首先提出了一種基於卷積神經網絡（CNN）的方法來識別當前最佳方法生成的假人臉圖像，並提供實驗證據表明該方法可以達到令人滿意的結果，平均準確率超過 99.4 %。此外，研究者們提供了對所提出的 CNN 架構的一些變體進行評估的比較結果，包括高通濾波器、層組數和激活函數，以進一步驗證我們方法的合理性。
 
 Bibliography
 
@@ -1624,6 +1646,8 @@ In a second experiment, in the evaluation of the medium-resolution images of the
 
 Finally, evaluating a low-resolution video sequences of the FaceForensics++ dataset, our method achieves 91% accuracy detecting manipulated videos.
 ```
+
+深度生成模型最近在許多實際應用中取得了令人矚目的成果，成功地從復雜的數據集中生成了高分辨率和多樣化的樣本。由於這種改進，虛假數位內容引起了越來越多的關注並傳播了對圖像內容的不信任，從而迫切需要自動化的方法來檢測這些 AI 生成的虛假圖像。儘管許多人臉編輯算法似乎可以生成逼真的人臉，但經過仔細檢查，它們確實在某些領域表現出偽影，而這些偽影通常是肉眼隱藏的。在這項工作中，研究者提出了一種檢測此類假人臉圖像的簡單方法——所謂的 DeepFakes，該研究的方法基於經典的頻域分析，然後是基本分類器。與需要輸入大量標記數據的先前系統相比，我們的方法僅使用少量帶註釋的訓練樣本就顯示出非常好的結果，甚至在完全無監督的情況下也取得了很好的準確性。對於高分辨率人臉圖像的評估，研究者將幾個真實和虛假人臉的公共數據集組合成一個新的基準：Faces-HQ。鑑於如此高分辨率的圖像，當該研究的方法在少至 20 個帶註釋的樣本上進行訓練時，其方法達到了 100% 的完美分類準確率。在第二個實驗中，在 CelebA 數據集的中等分辨率圖像的評估中，其方法在有監督的情況下達到了 100% 的準確率，在無監督的情況下達到了 96%。最後，評估 FaceForensics++ 數據集的低分辨率視頻序列，該研究的方法檢測操縱影片的準確率達到 91%。
 
 Bibliography
 
@@ -1661,6 +1685,9 @@ This dataset will be available for academic research use per request.
 Our goal of this study is to inspire more research in the field of image forensics through the creation of a dataset and initial analysis.
 ```
 
+深度學習在成像應用方面的巨大成功帶來了許多有益的進步。不幸的是，這一成功也成為了惡意使用的催化劑，例如未經同意就照片般逼真的各方換臉。在這項研究中，研究者們使用深度遷移學習進行人臉交換檢測，顯示出大於 96% 的真陽性率，並且誤報率非常低。與僅提供檢測準確性的現有方法不同，該研究還為每個預測提供不確定性，這對於信任此類檢測系統的部署至關重要。此外，研究者們提供了與人類受試者的比較。為了捕捉人類識別性能，此研究建立了一個網站來收集人類受試者圖像的成對比較。基於這些比較，研究者們推斷出從被認為最真實的圖像到被認為最假的圖像的共識排名，總體而言，結果顯示了該研究的方法有效性。作為這項研究的一部分，研究者們創建了一個新的數據集。
+
+
 Bibliography
 
 ```
@@ -1692,6 +1719,10 @@ Comparing to prior works, FT shows significant improvements in transferability, 
 
 For instance, on unseen examples, we achieve up to 85% in terms of accuracy, and with only a handful of seen examples, our performance already reaches around 95%.
 ```
+
+隨著新的複雜圖像偽造方法的出現，區分偽造圖像和真實圖像變得越來越困難，基於卷積神經網絡 (CNN) 的樸素分類方法在使用特定的偽造方法進行訓練時，在檢測圖像操作方面表現出出色的性能。
+
+然而，在來自看不見的操縱方法的例子中，它們的性能顯著下降，而為了解決可轉移性的這種限制，此研究引入了取證轉移（FT）。研究者們設計了一種基於學習的取證檢測器，它可以很好地適應新領域，即新穎的操作方法，並且可以處理在訓練期間只有少數假樣本可用的場景。為此，研究者學習了一種基於新型自動編碼器架構的取證嵌入，該架構可用於區分真假圖像，其學習嵌入充當異常檢測器的一種形式；即，如果從不可見的方法處理的圖像與真實圖像集群足夠遠，則該圖像將被檢測為假圖像。與之前的工作相比，FT 顯示出可遷移性的顯著改進，該研究在一系列關於尖端基準的實驗中證明了這一點。例如，在未見過的例子上，研究者們的準確率高達 85%，而只有少數可見的例子，該研究性能已經達到了 95% 左右。
 
 Bibliography
 
@@ -1728,6 +1759,8 @@ Moreover, fine-tuning using just a small amount of data enables the network to d
 
 ```
 
+檢測被操縱的圖像和視頻是數字媒體取證中的一個重要課題，大多數檢測方法使用二進制分類來確定查詢被操縱的概率，另一個重要主題是定位被操縱區域（即執行分割），這主要是由三種常用攻擊創建的：刪除、複製移動和拼接。研究者們設計了一個卷積神經網絡，它使用多任務學習方法來同時檢測被操縱的圖像和視頻，並為每個查詢定位被操縱的區域，其通過執行一項任務獲得的信息與另一項任務共享，從而提高兩項任務的性能。另外使用半監督學習方法來提高網絡的可生成性，該網絡包括一個編碼器和一個 Y 形解碼器。編碼特徵的激活用於二進制分類，其解碼器一個分支的輸出用於分割操作區域，而另一個分支的輸出用於重構輸入，這有助於提高整體性能。使用 FaceForensics 和 FaceForensics++ 數據庫的實驗證明了該網絡對面部重演攻擊和面部交換攻擊的有效性，以及它處理先前看到的攻擊的不匹配條件的能力。此外，僅使用少量數據進行微調使網絡能夠處理看不見的攻擊。
+
 Bibliography
 
 ```
@@ -1753,6 +1786,8 @@ To address this shortcoming, we adopt contrastive loss in seeking the typical fe
 
 Experimental results demonstrate that the proposed DeepFD successfully detected 94.7% fake images generated by several state-of-the-art GANs.
 ```
+
+雖然生成對抗網絡 (GAN) 可用於生成逼真的圖像，但這些技術的不當使用會帶來隱藏的問題，例如，GAN 可用於為特定人員和不當事件生成篡改視頻，創建對特定人員有害的圖像，甚至可能影響人身安全，該研究的研究者們將開發一種深度偽造鑑別器（DeepFD）來有效地檢測計算機生成的圖像，其直接學習二元分類器相對比較棘手，因為很難找到共同的判別特徵來判斷不同 GAN 生成的假圖像。為了解決這個缺點，研究者採用對比損失來尋找由不同 GAN 生成的合成圖像的典型特徵，然後連接一個分類器來檢測這些計算機生成的圖像，實驗結果表明，所提出的 DeepFD 成功檢測到由幾個最先進的 GAN 生成的 94.7% 的假圖像。
 
 Bibliography
 
@@ -1785,6 +1820,8 @@ Finally, a classification layer is concatenated to the proposed common fake feat
 
 The experimental results demonstrated that the proposed method significantly outperformed other state-of-the-art fake image detectors.
 ```
+
+生成對抗網絡 (GAN) 可用於從低維隨機噪聲生成照片般逼真的圖像，這種帶有不適當內容的合成（假）圖像可以在社交媒體網絡上使用，這可能會導致嚴重的問題，為了成功檢測假圖像，有效且高效的圖像偽造檢測器是必要的。然而，傳統的圖像偽造檢測器無法識別由基於 GAN 的生成器生成的假圖像，因為這些圖像是從源圖像生成和操縱的。因此，在本文中，研究者們提出了一種基於深度學習的方法，通過使用對比損失來檢測假圖像。首先，採用幾種最先進的 GAN 來生成假-真圖像對。接下來，將簡化的 DenseNet 發展為雙流網絡結構，以允許成對信息作為輸入。然後，使用成對學習來訓練所提出的常見假特徵網絡，以區分假圖像和真實圖像之間的特徵。最後，將分類層連接到所提出的常見假特徵網絡，以檢測輸入圖像是假的還是真的，其實驗結果表明，所提出的方法明顯優於其他最先進的假圖像檢測器。
 
 Bibliography
 
@@ -1820,6 +1857,8 @@ Then, various experiments are carried out to show that the proposed model with a
 Finally, we provided comparative results by applying the proposed CNN architecture on images generated by other GAN researches.
 ```
 
+生成對抗網絡 (GAN) 描述了一種新興的生成模型，該模型在過去幾年中在生成逼真的面部圖像方面取得了令人矚目的進展，結果，即使是用人眼，也越來越難以區分計算機生成的人臉圖像和真實的人臉圖像，如果生成的圖像用於誤導和欺騙讀者，可能會導致嚴重的倫理、道德和法律問題。此外，收集足夠大的用於研究目的的計算機生成人臉識別數據集具有挑戰性，因為現實的計算機生成圖像的數量仍然有限且分散在互聯網上，因此，開發一種用於分析和檢測由 GAN 網絡生成的計算機生成的人臉圖像的新型決策支持系統至關重要。在該研究的研究者們提出了一種定制的捲積神經網絡，即 CGFace，它是專門為計算機生成的人臉檢測任務而設計的，通過自定義卷積層的數量，因此在檢測計算機生成的人臉圖像方面表現良好。之後，通過從 CGFace 層中提取特徵並使用它們來訓練 AdaBoost 和 eXtreme Gradient Boosting (XGB) 來改變 CGFace 的層結構以適應不平衡數據問題，從而創建了一個不平衡框架 (IF-CGFace)。接下來，研究者們將解釋基於最先進的 PCGAN 和 BEGAN 模型生成大型計算機生成數據集的過程。而隨後的進行了各種實驗也表明所提出的具有增強輸入的模型產生了 98% 的最高精度。最後，研究者們通過將所提出的 CNN 架構應用於其他 GAN 研究生成的圖像來提供比較結果。
+
 Bibliography
 
 ```
@@ -1849,6 +1888,8 @@ Through a series of experiments, we demonstrate that our proposed approach can a
 
 The results of these experiments show that our proposed approach can automatically detect several different manipulations with an average accuracy of 99.10%.
 ```
+
+創建偽造品時，偽造者可以使用許多不同的圖像編輯操作來修改圖像，由於法醫檢查員必須對其中的每一項進行測試，因此人們對開發能夠檢測許多不同圖像編輯操作和操作的通用法醫算法產生了極大的興趣，該研究的研究者們提出了一種通用的取證方法來使用深度學習執行操作檢測。具體來說，研究者們提出了一種新的捲積網絡架構，能夠直接從訓練數據中自動學習操作檢測特徵，而在目前的形式中，卷積神經網絡將學習捕捉圖像內容的特徵，而不是操作檢測特徵。為了克服這個問題，該研究開發了一種新形式的捲積層，專門用於抑製圖像的內容並自適應地學習操作檢測特徵，通過一系列實驗，其研究證明了研究者們提出的方法可以自動學習如何檢測多個圖像操作，而不依賴於預先選擇的特徵或任何預處理。這些實驗的結果表明，該研究提出的方法可以自動檢測幾種不同的操作，平均準確率為 99.10%。
 
 Bibliography
 
