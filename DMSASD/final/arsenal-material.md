@@ -2423,6 +2423,8 @@ The best performing method, which is based on visual quality metrics and is ofte
 Our experiments demonstrate that GAN-generated Deepfake videos are challenging for both face recognition systems and existing detection methods, and the further development of face swapping technology will make it even more so.
 ```
 
+通過使用預先訓練的生成對抗網絡 (GAN)，將視頻中的一個人的臉自動替換為另一個人的臉變得越來越容易。最近的公共醜聞，例如，名人的面孔被交換到色情視頻上，需要自動檢測這些 Deepfake 視頻的方法，為了幫助開發此類方法，在本文中，我們展示了第一組從 VidTIMIT 數據庫的視頻中生成的公開可用的 Deepfake 視頻。研究者使用基於 GAN 的開源軟件來創建 Deepfakes，該研究強調訓練和混合參數可以顯著影響結果視頻的質量。為了證明這種影響，研究者使用不同調整的參數集生成了具有低和高視覺質量的視頻（每個 320 個視頻），其研究展示了基於 VGG 和 Facenet 神經網絡的最先進的人臉識別系統容易受到 Deepfake 視頻的攻擊，錯誤接受率分別為 85.62% 和 95.00%，這意味著檢測 Deepfake 視頻的方法是必要的。通過考慮幾種基線方法，我們發現基於口型同步不一致檢測的視聽方法無法區分 Deepfake 視頻。性能最佳的方法，基於視覺質量指標，常用於演示攻擊檢測領域，在高質量 Deepfakes 上的錯誤率為 8.97%，最後的實驗表明，GAN 生成的 Deepfake 視頻對人臉識別系統和現有檢測方法都具有挑戰性，而人臉交換技術的進一步發展將使其變得更加困難。
+
 Bibliography
 
 ```
@@ -2454,6 +2456,8 @@ We evaluate those fast networks on both an existing dataset and a dataset we hav
 The tests demonstrate a very successful detection rate with more than 98% for Deepfake and 95% for Face2Face.
 ```
 
+該研究提出了一種自動有效地檢測視頻中的人臉篡改的方法，特別關注最近用於生成超逼真偽造視頻的兩種技術：Deepfake 和 Face2Face，由於壓縮會嚴重降低數據質量，傳統的圖像取證技術通常不太適合視頻。因此，該研究采用深度學習方法並提出了兩個網絡，兩者都具有較少的層數，以專注於圖像的細觀特性。該研究在現有數據集和研究者從在線視頻構成的數據集上評估這些快速網絡。最後測試證明了非常成功的檢測率，Deepfake 的檢測率超過 98%，Face2Face 的檢測率超過 95%。
+
 Bibliography
 
 ```
@@ -2477,6 +2481,8 @@ We present a new large-scale challenging DeepFake video dataset, Celeb-DF, which
 
 We conduct a comprehensive evaluation of DeepFake detection methods and datasets to demonstrate the escalated level of challenges posed by Celeb-DF.
 ```
+
+AI 合成的換臉視頻，俗稱 DeepFakes，是一個威脅在線信息可信度的新興問題，其開發和評估 DeepFake 檢測算法的需求需要大規模數據集。然而，當前的 DeepFake 數據集視覺質量較低，與互聯網上流傳的 DeepFake 視頻不一樣。該研究提出了一個新的具有挑戰性的大規模 DeepFake 視頻數據集 Celeb-DF，其中包含使用改進的合成過程生成的 5,639 個名人的高質量 DeepFake 視頻。其研究者對 DeepFake 檢測方法和數據集進行了全面評估，以證明 Celeb-DF 帶來的挑戰不斷升級。
 
 Bibliography
 
@@ -2519,6 +2525,7 @@ The DFDC dataset preview can be downloaded at: this http URL(http://deepfakedete
 Bibliography
 
 ```
+在該研究中的研究者們介紹了 Deepfakes Detection Challenge (DFDC) 數據集的預覽，該數據集由 5K 視頻組成，具有兩種面部修改演算法。已經開展了一項數據收集活動，參與的參與者已就在我們創建數據集時使用和操縱他們的肖像達成協議，同時考慮了多個軸（性別、膚色、年齡等）的多樣性，並且演員錄製了具有任意背景的視頻，從而帶來了視覺上的可變性。最後，定義了一組評估性能的特定指標，並測試了兩個現有的檢測深度偽造模型，以提供參考性能基線。
 ```
 
 
@@ -2561,6 +2568,7 @@ We further contribute a comprehensive study that evaluates five representative d
 Bibliography
 
 ```
+研究者展示了其研究為構建面部偽造檢測的大規模基準所做的持續努力，該基準的第一個版本 DeeperForensics-1.0 代表了迄今為止最大的人臉偽造檢測數據集，由 60,000 個視頻組成，總共 1760 萬幀，是現有同類數據集的 10 倍，應用廣泛的現實世界擾動以獲得更大規模和更高多樣性的更具挑戰性的基準，DeeperForensics-1.0 中的所有源視頻都經過精心收集，假視頻由新提出的端到端人臉交換框架生成。經用戶研究驗證，生成視頻的質量優於現有數據集中的質量，該基準具有一個隱藏的測試集，其中包含在人工評估中獲得高欺騙性分數的操縱視頻，研究者進一步貢獻了一項綜合研究，評估五個具有代表性的檢測基線，並對不同的設置進行全面分析。
 ```
 
 
@@ -2624,6 +2632,8 @@ Despite the size of the dataset, some of our models train to convergence in less
 We plan to release code for training a TensorFlow model and for computing metrics.
 ```
 
+計算機視覺的許多最新進展都歸功於大型數據集，用於機器學習的開源軟件包和廉價的商品硬件降低了大規模探索新方法的門檻。可以在幾天內訓練超過數百萬個示例的模型。儘管存在用於圖像理解的大規模數據集，例如 ImageNet，但沒有可比大小的視頻分類數據集。該研究介紹了最大的多標籤視頻分類數據集 YouTube-8M，由約 800 萬個視頻（50 萬小時的視頻）組成，並用 4800 個視覺實體的詞彙表進行註釋，為了獲取視頻及其標籤，研究者使用了 YouTube 視頻註釋系統，該系統使用其主要主題標記視頻。雖然標籤是機器生成的，但它們具有高精度，並且源自各種基於人類的信號，包括元數據和查詢點擊信號，其使用自動和手動策展策略過濾了視頻標籤（知識圖實體），包括詢問人工評估者標籤是否在視覺上可識別。然後，研究者以每秒一幀的速度解碼每個視頻，並使用在 ImageNet 上預訓練的 Deep CNN 在分類層之前立即提取隱藏表示。最後，研究者壓縮了幀特徵並使特徵和視頻級標籤都可供下載。而研究在數據集上訓練了各種（適度的）分類模型，使用流行的評估指標對其進行評估，並將它們作為基線報告。儘管數據集很大，但該研究的一些模型在使用 TensorFlow 的單台機器上訓練不到一天就可以收斂。
+
 Bibliography
 
 ```
@@ -2653,6 +2663,8 @@ Extensive experimental results are presented to confirm that the technique is ab
 
 The method also deals with multiple cloning.
 ```
+
+圖像取證的主要問題之一是確定特定圖像是否真實。當圖像被用作影響判斷的基本證據時，例如在法庭上，這可能是一項至關重要的任務。為了進行這種取證分析，文獻中已經開發了各種技術儀器。此研究探究圖像是否被偽造的檢測問題；特別是，已經註意到圖像的一個區域被複製然後粘貼到另一個區域以創建複製或取消一些尷尬的東西的情況。通常，為了使圖像補丁適應新的上下文，需要進行幾何變換。為了檢測這種修改，提出了一種基於尺度不變特徵變換（SIFT）的新方法。這種方法使研究者既可以了解是否發生了複製移動攻擊，還可以恢復用於執行克隆的幾何變換。廣泛的實驗結果證實了該技術能夠精確地個體化改變區域，此外，還能夠以高可靠性估計幾何變換參數。該方法還處理多重克隆。
 
 Bibliography
 
@@ -2686,6 +2698,8 @@ From these illuminant estimates, we extract texture- and edge-based features whi
 The classification performance using an SVM meta-fusion classifier is promising. It yields detection rates of 86% on a new benchmark dataset consisting of 200 images, and 83% on 50 images that were collected from the Internet.
 ```
 
+幾十年來，照片一直被用來記錄時空事件，並且經常在法庭上作為證據。雖然攝影師能夠創建模擬圖片的合成，但這個過程非常耗時並且需要專業知識。然而，今天，強大的數字圖像編輯軟件使圖像修改變得簡單。這破壞了大家對照片的信任，尤其是質疑將照片作為真實世界事件證據的問題。該研究分析了一種最常見的攝影操作形式，即圖像合成或拼接。研究者們提出了一種偽造檢測方法，該方法利用圖像照明顏色的細微不一致，其方法是基於機器學習的，並且需要最少的用戶交互。該技術適用於包含兩個或更多人的圖像，並且不需要專家交互來做出篡改決定，為了實現這一點，研究者將來自基於物理和統計的光源估計器的信息整合到類似材料的圖像區域上。從這些光源估計中，該研究者提取基於紋理和邊緣的特徵，然後將其提供給機器學習方法以進行自動決策。使用 SVM 元融合分類器的分類性能是有希望的。它在由 200 張圖像組成的新基準數據集上產生 86% 的檢測率，在從 Internet 收集的 50 張圖像上產生 83% 的檢測率。
+
 Bibliography
 
 ```
@@ -2718,6 +2732,8 @@ The methods are tested both on examples of real forgeries and on non-forged imag
 We also investigate how further image processing applied to the forged image, such as lossy compression or filtering, influences our ability to verify image integrity.
 ```
 
+在假設拍攝圖像的相機可用或該相機拍攝的其他圖像可用的假設下，研究者們提出了一種檢測數字圖像中的偽造品的新方法，其方法基於檢測圖像中各個區域中相機模式噪聲的存在，這是成像傳感器的獨特隨機特性。而偽造區域被確定為缺少圖案噪聲的區域。噪聲的存在是使用相關性確定的，如在擴頻水印的檢測中。研究者們提出了兩種方法在第一個中，用戶選擇一個區域進行完整性驗證。第二種方法試圖在不假設任何先驗知識的情況下自動確定偽造區域。這些方法在真實偽造的例子和非偽造圖像上都進行了測試，其研究者還研究了應用於偽造圖像的進一步圖像處理，例如有損壓縮或過濾，如何影響驗證圖像完整性的能力。
+
 Bibliography
 
 ```
@@ -2737,6 +2753,8 @@ In spite of its effectiveness in many scenarios, the proposed method fails to de
 
 In this work we propose a modified version of the detection algorithm described in, based on a preliminary segmentation of the image, which guarantees a better detection performance for small size additive forgeries.
 ```
+
+最近引入了光響應非均勻性 (PRNU) 作為檢測圖像偽造的強大工具，儘管它在許多情況下都有效，但所提出的方法無法檢測到小的操作。在這項工作中，研究者基於圖像的初步分割提出了中描述的檢測算法的修改版本，這保證了對小尺寸加法偽造品的更好檢測性能。
 
 Bibliography
 
@@ -2769,6 +2787,8 @@ Steganalysis built around rich image models combined with ensemble classifiers i
 
 ```
 
+該研究描述了一種新的通用策略，用於為數字圖像構建隱寫檢測器，該過程首先組裝一個豐富的噪聲分量模型，作為由使用線性和非線性高通濾波器獲得的量化圖像噪聲殘差的相鄰樣本的聯合分佈形成的許多不同子模型的聯合。與以前的方法相比，研究者使模型組裝成為訓練過程的一部分，該過程由從相應的覆蓋和隱秘源中抽取的樣本驅動。集成分類器用於組裝模型以及最終的隱寫分析器，因為它們的計算複雜度低並且能夠有效地處理高維特徵空間和大型訓練集。該研究在三種隱寫算法上演示了所提出的框架，這些演算法旨在隱藏空間域中表示的圖像中的消息：HUGO、Luo 的邊緣自適應算法和優化編碼的三元 ±1 嵌入。對於每種算法，研究者應用一種簡單的子模型選擇技術來提高每個模型維度的檢測精度，並展示檢測如何隨著豐富模型的複雜性增加而飽和。通過觀察不同子模型如何參與檢測之間的差異，揭示了嵌入和檢測之間有趣的相互作用。圍繞豐富的圖像模型構建的隱寫分析與集成分類器相結合，是為廣泛的隱寫方案自動化隱寫分析的一個有前途的方向。
+
 Bibliography
 
 ```
@@ -2799,6 +2819,8 @@ For a tampered image which is saved in lossless compressed format, we also propo
 Extensive experiments on large scale databases prove the effectiveness of our proposed method and demonstrate that our method is suitable for locating tampered regions with different scales.
 ```
 
+本研究專注於局部圖像篡改檢測。對於JPEG圖像，其DCT係數的概率分佈會受到篡改操作的干擾，篡改區域和未改動區域分佈不同，是定位篡改的重要線索。基於未量化的ac DCT係數的拉普拉斯分佈假設，可以估計這兩個分佈以及被篡改區域的大小，從而得到每個DCT塊被篡改的概率，當研究者考慮常見篡改區域的先驗知識時，可以獲得更準確的定位結果，其研究者還設計了三種可以區分真實篡改區域和虛假區域的特徵，以減少誤報。對於以無損壓縮格式保存的篡改圖像，而研究者還提出了一種專門的方法，該方法利用高頻DCT係數的量化噪聲來提高篡改定位性能。在大規模數據庫上的大量實驗證明了該研究提出的方法的有效性，並證明其方法適用於定位不同尺度的篡改區域。
+
 Bibliography
 
 ```
@@ -2823,6 +2845,8 @@ We add a suitable amount of Gaussian noise to a resized and JPEG compressed imag
 The controlled Gaussian noise addition works better than median filtering and weighted averaging based filtering for suppressing the JPEG induced periodicity.
 ```
 
+影響大多數圖像大小調整檢測算法的一個常見問題是它們容易受到 JPEG 壓縮的影響，這是因為 JPEG 引入了周期性偽影，因為它適用於 8×8 塊。研究者提出了一種新穎但反直覺的技術，通過添加高斯噪聲來“去噪”JPEG 圖像。其研究者將適量的高斯噪聲添加到調整大小和 JPEG 壓縮的圖像中，以便抑制由於 JPEG 壓縮而導致的周期性，而由於調整大小而導致的周期性得以保留，受控的高斯噪聲添加比中值濾波和基於加權平均的濾波更有效地抑制 JPEG 引起的周期性。
+
 Bibliography
 
 ```
@@ -2842,6 +2866,8 @@ New probability models for the DCT coefficients of singly and doubly compressed 
 
 Based on such models, the probability for each DCT block to be forged is derived. Experimental results demonstrate a better discriminating behavior with respect to previously proposed methods.
 ```
+
+在本文中，研究者提出了一種統計測試來區分 JPEG 圖像中的原始區域和偽造區域，假設前者是雙重壓縮的，而後者是單次壓縮的。提出了單壓縮和雙壓縮區域DCT係數的新概率模型，以及雙壓縮情況下估計主量化因子的可靠方法，基於這樣的模型，推導出每個 DCT 塊被偽造的概率。 實驗結果證明了相對於先前提出的方法更好的區分行為。
 
 Bibliography
 
@@ -2865,6 +2891,8 @@ Our method estimates local noise variances based on an observation that kurtosis
 We demonstrate the efficacy and robustness of our method based on several sets of forged images generated with image splicing.
 ```
 
+圖像拼接是一種簡單而常見的圖像篡改操作，將圖像中的選定區域粘貼到另一張圖像中，目的是改變其內容。該研究基於來自不同來源的圖像往往具有由傳感器或後處理步驟引入的不同數量的噪聲，研究者描述了一種通過檢測局部噪聲方差的不一致性來暴露圖像拼接的有效方法，其方法基於以下觀察估計局部噪聲方差：帶通濾波域中自然圖像的峰度值傾向於集中在一個恆定值附近，並通過使用積分圖像來加速。最後基於通過圖像拼接生成的幾組偽造圖像證明了我們方法的有效性和魯棒性。
+
 Bibliography
 
 ```
@@ -2887,6 +2915,8 @@ The proposed method is based on a new feature measuring the presence of demosaic
 
 Experimental results on different cameras equipped with different demosaicking algorithms demonstrate both the validity of the theoretical model and the effectiveness of our scheme.
 ```
+
+該研究提出了一種能夠區分數碼相機捕獲的圖像中的原始區域和偽造區域的取證工具，研究者假設圖像是使用濾色器陣列獲取的，並且由於去馬賽克算法，篡改會消除偽影，其所提出的方法是基於一個新的特徵來測量局部水平的去馬賽克偽影的存在，以及一個新的統計模型，允許推導出每個 2 × 2 圖像塊的篡改概率，而無需先驗地知道偽造的位置。最後在配備不同去馬賽克算法的不同相機上的實驗結果證明了理論模型的有效性和方案的有效性。
 
 Bibliography
 
@@ -2918,6 +2948,8 @@ Although noiseprints can be used for a large variety of forensic tasks, here we 
 Experiments on several datasets widespread in the forensic community show noiseprint-based methods to provide state-of-the-art performance.
 ```
 
+數字圖像的取證分析在很大程度上依賴於在獲取的圖像上留下的相機內和相機外過程的痕跡，這樣的痕跡代表了一種相機指紋，若能夠恢復它們，通過抑制高級場景內容和其他干擾，可以輕鬆完成多項取證任務。一個值得注意的例子是 PRNU 模式，它可以被視為設備指紋，在多媒體取證中受到了極大的關注。該研究提出了一種提取相機模型指紋的方法，稱為噪聲指紋，其中場景內容在很大程度上被抑制，與模型相關的偽影得到增強。這是通過連體網絡獲得的，該網絡使用來自相同（標籤 +1）或不同（標籤 -1）相機的成對圖像塊進行訓練。儘管噪聲印記可用於多種取證任務，但這裡我們專注於圖像偽造定位，而在廣泛使用的幾個數據集上的實驗表明，基於噪聲印記的方法可以提供最先進的性能。
+
 Bibliography
 
 ```
@@ -2944,6 +2976,8 @@ We then fuse features from the two streams through a bilinear pooling layer to f
 Experiments on four standard image manipulation datasets demonstrate that our two-stream framework outperforms each individual stream, and also achieves state-of-the-art performance compared to alternative methods with robustness to resizing and compression.
 ```
 
+圖像操作檢測不同於傳統的語義對象檢測，因為它更關注篡改偽影而不是圖像內容，這表明需要學習更豐富的特徵，研究者提出了一個雙流 Faster R-CNN 網絡並對其進行端到端訓練，以檢測給定操縱圖像的篡改區域。兩個流之一是 RGB 流，其目的是從 RGB 圖像輸入中提取特徵，以發現篡改偽影，如強對比度差異、不自然的篡改邊界等。另一種是噪聲流，它利用從隱寫分析豐富的模型過濾層中提取的噪聲特徵來發現真實區域和篡改區域之間的噪聲不一致。然後，研究者通過雙線性池化層融合來自兩個流的特徵，以進一步結合這兩種模式的空間共現。對四個標準圖像處理數據集的實驗表明，其雙流框架優於每個單獨的流，並且與具有調整大小和壓縮魯棒性的替代方法相比，還實現了最先進的性能。
+
 Bibliography
 
 ```
@@ -2967,6 +3001,8 @@ The pre-trained CNN is used as patch descriptor to extract dense features from t
 
 The experimental results on several public datasets show that the proposed CNN based model outperforms some state-of-the-art methods.
 ```
+
+該研究提出了一種基於深度學習技術的新圖像偽造檢測方法，該方法利用卷積神經網絡 (CNN) 從輸入的 RGB 彩色圖像中自動學習層次表示，所提出的 CNN 專為圖像拼接和復制移動檢測應用而設計，其網絡第一層的權重不是隨機策略，而是使用空間豐富模型 (SRM) 中殘差圖計算中使用的基本高通濾波器集進行初始化，作為正則化器，可以有效地抑制圖像內容並捕獲由篡改操作引入的細微偽影，將預訓練的 CNN 作為補丁描述符從測試圖像中提取密集特徵，然後探索特徵融合技術以獲得 SVM 分類的最終判別特徵。在幾個公共數據集上的實驗結果表明，所提出的基於 CNN 的模型優於一些最先進的方法。
 
 Bibliography
 
@@ -2995,6 +3031,7 @@ After fine-tuning by a very small number of pictures, Fusion-Net is able to disc
 
 Experiments on the benchmark datasets show that our method is effective in various situations and outperform state-of-the-art methods
 ```
+數字拼接是一種常見的圖像偽造類型：圖像的某些區域被其他圖像的內容替換，在篡改圖片中定位更改區域是一項具有挑戰性的工作，因為更改區域和原始區域之間的差異是未知的，因此有必要在大的假設空間中搜索令人信服的結果。該研究提出了一種新穎的深度融合網絡，通過跟踪其邊界來定位篡改區域，首先訓練了一組稱為 Base-Net 的深度卷積神經網絡來分別響應某種類型的拼接偽造。然後，選擇 Base-Net 的一些層並組合為深度融合神經網絡（Fusion-Net），經過極少量的圖片微調後，Fusion-Net 能夠辨別圖像塊是否是從不同來源合成的。在基準數據集上的實驗表明，該研究方法在各種情況下都是有效的，並且優於最先進的方法
 
 Bibliography
 
@@ -3021,6 +3058,8 @@ Our forensics model achieves state of the art results on many benchmarks, despit
 
 Beyond handcrafted benchmarks, we also show promising results spotting fakes on Reddit and The Onion, as well as detecting computer-generated splices.
 ```
+
+照片編輯和操作工具的進步使得創建假圖像變得更加容易，突出了對更好的視覺取證算法的需求，然而，由於缺乏被操縱的視覺內容的良好數據集，學習從標記的訓練數據中檢測操縱是困難的，該研究介紹了一種自我監督方法，用於學習僅使用未標記數據來檢測視覺操作。給定大量帶有自動記錄的 EXIF 元數據的真實照片，研究者訓練一個模型來確定圖像是否是自洽的——也就是說，它的內容是否可以由單個成像管道產生。研究者將這種自我監督學習方法應用於定位拼接圖像內容的任務。其取證模型在許多基准上都取得了最先進的結果，儘管在沒有實際操作示例的情況下進行了訓練，也沒有對特定的檢測線索進行建模。除了手工製作的基準之外，研究者還展示了在 Reddit 和 The Onion 上發現假貨以及檢測計算機生成的拼接的有希望的結果。
 
 Bibliography
 
@@ -3099,6 +3138,9 @@ Such manipulations are now easily generated, for instance, by smartphone cameras
 We also demonstrate good performance on a challenge dataset evaluating a wider range of manipulations in imagery representing ‘in the wild’ conditions.
 ```
 
+隨著通過社交媒體渠道傳播的錯誤信息的興起，以及圖像處理工具的自動化和真實性的提高，圖像取證成為一個越來越重要的問題，經典的圖像取證方法利用低級線索，例如元數據、傳感器噪聲指紋等，當圖像在上傳到 Facebook 等時重新編碼時很容易被愚弄。這需要使用更高級別的物理和語義線索，這些線索曾經在野外難以可靠地估計，但由於計算機視覺的能力越來越強，它們變得更加有效。特別是，該研究的檢測由圖像的人工模糊引入的操作，這會在圖像強度和各種線索之間產生不一致的光度關係。在一個新的模糊操作數據集中，研究者在最具挑戰性的情況下實現了 98% 的準確率，其中模糊在幾何上是正確的並且與場景的一致
+物理安排。這種操作現在很容易生成，例如，通過具有硬件來測量深度的智能手機相機，例如。 iPhone7Plus 的“人像模式”。最後還在挑戰數據集上展示了良好的性能，該數據集評估了代表“野外”條件的圖像中更廣泛的操作。
+
 Bibliography
 
 ```
@@ -3120,6 +3162,8 @@ In addition, we use two different online face swapping applications to create a 
 
 We evaluate the proposed two-stream network on our newly collected dataset. Experimental results demonstrate the effectiveness of our method.
 ```
+
+研究者提出了一種用於人臉篡改檢測的雙流網絡，其訓練 GoogLeNet 以檢測人臉分類流中的篡改偽影，並訓練基於補丁的三元組網絡以利用捕獲局部噪聲殘差和相機特徵的特徵作為第二個流。此外，研究者使用兩個不同的在線人臉交換應用程序來創建一個新的數據集，該數據集由 2010 個篡改圖像組成，每個圖像都包含一個被篡改的人臉。最後在新收集的數據集上評估提出的雙流網絡。 實驗結果證明了其方法的有效性。
 
 Bibliography
 
@@ -3144,6 +3188,8 @@ To optimize quality, the architectural decisions were based on the Hebbian princ
 
 One particular incarnation used in our submission for ILSVRC 2014 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.
 ```
+
+該研究提出了一種代號為“Inception”的深度卷積神經網絡架構，它負責在 2014 年 ImageNet 大規模視覺識別挑戰賽 (ILSVRC 2014) 中為分類和檢測設定新的技術水平，這種架構的主要標誌是提高了網絡內部計算資源的利用率。這是通過精心設計的設計實現的，該設計允許增加網絡的深度和寬度，同時保持計算預算不變，而為了優化質量，架構決策基於赫布原理和多尺度處理的直覺。研究者為 ILSVRC 2014 提交的文件中使用的一個特殊化身稱為 GoogLeNet，這是一個 22 層深度網絡，其質量在分類和檢測的上下文中進行評估。
 
 Bibliography
 
@@ -3170,6 +3216,8 @@ We perform experiments to demonstrate this phenomenon and further develop a clas
 Using features based on this cue, an SVM classifier is evaluated using a set of real face images and Deep Fakes.
 ```
 
+該研究提出了一種新方法來暴露 AI 生成的假人臉圖像或視頻（通常稱為 Deep Fakes），其方法是基於觀察到 Deep Fakes 是通過將合成的人臉區域拼接到原始圖像中來創建的，並且在這樣做的過程中，當從人臉圖像估計 3D 頭部姿勢時可以發現錯誤。研究者進行實驗來證明這種現象，並進一步開發基於這種線索的分類方法。使用基於此線索的特徵，使用一組真實面部圖像和 Deep Fakes 評估 SVM 分類器。
+
 Bibliography
 
 ```
@@ -3192,6 +3240,8 @@ Our method is based on the observations that the facial parts configuration gene
 We perform experiments demonstrating this phenomenon, and show that an SVM classifier trained using the locations of facial landmark points is sufficient to achieve good classification performance for GAN-synthesized faces.
 ```
 
+生成對抗網絡（GAN）最近導致了高度逼真的圖像合成結果。在這項工作中，研究者描述了一種使用面部標誌點的位置來展示 GAN 合成圖像的新方法。其方法是基於觀察到，由於缺乏全局約束，GAN 模型生成的面部部件配置與真實面部不同。研究者進行了演示這種現象的實驗，並表明使用面部標誌點的位置訓練的 SVM 分類器足以為 GAN 合成的面部實現良好的分類性能。
+
 Bibliography
 
 ```
@@ -3213,6 +3263,8 @@ Our method is based on detection of eye blinking in the videos, which is a physi
 
 Our method is evaluated over benchmarks of eye-blinking detection datasets and shows promising performance on detecting videos generated with DNN based software DeepFake.
 ```
+
+深度生成網絡的新發展顯著提高了生成逼真的假人臉視頻的質量和效率。在這項工作中，研究者描述了一種新方法來暴露由深度神經網絡模型生成的假人臉視頻，其方法基於檢測視頻中的眨眼，這是一種生理信號，在合成的假視頻中沒有很好地呈現。該方法在眨眼檢測數據集的基准上進行了評估，並在檢測使用基於 DNN 的軟件 DeepFake 生成的視頻方面表現出良好的性能。
 
 Bibliography
 
@@ -3250,6 +3302,8 @@ We evaluate FakeCatcher on several datasets, resulting with 96%, 94.65%, 91.50%,
 We also analyze signals from various facial regions, under image distortions, with varying segment durations, from different generators, against unseen datasets, and under several dimensionality reduction techniques.
 ```
 
+最近虛假肖像視頻的氾濫對社會、法律和隱私構成了直接威脅。相信政客的假視頻，散佈名人的假色情內容，在法庭上偽造假冒的假視頻作為證據，這些只是深度造假在現實世界中的一些後果。研究者提出了一種檢測肖像視頻中合成內容的新方法，作為針對深度偽造威脅的預防性解決方案。換句話說，該研究引入了一個深度偽造檢測器，研究觀察到，盲目地利用深度學習的檢測器無法有效捕捉虛假內容，因為生成模型會產生非常逼真的結果。其研究者的關鍵斷言是，隱藏在肖像視頻中的生物信號可以用作真實性的隱含描述符，因為它們既不會在空間上也不會在時間上保留在虛假內容中。為了證明和利用這一斷言，該研究首先對成對分離問題進行了幾次信號轉換，達到了 99.39% 的準確率。其次，通過分析建議的信號轉換和相應的特徵集，利用這些發現為虛假內容制定通用分類器。第三，生成新的信號圖並使用 CNN 來改進我們用於檢測合成內容的傳統分類器。最後，發布了一個“在野外”的假肖像視頻數據集，而後在評估過程中收集了該數據集。研究在幾個數據集上評估 FakeCatcher，分別在人臉取證、人臉取證++、CelebDF 和研究本身新的 Deep Fakes 數據集上獲得 96%、94.65%、91.50% 和 91.07% 的準確率。該研究還分析了來自不同面部區域的信號，在圖像失真下，具有不同的片段持續時間，來自不同的生成器，針對看不見的數據集，以及在幾種降維技術下。
+
 Bibliography
 
 ```
@@ -3286,6 +3340,8 @@ The trained Neural-ODE was able to predict the heart rate of our 10 deepfake vid
 To best of our knowledge, this is the first attempt to train a Neural-ODE on original videos to predict the heart rate of fake videos.
 ```
 
+Deepfake 是一種使用計算機代碼操縱視頻的技術，它涉及用另一個人的臉替換視頻中的一個人的臉。視頻處理的自動化意味著 deepfakes 變得越來越普遍和更容易實施，這可以歸功於 FaceApp 和 FakeApp 等應用程序的出現，這些應用程序允許用戶使用智能手機創建自己的 deepfake 視頻。因此，檢測虛假視頻以避免虛假信息的傳播變得至關重要，最近的一項研究表明，假視頻的心率可以用來區分原始視頻和假視頻。在所展示的研究中，研究者獲得了原始視頻的心率並訓練了最先進的神經常微分方程 (Neural-ODE) 模型。然後，研究者使用商業軟件製作了 deepfake 視頻，其十個原始視頻獲得的平均損失為 0.010927，十個捐贈視頻為 0.010041，經過訓練的 Neural-ODE 能夠預測我們使用商業軟件生成的 10 個 deepfake 視頻和 deepfakeTIMI 數據庫的 320 個 deepfake 視頻的 heart rate，據該研究者所知，這是首次嘗試在原始視頻上訓練 Neural-ODE 來預測假視頻的 heart rate。
+
 Bibliography
 
 ```
@@ -3313,6 +3369,8 @@ Since training a DeepFake model to generate negative examples is time-consuming 
 
 Our method is evaluated on two sets of DeepFake video datasets for its effectiveness in practice.
 ```
+
+在這項工作中，研究者描述了一種新的基於深度學習的方法，可以有效地將 AI 生成的假視頻（以下稱為 {\em DeepFake} 視頻）與真實視頻區分開來。其方法基於當前 DeepFake 算法只能生成分辨率有限的圖像的觀察結果，這些圖像需要進一步變形以匹配源視頻中的原始人臉，這種變換在生成的 DeepFake 視頻中留下了獨特的偽影，我們證明它們可以被捲積神經網絡 (CNN) 有效地捕獲，與以前使用大量真實和 DeepFake 生成的圖像來訓練 CNN 分類器的方法相比，該方法不需要 DeepFake 生成的圖像作為負訓練示例，因為研究將仿射面部扭曲中的偽影作為區分真假的顯著特徵圖片。其研究方法的優點有兩個：（1）可以直接對圖像使用簡單的圖像處理操作來模擬這種偽影，使其成為反例。由於訓練 DeepFake 模型生成負樣本既費時又需要資源，因此該研究的方法在訓練數據收集方面節省了大量時間和資源； (2) 由於此類偽影普遍存在於來自不同來源的 DeepFake 視頻中，因此該研究的方法與其他方法相比更加穩健，研究的方法在兩組 DeepFake 視頻數據集上進行了評估，以了解其在實踐中的有效性。
 
 Bibliography
 
@@ -3347,6 +3405,8 @@ Solely due to our extremely deep representations, we obtain a 28% relative impro
 
 Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
 ```
+
+更深層次的神經網絡更難訓練。研究者提出了一個殘差學習框架，以簡化比以前使用的網絡更深的網絡的訓練，該研究明確地將層重新定義為參考層輸入的學習殘差函數，而不是學習未參考的函數。其提供了全面的經驗證據，表明這些殘差網絡更容易優化，並且可以從顯著增加的深度中獲得準確性。在 ImageNet 數據集上，研究者評估深度高達 152 層的殘差網絡——比 VGG 網絡深 8 倍，但仍然具有較低的複雜度，這些殘差網絡的集合在 ImageNet 測試集上實現了 3.57% 的誤差。該結果在 ILSVRC 2015 分類任務中獲得第一名。我們還對具有 100 層和 1000 層的 CIFAR-10 進行了分析。表示的深度對於許多視覺識別任務至關重要，其研究在 COCO 對象檢測數據集上獲得了 28% 的相對改進，深度殘差網絡是該研究提交 ILSVRC 和 COCO 2015 比賽的基礎，研究者還在 ImageNet 檢測、ImageNet 定位、COCO 檢測和 COCO 分割任務中獲得了第一名。
 
 Bibliography
 
@@ -3450,6 +3510,8 @@ We present extensive discussions on challenges, research trends and directions r
 By reviewing the background of deepfakes and state-of-the-art deepfake detection methods, this study provides a comprehensive overview of deepfake techniques and facilitates the development of new and more robust methods to deal with the increasingly challenging deepfakes.
 ```
 
+深度學習已成功應用於解決從大數據分析到計算機視覺和人類水平控制的各種複雜問題，然而，深度學習的進步也被用於創建可能對隱私、民主和國家安全造成威脅的軟件，最近出現的深度學習驅動的應用之一是 deepfake。其 Deepfake 演算法可以創建人類無法區分真實圖像和視頻的虛假圖像和視頻，因此，能夠自動檢測和評估數字視覺媒體完整性的技術的提議是必不可少的，該研究介紹了用於創建深度偽造的算法的調查，更重要的是，介紹了迄今為止文獻中提出的用於檢測深度偽造的方法。研究者對與深度偽造技術相關的挑戰、研究趨勢和方向進行了廣泛的討論。通過回顧 deepfake 的背景和最先進的 deepfake 檢測方法，本研究提供了 deepfake 技術的全面概述，並有助於開發新的、更強大的方法來處理日益具有挑戰性的 deepfake。
+
 Bibliography
 
 ```
@@ -3485,6 +3547,8 @@ In addition, we extensively cover the priors that are used to better constrain t
 
 Finally, we discuss a variety of use cases for the reviewed algorithms in the context of motion capture, facial animation, as well as image and video editing.
 ```
+
+計算機圖形和視覺社區長期致力於構建計算機化工具，以基於視覺輸入重建、跟踪和分析人臉，在過去幾年中取得了快速進展，這導致了新穎而強大的算法，即使在從單個 RGB 或 RGB-D 相機進行重建的極具挑戰性的情況下也能獲得令人印象深刻的結果，隨著這些技術在速度、準確性和易用性方面的進一步提高，應用範圍廣泛且穩步增長，在這一快速進展的推動下，這份最新的報告總結了單眼面部表演捕捉的最新趨勢，並討論了其應用，從基於表演的動畫到實時面部重演。研究將討論重點放在中心任務是使用基於優化的重建算法來恢復和跟踪人臉的三維模型的方法上，同時對現實世界圖像形成的基本概念進行了深入的概述，並討論了使這些算法實用的常見假設和簡化。此外，該研究廣泛涵蓋了用於更好地約束欠約束單目重建問題的先驗，並討論了用於從單目 2D 數據中恢復密集的照片幾何 3D 人臉模型的優化技術。最後，在動作捕捉、面部動畫以及圖像和視頻編輯的背景下討論了所審查算法的各種用例。
 
 Bibliography
 
@@ -3526,6 +3590,8 @@ We then compute an optimal seam through the video volume that maintains temporal
 We showcase the use of our method on a variety of examples and present the result of a user study that suggests our results are difficult to distinguish from real video footage.
 ```
 
+該研究提出了一種替換視頻中面部表演的方法ㄝ研究的方法考慮了源視頻和目標視頻之間在身份、視覺外觀、語音和時間方面的差異。與以前的工作不同，它不需要大量的手動操作或複雜的採集硬件，只需要單機視頻，研究者使用 3D 多線性模型來跟踪兩個視頻中的面部表現，使用相應的 3D 幾何，我們將源扭曲到目標面並重新定時源以匹配目標性能。然後，研究者通過視頻體積計算最佳接縫，以保持最終合成中的時間一致性。
+
 Bibliography
 
 ```
@@ -3555,6 +3621,9 @@ Our system excels in simplicity as it does not rely on a 3D face model, it is ro
 We show convincing reenactment results for videos that we recorded ourselves and for low-quality footage taken from the Internet.
 ```
 
+研究提出了一種基於圖像的面部重演系統，該系統將現有目標視頻中的演員面部替換為源視頻中用戶的面部，同時保留原始目標表現，其系統是全自動的，不需要源表達式數據庫。相反，它能夠從使用現成相機（例如網絡攝像頭）捕獲的短源視頻中產生令人信服的重演結果，用戶在其中執行任意的面部表情，研究者的重演流程被設想為部分圖像檢索和部分面部轉移：圖像檢索基於目標幀的時間聚類和一種新穎的圖像匹配度量，該度量結合了外觀和運動以從源視頻中選擇候選幀，而面部轉移使用保留用戶身份的 2D 變形策略。其系統在簡單性方面表現出色，因為它不依賴於 3D 人臉模型，它在頭部運動下很穩健，並且不需要源和目標性能相似。
+
+
 Bibliography
 
 ```
@@ -3580,6 +3649,9 @@ Our paper builds on high-quality monocular capture of 3D facial performance, lig
 
 We demonstrate plausible visual quality of our results compared to footage that has been professionally dubbed in the traditional way, both qualitatively and through a user study.
 ```
+
+在許多國家，外國電影和電視作品被配音，即演員的原聲被配音演員用該國自己的語言所說的翻譯代替，配音是一個複雜的過程，需要特定的翻譯和準確定時的朗誦，以使新音頻至少粗略地貼合視頻中的嘴巴動作。然而，由於原作和配音語言中的音素和視位序列不同，視頻與音頻的匹配永遠不會完美，這是視覺不適的主要來源，在本文中，研究者提出了一種系統來改變視頻中演員的嘴部動作，使其與新的音軌相匹配。其研究建立在對配音和目標演員的 3D 面部表演、照明和反照率的高質量單目捕捉的基礎上，並結合使用音頻分析和時空檢索方法來合成一個新的照片般逼真的渲染和高度詳細的 3D 形狀嘴區域模型來替換目標性能。
+
 
 Bibliography
 
@@ -3610,6 +3682,8 @@ To this end, we use the Labeled Faces in the Wild (LFW) benchmark and measure th
 
 We show that our intra-subject swapped faces remain as recognizable as their sources, testifying to the effectiveness of our method. In line with well known perceptual studies, we show that better face swapping produces less recognizable inter-subject results. This is the first time this effect was quantitatively demonstrated for machine vision systems.
 ```
+
+研究表明，即使人臉圖像不受約束且任意配對，它們之間的人臉交換實際上也非常簡單。為此，該研究做出以下貢獻。(a) 沒有像其他人之前提出的那樣為人臉分割定制系統，而是展示了標準的全卷積網絡 (FCN) 可以實現非常快速和準確的分割，前提是它在足夠豐富的示例集上進行訓練。為此，描述了新的數據收集和生成例程，這些例程提供了具有挑戰性的分割人臉示例。(b) 使用該研究的分割在前所未有的條件下實現強大的面部交換。(c) 與以前的工作不同，該研究的交換足夠強大，可以進行廣泛的定量測試。為此，研究者使用野外標記人臉 (LFW) 基準測試並測量對象內和對象間人臉交換對識別的影響。研究表明，其受試者內部交換的面孔仍然與其來源一樣可識別，證明了我們方法的有效性。與眾所周知的感知研究一致，而更好的面部交換會產生不太可識別的主體間結果。這是第一次在機器視覺系統中定量證明這種效果。
 
 Bibliography
 
