@@ -580,6 +580,8 @@ Bibliography
 
 3. Das RK, Yang J, Li H. Long range acoustic and deep features perspective on ASVspoof 2019. In: Proc. of the IEEE Automatic Speech Recognition and Understanding Workshop (ASRU). IEEE, 2019. 1018−1025.
 
+Das, R. K., Yang, J., & Li, H. (2019, December). Long range acoustic and deep features perspective on ASVspoof 2019. In 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU) (pp. 1018-1025). IEEE.
+
 Link : https://ieeexplore.ieee.org/document/9003845
 
 Note : 1) ASVspoof2019 資料集，2) 從遠程聲學和深度特徵的角度總結了欺騙檢測的發現且對不同類型的欺騙攻擊的性質和系統開發進行了綜合分析。
@@ -605,11 +607,20 @@ We make a comprehensive analysis on the nature of different kinds of spoofing at
 Bibliography
 
 ```
+@inproceedings{das2019long,
+  title={Long range acoustic and deep features perspective on ASVspoof 2019},
+  author={Das, Rohan Kumar and Yang, Jichen and Li, Haizhou},
+  booktitle={2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)},
+  pages={1018--1025},
+  year={2019},
+  organization={IEEE}
+}
 ```
 
 
 4. Zeinali H, Stafylakis T, Athanasopoulou G, Rohdin J, Gkinis I, Burget L, Cernocky JH. Detecting spoofing attacks using VGG and SincNet: BUT-Omilia submission to ASVspoof 2019 challenge. In: Proc. of the 20th Annual Conf. of the Int’l Speech Communication Association. 2019. 1073−1077.
 
+Zeinali, H., Stafylakis, T., Athanasopoulou, G., Rohdin, J., Gkinis, I., Burget, L., & Černocký, J. (2019). Detecting spoofing attacks using vgg and sincnet: but-omilia submission to asvspoof 2019 challenge. arXiv preprint arXiv:1907.12908.
 
 Link : https://arxiv.org/abs/1907.12908
 
@@ -635,10 +646,18 @@ On the other hand, the results on LA showed that although the proposed architect
 Bibliography
 
 ```
+@article{zeinali2019detecting,
+  title={Detecting spoofing attacks using vgg and sincnet: but-omilia submission to asvspoof 2019 challenge},
+  author={Zeinali, Hossein and Stafylakis, Themos and Athanasopoulou, Georgia and Rohdin, Johan and Gkinis, Ioannis and Burget, Luk{\'a}{\v{s}} and {\v{C}}ernock{\`y}, Jan and others},
+  journal={arXiv preprint arXiv:1907.12908},
+  year={2019}
+}
 ```
 
 
 5. Schörkhuber C, Klapuri A. Constant-Q transform toolbox for music processing. In: Proc. of the 7th Sound and Music Computing Conf. Barcelona, 2010. 3−64.
+
+Schörkhuber, C., & Klapuri, A. (2010, July). Constant-Q transform toolbox for music processing. In 7th sound and music computing conference, Barcelona, Spain (pp. 3-64).
 
 Link : https://core.ac.uk/download/pdf/144846462.pdf
 
@@ -665,10 +684,19 @@ The toolbox includes user-interface tools that facilitate spectral data visualiz
 Bibliography
 
 ```
+@inproceedings{schorkhuber2010constant,
+  title={Constant-Q transform toolbox for music processing},
+  author={Sch{\"o}rkhuber, Christian and Klapuri, Anssi},
+  booktitle={7th sound and music computing conference, Barcelona, Spain},
+  pages={3--64},
+  year={2010}
+}
 ```
 
 
 6. Gomez-Alanis A, Peinado AM, Gonzalez JA, Gomez AM. A light convolutional GRU-RNN deep feature extractor for ASV spoofing detection. In: Proc. of the Interspeech 2019. 2019. 1068−1072.
+
+Gomez-Alanis, A., Peinado, A. M., Gonzalez, J. A., & Gomez, A. M. (2019, September). A light convolutional GRU-RNN deep feature extractor for ASV spoofing detection. In Proc. Interspeech (Vol. 2019, pp. 1068-1072).
 
 Link : https://www.isca-speech.org/archive_v0/Interspeech_2019/pdfs/2212.pdf
 
@@ -691,10 +719,20 @@ Moreover, experiments were also carried out on the ASVspoof 2015 and 2017 corpor
 Bibliography
 
 ```
+@inproceedings{gomez2019light,
+  title={A light convolutional GRU-RNN deep feature extractor for ASV spoofing detection},
+  author={Gomez-Alanis, Alejandro and Peinado, Antonio M and Gonzalez, Jose A and Gomez, Angel M},
+  booktitle={Proc. Interspeech},
+  volume={2019},
+  pages={1068--1072},
+  year={2019}
+}
 ```
 
 
 7. Chen T, Kumar A, Nagarsheth P, Sivaraman G, Khoury E. Generalization of audio Deepfake detection. In: Proc. of the Odyssey 2020 Speaker and Language Recognition Workshop. 2020. 132−137.
+
+Chen, T., Kumar, A., Nagarsheth, P., Sivaraman, G., & Khoury, E. (2020, November). Generalization of audio deepfake detection. In Proc. Odyssey 2020 The Speaker and Language Recognition Workshop (pp. 132-137).
 
 Link : https://www.isca-speech.org/archive_v0/Odyssey_2020/pdfs/29.pdf
 
@@ -725,10 +763,19 @@ Furthermore, the additional improvements proposed in this paper reduce the EER t
 Bibliography
 
 ```
+@inproceedings{chen2020generalization,
+  title={Generalization of audio deepfake detection},
+  author={Chen, Tianxiang and Kumar, Avrosh and Nagarsheth, Parav and Sivaraman, Ganesh and Khoury, Elie},
+  booktitle={Proc. Odyssey 2020 The Speaker and Language Recognition Workshop},
+  pages={132--137},
+  year={2020}
+}
 ```
 
 
 8. Li R, Zhao M, Li Z, Li L, Hong Q. Anti-spoofing speaker verification system with multi-feature integration and multi-task learning. In: Proc. of the Interspeech. 2019. 1048−1052.
+
+Li, R., Zhao, M., Li, Z., Li, L., & Hong, Q. (2019, September). Anti-Spoofing Speaker Verification System with Multi-Feature Integration and Multi-Task Learning. In Interspeech (pp. 1048-1052).
 
 Link : https://www.researchgate.net/publication/335829363_Anti-Spoofing_Speaker_Verification_System_with_Multi-Feature_Integration_and_Multi-Task_Learning
 
@@ -755,11 +802,19 @@ Index Terms: multi-feature integration, multi-task learning,stitching layer, but
 Bibliography
 
 ```
+@inproceedings{li2019anti,
+  title={Anti-Spoofing Speaker Verification System with Multi-Feature Integration and Multi-Task Learning.},
+  author={Li, Rongjin and Zhao, Miao and Li, Zheng and Li, Lin and Hong, Qingyang},
+  booktitle={Interspeech},
+  pages={1048--1052},
+  year={2019}
+}
 ```
 
 
 9. Goswami G, Ratha N, Agarwal A, Singh R, Vatsa M. Unravelling robustness of deep learning based face recognition against adversarial attacks. In: Proc. of the 32nd AAAI Conf. on Artificial Intelligence. 2018. 6829−6836.
 
+Goswami, G., Ratha, N., Agarwal, A., Singh, R., & Vatsa, M. (2018, April). Unravelling robustness of deep learning based face recognition against adversarial attacks. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 32, No. 1).
 
 Link : https://arxiv.org/abs/1803.00401
 
@@ -792,10 +847,20 @@ Finally, we present several effective countermeasures to mitigate the impact of 
 Bibliography
 
 ```
+@inproceedings{goswami2018unravelling,
+  title={Unravelling robustness of deep learning based face recognition against adversarial attacks},
+  author={Goswami, Gaurav and Ratha, Nalini and Agarwal, Akshay and Singh, Richa and Vatsa, Mayank},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={32},
+  number={1},
+  year={2018}
+}
 ```
 
 
 10. Parkhi OM, Vedaldi A, Zisserman A. Deep face recognition. In: Proc. of the British Machine Vision Conf. (BMVC). BMVA Press, 2015. 41.1−41.12.
+
+Parkhi, O. M., Vedaldi, A., & Zisserman, A. (2015). Deep face recognition.
 
 Link : https://www.robots.ox.ac.uk/~vgg/publications/2015/Parkhi15/parkhi15.pdf
 
@@ -823,10 +888,18 @@ second, we traverse through the complexities of deep network training and face r
 Bibliography
 
 ```
+@article{parkhi2015deep,
+  title={Deep face recognition},
+  author={Parkhi, Omkar M and Vedaldi, Andrea and Zisserman, Andrew},
+  year={2015},
+  publisher={British Machine Vision Association}
+}
 ```
 
 
 11. Baltrušaitis T, Robinson P, Morency LP. Openface: An open source facial behavior analysis toolkit. In: Proc. of the IEEE Winter Conf. on Applications of Computer Vision (WACV). IEEE, 2016. 1−10.
+
+Baltrušaitis, T., Robinson, P., & Morency, L. P. (2016, March). Openface: an open source facial behavior analysis toolkit. In 2016 IEEE Winter Conference on Applications of Computer Vision (WACV) (pp. 1-10). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/7477553
 
@@ -851,10 +924,20 @@ Finally, OpenFace allows for easy integration with other applications and device
 Bibliography
 
 ```
+@inproceedings{baltruvsaitis2016openface,
+  title={Openface: an open source facial behavior analysis toolkit},
+  author={Baltru{\v{s}}aitis, Tadas and Robinson, Peter and Morency, Louis-Philippe},
+  booktitle={2016 IEEE Winter Conference on Applications of Computer Vision (WACV)},
+  pages={1--10},
+  year={2016},
+  organization={IEEE}
+}
 ```
 
 
 12. Li X, Ji S, Han M, Ji J, Ren Z, Liu Y, Wu C. Adversarial examples versus cloud-based detectors: A black-box empirical study. arXiv preprint arXiv:1901.01223, 2019.
+
+Li, X., Ji, S., Han, M., Ji, J., Ren, Z., Liu, Y., & Wu, C. (2019). Adversarial examples versus cloud-based detectors: A black-box empirical study. IEEE Transactions on Dependable and Secure Computing, 18(4), 1933-1949.
 
 Link : https://arxiv.org/abs/1901.01223
 
@@ -885,10 +968,22 @@ We also proposed several possible defense strategies for these security challeng
 Bibliography
 
 ```
+@article{li2019adversarial,
+  title={Adversarial examples versus cloud-based detectors: A black-box empirical study},
+  author={Li, Xurong and Ji, Shouling and Han, Meng and Ji, Juntao and Ren, Zhenyu and Liu, Yushan and Wu, Chunming},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  volume={18},
+  number={4},
+  pages={1933--1949},
+  year={2019},
+  publisher={IEEE}
+}
 ```
 
 
 13. Dong Y, Su H, Wu B, Li Z, Liu W, Zhang T, Zhu J. Efficient decision-based black-box adversarial attacks on face recognition. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2019. 7714−7722.
+
+Dong, Y., Su, H., Wu, B., Li, Z., Liu, W., Zhang, T., & Zhu, J. (2019). Efficient decision-based black-box adversarial attacks on face recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 7714-7722).
 
 Link : https://arxiv.org/abs/1904.04433
 
@@ -917,10 +1012,19 @@ We also apply the proposed method to attack a real-world face recognition system
 Bibliography
 
 ```
+@inproceedings{dong2019efficient,
+  title={Efficient decision-based black-box adversarial attacks on face recognition},
+  author={Dong, Yinpeng and Su, Hang and Wu, Baoyuan and Li, Zhifeng and Liu, Wei and Zhang, Tong and Zhu, Jun},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={7714--7722},
+  year={2019}
+}
 ```
 
 
 14. Song Q, Wu Y, Yang L. Attacks on state-of-the-art face recognition using attentional adversarial attack generative network. arXiv preprint arXiv:1811.12026, 2018.
+
+Yang, L., Song, Q., & Wu, Y. (2021). Attacks on state-of-the-art face recognition using attentional adversarial attack generative network. Multimedia Tools and Applications, 80(1), 855-875.
 
 Link : https://arxiv.org/abs/1811.12026
 
@@ -947,10 +1051,22 @@ The generated faces which are hard to arouse the notice of onlookers can evade r
 Bibliography
 
 ```
+@article{yang2021attacks,
+  title={Attacks on state-of-the-art face recognition using attentional adversarial attack generative network},
+  author={Yang, Lu and Song, Qing and Wu, Yingqi},
+  journal={Multimedia Tools and Applications},
+  volume={80},
+  number={1},
+  pages={855--875},
+  year={2021},
+  publisher={Springer}
+}
 ```
 
 
 15. Majumdar P, Agarwal A, Singh R, Vatsa M. Evading face recognition via partial tampering of faces. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops. 2019. 11−20.
+
+Majumdar, P., Agarwal, A., Singh, R., & Vatsa, M. (2019). Evading face recognition via partial tampering of faces. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (pp. 0-0).
 
 Link : https://ieeexplore.ieee.org/abstract/document/9025546
 
@@ -981,10 +1097,19 @@ The proposed network surpasses the performance of the existing baseline deep neu
 Bibliography
 
 ```
+@inproceedings{majumdar2019evading,
+  title={Evading face recognition via partial tampering of faces},
+  author={Majumdar, Puspita and Agarwal, Akshay and Singh, Richa and Vatsa, Mayank},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops},
+  pages={0--0},
+  year={2019}
+}
 ```
 
 
 16. Korshunov P, Marcel S. Vulnerability of face recognition to deep morphing. arXiv preprint arXiv:1910.01933, 2019.
+
+Korshunov, P., & Marcel, S. (2019). Vulnerability of face recognition to deep morphing. arXiv preprint arXiv:1910.01933.
 
 Link : https://arxiv.org/abs/1910.01933
 
@@ -1014,10 +1139,18 @@ Our experiments demonstrate that GAN-generated deep morph videos are challenging
 Bibliography
 
 ```
+@article{korshunov2019vulnerability,
+  title={Vulnerability of face recognition to deep morphing},
+  author={Korshunov, Pavel and Marcel, S{\'e}bastien},
+  journal={arXiv preprint arXiv:1910.01933},
+  year={2019}
+}
 ```
 
 
 17. Schroff F, Kalenichenko D, Philbin J. Facenet: A unified embedding for face recognition and clustering. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2015. 815−823.
+
+Schroff, F., Kalenichenko, D., & Philbin, J. (2015). Facenet: A unified embedding for face recognition and clustering. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 815-823).
 
 Link : https://arxiv.org/abs/1503.03832
 
@@ -1052,9 +1185,18 @@ We also introduce the concept of harmonic embeddings, and a harmonic triplet los
 Bibliography
 
 ```
+@inproceedings{schroff2015facenet,
+  title={Facenet: A unified embedding for face recognition and clustering},
+  author={Schroff, Florian and Kalenichenko, Dmitry and Philbin, James},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={815--823},
+  year={2015}
+}
 ```
 
 18. Szegedy C, Zaremba W, Sutskever I, Bruna J. Intriguing properties of neural networks. In: Proc. of the 2nd Int’l Conf. on Leaning Representations (ICLR). 2014.
+
+Szegedy, C., Zaremba, W., Sutskever, I., Bruna, J., Erhan, D., Goodfellow, I., & Fergus, R. (2013). Intriguing properties of neural networks. arXiv preprint arXiv:1312.6199.
 
 Link : https://arxiv.org/abs/1312.6199
 
@@ -1083,9 +1225,17 @@ In addition, the specific nature of these perturbations is not a random artifact
 Bibliography
 
 ```
+@article{szegedy2013intriguing,
+  title={Intriguing properties of neural networks},
+  author={Szegedy, Christian and Zaremba, Wojciech and Sutskever, Ilya and Bruna, Joan and Erhan, Dumitru and Goodfellow, Ian and Fergus, Rob},
+  journal={arXiv preprint arXiv:1312.6199},
+  year={2013}
+}
 ```
 
 19. Goodfellow IJ, Shlens J, Szegedy C. Explaining and harnessing adversarial examples. In: Proc. of the 3rd Int’l Conf. on Leaning Representations (ICLR). 2015.
+
+Goodfellow, I. J., Shlens, J., & Szegedy, C. (2014). Explaining and harnessing adversarial examples. arXiv preprint arXiv:1412.6572.
 
 Link : https://arxiv.org/abs/1412.6572
 
@@ -1110,10 +1260,18 @@ Using this approach to provide examples for adversarial training, we reduce the 
 Bibliography
 
 ```
+@article{goodfellow2014explaining,
+  title={Explaining and harnessing adversarial examples},
+  author={Goodfellow, Ian J and Shlens, Jonathon and Szegedy, Christian},
+  journal={arXiv preprint arXiv:1412.6572},
+  year={2014}
+}
 ```
 
 
 20. Kurakin A, Goodfellow I, Bengio S. Adversarial examples in the physical world. In: Proc. of the 5th Int’l Conf. on Leaning Representations (ICLR) Workshop. 2017.
+
+Kurakin, A., Goodfellow, I. J., & Bengio, S. (2018). Adversarial examples in the physical world. In Artificial intelligence safety and security (pp. 99-112). Chapman and Hall/CRC.
 
 Link : https://arxiv.org/abs/1607.02533
 
@@ -1144,10 +1302,20 @@ We find that a large fraction of adversarial examples are classified incorrectly
 Bibliography
 
 ```
+@incollection{kurakin2018adversarial,
+  title={Adversarial examples in the physical world},
+  author={Kurakin, Alexey and Goodfellow, Ian J and Bengio, Samy},
+  booktitle={Artificial intelligence safety and security},
+  pages={99--112},
+  year={2018},
+  publisher={Chapman and Hall/CRC}
+}
 ```
 
 
 21. Wang SY, Wang O, Zhang R, Owens A, Efros AA. CNN-generated images are surprisingly easy to spot for now. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 8692−8701.
+
+Kurakin, A., Goodfellow, I. J., & Bengio, S. (2018). Adversarial examples in the physical world. In Artificial intelligence safety and security (pp. 99-112). Chapman and Hall/CRC.
 
 Link : https://arxiv.org/abs/1912.11035
 
@@ -1172,10 +1340,20 @@ https://peterwang512.github.io/CNNDetection/
 Bibliography
 
 ```
+@incollection{kurakin2018adversarial,
+  title={Adversarial examples in the physical world},
+  author={Kurakin, Alexey and Goodfellow, Ian J and Bengio, Samy},
+  booktitle={Artificial intelligence safety and security},
+  pages={99--112},
+  year={2018},
+  publisher={Chapman and Hall/CRC}
+}
 ```
 
 
 22. Neves JC, Tolosana R, Vera-Rodriguez R, Vera-Rodriguez R, Lopes V, Proena H, Fierrez J. Ganprintr: Improved fakes and evaluation of the state-of-the-art in face manipulation detection. IEEE Journal of Selected Topics in Signal Processing, 2020,14(5): 1038−1048.
+
+Neves, J. C., Tolosana, R., Vera-Rodriguez, R., Lopes, V., Proença, H., & Fierrez, J. (2020). Ganprintr: Improved fakes and evaluation of the state of the art in face manipulation detection. IEEE Journal of Selected Topics in Signal Processing, 14(5), 1038-1048.
 
 Link : https://arxiv.org/abs/1911.05351
 
@@ -1206,10 +1384,22 @@ The results obtained in our empirical evaluation show that additional efforts ar
 Bibliography
 
 ```
+@article{neves2020ganprintr,
+  title={Ganprintr: Improved fakes and evaluation of the state of the art in face manipulation detection},
+  author={Neves, Joao C and Tolosana, Ruben and Vera-Rodriguez, Ruben and Lopes, Vasco and Proen{\c{c}}a, Hugo and Fierrez, Julian},
+  journal={IEEE Journal of Selected Topics in Signal Processing},
+  volume={14},
+  number={5},
+  pages={1038--1048},
+  year={2020},
+  publisher={IEEE}
+}
 ```
 
 
 23. Marra F, Gragnaniello D, Cozzolino D, Verdoliva L. Detection of GAN-generated fake images over social networks. In: Proc. of the IEEE Conf. on Multimedia Information Processing and Retrieval (MIPR). IEEE, 2018. 384−389.
+
+Marra, F., Gragnaniello, D., Cozzolino, D., & Verdoliva, L. (2018, April). Detection of gan-generated fake images over social networks. In 2018 IEEE Conference on Multimedia Information Processing and Retrieval (MIPR) (pp. 384-389). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/8397040
 
@@ -1234,10 +1424,20 @@ The study, carried out on a dataset of 36302 images, shows that detection accura
 Bibliography
 
 ```
+@inproceedings{marra2018detection,
+  title={Detection of gan-generated fake images over social networks},
+  author={Marra, Francesco and Gragnaniello, Diego and Cozzolino, Davide and Verdoliva, Luisa},
+  booktitle={2018 IEEE Conference on Multimedia Information Processing and Retrieval (MIPR)},
+  pages={384--389},
+  year={2018},
+  organization={IEEE}
+}
 ```
 
 
 24. Zhang X, Karaman S, Chang SF. Detecting and simulating artifacts in GAN fake images. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). 2019. 1−6.
+
+Zhang, X., Karaman, S., & Chang, S. F. (2019, December). Detecting and simulating artifacts in gan fake images. In 2019 IEEE International Workshop on Information Forensics and Security (WIFS) (pp. 1-6). IEEE.
 
 Link : https://arxiv.org/pdf/1907.06515.pdf
 
@@ -1262,10 +1462,20 @@ By using the simulated images to train a spectrum based classifier, even without
 Bibliography
 
 ```
+@inproceedings{zhang2019detecting,
+  title={Detecting and simulating artifacts in gan fake images},
+  author={Zhang, Xu and Karaman, Svebor and Chang, Shih-Fu},
+  booktitle={2019 IEEE International Workshop on Information Forensics and Security (WIFS)},
+  pages={1--6},
+  year={2019},
+  organization={IEEE}
+}
 ```
 
 
 25. Du M, Pentyala S, Li Y, Hu X. Towards generalizable forgery detection with locality-aware autoencoder. arXiv preprint arXiv: 1909.05999, 2019.
+
+Du, M., Pentyala, S., Li, Y., & Hu, X. (2019). Towards generalizable forgery detection with locality-aware autoencoder.
 
 Link : https://arxiv.org/abs/1909.05999
 
@@ -1294,10 +1504,17 @@ The analysis further shows that LAE outperforms the state-of-the-arts by 6.52%, 
 Bibliography
 
 ```
+@article{du2019towards,
+  title={Towards generalizable forgery detection with locality-aware autoencoder},
+  author={Du, Mengnan and Pentyala, Shiva and Li, Yuening and Hu, Xia},
+  year={2019}
+}
 ```
 
 
 26. Huang R, Fang F, Nguyen HH, Yamagishi J, Echizen I. Security of facial forensics models against adversarial attacks. arXiv preprint arXiv:1911.00660, 2019.
+
+Huang, R., Fang, F., Nguyen, H. H., Yamagishi, J., & Echizen, I. (2020, October). Security of facial forensics models against adversarial attacks. In 2020 IEEE International Conference on Image Processing (ICIP) (pp. 2236-2240). IEEE.
 
 Link : https://arxiv.org/abs/1911.00660
 
@@ -1328,10 +1545,20 @@ These findings provide a baseline for evaluating the adversarial security of FFM
 Bibliography
 
 ```
+@inproceedings{huang2020security,
+  title={Security of facial forensics models against adversarial attacks},
+  author={Huang, Rong and Fang, Fuming and Nguyen, Huy H and Yamagishi, Junichi and Echizen, Isao},
+  booktitle={2020 IEEE International Conference on Image Processing (ICIP)},
+  pages={2236--2240},
+  year={2020},
+  organization={IEEE}
+}
 ```
 
 
 27. Hall HK. Deepfake videos: When seeing isn’t believing. Catholic University Journal of Law and Technology, 2018,27(1):Article No.51.
+
+Hall, H. K. (2018). Deepfake videos: When seeing isn't believing. Cath. UJL & Tech, 27, 51.
 
 Link : https://scholarship.law.edu/jlt/vol27/iss1/4/#:~:text=Videos%2C%20known%20as%20deepfakes%2C%20use,videos%20are%20fact%20or%20fiction.
 
@@ -1352,10 +1579,21 @@ This study examines the potential use of deepfake videos in the democratic proce
 Bibliography
 
 ```
+@article{hall2018deepfake,
+  title={Deepfake videos: When seeing isn't believing},
+  author={Hall, Holly Kathleen},
+  journal={Cath. UJL \& Tech},
+  volume={27},
+  pages={51},
+  year={2018},
+  publisher={HeinOnline}
+}
 ```
 
 
 28. Hasan HR, Salah K. Combating deepfake videos using blockchain and smart contracts. IEEE Access, 2019,7:41596−41606.
+
+Hasan, H. R., & Salah, K. (2019). Combating deepfake videos using blockchain and smart contracts. Ieee Access, 7, 41596-41606.
 
 Link : https://ieeexplore.ieee.org/document/8668407
 
@@ -1388,6 +1626,15 @@ The full code of the smart contract has been made publicly available at Github.
 Bibliography
 
 ```
+@article{hasan2019combating,
+  title={Combating deepfake videos using blockchain and smart contracts},
+  author={Hasan, Haya R and Salah, Khaled},
+  journal={Ieee Access},
+  volume={7},
+  pages={41596--41606},
+  year={2019},
+  publisher={IEEE}
+}
 ```
 
 
@@ -1406,6 +1653,10 @@ Existing law prohibits a person or specified entity from, with actual malice, pr
 Bibliography
 
 ```
+@online{list1029,
+    title     = "The law of California to Deepfake.",
+    url       = "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB730"
+}
 ```
 
 
@@ -1427,10 +1678,16 @@ Note : 网络信息内容生态治理规定
 Bibliography
 
 ```
+@online{list1030,
+    title     = "Regulations of China Internet Information Office on the control of online content.",
+    url       = "http://www.cac.gov.cn/2019-12/20/c_1578375159509309.htm"
+}
 ```
 
 
 31. Nataraj L, Mohammed TM, Chandrasekaran S, Flenner A, Bappy JH, Roy-Chowdhury AK, Manjunath BS. Detecting GAN generated fake images using co-occurrence matrices. Electronic Imaging, 2019,2019(5):532-1−532-7.
+
+Nataraj, L., Mohammed, T. M., Manjunath, B. S., Chandrasekaran, S., Flenner, A., Bappy, J. H., & Roy-Chowdhury, A. K. (2019). Detecting GAN generated fake images using co-occurrence matrices. Electronic Imaging, 2019(5), 532-1.
 
 Link : https://arxiv.org/abs/1903.06836
 
@@ -1455,10 +1712,22 @@ Further, our approach also generalizes well and achieves good results when train
 Bibliography
 
 ```
+@article{nataraj2019detecting,
+  title={Detecting GAN generated fake images using co-occurrence matrices},
+  author={Nataraj, Lakshmanan and Mohammed, Tajuddin Manhar and Manjunath, BS and Chandrasekaran, Shivkumar and Flenner, Arjuna and Bappy, Jawadul H and Roy-Chowdhury, Amit K},
+  journal={Electronic Imaging},
+  volume={2019},
+  number={5},
+  pages={532--1},
+  year={2019},
+  publisher={Society for Imaging Science and Technology}
+}
 ```
 
 
 32. Li H, Li B, Tan S, Huang J. Identification of deep network generated images using disparities in color components. arXiv preprint arXiv:1808.07276, 2018.
+
+Li, H., Li, B., Tan, S., & Huang, J. (2020). Identification of deep network generated images using disparities in color components. Signal Processing, 174, 107616.
 
 Link : https://arxiv.org/abs/1808.07276
 
@@ -1489,10 +1758,21 @@ Moreover, when the GAN model is unknown, our methods also achieves good performa
 Bibliography
 
 ```
+@article{li2020identification,
+  title={Identification of deep network generated images using disparities in color components},
+  author={Li, Haodong and Li, Bin and Tan, Shunquan and Huang, Jiwu},
+  journal={Signal Processing},
+  volume={174},
+  pages={107616},
+  year={2020},
+  publisher={Elsevier}
+}
 ```
 
 
 33. Xuan X, Peng B, Wang W, Dong J. On the generalization of GAN image forensics. In: Proc. of the Chinese Conf. on Biometric Recognition. Cham: Springer-Verlag, 2019. 134−141.
+
+Xuan, X., Peng, B., Wang, W., & Dong, J. (2019, October). On the generalization of GAN image forensics. In Chinese conference on biometric recognition (pp. 134-141). Springer, Cham.
 
 Link : https://paperswithcode.com/paper/on-the-generalization-of-gan-image-forensics
 
@@ -1519,10 +1799,20 @@ Our experimental results also prove the effectiveness of the proposed method.
 Bibliography
 
 ```
+@inproceedings{xuan2019generalization,
+  title={On the generalization of GAN image forensics},
+  author={Xuan, Xinsheng and Peng, Bo and Wang, Wei and Dong, Jing},
+  booktitle={Chinese conference on biometric recognition},
+  pages={134--141},
+  year={2019},
+  organization={Springer}
+}
 ```
 
 
 34. McCloskey S, Albright M. Detecting GAN-generated imagery using color cues. arXiv preprint arXiv:1812.08247, 2018.
+
+McCloskey, S., & Albright, M. (2018). Detecting gan-generated imagery using color cues. arXiv preprint arXiv:1812.08247.
 
 Link : https://arxiv.org/abs/1812.08247
 
@@ -1545,10 +1835,18 @@ We further show that these two cues can be used to distinguish GAN-generated ima
 Bibliography
 
 ```
+@article{mccloskey2018detecting,
+  title={Detecting gan-generated imagery using color cues},
+  author={McCloskey, Scott and Albright, Michael},
+  journal={arXiv preprint arXiv:1812.08247},
+  year={2018}
+}
 ```
 
 
 35. Marra F, Gragnaniello D, Verdoliva L, Poggi G. Do GANs leave artificial fingerprints? In: Proc. of the IEEE Conf. on Multimedia Information Processing and Retrieval (MIPR). IEEE, 2019. 506−511.
+
+Marra, F., Gragnaniello, D., Verdoliva, L., & Poggi, G. (2019, March). Do gans leave artificial fingerprints?. In 2019 IEEE Conference on Multimedia Information Processing and Retrieval (MIPR) (pp. 506-511). IEEE.
 
 Link : https://arxiv.org/abs/1812.11842
 
@@ -1571,10 +1869,20 @@ Source identification experiments with several popular GANs show such fingerprin
 Bibliography
 
 ```
+@inproceedings{marra2019gans,
+  title={Do gans leave artificial fingerprints?},
+  author={Marra, Francesco and Gragnaniello, Diego and Verdoliva, Luisa and Poggi, Giovanni},
+  booktitle={2019 IEEE Conference on Multimedia Information Processing and Retrieval (MIPR)},
+  pages={506--511},
+  year={2019},
+  organization={IEEE}
+}
 ```
 
 
 36. Yu N, Davis LS, Fritz M. Attributing fake images to GANs: Learning and analyzing GAN fingerprints. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 7556−7566.
+
+Yu, N., Davis, L. S., & Fritz, M. (2019). Attributing fake images to gans: Learning and analyzing gan fingerprints. In Proceedings of the IEEE/CVF international conference on computer vision (pp. 7556-7566).
 
 Link : https://arxiv.org/abs/1811.08180
 
@@ -1605,10 +1913,19 @@ Our experiments show that (1) GANs carry distinct model fingerprints and leave s
 Bibliography
 
 ```
+@inproceedings{yu2019attributing,
+  title={Attributing fake images to gans: Learning and analyzing gan fingerprints},
+  author={Yu, Ning and Davis, Larry S and Fritz, Mario},
+  booktitle={Proceedings of the IEEE/CVF international conference on computer vision},
+  pages={7556--7566},
+  year={2019}
+}
 ```
 
 
 37. Wang R, Ma L, Juefei-Xu F, Xie X, Wang J, Liu Y. Fakespotter: A simple baseline for spotting ai-synthesized fake faces. In: Proc. of the 29th Int’l Joint Conf. on Artifical Intelligence (IJCAI). 2020. 3444−3451.
+
+Wang, R., Ma, L., Juefei-Xu, F., Xie, X., Wang, J., & Liu, Y. Fakespotter: A simple baseline for spotting ai-synthesized fake faces. arXiv 2019. arXiv preprint arXiv:1909.06122.
 
 Link : https://arxiv.org/abs/1909.06122
 
@@ -1636,10 +1953,17 @@ Experimental results on detecting four types of fake faces synthesized with the 
 Bibliography
 
 ```
+@article{wang1909fakespotter,
+  title={Fakespotter: A simple baseline for spotting ai-synthesized fake faces. arXiv 2019},
+  author={Wang, R and Ma, L and Juefei-Xu, F and Xie, X and Wang, J and Liu, Y},
+  journal={arXiv preprint arXiv:1909.06122}
+}
 ```
 
 
 38. Chollet F. Xception: Deep learning with depthwise separable convolutions. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2017. 1251−1258.
+
+Chollet, F. (2017). Xception: Deep learning with depthwise separable convolutions. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1251-1258).
 
 Link : https://arxiv.org/abs/1610.02357
 
@@ -1662,10 +1986,19 @@ Since the Xception architecture has the same number of parameters as Inception V
 Bibliography
 
 ```
+@inproceedings{chollet2017xception,
+  title={Xception: Deep learning with depthwise separable convolutions},
+  author={Chollet, Fran{\c{c}}ois},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={1251--1258},
+  year={2017}
+}
 ```
 
 
 39. Songsri-in K, Zafeiriou S. Complement face forensic detection and localization with faciallandmarks. arXiv preprint arXiv:1910. 05455, 2019.
+
+Songsri-in, K., & Zafeiriou, S. (2019). Complement face forensic detection and localization with faciallandmarks. arXiv preprint arXiv:1910.05455.
 
 Link : https://arxiv.org/abs/1910.05455
 
@@ -1692,10 +2025,18 @@ In addition, our proposed method consists of two branches and can coherently pre
 Bibliography
 
 ```
+@article{songsri2019complement,
+  title={Complement face forensic detection and localization with faciallandmarks},
+  author={Songsri-in, Kritaphat and Zafeiriou, Stefanos},
+  journal={arXiv preprint arXiv:1910.05455},
+  year={2019}
+}
 ```
 
 
 40. Nguyen HH, Yamagishi J, Echizen I. Capsule-forensics: Using capsule networks to detect forged images and videos. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP 2019). IEEE, 2019. 2307−2311.
+
+Nguyen, H. H., Yamagishi, J., & Echizen, I. (2019, May). Capsule-forensics: Using capsule networks to detect forged images and videos. In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 2307-2311). IEEE.
 
 Link : https://arxiv.org/pdf/1810.11215.pdf?ref=https://githubhelp.com
 
@@ -1718,10 +2059,20 @@ It extends the application of capsule networks beyond their original intention t
 Bibliography
 
 ```
+@inproceedings{nguyen2019capsule,
+  title={Capsule-forensics: Using capsule networks to detect forged images and videos},
+  author={Nguyen, Huy H and Yamagishi, Junichi and Echizen, Isao},
+  booktitle={ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={2307--2311},
+  year={2019},
+  organization={IEEE}
+}
 ```
 
 
 41. Simonyan K, Zisserman A. Very deep convolutional networks for large-scale image recognition. In: Proc. of the 3rd Int’l Conf. on Learning Representations (ICLR). 2015.
+
+Simonyan, K., & Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556.
 
 Link : https://arxiv.org/abs/1409.1556
 
@@ -1744,10 +2095,18 @@ We have made our two best-performing ConvNet models publicly available to facili
 Bibliography
 
 ```
+@article{simonyan2014very,
+  title={Very deep convolutional networks for large-scale image recognition},
+  author={Simonyan, Karen and Zisserman, Andrew},
+  journal={arXiv preprint arXiv:1409.1556},
+  year={2014}
+}
 ```
 
 
 42. Mo H, Chen B, Luo W. Fake faces identification via convolutional neural network. In: Proc. of the 6th ACM Workshop on Information Hiding and Multimedia Security. 2018. 43−47.
+
+Mo, H., Chen, B., & Luo, W. (2018, June). Fake faces identification via convolutional neural network. In Proceedings of the 6th ACM workshop on information hiding and multimedia security (pp. 43-47).
 
 Link : https://dl.acm.org/doi/10.1145/3206004.3206009
 
@@ -1770,10 +2129,19 @@ In addition, we provide comparative results evaluated on some variants of the pr
 Bibliography
 
 ```
+@inproceedings{mo2018fake,
+  title={Fake faces identification via convolutional neural network},
+  author={Mo, Huaxiao and Chen, Bolin and Luo, Weiqi},
+  booktitle={Proceedings of the 6th ACM workshop on information hiding and multimedia security},
+  pages={43--47},
+  year={2018}
+}
 ```
 
 
 43. Durall R, Keuper M, Pfreundt FJ, Keuper J. Unmasking DeepFakes with simple features. arXiv preprint arXiv:1911.00686, 2019.
+
+Durall, R., Keuper, M., Pfreundt, F. J., & Keuper, J. (2019). Unmasking deepfakes with simple features. arXiv preprint arXiv:1911.00686.
 
 Link : https://arxiv.org/abs/1911.00686
 
@@ -1802,10 +2170,18 @@ Finally, evaluating a low-resolution video sequences of the FaceForensics++ data
 Bibliography
 
 ```
+@article{durall2019unmasking,
+  title={Unmasking deepfakes with simple features},
+  author={Durall, Ricard and Keuper, Margret and Pfreundt, Franz-Josef and Keuper, Janis},
+  journal={arXiv preprint arXiv:1911.00686},
+  year={2019}
+}
 ```
 
 
 44. Ding X, Raziei Z, Larson EC, Olinick EV, Krueger PS, Hahsler M. Swapped face detection using deep learning and subjective assessment. EURASIP Journal on Information Security, 2020(2020):Article No.6.
+
+Ding, X., Raziei, Z., Larson, E. C., Olinick, E. V., Krueger, P., & Hahsler, M. (2020). Swapped face detection using deep learning and subjective assessment. EURASIP Journal on Information Security, 2020(1), 1-12.
 
 Link : https://jis-eurasipjournals.springeropen.com/articles/10.1186/s13635-020-00109-8
 
@@ -1841,10 +2217,22 @@ Our goal of this study is to inspire more research in the field of image forensi
 Bibliography
 
 ```
+@article{ding2020swapped,
+  title={Swapped face detection using deep learning and subjective assessment},
+  author={Ding, Xinyi and Raziei, Zohreh and Larson, Eric C and Olinick, Eli V and Krueger, Paul and Hahsler, Michael},
+  journal={EURASIP Journal on Information Security},
+  volume={2020},
+  number={1},
+  pages={1--12},
+  year={2020},
+  publisher={SpringerOpen}
+}
 ```
 
 
 45. Cozzolino D, Thies J, Rössler A, Riess C, Niebner M, Verdoliva L. Forensictransfer: Weakly-supervised domain adaptation for forgery detection. arXiv preprint arXiv:1812.02510, 2018.
+
+Cozzolino, D., Thies, J., Rössler, A., Riess, C., Nießner, M., & Verdoliva, L. (2018). Forensictransfer: Weakly-supervised domain adaptation for forgery detection. arXiv preprint arXiv:1812.02510.
 
 Link : https://arxiv.org/abs/1812.02510
 
@@ -1877,10 +2265,18 @@ For instance, on unseen examples, we achieve up to 85% in terms of accuracy, and
 Bibliography
 
 ```
+@article{cozzolino2018forensictransfer,
+  title={Forensictransfer: Weakly-supervised domain adaptation for forgery detection},
+  author={Cozzolino, Davide and Thies, Justus and R{\"o}ssler, Andreas and Riess, Christian and Nie{\ss}ner, Matthias and Verdoliva, Luisa},
+  journal={arXiv preprint arXiv:1812.02510},
+  year={2018}
+}
 ```
 
 
 46. Nguyen HH, Fang F, Yamagishi J, Echizen I. Multi-task learning for detecting and segmenting manipulated facial images and videos. arXiv preprint arXiv:1906.06876, 2019.
+
+Nguyen, H. H., Fang, F., Yamagishi, J., & Echizen, I. (2019). Multi-task learning for detecting and segmenting manipulated facial images and videos. arXiv preprint arXiv:1906.06876.
 
 Link : https://arxiv.org/abs/1906.06876
 
@@ -1914,10 +2310,18 @@ Moreover, fine-tuning using just a small amount of data enables the network to d
 Bibliography
 
 ```
+@article{nguyen2019multi,
+  title={Multi-task learning for detecting and segmenting manipulated facial images and videos},
+  author={Nguyen, Huy H and Fang, Fuming and Yamagishi, Junichi and Echizen, Isao},
+  journal={arXiv preprint arXiv:1906.06876},
+  year={2019}
+}
 ```
 
 
 47. Hsu CC, Lee CY, Zhuang YX. Learning to detect fake face images in the wild. In: Proc. of the Int’l Symp. on Computer, Consumer and Control (IS3C). IEEE, 2018. 388−391.
+
+Hsu, C. C., Lee, C. Y., & Zhuang, Y. X. (2018, December). Learning to detect fake face images in the wild. In 2018 International Symposium on Computer, Consumer and Control (IS3C) (pp. 388-391). IEEE.
 
 Link : https://arxiv.org/abs/1809.08754
 
@@ -1942,10 +2346,20 @@ Experimental results demonstrate that the proposed DeepFD successfully detected 
 Bibliography
 
 ```
+@inproceedings{hsu2018learning,
+  title={Learning to detect fake face images in the wild},
+  author={Hsu, Chih-Chung and Lee, Chia-Yen and Zhuang, Yi-Xiu},
+  booktitle={2018 International Symposium on Computer, Consumer and Control (IS3C)},
+  pages={388--391},
+  year={2018},
+  organization={IEEE}
+}
 ```
 
 
 48. Hsu CC, Zhuang YX, Lee CY. Deep fake image detection based on pairwise learning. Applied Sciences, 2020,10(1):Article No.370.
+
+Hsu, C. C., Zhuang, Y. X., & Lee, C. Y. (2020). Deep fake image detection based on pairwise learning. Applied Sciences, 10(1), 370.
 
 Link : https://www.researchgate.net/publication/338382561_Deep_Fake_Image_Detection_Based_on_Pairwise_Learning
 
@@ -1976,10 +2390,22 @@ The experimental results demonstrated that the proposed method significantly out
 Bibliography
 
 ```
+@article{hsu2020deep,
+  title={Deep fake image detection based on pairwise learning},
+  author={Hsu, Chih-Chung and Zhuang, Yi-Xiu and Lee, Chia-Yen},
+  journal={Applied Sciences},
+  volume={10},
+  number={1},
+  pages={370},
+  year={2020},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
 ```
 
 
 49. Dang LM, Hassan SI, Im S, Lee J, Lee S, Moon H. Deep learning based computer generated face identification using convolutional neural network. Applied Sciences, 2018,8(12):Article No.2610.
+
+Dang, L. M., Hassan, S. I., Im, S., Lee, J., Lee, S., & Moon, H. (2018). Deep learning based computer generated face identification using convolutional neural network. Applied Sciences, 8(12), 2610.
 
 Link : https://www.researchgate.net/publication/329652579_Deep_Learning_Based_Computer_Generated_Face_Identification_Using_Convolutional_Neural_Network
 
@@ -2012,10 +2438,22 @@ Finally, we provided comparative results by applying the proposed CNN architectu
 Bibliography
 
 ```
+@article{dang2018deep,
+  title={Deep learning based computer generated face identification using convolutional neural network},
+  author={Dang, L Minh and Hassan, Syed Ibrahim and Im, Suhyeon and Lee, Jaecheol and Lee, Sujin and Moon, Hyeonjoon},
+  journal={Applied Sciences},
+  volume={8},
+  number={12},
+  pages={2610},
+  year={2018},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
 ```
 
 
 50. Bayar B, Stamm MC. A deep learning approach to universal image manipulation detection using a new convolutional layer. In: Proc. of the 4th ACM Workshop on Information Hiding and Multimedia Security. 2016. 5−10.
+
+Bayar, B., & Stamm, M. C. (2016, June). A deep learning approach to universal image manipulation detection using a new convolutional layer. In Proceedings of the 4th ACM workshop on information hiding and multimedia security (pp. 5-10).
 
 Link : https://misl.ece.drexel.edu/wp-content/uploads/2017/07/Bayar_IHMMSec_2016.pdf
 
@@ -2044,10 +2482,19 @@ The results of these experiments show that our proposed approach can automatical
 Bibliography
 
 ```
+@inproceedings{bayar2016deep,
+  title={A deep learning approach to universal image manipulation detection using a new convolutional layer},
+  author={Bayar, Belhassen and Stamm, Matthew C},
+  booktitle={Proceedings of the 4th ACM workshop on information hiding and multimedia security},
+  pages={5--10},
+  year={2016}
+}
 ```
 
 
 51. Dang H, Liu F, Stehouwer J, Liu X, Jain A. On the detection of digital face manipulation. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 5780−5789.
+
+Dang, H., Liu, F., Stehouwer, J., Liu, X., & Jain, A. K. (2020). On the detection of digital face manipulation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern recognition (pp. 5781-5790).
 
 Link : https://arxiv.org/abs/1910.01717
 
@@ -2076,10 +2523,19 @@ We show that the use of an attention mechanism improves facial forgery detection
 Bibliography
 
 ```
+@inproceedings{dang2020detection,
+  title={On the detection of digital face manipulation},
+  author={Dang, Hao and Liu, Feng and Stehouwer, Joel and Liu, Xiaoming and Jain, Anil K},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern recognition},
+  pages={5781--5790},
+  year={2020}
+}
 ```
 
 
 52. Rahmouni N, Nozick V, Yamagishi J, Echizen I. Distinguishing computer graphics from natural images using convolution neural networks. In: Proc. of the IEEE Workshop on Information Forensics and Security (WIFS). IEEE, 2017. 1−6.
+
+Rahmouni, N., Nozick, V., Yamagishi, J., & Echizen, I. (2017, December). Distinguishing computer graphics from natural images using convolution neural networks. In 2017 IEEE Workshop on Information Forensics and Security (WIFS) (pp. 1-6). IEEE.
 
 Link : http://www-igm.univ-mlv.fr/~vnozick/publications/Rahmouni_WIFS_2017/Rahmouni_WIFS_2017.pdf
 
@@ -2100,11 +2556,20 @@ We evaluate our work on recent photo-realistic computer graphics and show that i
 Bibliography
 
 ```
-
+@inproceedings{rahmouni2017distinguishing,
+  title={Distinguishing computer graphics from natural images using convolution neural networks},
+  author={Rahmouni, Nicolas and Nozick, Vincent and Yamagishi, Junichi and Echizen, Isao},
+  booktitle={2017 IEEE Workshop on Information Forensics and Security (WIFS)},
+  pages={1--6},
+  year={2017},
+  organization={IEEE}
+}
 ```
 
 
 53. Li X, Yu K, Ji S, Wang Y, Wu C, Xue H. Fighting against Deepfake: Patch&Pair convolutional neural networks (PPCNN). In: Proc. of the Companion Web Conf. 2020. 2020. 88−89.
+
+Li, X., Yu, K., Ji, S., Wang, Y., Wu, C., & Xue, H. (2020, April). Fighting against deepfake: Patch&pair convolutional neural networks (PPCNN). In Companion Proceedings of the Web Conference 2020 (pp. 88-89).
 
 Link : https://dl.acm.org/doi/fullHtml/10.1145/3366424.3382711
 
@@ -2121,10 +2586,19 @@ Through the comprehensive evaluations on public datasets, we demonstrate that ou
 Bibliography
 
 ```
+@inproceedings{li2020fighting,
+  title={Fighting against deepfake: Patch\&pair convolutional neural networks (PPCNN)},
+  author={Li, Xurong and Yu, Kun and Ji, Shouling and Wang, Yan and Wu, Chunming and Xue, Hui},
+  booktitle={Companion Proceedings of the Web Conference 2020},
+  pages={88--89},
+  year={2020}
+}
 ```
 
 
 54. Brockschmidt J, Shang J, Wu J. On the generality of facial forgery detection. In: Proc. of the IEEE 16th Int’l Conf. on Mobile Ad Hoc and Sensor Systems Workshops (MASSW). IEEE, 2019. 43−47.
+
+Brockschmidt, J., Shang, J., & Wu, J. (2019, November). On the generality of facial forgery detection. In 2019 IEEE 16th International Conference on Mobile Ad Hoc and Sensor Systems Workshops (MASSW) (pp. 43-47). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/9059392
 
@@ -2158,10 +2632,20 @@ We loosely extrapolate these results to similar CNN architectures and emphasize 
 Bibliography
 
 ```
+@inproceedings{brockschmidt2019generality,
+  title={On the generality of facial forgery detection},
+  author={Brockschmidt, Joshua and Shang, Jiacheng and Wu, Jie},
+  booktitle={2019 IEEE 16th International Conference on Mobile Ad Hoc and Sensor Systems Workshops (MASSW)},
+  pages={43--47},
+  year={2019},
+  organization={IEEE}
+}
 ```
 
 
 55. Sohrawardi SJ, Chintha A, Thai B, Seng S, Hickerson A, Ptucha R, Wright M. Poster: Towards robust open-world detection of Deepfakes. In: Proc. of the ACM SIGSAC Conf. on Computer and Communications Security. 2019. 2613−2615.
+
+Sohrawardi, S. J., Chintha, A., Thai, B., Seng, S., Hickerson, A., Ptucha, R., & Wright, M. (2019, November). Poster: Towards robust open-world detection of deepfakes. In Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (pp. 2613-2615).
 
 Link : https://www.researchgate.net/publication/337092099_Poster_Towards_Robust_Open-World_Detection_of_Deepfakes
 
@@ -2188,10 +2672,19 @@ Results demonstrate accurate detection on both within and mismatched datasets.
 Bibliography
 
 ```
+@inproceedings{sohrawardi2019poster,
+  title={Poster: Towards robust open-world detection of deepfakes},
+  author={Sohrawardi, Saniat Javid and Chintha, Akash and Thai, Bao and Seng, Sovantharith and Hickerson, Andrea and Ptucha, Raymond and Wright, Matthew},
+  booktitle={Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security},
+  pages={2613--2615},
+  year={2019}
+}
 ```
 
 
 56. Agarwal S, Farid H, Gu Y, He M, Nagano K, Li H. Protecting world leaders against deep fakes. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops. 2019. 38−45.
+
+Agarwal, S., Farid, H., Gu, Y., He, M., Nagano, K., & Li, H. (2019, June). Protecting World Leaders Against Deep Fakes. In CVPR workshops (Vol. 1).
 
 Link : https://openaccess.thecvf.com/content_CVPRW_2019/papers/Media%20Forensics/Agarwal_Protecting_World_Leaders_Against_Deep_Fakes_CVPRW_2019_paper.pdf
 
@@ -2217,10 +2710,19 @@ Although not visually apparent, these correlations are often violated by the nat
 Bibliography
 
 ```
+@inproceedings{agarwal2019protecting,
+  title={Protecting World Leaders Against Deep Fakes.},
+  author={Agarwal, Shruti and Farid, Hany and Gu, Yuming and He, Mingming and Nagano, Koki and Li, Hao},
+  booktitle={CVPR workshops},
+  volume={1},
+  year={2019}
+}
 ```
 
 
 57. Amerini I, Galteri L, Caldelli R, Bimbo AD. Deepfake video detection through optical flow based CNN. In: Proc. of the IEEE Int’l Conf. on Computer Vision Workshops. 2019. 1205−1207.
+
+Amerini, I., Galteri, L., Caldelli, R., & Del Bimbo, A. (2019). Deepfake video detection through optical flow based cnn. In Proceedings of the IEEE/CVF international conference on computer vision workshops (pp. 0-0).
 
 Link : https://openaccess.thecvf.com/content_ICCVW_2019/papers/HBU/Amerini_Deepfake_Video_Detection_through_Optical_Flow_Based_CNN_ICCVW_2019_paper.pdf
 
@@ -2243,10 +2745,19 @@ Such a clue is then used as feature to be learned by CNN classifiers. Preliminar
 Bibliography
 
 ```
+@inproceedings{amerini2019deepfake,
+  title={Deepfake video detection through optical flow based cnn},
+  author={Amerini, Irene and Galteri, Leonardo and Caldelli, Roberto and Del Bimbo, Alberto},
+  booktitle={Proceedings of the IEEE/CVF international conference on computer vision workshops},
+  pages={0--0},
+  year={2019}
+}
 ```
 
 
 58. Güera D, Delp EJ. Deepfake video detection using recurrent neural networks. In: Proc. of the 15th IEEE Int’l Conf. on Advanced Video and Signal Based Surveillance (AVSS). IEEE, 2018. 1−6.
+
+Güera, D., & Delp, E. J. (2018, November). Deepfake video detection using recurrent neural networks. In 2018 15th IEEE international conference on advanced video and signal based surveillance (AVSS) (pp. 1-6). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/8639163
 
@@ -2272,10 +2783,20 @@ We show how our system can achieve competitive results in this task while using 
 Bibliography
 
 ```
+@inproceedings{guera2018deepfake,
+  title={Deepfake video detection using recurrent neural networks},
+  author={G{\"u}era, David and Delp, Edward J},
+  booktitle={2018 15th IEEE international conference on advanced video and signal based surveillance (AVSS)},
+  pages={1--6},
+  year={2018},
+  organization={IEEE}
+}
 ```
 
 
 59. Sabir E, Cheng J, Jaiswal A, AbdAlmageed W, Masi I, Natarajan P. Recurrent convolutional strategies for face manipulation detection in videos. arXiv preprint arXiv:1905.00582, 2019.
+
+Sabir, E., Cheng, J., Jaiswal, A., AbdAlmageed, W., Masi, I., & Natarajan, P. (2019). Recurrent convolutional strategies for face manipulation detection in videos. Interfaces (GUI), 3(1), 80-87.
 
 Link : https://arxiv.org/abs/1905.00582
 
@@ -2300,10 +2821,22 @@ Evaluation is performed on the recently introduced FaceForensics++ dataset, impr
 Bibliography
 
 ```
+@article{sabir2019recurrent,
+  title={Recurrent convolutional strategies for face manipulation detection in videos},
+  author={Sabir, Ekraam and Cheng, Jiaxin and Jaiswal, Ayush and AbdAlmageed, Wael and Masi, Iacopo and Natarajan, Prem},
+  journal={Interfaces (GUI)},
+  volume={3},
+  number={1},
+  pages={80--87},
+  year={2019},
+  publisher={CVPR Long Beach, CA, USA}
+}
 ```
 
 
 60. Todisco M, Delgado H, Evans NWD. A new feature for automatic speaker verification anti-spoofing: Constant Q cepstral coefficients. In: Proc. of the Odyssey. 2016. 283−290.
+
+Todisco, M., Delgado, H., & Evans, N. W. (2016, June). A New Feature for Automatic Speaker Verification Anti-Spoofing: Constant Q Cepstral Coefficients. In Odyssey (Vol. 2016, pp. 283-290).
 
 Link : https://www.eurecom.fr/publication/4855
 
@@ -2326,10 +2859,20 @@ In particular, those for a subset of unknown spoofing attacks (for which no matc
 Bibliography
 
 ```
+@inproceedings{todisco2016new,
+  title={A New Feature for Automatic Speaker Verification Anti-Spoofing: Constant Q Cepstral Coefficients.},
+  author={Todisco, Massimiliano and Delgado, H{\'e}ctor and Evans, Nicholas WD},
+  booktitle={Odyssey},
+  volume={2016},
+  pages={283--290},
+  year={2016}
+}
 ```
 
 
 61. Rössler A, Cozzolino D, Verdoliva L, Christian R, Justus T, Matthias N. Faceforensics: A large-scale video dataset for forgery detection in human faces. arXiv preprint arXiv:1803.09179, 2018.
+
+Rössler, A., Cozzolino, D., Verdoliva, L., Riess, C., Thies, J., & Nießner, M. (2018). Faceforensics: A large-scale video dataset for forgery detection in human faces. arXiv preprint arXiv:1803.09179.
 
 Link : https://arxiv.org/abs/1803.09179
 
@@ -2360,10 +2903,18 @@ In addition, we introduce a benchmark evaluation for creating indistinguishable 
 Bibliography
 
 ```
+@article{rossler2018faceforensics,
+  title={Faceforensics: A large-scale video dataset for forgery detection in human faces},
+  author={R{\"o}ssler, Andreas and Cozzolino, Davide and Verdoliva, Luisa and Riess, Christian and Thies, Justus and Nie{\ss}ner, Matthias},
+  journal={arXiv preprint arXiv:1803.09179},
+  year={2018}
+}
 ```
 
 
 62. Rossler A, Cozzolino D, Verdoliva L, Riess C, Thies J, Niessner M. Faceforensics++: Learning to detect manipulated facial images. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 1−11.
+
+Rossler, A., Cozzolino, D., Verdoliva, L., Riess, C., Thies, J., & Nießner, M. (2019). Faceforensics++: Learning to detect manipulated facial images. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 1-11).
 
 Link : https://arxiv.org/abs/1901.08971
 
@@ -2394,10 +2945,19 @@ We show that the use of additional domainspecific knowledge improves forgery det
 Bibliography
 
 ```
+@inproceedings{rossler2019faceforensics++,
+  title={Faceforensics++: Learning to detect manipulated facial images},
+  author={Rossler, Andreas and Cozzolino, Davide and Verdoliva, Luisa and Riess, Christian and Thies, Justus and Nie{\ss}ner, Matthias},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={1--11},
+  year={2019}
+}
 ```
 
 
 63. Korshunov P, Marcel S. Deepfakes: A new threat to face recognition? Assessment and detection. arXiv preprint arXiv:1812.08685, 2018.
+
+Korshunov, P., & Marcel, S. (2018). Deepfakes: a new threat to face recognition? assessment and detection. arXiv preprint arXiv:1812.08685.
 
 Link : https://arxiv.org/abs/1812.08685
 
@@ -2428,6 +2988,12 @@ Our experiments demonstrate that GAN-generated Deepfake videos are challenging f
 Bibliography
 
 ```
+@article{korshunov2018deepfakes,
+  title={Deepfakes: a new threat to face recognition? assessment and detection},
+  author={Korshunov, Pavel and Marcel, S{\'e}bastien},
+  journal={arXiv preprint arXiv:1812.08685},
+  year={2018}
+}
 ```
 
 
@@ -2438,7 +3004,19 @@ Link : http://conradsanderson.id.au/vidtimit/
 Note : 深度伪造开源数据集 VidTIMIT 获取源
 
 
+Bibliography
+
+```
+@online{list1064,
+    title     = "VidTIMIT.",
+    url       = "http://conradsanderson.id.au/vidtimit/"
+}
+```
+
+
 65. Afchar D, Nozick V, Yamagishi J, Echizen I. Mesonet: A compact facial video forgery detection network. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2018. 1−7.
+
+Afchar, D., Nozick, V., Yamagishi, J., & Echizen, I. (2018, December). Mesonet: a compact facial video forgery detection network. In 2018 IEEE international workshop on information forensics and security (WIFS) (pp. 1-7). IEEE.
 
 Link : https://arxiv.org/abs/1809.00888
 
@@ -2461,10 +3039,20 @@ The tests demonstrate a very successful detection rate with more than 98% for De
 Bibliography
 
 ```
+@inproceedings{afchar2018mesonet,
+  title={Mesonet: a compact facial video forgery detection network},
+  author={Afchar, Darius and Nozick, Vincent and Yamagishi, Junichi and Echizen, Isao},
+  booktitle={2018 IEEE international workshop on information forensics and security (WIFS)},
+  pages={1--7},
+  year={2018},
+  organization={IEEE}
+}
 ```
 
 
 66. Li Y, Yang X, Sun P, Qi H, Lyu S. Celeb-DF: A new dataset for Deepfake forensics. arXiv preprint arXiv:1909.12962, 2019.
+
+Li, Y., Yang, X., Sun, P., Qi, H., & Lyu, S. (2019). Celeb-df: A new dataset for deepfake forensics.
 
 Link : https://arxiv.org/abs/1909.12962
 
@@ -2487,6 +3075,11 @@ AI 合成的換臉視頻，俗稱 DeepFakes，是一個威脅在線信息可信�
 Bibliography
 
 ```
+@article{li2019celeb,
+  title={Celeb-df: A new dataset for deepfake forensics},
+  author={Li, Yuezun and Yang, Xin and Sun, Pu and Qi, Honggang and Lyu, Siwei},
+  year={2019}
+}
 ```
 
 
@@ -2500,10 +3093,16 @@ Note : 深度伪造开源数据集,DeepfakeDetection(DFD),363 个不同场景下
 Bibliography
 
 ```
+@online{list1067,
+    title     = "DeepfakeDetection",
+    url       = "https://github.com/ondyari/FaceForensics"
+}
 ```
 
 
 68. Dolhansky B, Howes R, Pflaum B, Baram N, Ferrer C. The Deepfake detection challenge (DFDC) preview dataset. arXiv preprint arXiv:1910.08854, 2019.
+
+Dolhansky, B., Howes, R., Pflaum, B., Baram, N., & Ferrer, C. C. (2019). The deepfake detection challenge (dfdc) preview dataset. arXiv preprint arXiv:1910.08854.
 
 Link : https://arxiv.org/abs/1910.08854
 
@@ -2522,10 +3121,17 @@ Finally, a set of specific metrics to evaluate the performance have been defined
 The DFDC dataset preview can be downloaded at: this http URL(http://deepfakedetectionchallenge.ai/)
 ```
 
+在該研究中的研究者們介紹了 Deepfakes Detection Challenge (DFDC) 數據集的預覽，該數據集由 5K 視頻組成，具有兩種面部修改演算法。已經開展了一項數據收集活動，參與的參與者已就在我們創建數據集時使用和操縱他們的肖像達成協議，同時考慮了多個軸（性別、膚色、年齡等）的多樣性，並且演員錄製了具有任意背景的視頻，從而帶來了視覺上的可變性。最後，定義了一組評估性能的特定指標，並測試了兩個現有的檢測深度偽造模型，以提供參考性能基線。
+
 Bibliography
 
 ```
-在該研究中的研究者們介紹了 Deepfakes Detection Challenge (DFDC) 數據集的預覽，該數據集由 5K 視頻組成，具有兩種面部修改演算法。已經開展了一項數據收集活動，參與的參與者已就在我們創建數據集時使用和操縱他們的肖像達成協議，同時考慮了多個軸（性別、膚色、年齡等）的多樣性，並且演員錄製了具有任意背景的視頻，從而帶來了視覺上的可變性。最後，定義了一組評估性能的特定指標，並測試了兩個現有的檢測深度偽造模型，以提供參考性能基線。
+@article{dolhansky2019deepfake,
+  title={The deepfake detection challenge (dfdc) preview dataset},
+  author={Dolhansky, Brian and Howes, Russ and Pflaum, Ben and Baram, Nicole and Ferrer, Cristian Canton},
+  journal={arXiv preprint arXiv:1910.08854},
+  year={2019}
+}
 ```
 
 
@@ -2538,10 +3144,16 @@ Note : DFDC Unknown Deepfakes 竞赛的正式全部数据
 Bibliography
 
 ```
+@online{list1069,
+    title     = "DFDC.",
+    url       = "https://www.kaggle.com/c/deepfake-detection-challenge/data"
+}
 ```
 
 
 70. Jiang L, Li R, Wu W, Qian C, Loy C. DeeperForensics-1.0: A large-scale dataset for real-world face forgery detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 2020. 2886−2895.
+
+Jiang, L., Li, R., Wu, W., Qian, C., & Loy, C. C. (2020). Deeperforensics-1.0: A large-scale dataset for real-world face forgery detection. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 2889-2898).
 
 Link : https://openaccess.thecvf.com/content_CVPR_2020/html/Jiang_DeeperForensics-1.0_A_Large-Scale_Dataset_for_Real-World_Face_Forgery_Detection_CVPR_2020_paper.html
 
@@ -2565,10 +3177,18 @@ The benchmark features a hidden test set, which contains manipulated videos achi
 We further contribute a comprehensive study that evaluates five representative detection baselines and make a thorough analysis of different settings.
 ```
 
+研究者展示了其研究為構建面部偽造檢測的大規模基準所做的持續努力，該基準的第一個版本 DeeperForensics-1.0 代表了迄今為止最大的人臉偽造檢測數據集，由 60,000 個視頻組成，總共 1760 萬幀，是現有同類數據集的 10 倍，應用廣泛的現實世界擾動以獲得更大規模和更高多樣性的更具挑戰性的基準，DeeperForensics-1.0 中的所有源視頻都經過精心收集，假視頻由新提出的端到端人臉交換框架生成。經用戶研究驗證，生成視頻的質量優於現有數據集中的質量，該基準具有一個隱藏的測試集，其中包含在人工評估中獲得高欺騙性分數的操縱視頻，研究者進一步貢獻了一項綜合研究，評估五個具有代表性的檢測基線，並對不同的設置進行全面分析。
+
 Bibliography
 
 ```
-研究者展示了其研究為構建面部偽造檢測的大規模基準所做的持續努力，該基準的第一個版本 DeeperForensics-1.0 代表了迄今為止最大的人臉偽造檢測數據集，由 60,000 個視頻組成，總共 1760 萬幀，是現有同類數據集的 10 倍，應用廣泛的現實世界擾動以獲得更大規模和更高多樣性的更具挑戰性的基準，DeeperForensics-1.0 中的所有源視頻都經過精心收集，假視頻由新提出的端到端人臉交換框架生成。經用戶研究驗證，生成視頻的質量優於現有數據集中的質量，該基準具有一個隱藏的測試集，其中包含在人工評估中獲得高欺騙性分數的操縱視頻，研究者進一步貢獻了一項綜合研究，評估五個具有代表性的檢測基線，並對不同的設置進行全面分析。
+@inproceedings{jiang2020deeperforensics,
+  title={Deeperforensics-1.0: A large-scale dataset for real-world face forgery detection},
+  author={Jiang, Liming and Li, Ren and Wu, Wayne and Qian, Chen and Loy, Chen Change},
+  booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+  pages={2889--2898},
+  year={2020}
+}
 ```
 
 
@@ -2581,6 +3201,10 @@ Note : 深度伪造开源数据集, synthetic and converted speech, 106 speakers
 Bibliography
 
 ```
+@online{list1071,
+    title     = "ASVspoof 2015 database.",
+    url       = "https://datashare.is.ed.ac.uk/handle/10283/853"
+}
 ```
 
 
@@ -2593,10 +3217,16 @@ Note : 深度伪造开源数据集, synthetic and converted speech, 107 speakers
 Bibliography
 
 ```
+@online{list1072,
+    title     = "ASVspoof 2015 database.",
+    url       = "https://datashare.is.ed.ac.uk/handle/10283/853"
+}
 ```
 
 
 73. Abu-El-Haija S, Kothari N, Lee J, Natsev P, Toderici G, Varadarajan B, Vijayanarasimhan S. Youtube-8m: A large-scale video classification benchmark. arXiv preprint arXiv:1609.08675, 2016.
+
+Abu-El-Haija, S., Kothari, N., Lee, J., Natsev, P., Toderici, G., Varadarajan, B., & Vijayanarasimhan, S. (2016). Youtube-8m: A large-scale video classification benchmark. arXiv preprint arXiv:1609.08675.
 
 Link : https://arxiv.org/abs/1609.08675
 
@@ -2637,10 +3267,18 @@ We plan to release code for training a TensorFlow model and for computing metric
 Bibliography
 
 ```
+@article{abu2016youtube,
+  title={Youtube-8m: A large-scale video classification benchmark},
+  author={Abu-El-Haija, Sami and Kothari, Nisarg and Lee, Joonseok and Natsev, Paul and Toderici, George and Varadarajan, Balakrishnan and Vijayanarasimhan, Sudheendra},
+  journal={arXiv preprint arXiv:1609.08675},
+  year={2016}
+}
 ```
 
 
 74. Amerini I, Ballan L, Caldelli R, Bimbo AD, Serra G. A sift-based forensic method for copy-move attack detection and transformation recovery. IEEE Trans. on Information Forensics and Security, 2011,6(3):1099−1110.
+
+Amerini, I., Ballan, L., Caldelli, R., Del Bimbo, A., & Serra, G. (2011). A sift-based forensic method for copy–move attack detection and transformation recovery. IEEE transactions on information forensics and security, 6(3), 1099-1110.
 
 Link : https://www.researchgate.net/publication/224225329_A_SIFT-Based_Forensic_Method_for_Copy-Move_Attack_Detection_and_Transformation_Recovery
 
@@ -2669,10 +3307,22 @@ The method also deals with multiple cloning.
 Bibliography
 
 ```
+@article{amerini2011sift,
+  title={A sift-based forensic method for copy--move attack detection and transformation recovery},
+  author={Amerini, Irene and Ballan, Lamberto and Caldelli, Roberto and Del Bimbo, Alberto and Serra, Giuseppe},
+  journal={IEEE transactions on information forensics and security},
+  volume={6},
+  number={3},
+  pages={1099--1110},
+  year={2011},
+  publisher={IEEE}
+}
 ```
 
 
 75. De Carvalho TJ, Riess C, Angelopoulou E, Pedrini H, Rocha A. Exposing digital image forgeries by illumination color classification. IEEE Trans. on Information Forensics and Security, 2013,8(7):1182−1194.
+
+De Carvalho, T. J., Riess, C., Angelopoulou, E., Pedrini, H., & de Rezende Rocha, A. (2013). Exposing digital image forgeries by illumination color classification. IEEE Transactions on Information Forensics and Security, 8(7), 1182-1194.
 
 Link : https://ieeexplore.ieee.org/document/6522874
 
@@ -2703,10 +3353,22 @@ The classification performance using an SVM meta-fusion classifier is promising.
 Bibliography
 
 ```
+@article{de2013exposing,
+  title={Exposing digital image forgeries by illumination color classification},
+  author={De Carvalho, Tiago Jos{\'e} and Riess, Christian and Angelopoulou, Elli and Pedrini, Helio and de Rezende Rocha, Anderson},
+  journal={IEEE Transactions on Information Forensics and Security},
+  volume={8},
+  number={7},
+  pages={1182--1194},
+  year={2013},
+  publisher={IEEE}
+}
 ```
 
 
 76. Lukáš J, Fridrich J, Goljan M. Detecting digital image forgeries using sensor pattern noise. In: Proc. of the Security, Steganography, and Watermarking of Multimedia Contents VIII, Vol.6072. Int’l Society for Optics and Photonics, 2006.
+
+Lukáš, J., Fridrich, J., & Goljan, M. (2006, February). Detecting digital image forgeries using sensor pattern noise. In Security, Steganography, and Watermarking of Multimedia Contents VIII (Vol. 6072, pp. 362-372). SPIE.
 
 Link : https://www.spiedigitallibrary.org/conference-proceedings-of-spie/6072/60720Y/Detecting-digital-image-forgeries-using-sensor-pattern-noise/10.1117/12.640109.short?SSO=1
 
@@ -2737,10 +3399,21 @@ We also investigate how further image processing applied to the forged image, su
 Bibliography
 
 ```
+@inproceedings{lukavs2006detecting,
+  title={Detecting digital image forgeries using sensor pattern noise},
+  author={Luk{\'a}{\v{s}}, Jan and Fridrich, Jessica and Goljan, Miroslav},
+  booktitle={Security, Steganography, and Watermarking of Multimedia Contents VIII},
+  volume={6072},
+  pages={362--372},
+  year={2006},
+  organization={SPIE}
+}
 ```
 
 
 77. Chierchia G, Parrilli S, Poggi G, Verdoliva L, Sansone C. PRNU-based detection of small-size image forgeries. In: Proc. of the 17th Int’l Conf. on Digital Signal Processing (DSP). IEEE, 2011. 1−6. 
+
+Chierchia, G., Parrilli, S., Poggi, G., Verdoliva, L., & Sansone, C. (2011, July). PRNU-based detection of small-size image forgeries. In 2011 17th International Conference on Digital Signal Processing (DSP) (pp. 1-6). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/6004957
 
@@ -2759,10 +3432,20 @@ In this work we propose a modified version of the detection algorithm described 
 Bibliography
 
 ```
+@inproceedings{chierchia2011prnu,
+  title={PRNU-based detection of small-size image forgeries},
+  author={Chierchia, Giovanni and Parrilli, Sara and Poggi, Giovanni and Verdoliva, Luisa and Sansone, Carlo},
+  booktitle={2011 17th International Conference on Digital Signal Processing (DSP)},
+  pages={1--6},
+  year={2011},
+  organization={IEEE}
+}
 ```
 
 
 78. Fridrich J, Kodovsky J. Rich models for steganalysis of digital images. IEEE Trans. on Information Forensics and Security, 2012, 7(3):868−882.
+
+Fridrich, J., & Kodovsky, J. (2012). Rich models for steganalysis of digital images. IEEE Transactions on information Forensics and Security, 7(3), 868-882.
 
 Link : https://ieeexplore.ieee.org/document/6197267
 
@@ -2792,10 +3475,22 @@ Steganalysis built around rich image models combined with ensemble classifiers i
 Bibliography
 
 ```
+@article{fridrich2012rich,
+  title={Rich models for steganalysis of digital images},
+  author={Fridrich, Jessica and Kodovsky, Jan},
+  journal={IEEE Transactions on information Forensics and Security},
+  volume={7},
+  number={3},
+  pages={868--882},
+  year={2012},
+  publisher={IEEE}
+}
 ```
 
 
 79. Wang W, Dong J, Tan T. Exploring DCT coefficient quantization effects for local tampering detection. IEEE Trans. on Information Forensics and Security, 2014,9(10):1653−1666.
+
+Wang, W., Dong, J., & Tan, T. (2014). Exploring DCT coefficient quantization effects for local tampering detection. IEEE Transactions on Information Forensics and Security, 9(10), 1653-1666.
 
 Link : https://ieeexplore.ieee.org/document/6871380
 
@@ -2824,10 +3519,22 @@ Extensive experiments on large scale databases prove the effectiveness of our pr
 Bibliography
 
 ```
+@article{wang2014exploring,
+  title={Exploring DCT coefficient quantization effects for local tampering detection},
+  author={Wang, Wei and Dong, Jing and Tan, Tieniu},
+  journal={IEEE Transactions on Information Forensics and Security},
+  volume={9},
+  number={10},
+  pages={1653--1666},
+  year={2014},
+  publisher={IEEE}
+}
 ```
 
 
 80. Nataraj L, Sarkar A, Manjunath BS. Adding gaussian noise to “denoise” JPEG for detecting image resizing. In: Proc. of the 16th IEEE Int’l Conf. on Image Processing (ICIP). IEEE, 2009. 1493−1496.
+
+Nataraj, L., Sarkar, A., & Manjunath, B. S. (2009, November). Adding gaussian noise to “denoise” JPEG for detecting image resizing. In 2009 16th IEEE International Conference on Image Processing (ICIP) (pp. 1493-1496). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/5414609
 
@@ -2850,10 +3557,20 @@ The controlled Gaussian noise addition works better than median filtering and we
 Bibliography
 
 ```
+@inproceedings{nataraj2009adding,
+  title={Adding gaussian noise to “denoise” JPEG for detecting image resizing},
+  author={Nataraj, Lakshmanan and Sarkar, Anindya and Manjunath, Bangalore S},
+  booktitle={2009 16th IEEE International Conference on Image Processing (ICIP)},
+  pages={1493--1496},
+  year={2009},
+  organization={IEEE}
+}
 ```
 
 
 81. Bianchi T, De Rosa A, Piva A. Improved DCT coefficient analysis for forgery localization in JPEG images. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2011. 2444−2447.
+
+Bianchi, T., De Rosa, A., & Piva, A. (2011, May). Improved DCT coefficient analysis for forgery localization in JPEG images. In 2011 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 2444-2447). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/5946978
 
@@ -2872,10 +3589,20 @@ Based on such models, the probability for each DCT block to be forged is derived
 Bibliography
 
 ```
+@inproceedings{bianchi2011improved,
+  title={Improved DCT coefficient analysis for forgery localization in JPEG images},
+  author={Bianchi, Tiziano and De Rosa, Alessia and Piva, Alessandro},
+  booktitle={2011 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={2444--2447},
+  year={2011},
+  organization={IEEE}
+}
 ```
 
 
 82. Pan X, Zhang X, Lyu S. Exposing image splicing with inconsistent local noise variances. In: Proc. of the IEEE Int’l Conf. on Computational Photography (ICCP). IEEE, 2012. 1−10.
+
+Pan, X., Zhang, X., & Lyu, S. (2012, April). Exposing image splicing with inconsistent local noise variances. In 2012 IEEE International Conference on Computational Photography (ICCP) (pp. 1-10). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/6215223
 
@@ -2896,10 +3623,20 @@ We demonstrate the efficacy and robustness of our method based on several sets o
 Bibliography
 
 ```
+@inproceedings{pan2012exposing,
+  title={Exposing image splicing with inconsistent local noise variances},
+  author={Pan, Xunyu and Zhang, Xing and Lyu, Siwei},
+  booktitle={2012 IEEE International Conference on Computational Photography (ICCP)},
+  pages={1--10},
+  year={2012},
+  organization={IEEE}
+}
 ```
 
 
 83. Ferrara P, Bianchi T, De Rosa A, Piva A. Image forgery localization via fine-grained analysis of CFA artifacts. IEEE Trans. on Information Forensics and Security, 2012,7(5):1566−1577.
+
+Ferrara, P., Bianchi, T., De Rosa, A., & Piva, A. (2012). Image forgery localization via fine-grained analysis of CFA artifacts. IEEE Transactions on Information Forensics and Security, 7(5), 1566-1577.
 
 Link : https://ieeexplore.ieee.org/document/6210378
 
@@ -2921,10 +3658,21 @@ Experimental results on different cameras equipped with different demosaicking a
 Bibliography
 
 ```
+@ARTICLE{6210378,
+  author={Ferrara, Pasquale and Bianchi, Tiziano and De Rosa, Alessia and Piva, Alessandro},
+  journal={IEEE Transactions on Information Forensics and Security}, 
+  title={Image Forgery Localization via Fine-Grained Analysis of CFA Artifacts}, 
+  year={2012},
+  volume={7},
+  number={5},
+  pages={1566-1577},
+  doi={10.1109/TIFS.2012.2202227}}
 ```
 
 
 84. Cozzolino D, Verdoliva L. Noiseprint: A CNN-based camera model fingerprint. IEEE Trans. on Information Forensics and Security, 2019,15:144−159.
+
+Cozzolino, D., & Verdoliva, L. (2019). Noiseprint: a CNN-based camera model fingerprint. IEEE Transactions on Information Forensics and Security, 15, 144-159.
 
 Link : https://arxiv.org/abs/1808.08396
 
@@ -2953,10 +3701,21 @@ Experiments on several datasets widespread in the forensic community show noisep
 Bibliography
 
 ```
+@article{cozzolino2019noiseprint,
+  title={Noiseprint: a CNN-based camera model fingerprint},
+  author={Cozzolino, Davide and Verdoliva, Luisa},
+  journal={IEEE Transactions on Information Forensics and Security},
+  volume={15},
+  pages={144--159},
+  year={2019},
+  publisher={IEEE}
+}
 ```
 
 
 85. Zhou P, Han X, Morariu VI, Davis LS. Learning rich features for image manipulation detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 1053−1061.
+
+Zhou, P., Han, X., Morariu, V. I., & Davis, L. S. (2018). Learning rich features for image manipulation detection. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1053-1061).
 
 Link : https://openaccess.thecvf.com/content_cvpr_2018/html/Zhou_Learning_Rich_Features_CVPR_2018_paper.html
 
@@ -2981,10 +3740,19 @@ Experiments on four standard image manipulation datasets demonstrate that our tw
 Bibliography
 
 ```
+@inproceedings{zhou2018learning,
+  title={Learning rich features for image manipulation detection},
+  author={Zhou, Peng and Han, Xintong and Morariu, Vlad I and Davis, Larry S},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={1053--1061},
+  year={2018}
+}
 ```
 
 
 86. Rao Y, Ni J. A deep learning approach to detection of splicing and copy-move forgeries in images. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2016. 1−6.
+
+Rao, Y., & Ni, J. (2016, December). A deep learning approach to detection of splicing and copy-move forgeries in images. In 2016 IEEE International Workshop on Information Forensics and Security (WIFS) (pp. 1-6). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/7823911
 
@@ -3007,10 +3775,20 @@ The experimental results on several public datasets show that the proposed CNN b
 Bibliography
 
 ```
+@inproceedings{rao2016deep,
+  title={A deep learning approach to detection of splicing and copy-move forgeries in images},
+  author={Rao, Yuan and Ni, Jiangqun},
+  booktitle={2016 IEEE International Workshop on Information Forensics and Security (WIFS)},
+  pages={1--6},
+  year={2016},
+  organization={IEEE}
+}
 ```
 
 
 87. Liu B, Pun CM. Deep fusion network for splicing forgery localization. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 237−251.
+
+Liu, B., & Pun, C. M. (2018). Deep fusion network for splicing forgery localization. In Proceedings of the European Conference on Computer Vision (ECCV) Workshops (pp. 0-0).
 
 Link : https://openaccess.thecvf.com/content_ECCVW_2018/papers/11130/Liu_Deep_fusion_network_for_splicing_forgery_localization_ECCVW_2018_paper.pdf
 
@@ -3036,10 +3814,19 @@ Experiments on the benchmark datasets show that our method is effective in vario
 Bibliography
 
 ```
+@inproceedings{liu2018deep,
+  title={Deep fusion network for splicing forgery localization},
+  author={Liu, Bo and Pun, Chi-Man},
+  booktitle={Proceedings of the European Conference on Computer Vision (ECCV) Workshops},
+  pages={0--0},
+  year={2018}
+}
 ```
 
 
 88. Huh M, Liu A, Owens A, Efros A. Fighting fake news: Image splice detection via learned self-consistency. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 101−117.
+
+Huh, M., Liu, A., Owens, A., & Efros, A. A. (2018). Fighting fake news: Image splice detection via learned self-consistency. In Proceedings of the European conference on computer vision (ECCV) (pp. 101-117).
 
 Link : https://openaccess.thecvf.com/content_ECCV_2018/html/Jacob_Huh_Fighting_Fake_News_ECCV_2018_paper.html
 
@@ -3064,10 +3851,19 @@ Beyond handcrafted benchmarks, we also show promising results spotting fakes on 
 Bibliography
 
 ```
+@inproceedings{huh2018fighting,
+  title={Fighting fake news: Image splice detection via learned self-consistency},
+  author={Huh, Minyoung and Liu, Andrew and Owens, Andrew and Efros, Alexei A},
+  booktitle={Proceedings of the European conference on computer vision (ECCV)},
+  pages={101--117},
+  year={2018}
+}
 ```
 
 
 89. Cun X, Pun CM. Image splicing localization via semi-global network and fully connected conditional random fields. In: Proc. of the European Conf. on Computer Vision (ECCV). 2018. 252−266.
+
+Cun, X., & Pun, C. M. (2018). Image splicing localization via semi-global network and fully connected conditional random fields. In Proceedings of the European Conference on Computer Vision (ECCV) Workshops (pp. 0-0).
 
 Link : https://openaccess.thecvf.com/content_ECCVW_2018/papers/11130/Cun_Image_Splicing_Localization_via_Semi-Global_Network_and_Fully_Connected_Conditional_ECCVW_2018_paper.pdf
 
@@ -3090,10 +3886,19 @@ We show that our method outperforms other state-of-the-art methods in three popu
 Bibliography
 
 ```
+@inproceedings{cun2018image,
+  title={Image splicing localization via semi-global network and fully connected conditional random fields},
+  author={Cun, Xiaodong and Pun, Chi-Man},
+  booktitle={Proceedings of the European Conference on Computer Vision (ECCV) Workshops},
+  pages={0--0},
+  year={2018}
+}
 ```
 
 
 90. Cozzolino D, Poggi G, Verdoliva L. Recasting residual-based local descriptors as convolutional neural networks: An application to image forgery detection. In: Proc. of the 5th ACM Workshop on Information Hiding and Multimedia Security. 2017. 159−164.
+
+Cozzolino, D., Poggi, G., & Verdoliva, L. (2017, June). Recasting residual-based local descriptors as convolutional neural networks: an application to image forgery detection. In Proceedings of the 5th ACM Workshop on Information Hiding and Multimedia Security (pp. 159-164).
 
 Link : https://arxiv.org/abs/1703.04615
 
@@ -3112,10 +3917,19 @@ Then, by relaxing the constraints, and fine-tuning the net on a relatively small
 Bibliography
 
 ```
+@inproceedings{cozzolino2017recasting,
+  title={Recasting residual-based local descriptors as convolutional neural networks: an application to image forgery detection},
+  author={Cozzolino, Davide and Poggi, Giovanni and Verdoliva, Luisa},
+  booktitle={Proceedings of the 5th ACM Workshop on Information Hiding and Multimedia Security},
+  pages={159--164},
+  year={2017}
+}
 ```
 
 
 91. Chen C, McCloskey S, Yu J. Focus manipulation detection via photometric histogram analysis. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 1674−1682.
+
+Chen, C., McCloskey, S., & Yu, J. (2018). Focus manipulation detection via photometric histogram analysis. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 1674-1682).
 
 Link : https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_Focus_Manipulation_Detection_CVPR_2018_paper.pdf
 
@@ -3144,10 +3958,19 @@ We also demonstrate good performance on a challenge dataset evaluating a wider r
 Bibliography
 
 ```
+@inproceedings{chen2018focus,
+  title={Focus manipulation detection via photometric histogram analysis},
+  author={Chen, Can and McCloskey, Scott and Yu, Jingyi},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={1674--1682},
+  year={2018}
+}
 ```
 
 
 92. Zhou P, Han X, Morariu VI, Davis LS. Two-stream neural networks for tampered face detection. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition Workshops (CVPRW). IEEE, 2017. 1831−1839.
+
+Zhou, P., Han, X., Morariu, V. I., & Davis, L. S. (2017, July). Two-stream neural networks for tampered face detection. In 2017 IEEE conference on computer vision and pattern recognition workshops (CVPRW) (pp. 1831-1839). IEEE.
 
 Link : https://arxiv.org/abs/1803.11276
 
@@ -3168,10 +3991,20 @@ We evaluate the proposed two-stream network on our newly collected dataset. Expe
 Bibliography
 
 ```
+@inproceedings{zhou2017two,
+  title={Two-stream neural networks for tampered face detection},
+  author={Zhou, Peng and Han, Xintong and Morariu, Vlad I and Davis, Larry S},
+  booktitle={2017 IEEE conference on computer vision and pattern recognition workshops (CVPRW)},
+  pages={1831--1839},
+  year={2017},
+  organization={IEEE}
+}
 ```
 
 
 93. Szegedy C, Liu W, Jia Y, Sermanet P, Reed S, Anguelov D, Erhan D, Vanhoucke V, Rabinovich A. Going deeper with convolutions. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2015. 1−9.
+
+Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., ... & Rabinovich, A. (2015). Going deeper with convolutions. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1-9).
 
 Link : https://arxiv.org/abs/1409.4842
 
@@ -3194,10 +4027,19 @@ One particular incarnation used in our submission for ILSVRC 2014 is called Goog
 Bibliography
 
 ```
+@inproceedings{szegedy2015going,
+  title={Going deeper with convolutions},
+  author={Szegedy, Christian and Liu, Wei and Jia, Yangqing and Sermanet, Pierre and Reed, Scott and Anguelov, Dragomir and Erhan, Dumitru and Vanhoucke, Vincent and Rabinovich, Andrew},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={1--9},
+  year={2015}
+}
 ```
 
 
 94. Yang X, Li Y, Lyu S. Exposing deep fakes using inconsistent head poses. In: Proc. of the IEEE Int’l Conf. on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2019. 8261−8265.
+
+Yang, X., Li, Y., & Lyu, S. (2019, May). Exposing deep fakes using inconsistent head poses. In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 8261-8265). IEEE.
 
 Link : https://arxiv.org/abs/1811.00661
 
@@ -3221,10 +4063,20 @@ Using features based on this cue, an SVM classifier is evaluated using a set of 
 Bibliography
 
 ```
+@inproceedings{yang2019exposing,
+  title={Exposing deep fakes using inconsistent head poses},
+  author={Yang, Xin and Li, Yuezun and Lyu, Siwei},
+  booktitle={ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={8261--8265},
+  year={2019},
+  organization={IEEE}
+}
 ```
 
 
 95. Yang X, Li Y, Qi H, Lyu S. Exposing GAN-synthesized faces using landmark locations. In: Proc. of the ACM Workshop on Information Hiding and Multimedia Security. 2019. 113−118.
+
+Yang, X., Li, Y., Qi, H., & Lyu, S. (2019, July). Exposing gan-synthesized faces using landmark locations. In Proceedings of the ACM Workshop on Information Hiding and Multimedia Security (pp. 113-118).
 
 Link : https://arxiv.org/abs/1904.00167
 
@@ -3245,10 +4097,19 @@ We perform experiments demonstrating this phenomenon, and show that an SVM class
 Bibliography
 
 ```
+@inproceedings{yang2019exposing,
+  title={Exposing gan-synthesized faces using landmark locations},
+  author={Yang, Xin and Li, Yuezun and Qi, Honggang and Lyu, Siwei},
+  booktitle={Proceedings of the ACM Workshop on Information Hiding and Multimedia Security},
+  pages={113--118},
+  year={2019}
+}
 ```
 
 
 96. Li Y, Chang MC, Lyu S. In ictu oculi: Exposing AI created fake videos by detecting eye blinking. In: Proc. of the IEEE Int’l Workshop on Information Forensics and Security (WIFS). IEEE, 2018. 1−7.
+
+LIY, C. M., & InIctuOculi, L. Y. U. S. (2018). ExposingAICreated FakeVideosbyDetectingEyeBlinking. In 2018IEEEInterG national Workshop on Information Forensics and Security (WIFS). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/8630787
 
@@ -3269,10 +4130,18 @@ Our method is evaluated over benchmarks of eye-blinking detection datasets and s
 Bibliography
 
 ```
+@inproceedings{liy2018exposingaicreated,
+  title={ExposingAICreated FakeVideosbyDetectingEyeBlinking},
+  author={LIY, CHANG M and InIctuOculi, LYUS},
+  booktitle={2018IEEEInterG national Workshop on Information Forensics and Security (WIFS). IEEE},
+  year={2018}
+}
 ```
 
 
 97. Ciftci UA, Demir I. FakeCatcher: Detection of synthetic portrait videos using biological signals. arXiv preprint arXiv:1901.02212, 2019.
+
+Ciftci, U. A., Demir, I., & Yin, L. (2020). Fakecatcher: Detection of synthetic portrait videos using biological signals. IEEE Transactions on Pattern Analysis and Machine Intelligence.
 
 Link : https://arxiv.org/abs/1901.02212
 
@@ -3307,10 +4176,19 @@ We also analyze signals from various facial regions, under image distortions, wi
 Bibliography
 
 ```
+@article{ciftci2020fakecatcher,
+  title={Fakecatcher: Detection of synthetic portrait videos using biological signals},
+  author={Ciftci, Umur Aybars and Demir, Ilke and Yin, Lijun},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2020},
+  publisher={IEEE}
+}
 ```
 
 
 98. Fernandes S, Raj S, Ortiz E, Vintila I, Salter M, Urosevic G, Jha S. Predicting heart rate variations of Deepfake videos using neural ODE. In: Proc. of the IEEE Int’l Conf. on Computer Vision Workshops. 2019. 1721−1729.
+
+Fernandes, S., Raj, S., Ortiz, E., Vintila, I., Salter, M., Urosevic, G., & Jha, S. (2019). Predicting heart rate variations of deepfake videos using neural ode. In Proceedings of the IEEE/CVF international conference on computer vision workshops (pp. 0-0).
 
 Link : https://ieeexplore.ieee.org/document/9022055
 
@@ -3345,10 +4223,19 @@ Deepfake 是一種使用計算機代碼操縱視頻的技術，它涉及用另�
 Bibliography
 
 ```
+@inproceedings{fernandes2019predicting,
+  title={Predicting heart rate variations of deepfake videos using neural ode},
+  author={Fernandes, Steven and Raj, Sunny and Ortiz, Eddy and Vintila, Iustina and Salter, Margaret and Urosevic, Gordana and Jha, Sumit},
+  booktitle={Proceedings of the IEEE/CVF international conference on computer vision workshops},
+  pages={0--0},
+  year={2019}
+}
 ```
 
 
 99. Li Y, Lyu S. Exposing Deepfake videos by detecting face warping artifacts. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR) Workshops, 2019. 46−52.
+
+Li, Y., & Lyu, S. (2018). Exposing deepfake videos by detecting face warping artifacts. arXiv preprint arXiv:1811.00656.
 
 Link : https://arxiv.org/abs/1811.00656
 
@@ -3375,10 +4262,18 @@ Our method is evaluated on two sets of DeepFake video datasets for its effective
 Bibliography
 
 ```
+@article{li2018exposing,
+  title={Exposing deepfake videos by detecting face warping artifacts},
+  author={Li, Yuezun and Lyu, Siwei},
+  journal={arXiv preprint arXiv:1811.00656},
+  year={2018}
+}
 ```
 
 
 100. He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2016. 770−778. 
+
+He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).
 
 Link : https://arxiv.org/abs/1512.03385
 
@@ -3411,6 +4306,13 @@ Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 comp
 Bibliography
 
 ```
+@inproceedings{he2016deep,
+  title={Deep residual learning for image recognition},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={770--778},
+  year={2016}
+}
 ```
 
 
@@ -3423,6 +4325,10 @@ Note : Deepfakes 换脸技术
 Bibliography
 
 ```
+@online{list1101,
+    title     = "Deepfakes.",
+    url       = "https://github.com/deepfakes/faceswap"
+}
 ```
 
 
@@ -3435,6 +4341,10 @@ Note : Zao APP 提供大众换脸娱乐服务等
 Bibliography
 
 ```
+@online{list1102,
+    title     = "Zao app.",
+    url       = "https://zao-app.com/"
+}
 ```
 
 
@@ -3447,10 +4357,16 @@ Note : Deepfakes 检测竞赛
 Bibliography
 
 ```
+@online{list1103,
+    title     = "Deepfake detection challenge.",
+    url       = "https://www.kaggle.com/c/deepfake-detection-challenge"
+}
 ```
 
 
 104. Girish N, Nandini C. A review on digital video forgery detection techniques in cyber forensics. Science, Technology and Development, 2019,3(6):235−239.
+
+Girish, N., & Nandini, C. (2019). A review on digital video forgery detection techniques in cyber forensics. Science, Technology and Development, 3(6), 235-239.
 
 Link : http://journalstd.com/gallery/28-sep2019a.pdf
 
@@ -3481,6 +4397,15 @@ While most of the existing methods are based on the analysis of video data flow,
 Bibliography
 
 ```
+@article{girish2019review,
+  title={A review on digital video forgery detection techniques in cyber forensics},
+  author={Girish, N and Nandini, C},
+  journal={Science, Technology and Development},
+  volume={3},
+  number={6},
+  pages={235--239},
+  year={2019}
+}
 ```
 
 
