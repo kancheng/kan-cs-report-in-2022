@@ -3713,6 +3713,8 @@ Furthermore, the public available databases and evaluation metrics are introduce
 We end the review with discussing unsolved difficulties and promising directions for future research.
 ```
 
+人臉合成一直是計算機視覺和機器學習中一個引人入勝但具有挑戰性的問題，它的主要研究工作是設計算法以通過給定的語義域生成照片般逼真的人臉圖像。它一直是主流人臉識別方法的關鍵前置步驟，也是對人工智能使用複雜概率分佈能力的極好測試，該研究對涉及傳統方法和高級深度學習方法的典型人臉合成工作進行了全面回顧。特別是，Generative Adversarial Net (GAN) 被突出顯示以生成照片般逼真和身份保持的結果。此外，還詳細介紹了公開可用的數據庫和評估指標，研究以討論未解決的困難和未來研究的有希望的方向來結束審查。
+
 Bibliography
 
 ```
@@ -3742,6 +3744,8 @@ There is no need for any Markov chains or unrolled approximate inference network
 
 Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples.
 ```
+
+研究者提出了一個通過對抗過程估計生成模型的新框架，該研究同時訓練兩個模型：一個生成模型 G 捕獲數據分佈，一個判別模型 D 估計樣本來自訓練數據而不是 G 的概率。 G 的訓練過程是最大化 D 出錯的概率。這個框架對應於一個極小極大的兩人遊戲，在任意函數 G 和 D 的空間中，存在唯一解，G 恢復訓練數據分佈，D 處處等於 1/2。在 G 和 D 由多層感知器定義的情況下，整個系統可以通過反向傳播進行訓練。在訓練或生成樣本期間，不需要任何馬爾可夫鍊或展開的近似推理網絡，實驗通過對生成的樣本進行定性和定量評估，證明了框架的潛力。
 
 Bibliography
 
@@ -3780,6 +3784,8 @@ Building on recent advances in this area, we devise a new loss function that ena
 By combining neural networks with simple pre- and post-processing steps, we aim at making face swap work in real-time with no input from the user.
 ```
 
+研究考慮圖像中的人臉交換問題，其中輸入身份被轉換為目標身份，同時保留姿勢、面部表情和照明，為了執行這種映射，研究者使用經過訓練的捲積神經網絡從他/她的照片的非結構化集合中捕獲目標身份的外觀，此方法是通過在風格轉移方面構建人臉交換問題來實現的，其目標是用另一個風格來渲染圖像。基於該領域的最新進展，研究者設計了一種新的損失函數，使網絡能夠產生高度逼真的結果，通過將神經網絡與簡單的預處理和後處理步驟相結合，研究者的目標是讓面部交換實時工作，無需用戶輸入。
+
 Bibliography
 
 ```
@@ -3810,6 +3816,8 @@ Finally, we use a face blending network for seamless blending of the two faces w
 This network uses a novel Poisson blending loss which combines Poisson optimization with perceptual loss. We compare our approach to existing state-of-the-art systems and show our results to be both qualitatively and quantitatively superior.
 ```
 
+研究者提出了人臉交換 GAN (FSGAN) 用於人臉交換和重演，與以前的工作不同，FSGAN 與主題無關，可以應用於成對的面孔，而無需對這些面孔進行培訓。為此，研究者描述了一些技術貢獻，其推導出了一種新穎的基於循環神經網絡 (RNN) 的面部重演方法，該方法可針對姿勢和表情變化進行調整，並可應用於單個圖像或視頻序列，對於視頻序列，我們引入了基於重演、Delaunay 三角剖分和重心坐標的人臉視圖的連續插值，而被遮擋的人臉區域由人臉補全網絡處理。最後，研究者使用人臉融合網絡無縫融合兩張臉，同時保留目標膚色和光照條件。該網絡使用一種新穎的泊松混合損失，它將泊松優化與感知損失相結合。該研究將其方法與現有的最先進系統進行比較，並顯示研究的結果在質量和數量上都優越。
+
 Bibliography
 
 ```
@@ -3835,6 +3843,8 @@ This leads to StarGAN's superior quality of translated images compared to existi
 
 We empirically demonstrate the effectiveness of our approach on a facial attribute transfer and a facial expression synthesis tasks.
 ```
+
+最近的研究表明，在兩個領域的圖像到圖像轉換方面取得了顯著的成功。然而，現有方法在處理兩個以上的域時具有有限的可擴展性和魯棒性，因為應該為每對圖像域獨立構建不同的模型，為了解決這個限制，研究者提出了 StarGAN，這是一種新穎且可擴展的方法，可以僅使用單個模型為多個域執行圖像到圖像的轉換，StarGAN 的這種統一模型架構允許在單個網絡中同時訓練具有不同域的多個數據集。與現有模型相比，這導致 StarGAN 具有卓越的翻譯圖像質量，以及將輸入圖像靈活翻譯到任何所需目標域的新穎能力，研究者憑經驗證明了其方法在面部屬性轉移和麵部表情合成任務上的有效性。
 
 Bibliography
 
@@ -3868,6 +3878,8 @@ StackGAN-v2 shows more stable training behavior than StackGAN-v1 by jointly appr
 Extensive experiments demonstrate that the proposed stacked generative adversarial networks significantly outperform other state-of-the-art methods in generating photo-realistic images.
 ```
 
+儘管生成對抗網絡 (GAN) 在各種任務中取得了顯著成功，但它們在生成高質量圖像方面仍然面臨挑戰。在研究提出了堆疊生成對抗網絡（StackGAN），旨在生成高分辨率照片級逼真圖像。首先，研究者提出了一種用於文本到圖像合成的兩階段生成對抗網絡架構 StackGAN-v1，Stage-I GAN 根據給定的文本描述勾勒出對象的原始形狀和顏色，產生低分辨率圖像，Stage-II GAN 將 Stage-I 結果和文本描述作為輸入，並生成具有照片般逼真細節的高分辨率圖像，其次，針對有條件和無條件的生成任務提出了一種先進的多階段生成對抗網絡架構 StackGAN-v2。研究者的 StackGAN-v2 由樹狀結構中的多個生成器和判別器組成；從樹的不同分支生成對應於同一場景的多個尺度的圖像，StackGAN-v2 通過聯合逼近多個分佈，顯示出比 StackGAN-v1 更穩定的訓練行為。大量實驗表明，所提出的堆疊生成對抗網絡在生成照片般逼真的圖像方面明顯優於其他最先進的方法。
+
 Bibliography
 
 ```
@@ -3898,6 +3910,8 @@ Finally, we suggest a new metric for evaluating GAN results, both in terms of im
 As an additional contribution, we construct a higher-quality version of the CelebA dataset.
 ```
 
+研究者描述了一種用於生成對抗網絡的新訓練方法。關鍵思想是逐步增長生成器和判別器：從低分辨率開始，我們添加了新的層，隨著訓練的進行，對越來越精細的細節進行建模。這既加快了訓練的速度，又極大地穩定了訓練，使研究者能夠生成質量前所未有的圖像，例如 1024^2 的 CelebA 圖像，其研究者還提出了一種簡單的方法來增加生成圖像的變化，並在無監督 CIFAR10 中實現 8.80 的創紀錄初始分數。此外，研究者描述了幾個實現細節，這些細節對於阻止生成器和判別器之間的不健康競爭很重要。最後，該研究建議在圖像質量和變化方面評估 GAN 結果的新指標，作為額外的貢獻，研究者構建了更高質量的 CelebA 數據集版本。
+
 Bibliography
 
 ```
@@ -3922,6 +3936,8 @@ To this end, we introduce a novel approach for "Identity-Preserving" optimizatio
 The objective evaluation of the resulting aged and rejuvenated face images by the state-of-the-art face recognition and age estimation solutions demonstrate the high potential of the proposed method.
 ```
 
+最近表明，生成對抗網絡 (GAN) 可以生成具有出色視覺保真度的合成圖像，在這項工作中，研究者提出了基於 GAN 的自動人臉老化方法。與以前使用 GAN 來改變面部屬性的工作相反，研究者特別強調在他/她的面部老化版本中保留原始人的身份。為此，該研究引入了一種新的方法來優化 GAN 的潛在向量的“身份保持”。通過最先進的人臉識別和年齡估計解決方案對產生的老化和恢復活力的人臉圖像進行客觀評估，證明了所提出方法的巨大潛力。
+
 Bibliography
 
 ```
@@ -3943,6 +3959,7 @@ We show that this model can generate MNIST digits conditioned on class labels.
 
 We also illustrate how this model could be used to learn a multi-modal model, and provide preliminary examples of an application to image tagging in which we demonstrate how this approach can generate descriptive tags which are not part of training labels.
 ```
+生成對抗網絡最近作為一種訓練生成模型的新方法被引入，在這項工作中，研究者介紹了生成對抗網絡的條件版本，它可以通過簡單地輸入數據 y 來構建，我們希望同時對生成器和判別器進行條件處理。該研究展示了該模型可以生成以類標籤為條件的 MNIST 數字。其研究還說明了該模型如何用於學習多模態模型，並提供了圖像標記應用的初步示例，其中研究者演示了該方法如何生成不屬於訓練標籤的描述性標籤。
 
 Bibliography
 
@@ -3974,6 +3991,8 @@ Different from previous deep learning methods that mainly rely on intermediate f
 Experimental results demonstrate that our method not only presents compelling perceptual results but also outperforms state-of-the-art results on large pose face recognition.
 ```
 
+從單張人臉圖像合成逼真的正面視圖在人臉識別領域具有廣泛的應用，儘管已經提出數據驅動的深度學習方法通過從大量面部數據中尋求解決方案來解決這個問題，但這個問題仍然具有挑戰性，因為它本質上是不適定的。該研究提出了一種雙路徑生成對抗網絡（TP-GAN），用於通過同時感知全局結構和局部細節來進行逼真的正面視圖合成。除了常用的全局編碼器-解碼器網絡之外，還提出了四個具有里程碑意義的補丁網絡來處理局部紋理。除了新穎的架構外，研究者通過引入對抗性損失、對稱性損失和身份保持損失的組合來很好地約束這個不適定問題，組合的損失函數利用正面人臉分佈和預訓練的判別式深度人臉模型來指導從側面看正面視圖的身份保持推斷。與之前主要依賴中間特徵進行識別的深度學習方法不同，該研究的方法直接利用合成的身份保持圖像來完成人臉識別和屬性估計等下游任務，其實驗結果表明，該研究的方法不僅提供了令人信服的感知結果，而且在大姿勢人臉識別方面也優於最先進的結果。
+
 Bibliography
 
 ```
@@ -4003,6 +4022,8 @@ This requires a careful consideration of the lighting and shading design, which 
 
 We demonstrate our method in a live setup, where we modify a video conference feed such that the facial expressions of a different person (e.g., translator) are matched in real-time.
 ```
+
+研究提出了一種將面部表情從源視頻中的演員實時傳輸到目標視頻中的演員的方法，從而能夠對目標演員的面部表情進行臨時控制。其方法的新穎之處在於將面部變形和細節的轉移和逼真的重新渲染到目標視頻中，新合成的表情與真實視頻幾乎沒有區別。為了實現這一點，該研究使用商品 RGB-D 傳感器實時準確地捕捉源對象和目標對象的面部表現，對於每一幀，研究者將身份、表情和皮膚反射率的參數模型與輸入顏色和深度數據聯合擬合，並重建場景照明。對於表達式轉移，該研究計算參數空間中源表達式和目標表達式之間的差異，並修改目標參數以匹配源表達式。一個主要挑戰是將合成的目標人臉重新渲染到相應的視頻流中，這需要仔細考慮照明和陰影設計，兩者都必須與現實世界環境相對應。研究者在現場設置中演示了其方法，並修改了視頻會議來源，以便實時匹配不同人（例如翻譯）的面部表情。
 
 Bibliography
 
@@ -4036,6 +4057,9 @@ Finally, we convincingly re-render the synthesized target face on top of the cor
 We demonstrate our method in a live setup, where Youtube videos are reenacted in real time.
 ```
 
+研究提出了 Face2Face，這是一種用於對單目目標視頻序列（例如 Youtube 視頻）進行實時面部重演的新穎方法，源序列也是單目視頻流，使用商品網絡攝像頭實時捕獲。其目標是通過源演員為目標視頻的面部表情製作動畫，並以照片般逼真的方式重新渲染經過處理的輸出視頻。為此，研究者首先通過基於非剛性模型的捆綁解決了從單目視頻中恢復面部身份的約束不足問題。同時運行時使用密集的光度一致性測量來跟踪源視頻和目標視頻的面部表情。然後通過源和目標之間的快速有效的變形傳遞來實現重演，從目標序列中檢索與重新定位的表情最匹配的嘴巴內部，並對其進行扭曲以產生準確的擬合。最後，研究者令人信服地在相應的視頻流之上重新渲染合成的目標人臉，使其與現實世界的照明無縫融合。
+
+
 Bibliography
 
 ```
@@ -4061,6 +4085,9 @@ To this end, we propose a robust tracking of the face and torso of the source ac
 
 We extensively evaluate our approach and show significant improvements in enabling much greater flexibility in creating realistic reenacted output videos.
 ```
+
+研究提出了 HeadOn，這是第一個實時的源到目標重演方法，用於完整的人類肖像視頻，可以傳輸軀乾和頭部運動、面部表情和眼睛注視。給定目標演員的簡短 RGB-D 視頻，其研究者自動構建個性化幾何代理，該代理嵌入參數化頭部、眼睛和運動學軀幹模型。而一種新穎的實時重演算法使用此代理將捕獲的運動從源演員逼真地映射到目標演員。在粗略的幾何代理之上，研究者提出了一種基於視頻的渲染技術，該技術通過與視圖和姿勢相關的紋理合成修改後的目標肖像視頻，並在新穎的軀乾和頭部姿勢下創建目標演員的照片般逼真的圖像，面部表情和注視方向。為此，研究者建議對源演員的面部和軀幹進行穩健的跟踪。
+
 
 Bibliography
 
@@ -4093,6 +4120,8 @@ For instance, we can reenact the full head using interactive user-controlled edi
 
 To demonstrate the high quality of our output, we conduct an extensive series of experiments and evaluations, where for instance a user study shows that our video edits are hard to detect.
 ```
+
+研究者提出了一種新穎的方法，該方法僅使用輸入視頻就可以對肖像視頻進行逼真的重新動畫處理。與僅限於面部表情操作的現有方法相比，研究者率先將完整的 3D 頭部位置、頭部旋轉、面部表情、眼睛注視和眨眼從源演員轉移到目標的肖像視頻演員，其方法的核心是具有新穎時空架構的生成神經網絡。該網絡將參數化人臉模型的合成渲染作為輸入，並據此預測給定目標演員的照片般逼真的視頻幀，這種從渲染到視頻的傳輸的真實性是通過仔細的對抗訓練來實現的，因此，研究者可以創建修改後的目標視頻，以模仿合成創建的輸入的行為。為了實現源到目標視頻的重新動畫，研究者使用從源視頻中重建的頭部動畫參數渲染合成目標視頻，並將其輸入到訓練好的網絡中，從而完全控制目標，憑藉自由重組源參數和目標參數的能力，研究者能夠演示各種視頻重寫應用程序，而無需明確建模頭髮、身體或背景。例如，該研究可以使用交互式用戶控制的編輯來重新製作完整的頭部，並實現高保真視覺配音。為了證明其成果輸出的高質量，研究者進行了一系列廣泛的實驗和評估，例如，用戶研究表明該研究的視頻編輯很難檢測到。
 
 Bibliography
 
@@ -4130,6 +4159,8 @@ This way, neural textures can be utilized to coherently re-render or manipulate 
 We show the effectiveness of our approach in several experiments on novel view synthesis, scene editing, and facial reenactment, and compare to state-of-the-art approaches that leverage the standard graphics pipeline as well as conventional generative neural networks.
 ```
 
+現代計算機圖形流水線可以以卓越的視覺質量合成圖像；但是，它需要定義明確的高質量 3D 內容作為輸入。在這項工作中，研究者探索了不完美的 3D 內容的使用，例如，從具有噪聲和不完整表面幾何的光度重建中獲得，同時仍然旨在產生照片般逼真的（重新）渲染。為了解決這個具有挑戰性的問題，研究者引入了延遲神經渲染，這是一種將傳統圖形管道與可學習組件相結合的圖像合成新範例。具體來說，該研究提出了神經紋理，它是作為場景捕獲過程的一部分進行訓練的學習特徵圖。與傳統紋理類似，神經紋理作為貼圖存儲在 3D 網格代理之上；然而，高維特徵圖包含更多信息，可以通過我們新的延遲神經渲染管道進行解釋，神經紋理和延遲神經渲染器都是端到端訓練的，即使原始 3D 內容不完美，我們也能夠合成照片般逼真的圖像。與傳統的黑盒 2D 生成神經網絡相比，研究者的 3D 表示使我們能夠明確控制生成的輸出，並允許廣泛的應用領域。例如，該研究可以合成時間一致的視頻重新渲染記錄的 3D 場景，因為研究者表示固有地嵌入在 3D 空間中。通過這種方式，可以利用神經紋理在靜態和動態環境中以實時速率連貫地重新渲染或操作現有視頻內容。該研究在幾個關於新視圖合成、場景編輯和麵部重演的實驗中展示了其方法的有效性，並與利用標準圖形管道和傳統生成神經網絡的最先進方法進行了比較。
+
 Bibliography
 
 ```
@@ -4151,6 +4182,8 @@ Given the mouth shape at each time instant, we synthesize high quality mouth tex
 
 Our approach produces photorealistic results.
 ```
+
+鑑於美國總統巴拉克奧巴馬的音頻，研究者合成了一段高質量的他講話的視頻，並具有準確的口型同步，並合成到目標視頻剪輯中，一個循環神經網絡在他每週的演講視頻中經過數小時的訓練，可以學習從原始音頻特徵到嘴形的映射。給定每個時刻的嘴巴形狀，研究者合成高質量的嘴巴紋理，並將其與適當的 3D 姿勢匹配合成，以改變他在目標視頻中所說的內容，以匹配輸入音軌。其方法產生逼真的結果。
 
 Bibliography
 
@@ -4177,6 +4210,8 @@ Crucially, the system is able to initialize the parameters of both the generator
 
 We show that such an approach is able to learn highly realistic and personalized talking head models of new people and even portrait paintings.
 ```
+
+最近的幾項工作表明，如何通過訓練卷積神經網絡來生成高度逼真的人頭圖像，為了創建個性化的說話頭模型，這些工作需要對單個人的大型圖像數據集進行訓練。然而，在許多實際場景中，這種個性化的說話頭部模型需要從一個人的幾個圖像視圖中學習，甚至可能是單個圖像。在這裡，研究者展示了一個具有如此少鏡頭能力的系統。它在大型視頻數據集上執行冗長的元學習，然後能夠將以前看不見的人的神經說話頭模型的少量和一次性學習構建為具有高容量生成器和鑑別器的對抗性訓練問題。至關重要的是，該系統能夠以特定於人的方式初始化生成器和判別器的參數，因此儘管需要調整數千萬個參數，但訓練可以僅基於幾張圖像并快速完成。其研究表明，這種方法能夠學習高度逼真和個性化的新人說話頭部模型，甚至是肖像畫。
 
 Bibliography
 
@@ -4206,9 +4241,12 @@ Finally, a recurrent video generation network transforms this representation to 
 We demonstrate a large variety of edits, such as the addition, removal, and alteration of words, as well as convincing language translation and full sentence synthesis.
 ```
 
+編輯說話頭視頻以更改語音內容或刪除填充詞具有挑戰性，研究者提出了一種新穎的方法來編輯說話頭視頻的腳本，以生成逼真的輸出視頻，其中說話者的對話已被修改，同時保持無縫的視聽流（即沒有跳轉）。其方法使用音素、視位、3D 面部姿勢和幾何形狀、反射率、表情和每幀場景照明自動註釋輸入的說話頭視頻，要編輯視頻，用戶只需編輯腳本，然後優化策略選擇輸入語料庫的片段作為基礎材料。與所選片段對應的註釋參數無縫拼接在一起，並用於生成中間視頻表示，其中臉部的下半部分用參數化臉部模型渲染，最後該循環視頻生成網絡將此表示轉換為與編輯後的文字記錄相匹配的逼真視頻。研究者展示了各種各樣的編輯，例如單詞的添加、刪除和更改，以及令人信服的語言翻譯和完整的句子合成。
+
 Bibliography
 
 ```
+
 ```
 
 
@@ -4236,9 +4274,12 @@ Our technique gives rise to reactive profiles, where people in still images can 
 We demonstrate our technique operating on numerous still portraits from the internet.
 ```
 
+研究者提出了一種自動為靜止肖像製作動畫的技術，使照片中的主體能夠栩栩如生並表達各種情感，該研究使用（不同主題的）駕駛視頻，並開發了將駕駛視頻中主題的表現力轉移到目標肖像的方法。與之前需要目標面部的輸入視頻來重現面部表現的工作相比，我們的技術僅使用單個目標圖像，研究者通過模仿駕駛視頻中的面部變換的 2D 扭曲對目標圖像進行動畫處理。由於單獨的經線不能承載面部的全部表現力，因此研究者添加了通常與面部表情相關的精細動態細節，例如摺痕和皺紋。此外，該研究對隱藏在輸入目標面部中的區域產生幻覺，尤其是在嘴巴內。其技術產生了反應式配置文件，靜止圖像中的人可以自動與他們的觀眾互動，最後展示了該研究在互聯網上的大量靜態肖像上運行的技術。
+
 Bibliography
 
 ```
+
 ```
 
 
@@ -4261,6 +4302,8 @@ Compared to the state-of-the-art which mostly relies on training adversarial net
 
 We present evidence that our model can significantly change the perceived value of the attributes while preserving the naturalness of images.
 ```
+
+該研究介紹了一種新的編碼器-解碼器架構，該架構經過訓練，可通過直接在潛在空間中解開圖像的顯著信息和屬性值來重建圖像。因此，經過訓練，其模型可以通過改變屬性值來生成輸入圖像的不同真實版本。通過使用連續的屬性值，研究者可以選擇在生成的圖像中可以感知多少特定屬性。此屬性可以允許用戶使用滑動旋鈕修改圖像的應用程序，例如混合控制台上的推子，以更改肖像的面部表情或更新某些對象的顏色。與主要依賴於通過在訓練時更改屬性值來訓練像素空間中的對抗性網絡的最先進技術相比，該研究的方法產生了更簡單的訓練方案並且可以很好地擴展到多個屬性。其提供的證據表明，該模型可以顯著改變屬性的感知價值，同時保持圖像的自然性。
 
 Bibliography
 
@@ -4287,6 +4330,8 @@ A single WaveNet can capture the characteristics of many different speakers with
 
 When trained to model music, we find that it generates novel and often highly realistic musical fragments. We also show that it can be employed as a discriminative model, returning promising results for phoneme recognition.
 ```
+
+該研究介紹 WaveNet，一種用於生成原始音頻波形的深度神經網絡。該模型是完全概率和自回歸的，每個音頻樣本的預測分佈都以所有先前的樣本為條件；儘管如此，該研究證明它可以在每秒數万個音頻樣本的數據上進行有效訓練。當應用於文本到語音時，它產生了最先進的性能，人類聽眾認為它比英語和普通話的最佳參數和連接系統聽起來更自然。單個 WaveNet 可以以相同的保真度捕獲許多不同說話者的特徵，並且可以通過調節說話者身份在它們之間切換。當訓練為音樂建模時，我們發現它會生成新穎且通常高度逼真的音樂片段。 其研究者還表明它可以用作判別模型，為音素識別返回有希望的結果。
 
 Bibliography
 
@@ -4316,6 +4361,8 @@ By using a neural network for each component, our system is simpler and more fle
 Finally, we show that inference with our system can be performed faster than real time and describe optimized WaveNet inference kernels on both CPU and GPU that achieve up to 400x speedups over existing implementations.
 ```
 
+研究者展示了 Deep Voice，這是一個完全由深度神經網絡構建的生產質量的文本到語音系統，Deep Voice 為真正的端到端神經語音合成奠定了基礎。該系統包括五個主要構建塊：定位音素邊界的分割模型、字素到音素的轉換模型、音素持續時間預測模型、基頻預測模型和音頻合成模型。對於分割模型，該研究提出了一種使用連接主義時間分類 (CTC) 損失的深度神經網絡執行音素邊界檢測的新方法，對於音頻合成模型，研究者實現了 WaveNet 的變體，它需要的參數更少，訓練速度比原始模型快。通過為每個組件使用神經網絡，研究者的系統比傳統的文本到語音系統更簡單、更靈活，傳統的文本到語音系統的每個組件都需要費力的特徵工程和廣泛的領域專業知識。最後，研究者展示其系統的推理可以比實時更快地執行，並描述了在 CPU 和 GPU 上優化的 WaveNet 推理內核，與現有實現相比可實現高達 400 倍的加速。
+
 Bibliography
 
 ```
@@ -4341,6 +4388,8 @@ Tacotron achieves a 3.82 subjective 5-scale mean opinion score on US English, ou
 
 In addition, since Tacotron generates speech at the frame level, it's substantially faster than sample-level autoregressive methods.
 ```
+文本到語音合成系統通常由多個階段組成，例如文本分析前端、聲學模型和音頻合成模塊，構建這些組件通常需要廣泛的領域專業知識，並且可能包含脆弱的設計選擇。該研究介紹了 Tacotron，這是一種直接從字符合成語音的端到端生成文本到語音模型。給定 text and audio 對，可以通過隨機初始化完全從頭開始訓練模型。 研究者提出了幾種關鍵技術，以使序列到序列框架在這項具有挑戰性的任務中表現良好。Tacotron 在美國英語上的主觀 5 級平均意見得分為 3.82，在自然度方面優於生產參數係統。此外，由於 Tacotron 在幀級別生成語音，因此它比樣本級別的自回歸方法要快得多。
+
 
 Bibliography
 
