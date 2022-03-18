@@ -4451,6 +4451,8 @@ Bibliography
 
 106. Zollhöfer M, Thies J, Garrido P, Bradley D, Beeler T, Perez P, Stamminger M, Niessner M, Theobalt C. State of the art on monocular 3D face reconstruction, tracking, and applications. Computer Graphics Forum, 2018,37(2):523−550.
 
+Zollhöfer, M., Thies, J., Garrido, P., Bradley, D., Beeler, T., Pérez, P., ... & Theobalt, C. (2018, May). State of the art on monocular 3D face reconstruction, tracking, and applications. In Computer Graphics Forum (Vol. 37, No. 2, pp. 523-550).
+
 Link : https://studios.disneyresearch.com/wp-content/uploads/2019/03/State-of-the-Art-on-Monocular-3D-Face-Reconstruction-Tracking-and-Applications-1.pdf
 
 Note : Zollhofer 等人综述了当前比较主流的 3D 模型重建追踪等技术
@@ -4478,6 +4480,16 @@ Finally, we discuss a variety of use cases for the reviewed algorithms in the co
 Bibliography
 
 ```
+@inproceedings{zollhofer2018state,
+  title={State of the art on monocular 3D face reconstruction, tracking, and applications},
+  author={Zollh{\"o}fer, Michael and Thies, Justus and Garrido, Pablo and Bradley, Derek and Beeler, Thabo and P{\'e}rez, Patrick and Stamminger, Marc and Nie{\ss}ner, Matthias and Theobalt, Christian},
+  booktitle={Computer Graphics Forum},
+  volume={37},
+  number={2},
+  pages={523--550},
+  year={2018},
+  organization={Wiley Online Library}
+}
 ```
 
 
@@ -4490,10 +4502,16 @@ Note : FaceSwap 是基于图形学的换脸方法,首先获取人脸关键点,�
 Bibliography
 
 ```
+@online{list1107,
+    title     = "FaceSwap.",
+    url       = "https://github.com/MarekKowalski/FaceSwap/"
+}
 ```
 
 
 108. Dale K, Sunkavalli K, Johnson MK, Vlasic D, Matusik W, Pfister H. Video face replacement. In: Proc. of the SIGGRAPH Asia Conf. 2011. 1−10.
+
+Dale, K., Sunkavalli, K., Johnson, M. K., Vlasic, D., Matusik, W., & Pfister, H. (2011, December). Video face replacement. In Proceedings of the 2011 SIGGRAPH Asia conference (pp. 1-10).
 
 Link : https://vcg.seas.harvard.edu/publications/video-face-replacement
 
@@ -4520,10 +4538,19 @@ We showcase the use of our method on a variety of examples and present the resul
 Bibliography
 
 ```
+@inproceedings{dale2011video,
+  title={Video face replacement},
+  author={Dale, Kevin and Sunkavalli, Kalyan and Johnson, Micah K and Vlasic, Daniel and Matusik, Wojciech and Pfister, Hanspeter},
+  booktitle={Proceedings of the 2011 SIGGRAPH Asia conference},
+  pages={1--10},
+  year={2011}
+}
 ```
 
 
 109. Garrido P, Valgaerts L, Rehmsen O, Thormae T, Perez P, Theobalt C. Automatic face reenactment. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2014. 4217−4224.
+
+Garrido, P., Valgaerts, L., Rehmsen, O., Thormahlen, T., Perez, P., & Theobalt, C. (2014). Automatic face reenactment. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 4217-4224).
 
 Link : https://vcai.mpi-inf.mpg.de/projects/FaceReenactment/files/FaceReenactment.pdf
 
@@ -4552,10 +4579,19 @@ We show convincing reenactment results for videos that we recorded ourselves and
 Bibliography
 
 ```
+@inproceedings{garrido2014automatic,
+  title={Automatic face reenactment},
+  author={Garrido, Pablo and Valgaerts, Levi and Rehmsen, Ole and Thormahlen, Thorsten and Perez, Patrick and Theobalt, Christian},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={4217--4224},
+  year={2014}
+}
 ```
 
 
 110. Garrido P, Valgaerts L, Sarmadi H, Steiner I, Varanasi K, Perez P, Theobalt C. VDub: Modifying face video of actors for plausible visual alignment to a dubbed audio track. Computer Graphics Forum, 2015,34(2):193−204.
+
+Garrido, P., Valgaerts, L., Sarmadi, H., Steiner, I., Varanasi, K., Perez, P., & Theobalt, C. (2015, May). Vdub: Modifying face video of actors for plausible visual alignment to a dubbed audio track. In Computer graphics forum (Vol. 34, No. 2, pp. 193-204).
 
 Link : https://vcai.mpi-inf.mpg.de/files/EuroGraphics2015/dubbing_high.pdf
 
@@ -4581,10 +4617,22 @@ We demonstrate plausible visual quality of our results compared to footage that 
 Bibliography
 
 ```
+@inproceedings{garrido2015vdub,
+  title={Vdub: Modifying face video of actors for plausible visual alignment to a dubbed audio track},
+  author={Garrido, Pablo and Valgaerts, Levi and Sarmadi, Hamid and Steiner, Ingmar and Varanasi, Kiran and Perez, Patrick and Theobalt, Christian},
+  booktitle={Computer graphics forum},
+  volume={34},
+  number={2},
+  pages={193--204},
+  year={2015},
+  organization={Wiley Online Library}
+}
 ```
 
 
 111. Nirkin Y, Masi I, Tuan AT, Hassner T, Medioni G. On face segmentation, face swapping, and face perception. In: Proc. of the 13th IEEE Int’l Conf. on Automatic Face and Gesture Recognition (FG 2018). IEEE, 2018. 98−105.
+
+Nirkin, Y., Masi, I., Tuan, A. T., Hassner, T., & Medioni, G. (2018, May). On face segmentation, face swapping, and face perception. In 2018 13th IEEE International Conference on Automatic Face & Gesture Recognition (FG 2018) (pp. 98-105). IEEE.
 
 Link : https://arxiv.org/abs/1704.06729
 
@@ -4613,10 +4661,20 @@ We show that our intra-subject swapped faces remain as recognizable as their sou
 Bibliography
 
 ```
+@inproceedings{nirkin2018face,
+  title={On face segmentation, face swapping, and face perception},
+  author={Nirkin, Yuval and Masi, Iacopo and Tuan, Anh Tran and Hassner, Tal and Medioni, Gerard},
+  booktitle={2018 13th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2018)},
+  pages={98--105},
+  year={2018},
+  organization={IEEE}
+}
 ```
 
 
 112. Lu Z, Li Z, Cao J, He R, Sun Z. Recent progress of face image synthesis. In: Proc. of the 4th IAPR Asian Conf. on Pattern Recognition (ACPR). IEEE, 2017. 7−12.
+
+Lu, Z., Li, Z., Cao, J., He, R., & Sun, Z. (2017, November). Recent progress of face image synthesis. In 2017 4th IAPR Asian Conference on Pattern Recognition (ACPR) (pp. 7-12). IEEE.
 
 Link : https://arxiv.org/abs/1706.04717
 
@@ -4643,10 +4701,20 @@ We end the review with discussing unsolved difficulties and promising directions
 Bibliography
 
 ```
+@inproceedings{lu2017recent,
+  title={Recent progress of face image synthesis},
+  author={Lu, Zhihe and Li, Zhihang and Cao, Jie and He, Ran and Sun, Zhenan},
+  booktitle={2017 4th IAPR Asian Conference on Pattern Recognition (ACPR)},
+  pages={7--12},
+  year={2017},
+  organization={IEEE}
+}
 ```
 
 
 113. Goodfellow I, Pouget-Abadie J, Mirza M, Xu B, Warde-Farley D, Ozair S, Courvile A, Bengio Y. Generative adversarial nets. In: Proc. of the Advances in Neural Information Processing Systems. 2014. 2672−2680.
+
+Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., ... & Bengio, Y. (2014). Generative adversarial nets. Advances in neural information processing systems, 27.
 
 Link : https://arxiv.org/abs/1406.2661
 
@@ -4675,6 +4743,13 @@ Experiments demonstrate the potential of the framework through qualitative and q
 Bibliography
 
 ```
+@article{goodfellow2014generative,
+  title={Generative adversarial nets},
+  author={Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+  journal={Advances in neural information processing systems},
+  volume={27},
+  year={2014}
+}
 ```
 
 
@@ -4687,10 +4762,16 @@ Note : Faceswap-GAN 就是增加了 GAN 技术的 Deepfakes,引入判别器的�
 Bibliography
 
 ```
+@online{list1113,
+    title     = "Faceswap-GAN.",
+    url       = "https://github.com/shaoanlu/faceswap-GAN"
+}
 ```
 
 
 115. Korshunova I, Shi W, Dambre J, Theis L. Fast face-swap using convolutional neural networks. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2017. 3677−3685.
+
+Korshunova, I., Shi, W., Dambre, J., & Theis, L. (2017). Fast face-swap using convolutional neural networks. In Proceedings of the IEEE international conference on computer vision (pp. 3677-3685).
 
 Link : https://arxiv.org/abs/1611.09577
 
@@ -4714,10 +4795,19 @@ By combining neural networks with simple pre- and post-processing steps, we aim 
 Bibliography
 
 ```
+@inproceedings{korshunova2017fast,
+  title={Fast face-swap using convolutional neural networks},
+  author={Korshunova, Iryna and Shi, Wenzhe and Dambre, Joni and Theis, Lucas},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={3677--3685},
+  year={2017}
+}
 ```
 
 
 116. Nirkin Y, Keller Y, Hassner T. FSGAN: Subject agnostic face swapping and reenactment. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 7184−7193.
+
+Nirkin, Y., Keller, Y., & Hassner, T. (2019). Fsgan: Subject agnostic face swapping and reenactment. In Proceedings of the IEEE/CVF international conference on computer vision (pp. 7184-7193).
 
 Link : https://arxiv.org/abs/1908.05932
 
@@ -4746,10 +4836,19 @@ This network uses a novel Poisson blending loss which combines Poisson optimizat
 Bibliography
 
 ```
+@inproceedings{nirkin2019fsgan,
+  title={Fsgan: Subject agnostic face swapping and reenactment},
+  author={Nirkin, Yuval and Keller, Yosi and Hassner, Tal},
+  booktitle={Proceedings of the IEEE/CVF international conference on computer vision},
+  pages={7184--7193},
+  year={2019}
+}
 ```
 
 
 117. Choi Y, Choi M, Kim M, Ha J, Kin S, Choo J. StarGAN: Unified generative adversarial networks for multi-domain image-toimage translation. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2018. 8789−8797.
+
+Choi, Y., Choi, M., Kim, M., Ha, J. W., Kim, S., & Choo, J. (2018). Stargan: Unified generative adversarial networks for multi-domain image-to-image translation. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 8789-8797).
 
 Link : https://arxiv.org/abs/1711.09020
 
@@ -4774,10 +4873,19 @@ We empirically demonstrate the effectiveness of our approach on a facial attribu
 Bibliography
 
 ```
+@inproceedings{choi2018stargan,
+  title={Stargan: Unified generative adversarial networks for multi-domain image-to-image translation},
+  author={Choi, Yunjey and Choi, Minje and Kim, Munyoung and Ha, Jung-Woo and Kim, Sunghun and Choo, Jaegul},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={8789--8797},
+  year={2018}
+}
 ```
 
 
 118. Zhang H, Xu T, Li H, Zhang S, Wang X, Huang X, Netaxas D. StackGAN++: Realistic image synthesis with stacked generative adversarial networks. IEEE Trans. on Pattern Analysis and Machine Intelligence, 2018,41(8):1947−1962.
+
+Zhang, H., Xu, T., Li, H., Zhang, S., Wang, X., Huang, X., & Metaxas, D. N. (2018). Stackgan++: Realistic image synthesis with stacked generative adversarial networks. IEEE transactions on pattern analysis and machine intelligence, 41(8), 1947-1962.
 
 Link : https://www.researchgate.net/publication/320727533_StackGAN_Realistic_Image_Synthesis_with_Stacked_Generative_Adversarial_Networks
 
@@ -4808,10 +4916,22 @@ Extensive experiments demonstrate that the proposed stacked generative adversari
 Bibliography
 
 ```
+@article{zhang2018stackgan++,
+  title={Stackgan++: Realistic image synthesis with stacked generative adversarial networks},
+  author={Zhang, Han and Xu, Tao and Li, Hongsheng and Zhang, Shaoting and Wang, Xiaogang and Huang, Xiaolei and Metaxas, Dimitris N},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={41},
+  number={8},
+  pages={1947--1962},
+  year={2018},
+  publisher={IEEE}
+}
 ```
 
 
 119. Karras T, Aila T, Laine S, Lehtinen J. Progressive growing of GANs for improved quality, stability, and variation. In: Proc. of the 6th Int’l Conf. on Learning Representations (ICLR). 2018.
+
+Karras, T., Aila, T., Laine, S., & Lehtinen, J. (2017). Progressive growing of gans for improved quality, stability, and variation. arXiv preprint arXiv:1710.10196.
 
 Link : https://arxiv.org/abs/1710.10196
 
@@ -4840,10 +4960,18 @@ As an additional contribution, we construct a higher-quality version of the Cele
 Bibliography
 
 ```
+@article{karras2017progressive,
+  title={Progressive growing of gans for improved quality, stability, and variation},
+  author={Karras, Tero and Aila, Timo and Laine, Samuli and Lehtinen, Jaakko},
+  journal={arXiv preprint arXiv:1710.10196},
+  year={2017}
+}
 ```
 
 
 120. Antipov G, Baccouche M, Dugelay JL. Face aging with conditional generative adversarial networks. In: Proc. of the IEEE Int’l Conf. on Image Processing (ICIP). IEEE, 2017. 2089−2093.
+
+Antipov, G., Baccouche, M., & Dugelay, J. L. (2017, September). Face aging with conditional generative adversarial networks. In 2017 IEEE international conference on image processing (ICIP) (pp. 2089-2093). IEEE.
 
 Link : https://arxiv.org/abs/1702.01983
 
@@ -4866,10 +4994,20 @@ The objective evaluation of the resulting aged and rejuvenated face images by th
 Bibliography
 
 ```
+@inproceedings{antipov2017face,
+  title={Face aging with conditional generative adversarial networks},
+  author={Antipov, Grigory and Baccouche, Moez and Dugelay, Jean-Luc},
+  booktitle={2017 IEEE international conference on image processing (ICIP)},
+  pages={2089--2093},
+  year={2017},
+  organization={IEEE}
+}
 ```
 
 
 121. Mirza M, Osindero S. Conditional generative adversarial nets. arXiv preprint arXiv:1411.1784, 2014.
+
+Mirza, M., & Osindero, S. (2014). Conditional generative adversarial nets. arXiv preprint arXiv:1411.1784.
 
 Link : https://arxiv.org/abs/1411.1784
 
@@ -4889,10 +5027,18 @@ We also illustrate how this model could be used to learn a multi-modal model, an
 Bibliography
 
 ```
+@article{mirza2014conditional,
+  title={Conditional generative adversarial nets},
+  author={Mirza, Mehdi and Osindero, Simon},
+  journal={arXiv preprint arXiv:1411.1784},
+  year={2014}
+}
 ```
 
 
 122. Huang R, Zhang S, Li T, He R. Beyond face rotation: Global and local perception GAN for photorealistic and identity preserving frontal view synthesis. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2017. 2439−2448.
+
+Huang, R., Zhang, S., Li, T., & He, R. (2017). Beyond face rotation: Global and local perception gan for photorealistic and identity preserving frontal view synthesis. In Proceedings of the IEEE international conference on computer vision (pp. 2439-2448).
 
 Link : https://arxiv.org/abs/1704.04086
 
@@ -4921,10 +5067,19 @@ Experimental results demonstrate that our method not only presents compelling pe
 Bibliography
 
 ```
+@inproceedings{huang2017beyond,
+  title={Beyond face rotation: Global and local perception gan for photorealistic and identity preserving frontal view synthesis},
+  author={Huang, Rui and Zhang, Shu and Li, Tianyu and He, Ran},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={2439--2448},
+  year={2017}
+}
 ```
 
 
 123. Thies J, Zollhöfer M, Nießner M, Valgaerts L, Stamminger M, Theobalt C. Real-time expression transfer for facial reenactment. ACM Trans. on Graphics (TOG), 2015,34(6):Article No.183.
+
+Thies, J., Zollhöfer, M., Nießner, M., Valgaerts, L., Stamminger, M., & Theobalt, C. (2015). Real-time expression transfer for facial reenactment. ACM Trans. Graph., 34(6), 183-1.
 
 Link : http://www.graphics.stanford.edu/~niessner/papers/2015/10face/thies2015realtime.pdf
 
@@ -4953,10 +5108,21 @@ We demonstrate our method in a live setup, where we modify a video conference fe
 Bibliography
 
 ```
+@article{thies2015real,
+  title={Real-time expression transfer for facial reenactment.},
+  author={Thies, Justus and Zollh{\"o}fer, Michael and Nie{\ss}ner, Matthias and Valgaerts, Levi and Stamminger, Marc and Theobalt, Christian},
+  journal={ACM Trans. Graph.},
+  volume={34},
+  number={6},
+  pages={183--1},
+  year={2015}
+}
 ```
 
 
 124. Thies J, Zollhofer M, Stamminger M, Theobalt C, Niebner M. Face2face: Real-time face capture and reenactment of RGB videos. In: Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition. 2016. 2387−2395.
+
+Thies, J., Zollhofer, M., Stamminger, M., Theobalt, C., & Nießner, M. (2016). Face2face: Real-time face capture and reenactment of rgb videos. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2387-2395).
 
 Link : https://arxiv.org/abs/2007.14808
 
@@ -4988,10 +5154,19 @@ We demonstrate our method in a live setup, where Youtube videos are reenacted in
 Bibliography
 
 ```
+@inproceedings{thies2016face2face,
+  title={Face2face: Real-time face capture and reenactment of rgb videos},
+  author={Thies, Justus and Zollhofer, Michael and Stamminger, Marc and Theobalt, Christian and Nie{\ss}ner, Matthias},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={2387--2395},
+  year={2016}
+}
 ```
 
 
 125. Thies J, Zollhöfer M, Theobalt C, Stamminger M, Niessner M. Headon: Real-time reenactment of human portrait videos. ACM Trans. on Graphics (TOG), 2018,37(4):1−13.
+
+Thies, J., Zollhöfer, M., Theobalt, C., Stamminger, M., & Nießner, M. (2018). Headon: Real-time reenactment of human portrait videos. ACM Transactions on Graphics (TOG), 37(4), 1-13.
 
 Link : https://arxiv.org/pdf/1805.11729.pdf
 
@@ -5017,10 +5192,22 @@ We extensively evaluate our approach and show significant improvements in enabli
 Bibliography
 
 ```
+@article{thies2018headon,
+  title={Headon: Real-time reenactment of human portrait videos},
+  author={Thies, Justus and Zollh{\"o}fer, Michael and Theobalt, Christian and Stamminger, Marc and Nie{\ss}ner, Matthias},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={37},
+  number={4},
+  pages={1--13},
+  year={2018},
+  publisher={ACM New York, NY, USA}
+}
 ```
 
 
 126. Kim H, Garrido P, Tewari A, Xu W, Thies J, Niessner M, Perez P, Richardt C, Zollhofer M, Theobalt C. Deep video portraits. ACM Trans. on Graphics (TOG), 2018,37(4):1−14.
+
+Kim, H., Garrido, P., Tewari, A., Xu, W., Thies, J., Niessner, M., ... & Theobalt, C. (2018). Deep video portraits. ACM Transactions on Graphics (TOG), 37(4), 1-14.
 
 Link : https://gvv.mpi-inf.mpg.de/projects/DeepVideoPortraits/
 
@@ -5051,10 +5238,22 @@ To demonstrate the high quality of our output, we conduct an extensive series of
 Bibliography
 
 ```
+@article{kim2018deep,
+  title={Deep video portraits},
+  author={Kim, Hyeongwoo and Garrido, Pablo and Tewari, Ayush and Xu, Weipeng and Thies, Justus and Niessner, Matthias and P{\'e}rez, Patrick and Richardt, Christian and Zollh{\"o}fer, Michael and Theobalt, Christian},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={37},
+  number={4},
+  pages={1--14},
+  year={2018},
+  publisher={ACM New York, NY, USA}
+}
 ```
 
 
 127. Thies J, Zollhöfer M, Nießner M. Deferred neural rendering: Image synthesis using neural textures. ACM Trans. on Graphics (TOG), 2019,38(4):1−12.
+
+Thies, J., Zollhöfer, M., & Nießner, M. (2019). Deferred neural rendering: Image synthesis using neural textures. ACM Transactions on Graphics (TOG), 38(4), 1-12.
 
 Link : https://arxiv.org/abs/1904.12356
 
@@ -5089,10 +5288,22 @@ We show the effectiveness of our approach in several experiments on novel view s
 Bibliography
 
 ```
+@article{thies2019deferred,
+  title={Deferred neural rendering: Image synthesis using neural textures},
+  author={Thies, Justus and Zollh{\"o}fer, Michael and Nie{\ss}ner, Matthias},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={38},
+  number={4},
+  pages={1--12},
+  year={2019},
+  publisher={ACM New York, NY, USA}
+}
 ```
 
 
 128. Suwajanakorn S, Seitz SM, Kemelmacher-Shlizerman I. Synthesizing Obama: Learning lip sync from audio. ACM Trans. on Graphics (TOG), 2017,36(4):1−13.
+
+Suwajanakorn, S., Seitz, S. M., & Kemelmacher-Shlizerman, I. (2017). Synthesizing obama: learning lip sync from audio. ACM Transactions on Graphics (ToG), 36(4), 1-13.
 
 Link : https://grail.cs.washington.edu/projects/AudioToObama/
 
@@ -5113,10 +5324,31 @@ Our approach produces photorealistic results.
 Bibliography
 
 ```
+@article{10.1145/3072959.3073640,
+author = {Suwajanakorn, Supasorn and Seitz, Steven M. and Kemelmacher-Shlizerman, Ira},
+title = {Synthesizing Obama: Learning Lip Sync from Audio},
+year = {2017},
+issue_date = {August 2017},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {36},
+number = {4},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/3072959.3073640},
+doi = {10.1145/3072959.3073640},
+abstract = {Given audio of President Barack Obama, we synthesize a high quality video of him speaking with accurate lip sync, composited into a target video clip. Trained on many hours of his weekly address footage, a recurrent neural network learns the mapping from raw audio features to mouth shapes. Given the mouth shape at each time instant, we synthesize high quality mouth texture, and composite it with proper 3D pose matching to change what he appears to be saying in a target video to match the input audio track. Our approach produces photorealistic results.},
+journal = {ACM Trans. Graph.},
+month = {jul},
+articleno = {95},
+numpages = {13},
+keywords = {audiovisual speech, LSTM, face synthesis, videos, audio, big data, uncanny valley, RNN, lip sync}
+}
 ```
 
 
 129. Zakharov E, Shysheya A, Burkov E, Lempitsky V. Few-shot adversarial learning of realistic neural talking head models. In: Proc. of the IEEE Int’l Conf. on Computer Vision. 2019. 9459−9468.
+
+Zakharov, E., Shysheya, A., Burkov, E., & Lempitsky, V. (2019). Few-shot adversarial learning of realistic neural talking head models. In Proceedings of the IEEE/CVF international conference on computer vision (pp. 9459-9468).
 
 Link : https://arxiv.org/abs/1905.08233
 
@@ -5141,10 +5373,19 @@ We show that such an approach is able to learn highly realistic and personalized
 Bibliography
 
 ```
+@InProceedings{Zakharov_2019_ICCV,
+author = {Zakharov, Egor and Shysheya, Aliaksandra and Burkov, Egor and Lempitsky, Victor},
+title = {Few-Shot Adversarial Learning of Realistic Neural Talking Head Models},
+booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+month = {October},
+year = {2019}
+}
 ```
 
 
 130. Fried O, Tewari A, Zollhöfer M, Finkelstein A, Shechtman E, Goldman D, Genova K, Jin Z, Theobalt C, Agrawala M. Text-based editing of talking-head video. ACM Trans. on Graphics (TOG), 2019,38(4):1−14.
+
+Fried, O., Tewari, A., Zollhöfer, M., Finkelstein, A., Shechtman, E., Goldman, D. B., ... & Agrawala, M. (2019). Text-based editing of talking-head video. ACM Transactions on Graphics (TOG), 38(4), 1-14.
 
 Link : https://arxiv.org/abs/1906.01524
 
@@ -5171,11 +5412,31 @@ We demonstrate a large variety of edits, such as the addition, removal, and alte
 Bibliography
 
 ```
-
+@article{10.1145/3306346.3323028,
+author = {Fried, Ohad and Tewari, Ayush and Zollh\"{o}fer, Michael and Finkelstein, Adam and Shechtman, Eli and Goldman, Dan B and Genova, Kyle and Jin, Zeyu and Theobalt, Christian and Agrawala, Maneesh},
+title = {Text-Based Editing of Talking-Head Video},
+year = {2019},
+issue_date = {August 2019},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {38},
+number = {4},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/3306346.3323028},
+doi = {10.1145/3306346.3323028},
+abstract = {Editing talking-head video to change the speech content or to remove filler words is challenging. We propose a novel method to edit talking-head video based on its transcript to produce a realistic output video in which the dialogue of the speaker has been modified, while maintaining a seamless audio-visual flow (i.e. no jump cuts). Our method automatically annotates an input talking-head video with phonemes, visemes, 3D face pose and geometry, reflectance, expression and scene illumination per frame. To edit a video, the user has to only edit the transcript, and an optimization strategy then chooses segments of the input corpus as base material. The annotated parameters corresponding to the selected segments are seamlessly stitched together and used to produce an intermediate video representation in which the lower half of the face is rendered with a parametric face model. Finally, a recurrent video generation network transforms this representation to a photorealistic video that matches the edited transcript. We demonstrate a large variety of edits, such as the addition, removal, and alteration of words, as well as convincing language translation and full sentence synthesis.},
+journal = {ACM Trans. Graph.},
+month = {jul},
+articleno = {68},
+numpages = {14},
+keywords = {visemes, neural rendering, dubbing, face parameterization, talking heads, face tracking, text-based video editing}
+}
 ```
 
 
 131. Averbuch-Elor H, Cohen-Or D, Kopf J, Cohen M. Bringing portraits to life. ACM Trans. on Graphics (TOG), 2017,36(6):Article No.196.
+
+Averbuch-Elor, H., Cohen-Or, D., Kopf, J., & Cohen, M. F. (2017). Bringing portraits to life. ACM Transactions on Graphics (TOG), 36(6), 1-13.
 
 Link : https://dl.acm.org/doi/abs/10.1145/3130800.3130818
 
@@ -5204,11 +5465,31 @@ We demonstrate our technique operating on numerous still portraits from the inte
 Bibliography
 
 ```
-
+@article{10.1145/3130800.3130818,
+author = {Averbuch-Elor, Hadar and Cohen-Or, Daniel and Kopf, Johannes and Cohen, Michael F.},
+title = {Bringing Portraits to Life},
+year = {2017},
+issue_date = {December 2017},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {36},
+number = {6},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/3130800.3130818},
+doi = {10.1145/3130800.3130818},
+abstract = {We present a technique to automatically animate a still portrait, making it possible for the subject in the photo to come to life and express various emotions. We use a driving video (of a different subject) and develop means to transfer the expressiveness of the subject in the driving video to the target portrait. In contrast to previous work that requires an input video of the target face to reenact a facial performance, our technique uses only a single target image. We animate the target image through 2D warps that imitate the facial transformations in the driving video. As warps alone do not carry the full expressiveness of the face, we add fine-scale dynamic details which are commonly associated with facial expressions such as creases and wrinkles. Furthermore, we hallucinate regions that are hidden in the input target face, most notably in the inner mouth. Our technique gives rise to reactive profiles, where people in still images can automatically interact with their viewers. We demonstrate our technique operating on numerous still portraits from the internet.},
+journal = {ACM Trans. Graph.},
+month = {nov},
+articleno = {196},
+numpages = {13},
+keywords = {face animation, facial reenactment}
+}
 ```
 
 
 132. Lample G, Zeghidour N, Usunier N, Bordes A, Denoyer L, Ranzato M. Fader networks: Manipulating images by sliding attributes. In: Proc. of the Advances in Neural Information Processing Systems. 2017. 5967−5976. 
+
+Lample, G., Zeghidour, N., Usunier, N., Bordes, A., Denoyer, L., & Ranzato, M. A. (2017). Fader networks: Manipulating images by sliding attributes. Advances in neural information processing systems, 30.
 
 Link : https://arxiv.org/abs/1706.00409
 
@@ -5233,6 +5514,17 @@ We present evidence that our model can significantly change the perceived value 
 Bibliography
 
 ```
+@inproceedings{NIPS2017_3fd60983,
+ author = {Lample, Guillaume and Zeghidour, Neil and Usunier, Nicolas and Bordes, Antoine and DENOYER, Ludovic and Ranzato, Marc\textquotesingle Aurelio},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {I. Guyon and U. V. Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {Fader Networks:Manipulating Images by Sliding Attributes},
+ url = {https://proceedings.neurips.cc/paper/2017/file/3fd60983292458bf7dee75f12d5e9e05-Paper.pdf},
+ volume = {30},
+ year = {2017}
+}
 ```
 
 
