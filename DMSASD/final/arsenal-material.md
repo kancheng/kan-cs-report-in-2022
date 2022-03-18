@@ -4415,6 +4415,8 @@ We improve Tacotron by introducing a post-processing neural vocoder, and demonst
 We then demonstrate our technique for multi-speaker speech synthesis for both Deep Voice 2 and Tacotron on two multi-speaker TTS datasets. We show that a single neural TTS system can learn hundreds of unique voices from less than half an hour of data per speaker, while achieving high audio quality synthesis and preserving the speaker identities almost perfectly.
 ```
 
+該研究介紹了一種使用低維可訓練說話人嵌入來增強神經文本到語音 (TTS) 的技術，以從單個模型生成不同的聲音。作為起點，研究者展示了對單說話人神經 TTS 的兩種最先進方法的改進：Deep Voice 1 和 Tacotron。該研究介紹了 Deep Voice 2，它基於與 Deep Voice 1 類似的管道，但使用更高性能的構建塊構建，並展示了與 Deep Voice 1 相比顯著的音頻質量改進，其研究通過引入後處理神經聲碼器來改進 Tacotron，並展示了顯著的音頻質量改進。然後，研究者在兩個多說話人 TTS 數據集上演示了該研究的 Deep Voice 2 和 Tacotron 多說話人語音合成技術。並展示了單個神經 TTS 系統可以從每個說話者不到半小時的數據中學習數百個獨特的聲音，同時實現高音頻質量合成並幾乎完美地保留說話者的身份。
+
 Bibliography
 
 ```
@@ -4436,6 +4438,8 @@ In addition, we identify common error modes of attention-based speech synthesis 
 
 We also describe how to scale inference to ten million queries per day on one single-GPU server.
 ```
+
+研究者展示了 Deep Voice 3，這是一種基於全卷積注意力的神經文本到語音 (TTS) 系統，Deep Voice 3 在自然度上與最先進的神經語音合成系統相匹配，同時訓練速度提高了十倍。 該研究將 Deep Voice 3 擴展到 TTS 前所未有的數據集大小，對來自 2000 多個揚聲器的超過 800 小時的音頻進行訓練。此外，研究確定了基於注意力的語音合成網絡的常見錯誤模式，演示瞭如何減輕它們，並比較了幾種不同的波形合成方法，最後還描述瞭如何在一台單 GPU 服務器上將推理擴展到每天一千萬個查詢。
 
 Bibliography
 
@@ -4467,6 +4471,8 @@ The enhanced samples confirm the viability of the proposed model, and both objec
 With that, we open the exploration of generative architectures for speech enhancement, which may progressively incorporate further speech-centric design choices to improve their performance.
 ```
 
+當前的語音增強技術在頻譜域上運行和/或利用一些更高級別的特徵，它們中的大多數處理有限數量的噪聲條件並依賴一階統計數據。為了規避這些問題，由於深度網絡能夠從大型示例集中學習複雜功能，因此越來越多地使用它們。在這項工作中，研究建議使用生成對抗網絡進行語音增強。與當前技術相比，該研究在波形級別上操作，端到端訓練模型，並將 28 個揚聲器和 40 種不同的噪聲條件合併到同一模型中，以便在它們之間共享模型參數。研究者使用具有兩個揚聲器和 20 種替代噪聲條件的獨立、看不見的測試集來評估所提出的模型，增強的樣本證實了所提出模型的可行性，客觀和主觀評價都證實了它的有效性。有了這個，研究者開始探索用於語音增強的生成架構，這可能會逐漸結合進一步的以語音為中心的設計選擇，以提高它們的性能。
+
 Bibliography
 
 ```
@@ -4493,6 +4499,8 @@ Our experiments demonstrate that, without labels, WaveGAN learns to produce inte
 We compare WaveGAN to a method which applies GANs designed for image generation on image-like audio feature representations, finding both approaches to be promising.
 ```
 
+音頻信號以高時間分辨率進行採樣，學習合成音頻需要在一系列時間尺度上捕獲結構。生成對抗網絡 (GAN) 在生成本地和全局連貫的圖像方面取得了廣泛成功，但它們在音頻生成方面的應用卻很少。該研究的研究者介紹了 WaveGAN，這是將 GAN 應用於原始波形音頻的無監督合成的首次嘗試，WaveGAN 能夠合成一秒鐘的具有全局相干性的音頻波形切片，適用於音效生成。其實驗表明，在沒有標籤的情況下，WaveGAN 在小詞彙量語音數據集上訓練時學會了生成可理解的單詞，並且還可以合成來自其他領域的音頻，例如鼓、鳥的發聲和鋼琴。研究者將 WaveGAN 與將設計用於圖像生成的 GAN 應用於類似圖像的音頻特徵表示的方法進行比較，發現這兩種方法都有前景。
+
 Bibliography
 
 ```
@@ -4517,8 +4525,9 @@ However, the detection technology for this kind of fake videos is still far behi
 This paper first summarizes the existing generation and detection works, and analyzes the defects of the existing works, then we propose the two-stream network detection framework based on the EfficientNet. 
 
 By testing on a large open source dataset, FaceForensics++, our detection method was able to detect fake videos with an average accuracy of over 99%, and improve the ability of the model to resist compression to a certain extent.
-
 ```
+
+隨著深度學習技術的飛速發展，Deepfakes等深度偽造技術開始充斥互聯網的每一個角落，通過利用生成對抗網絡和自動編碼器技術，Deepfakes 可以輕鬆替換面部並篡改面部表情。Deepfakes 可以製作假色情、散佈謠言、散佈假新聞，甚至影響政治選舉，導致災難性的社會後果。但是，對於此類假視頻的檢測技術仍遠遠落後於生成技術，現有作品存在一定的局限性。該研究首先總結了現有的生成和檢測工作，分析了現有工作的缺陷，然後提出了基於 EfficientNet 的雙流網絡檢測框架。通過在大型開源數據集 FaceForensics++ 上進行測試，其研究者的檢測方法能夠檢測出平均超過 99% 的假視頻，並在一定程度上提高了模型的抗壓縮能力。
 
 Bibliography
 
@@ -4651,6 +4660,8 @@ The methods are easy to implement and offer capabilities for rapid adjustment to
 
 Despite their simplicity, the methods are able to achieve AUC values of up to 0.866.
 ```
+
+視頻中的高質量人臉編輯越來越受到關注，並傳播了對視頻內容的不信任。然而，經過仔細檢查，許多人臉編輯算法表現出類似於經典計算機視覺問題的偽影，這些問題源於人臉跟踪和編輯。因此，研究者想知道從當前的生成器中暴露人造面孔有多困難？為此，該研究回顧了當前的面部編輯方法和來自其處理管道的幾個特徵工件。其研究還表明，相對簡單的視覺偽影在暴露此類操作方面已經非常有效，包括 Deepfakes 和 Face2Face。由於這些方法基於視覺特徵，因此對於非技術專家也很容易解釋。這些方法易於實施，並提供了在可用數據很少的情況下快速調整新操作類型的能力。儘管它們很簡單，但這些方法能夠實現高達 0.866 的 AUC 值。
 
 Bibliography
 
