@@ -37,10 +37,21 @@ By reviewing the background of deep-fakes and state-of-the-art deepfake detectio
 Bibliography
 
 ```
+@unknown{unknown,
+author = {Nguyen, Thanh and Nguyen, Cuong M. and Nguyen, Tien and Nguyen, Duc and Nahavandi, Saeid},
+year = {2019},
+month = {09},
+pages = {},
+title = {Deep Learning for Deepfakes Creation and Detection: A Survey}
+}
 ```
+
+> 疑似與某篇一致
 
 
 1. Deepfakes Detection Techniques Using Deep Learning: A Survey
+
+Almars, A. M. (2021). Deepfakes detection techniques using deep learning: a survey. Journal of Computer and Communications, 9(5), 20-35.
 
 https://www.scirp.org/journal/paperinformation.aspx?paperid=109149
 
@@ -65,10 +76,22 @@ In addition, it will help comparison with the existing works because of the deta
 Bibliography
 
 ```
+@article{almars2021deepfakes,
+  title={Deepfakes detection techniques using deep learning: a survey},
+  author={Almars, Abdulqader M},
+  journal={Journal of Computer and Communications},
+  volume={9},
+  number={5},
+  pages={20--35},
+  year={2021},
+  publisher={Scientific Research Publishing}
+}
 ```
 
 
 2. M2TR: Multi-modal Multi-scale Transformers for Deepfake Detection
+
+Wang, J., Wu, Z., Chen, J., & Jiang, Y. G. (2021). M2tr: Multi-modal multi-scale transformers for deepfake detection. arXiv preprint arXiv:2104.09770.
 
 https://arxiv.org/abs/2104.09770
 
@@ -99,10 +122,18 @@ Deepfake 技術所產生的偽造圖像廣泛傳播對數位資訊的可信度�
 Bibliography
 
 ```
+@article{wang2021m2tr,
+  title={M2tr: Multi-modal multi-scale transformers for deepfake detection},
+  author={Wang, Junke and Wu, Zuxuan and Chen, Jingjing and Jiang, Yu-Gang},
+  journal={arXiv preprint arXiv:2104.09770},
+  year={2021}
+}
 ```
 
 
 3. Combining EfficientNet and Vision Transformers for Video Deepfake Detection
+
+Coccomini, D., Messina, N., Gennaro, C., & Falchi, F. (2021). Combining efficientnet and vision transformers for video deepfake detection. arXiv preprint arXiv:2107.02612.
 
 https://arxiv.org/abs/2107.02612
 
@@ -135,10 +166,18 @@ Deepfakes 是用數位的方式去操作跟偽造出逼真但虛假圖像的結�
 Bibliography
 
 ```
+@article{coccomini2021combining,
+  title={Combining efficientnet and vision transformers for video deepfake detection},
+  author={Coccomini, Davide and Messina, Nicola and Gennaro, Claudio and Falchi, Fabrizio},
+  journal={arXiv preprint arXiv:2107.02612},
+  year={2021}
+}
 ```
 
 
 4. Video Transformer for Deepfake Detection with Incremental Learning
+
+Khan, S. A., & Dai, H. (2021, October). Video Transformer for Deepfake Detection with Incremental Learning. In Proceedings of the 29th ACM International Conference on Multimedia (pp. 1821-1828).
 
 https://dl.acm.org/doi/abs/10.1145/3474085.3475332?sid=SCITRUS
 
@@ -161,6 +200,13 @@ Deepfake 的面部偽造在互聯網上廣泛傳播，這引起了嚴重的社�
 Bibliography
 
 ```
+@inproceedings{khan2021video,
+  title={Video Transformer for Deepfake Detection with Incremental Learning},
+  author={Khan, Sohail Ahmed and Dai, Hang},
+  booktitle={Proceedings of the 29th ACM International Conference on Multimedia},
+  pages={1821--1828},
+  year={2021}
+}
 ```
 
 
@@ -188,6 +234,13 @@ Link : https://www.angle.com.tw/book.asp?BKID=12196
 Bibliography
 
 ```
+@Article{law01,
+title = {第二波人工智慧知識學習與生產對法學的挑戰 — 資訊、科技與社會研究及法學的對話},
+author = {邱文聰},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -202,6 +255,13 @@ Bibliography
 Bibliography
 
 ```
+@Article{law02,
+title = {初探人工智慧與生命倫理之關係},
+author = {吳全峰},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -216,10 +276,17 @@ Bibliography
 Bibliography
 
 ```
+@Article{law03,
+title = {初探目的解釋在法律人工智慧系統之運用可能},
+author = {陳弘儒},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
-4. AI 時代之分裂社會與民主—以美國法之表意自由與觀念市場自由競爭理論為中心，陳柏良
+4. AI 時代之分裂社會與民主 — 以美國法之表意自由與觀念市場自由競爭理論為中心，陳柏良
 
 美國聯邦最高法院自 1920 年代起所形塑之之表意自由權,建立於三個法社會基礎:一、資訊稀缺性:二、閱聽者具備充分的資訊審議時間；三、政府是意見自由競爭市場的主要威脅。
 
@@ -232,10 +299,17 @@ Bibliography
 Bibliography
 
 ```
+@Article{law04,
+title = {AI 時代之分裂社會與民主 — 以美國法之表意自由與觀念市場自由競爭理論為中心},
+author = {陳柏良},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
-5. AI 個資爭議在英國與歐盟之經驗 — 以Google DeepMind一案為例，何之行、廖貞
+5. AI 個資爭議在英國與歐盟之經驗 — 以Google DeepMind 一案為例，何之行、廖貞
 
 本文分析英國國家健保局(NHS)下轄之 Royl Free 公立醫院於 2016 年 1 月起薪由身 Google DecpMnd 公司所簽署之
 資料分享協議·移轉超過 160 萬未去識別化之病患個資于 Google DeepMind 作為急性腎衰竭診断軟體開發之用，從而引發個資保護之爭議。文章首先剖析 Google DeepMind 一案之案例事及背景，而探討人工智演算法所仰賴大量資料之應用與個資保護間文衝突。最後則藉由 Google DeepMind 一案，進一步分析甫於 2018 年 5 月施行之歐盟一般資料保護規則(EUGeneral Data Protection Regulation, GDPR)，其就巨量資料發展所訂定關於科學例外條款及拒絕自動化決策之適用範圍及其限制，盼能由 Google DeepMind 一案之探討，就展人工慧醫療領域所可能面臨之相關個資保護議題以為參酌和借鏡。
@@ -247,6 +321,13 @@ Note : Google 醫療體系與歐盟法規之間發生的問題
 Bibliography
 
 ```
+@Article{law05,
+title = {AI 個資爭議在英國與歐盟之經驗 — 以Google DeepMind 一案為例},
+author = {何之行、廖貞},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -259,6 +340,13 @@ Bibliography
 Bibliography
 
 ```
+@Article{law06,
+title = {人工智慧在金融業的應用 — 論數位金融與一般個人資料保護規則之適用與衝突},
+author = {黃相博},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -278,6 +366,13 @@ Bibliography
 Bibliography
 
 ```
+@Article{law07,
+title = {人工智慧時代下的國際人權法 ─ 規範與制度的韌性探索與再建構},
+author = {林勤富、李怡俐},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -290,6 +385,13 @@ Bibliography
 Bibliography
 
 ```
+@Article{law08,
+title = {人工智慧時代下的金融監理議題 ─ 以理財機器人監理為例},
+author = {楊岳平},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -303,6 +405,13 @@ Bibliography
 Bibliography
 
 ```
+@Article{law09,
+title = {人工智慧時代下的證券監理 ─ 以智能合約在區塊鏈技術的應用出發},
+author = {鄭瑞健},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -315,6 +424,13 @@ Bibliography
 Bibliography
 
 ```
+@Article{law10,
+title = {人工智慧科技對於專利侵權法制的衝擊與因應之道 ─ 以責任歸屬為中心},
+author = {沈宗倫},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 
@@ -327,6 +443,13 @@ Bibliography
 Bibliography
 
 ```
+@Article{law11,
+title = {人工智慧創作與著作權之相關問題},
+author = {王怡蘋},
+ year = {2021},
+ month = {11},
+ publisher = {元照出版公司}
+}
 ```
 
 ## lists 1.
@@ -370,6 +493,19 @@ Finally, the social risks posed by the spread of Deepfakes technology are discus
 Bibliography
 
 ```
+@Article{2021496,
+title = {深度伪造与检测技术综述},
+author = {李旭嵘,纪守领,吴春明,刘振广,邓水光,程鹏,杨珉,孔祥维},
+ journal = {软件学报},
+ volume = {32},
+ number = {2},
+ pages = {496},
+ numpages = {23.0000},
+ year = {2021},
+ month = {},
+ doi = {10.13328/j.cnki.jos.006140},
+ publisher = {科学出版社}
+}
 ```
 
 1. Wu Z, Kinnunen T, Chng ES, Li H, Ambikairajah E. A study on spoofing attack in state-of-the-art speaker verification: The telephone speech case. In: Proc. of the Asia Pacific Signal and Information Processing Association Annual Summit and Conf. IEEE, 2012. 1−5.
@@ -399,6 +535,14 @@ The results indicate that both conversion techniques can increase the false acce
 Bibliography
 
 ```
+@inproceedings{wu2012study,
+  title={A study on spoofing attack in state-of-the-art speaker verification: the telephone speech case},
+  author={Wu, Zhizheng and Kinnunen, Tomi and Chng, Eng Siong and Li, Haizhou and Ambikairajah, Eliathamby},
+  booktitle={Proceedings of The 2012 Asia Pacific Signal and Information Processing Association Annual Summit and Conference},
+  pages={1--5},
+  year={2012},
+  organization={IEEE}
+}
 ```
 
 
@@ -425,6 +569,12 @@ Experi-ments conducted on the National Institute of Standards and Technology (NI
 Bibliography
 
 ```
+@inproceedings{wu2012detecting,
+  title={Detecting converted speech and natural speech for anti-spoofing attack in speaker recognition},
+  author={Wu, Zhizheng and Chng, Eng Siong and Li, Haizhou},
+  booktitle={Thirteenth Annual Conference of the International Speech Communication Association},
+  year={2012}
+}
 ```
 
 
@@ -1921,6 +2071,8 @@ With this dataset, we perform a thorough analysis of data-driven fake face detec
 We show that the use of an attention mechanism improves facial forgery detection and manipulated region localization.
 ```
 
+檢測被操縱的面部圖像和視頻是數字媒體取證中越來越重要的主題。隨著先進的人臉合成和操作方法的出現，新類型的假人臉表示正在被創造出來，這引起了人們對它們在社交媒體中的使用的極大關注。因此，檢測操縱的人臉圖像和定位操縱區域至關重要。該研究建議利用注意力機制來處理和改進分類任務的特徵圖，而不是簡單地使用多任務學習來同時檢測操縱圖像和預測操縱掩碼（區域），其學習到的注意力圖突出顯示信息區域以進一步改進二元分類（真人臉與假人臉），並可視化操作區域，為了使研究者能夠研究操縱的面部檢測和定位，該研究收集了一個包含多種類型的面部偽造的大型數據庫。同時使用這個數據集的過程中，研究者對數據驅動的假人臉檢測進行了徹底的分析，成果展示了注意力機制的使用改進了面部偽造檢測和操縱區域定位。
+
 Bibliography
 
 ```
@@ -1943,9 +2095,12 @@ Local estimates of class probabilities are computed and aggregated to predict th
 We evaluate our work on recent photo-realistic computer graphics and show that it outperforms state of the art methods for both local and full image classification.
 ```
 
+該研究提出了一種深度學習方法，用於將計算機生成的圖形與真實的攝影圖像區分開來。所提出的方法使用帶有自定義池化層的捲積神經網絡 (CNN) 來優化當前性能最佳的算法特徵提取方案，來計算和聚合類概率的局部估計以預測整個圖片的標籤，研究者評估了我們在最近的照片般逼真的計算機圖形方面的工作，並表明它在局部和完整圖像分類方面都優於最先進的方法。
+
 Bibliography
 
 ```
+
 ```
 
 
@@ -1960,6 +2115,8 @@ In this paper, we propose a novel Patch&Pair Convolutional Neural Networks (PPCN
 
 Through the comprehensive evaluations on public datasets, we demonstrate that our model performs better than existing detection methods and show better generalization.
 ```
+
+該研究提出了一種新穎的 Patch&Pair 卷積神經網絡 (PPCNN) 來區分 Deepfake 視頻或圖像與真實視頻或圖像，其通過對公共數據集的綜合評估，研究者證明其研究的模型比現有的檢測方法表現更好，並表現出更好的泛化性。
 
 Bibliography
 
@@ -1996,6 +2153,8 @@ We find MesoNet and XceptionNet show potential to generalize to multiple spoofin
 We loosely extrapolate these results to similar CNN architectures and emphasize the need for better architectures to meet the challenges of generality.
 ```
 
+已經為面部偽造檢測任務設計或重新利用了各種架構，儘管其中許多設計取得了巨大成功，但它們在很大程度上未能解決這些模型在實踐中可能面臨的挑戰，這個普遍性帶來了一個重大挑戰，其中模型必須準備好在各種領域中執行。該研究研究了最先進的面部偽造檢測架構的泛化能力，其研究者首先提出兩個通用性標準：可靠地檢測多種欺騙技術和可靠地檢測看不見的欺騙技術，隨後設計實驗來衡量給定架構如何根據這些標準執行。研究者的分析側重於兩種最先進的面部偽造檢測架構，MesoNet 和 XceptionNet，它們都是卷積神經網絡 (CNN)，而實驗使用來自六種最先進的面部偽造技術的樣本：Deepfakes、Face2Face、FaceSwap、GANnotation、ICface 和 X2Face。研究者發現 MesoNet 和 XceptionNet 顯示出泛化到多種欺騙技術的潛力，但在準確性上略有權衡，並且在很大程度上無法對抗看不見的技術。最後將這些結果鬆散地推斷為類似的 CNN 架構，並強調需要更好的架構來應對普遍性的挑戰。
+
 Bibliography
 
 ```
@@ -2024,6 +2183,8 @@ We approach the problem from the journalists' perspective and work towards devel
 Results demonstrate accurate detection on both within and mismatched datasets.
 ```
 
+人們對故意不准確的新聞表示高度關注，最近，由人工智能技術修改或生成的所謂 deepfake 視頻和圖像變得更加逼真，更容易創建。這些技術可用於從公眾人物或未發生事件的視頻中製作虛假公告，以危險的方式誤導大眾觀眾，儘管最近的一些研究已經檢查了深度偽造的準確檢測，但這些方法並不能很好地推廣到現實世界的場景，並且不能以可用的形式向公眾提供。在這個研究工作中，研究者們提出了一個系統，該系統將強大而有效地使用戶能夠確定在線發布的影片是否是 deepfake，該研究從記者的角度處理問題，並努力開發一種工具以無縫融入他們的工作流程，結果表明對內部數據集和不匹配數據集的準確檢測。
+
 Bibliography
 
 ```
@@ -2050,6 +2211,8 @@ To contend with this growing threat, we describe a forensic technique that model
 
 Although not visually apparent, these correlations are often violated by the nature of how deep-fake videos are created and can, therefore, be used for authentication
 ```
+
+製作複雜的假視頻在很大程度上已歸咎於好萊塢製片廠或國家演員，然而，深度學習的最新進展使得創建複雜且引人注目的假視頻變得更加容易。例如，普通人可以利用相對適中的數據量和計算能力創建一個世界領導人承認領導非法活動的視頻，造成憲法危機，軍事領導人說出種族不敏感的話導致軍事活動領域的內亂，或者企業巨頭聲稱他們的利潤微弱導致全球股票操縱，綜上所述這些所謂的深度造假對我們的民主、國家安全和社會構成了重大威脅。為了應對這種日益增長的威脅，研究者描述了一種法醫技術，該技術可以對代表個人說話模式的面部表情和動作進行建模。儘管在視覺上並不明顯，但這些相關性經常被深度偽造視頻的創建方式所破壞，因此可以用於身份驗證
 
 Bibliography
 
@@ -3241,6 +3404,8 @@ Video Forensics continues to develop new technologies to verify the authenticity
 While most of the existing methods are based on the analysis of video data flow, recently, a new line of research was introduced to investigate the video life cycle based on video container analysis.
 ```
 
+在過去的幾十年裡，這一研究領域取得了巨大的發展和進步。然而，該領域現有的貢獻是基於手動比較視頻容器的結構和內容，耗時且費力且容易出錯。目前的工作在網絡取證調查領域顯示出一種詳盡和詳盡的分佈式寫作趨勢，用於檢測視頻偽造，重點關注偽造/篡改檢測、視頻捕獲和復制偽造以及反取證和犯罪現場調查的敵人視頻計數器，Video Forensics 不斷開發新技術來驗證數位影像的真實性和完整性，雖然現有的大多數方法都是基於影像數據流分析的，但最近引入了一種新的研究方向來研究基於視頻容器分析的視頻生命週期。
+
 Bibliography
 
 ```
@@ -3248,6 +3413,8 @@ Bibliography
 
 
 105. Nguyen TT, Nguyen CM, Nguyen DT, Nguyen DT, Nahavandi S. Deep learning for Deepfakes creation and detection. arXiv preprint arXiv:1909.11573, 2019.
+
+Nguyen, T. T., Nguyen, Q. V. H., Nguyen, C. M., Nguyen, D., Nguyen, D. T., & Nahavandi, S. (2019). Deep learning for deepfakes creation and detection: A survey. arXiv preprint arXiv:1909.11573.
 
 Link : https://arxiv.org/abs/1909.11573
 
@@ -3274,6 +3441,12 @@ By reviewing the background of deepfakes and state-of-the-art deepfake detection
 Bibliography
 
 ```
+@article{nguyen2019deep,
+  title={Deep learning for deepfakes creation and detection: A survey},
+  author={Nguyen, Thanh Thi and Nguyen, Quoc Viet Hung and Nguyen, Cuong M and Nguyen, Dung and Nguyen, Duc Thanh and Nahavandi, Saeid},
+  journal={arXiv preprint arXiv:1909.11573},
+  year={2019}
+}
 ```
 
 
