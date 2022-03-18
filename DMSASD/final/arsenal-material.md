@@ -2238,6 +2238,8 @@ In this work, a new forensic technique able to discern between fake and original
 Such a clue is then used as feature to be learned by CNN classifiers. Preliminary results obtained on FaceForensics++ dataset highlight very promising performances.
 ```
 
+視覺媒體技術的最新進展帶來了用於處理，尤其是生成多媒體內容的新工具，特別在於現代基於人工智能的技術提供了易於使用的工具來創建極其逼真的影響，這種名為 Deep Fakes 的合成視頻可能對攻擊公共主體的聲譽或解決對某一事件的普遍看法構成嚴重威脅。 據此，能夠對這種虛假信息進行個體化就變得至關重要。在這項工作中，給出了一種能夠區分假視頻序列和原始視頻序列的新取證技術； 與採用單個視頻幀的其他最先進的方法不同，研究者們建議採用光流場來利用可能的幀間差異。然後將這樣的線索用作 CNN 分類器要學習的特徵。 在 FaceForensics++ 數據集上獲得的初步結果突出了非常有前景的性能。
+
 Bibliography
 
 ```
@@ -2265,6 +2267,8 @@ We evaluate our method against a large set of deepfake videos collected from mul
 We show how our system can achieve competitive results in this task while using a simple architecture.
 ```
 
+最近幾個月，基於機器學習的免費軟件工具可以輕鬆地在視頻中創建可信的人臉交換，幾乎沒有人為操作的痕跡，即所謂的“深度偽造”視頻，這些逼真的假視頻被用來製造政治困境、敲詐某人或假恐怖主義事件的場景很容易想像。該研究提出了一種時間感知管道來自動檢測 deepfake 視頻。 研究者的系統使用卷積神經網絡 (CNN) 來提取幀級特徵，然後使用這些特徵來訓練循環神經網絡 (RNN)，該網絡學習對視頻是否受到操縱進行分類。同時研究者針對從多個視頻網站收集的大量 deepfake 視頻評估該研究的方法，最後展示了該研究的系統如何在使用簡單架構的同時在這項任務中取得有競爭力的結果。
+
 Bibliography
 
 ```
@@ -2291,6 +2295,8 @@ Specifically, we attempt to detect Deepfake, Face2Face and FaceSwap tampered fac
 Evaluation is performed on the recently introduced FaceForensics++ dataset, improving the previous state-of-the-art by up to 4.55% in accuracy.
 ```
 
+通過合成生成但逼真的圖像和視頻傳播錯誤信息已成為一個重大問題，需要強大的操縱檢測方法，儘管在靜止圖像中檢測人臉操作的主要努力，通過利用流中存在的時間信息來識別視頻中被篡改的人臉卻很少受到關注。循環卷積模型是一類深度學習模型，已被證明可以有效地利用跨域圖像流中的時間信息。因此，研究者通過廣泛的實驗提取了將這些模型的變化與特定領域的面部預處理技術相結合的最佳策略，以在公開的基於視頻的面部操作基准上獲得最先進的性能。具體來說，該研究嘗試檢測視頻流中的 Deepfake、Face2Face 和 FaceSwap 篡改人臉，其評估是在最近推出的 FaceForensics++ 數據集上進行的，將之前最先進的準確率提高了 4.55%。
+
 Bibliography
 
 ```
@@ -2314,6 +2320,8 @@ Experimental results obtained using the standard ASVspoof 2015 database show tha
 
 In particular, those for a subset of unknown spoofing attacks (for which no matched training data was used) is 0.46%, a relative improvement of 72% over the best, previously reported results. 
 ```
+
+近年來，開發新的對策以保護自動說話人驗證免受欺騙的努力已經加強，其 ASVspoof 2015 計劃表明，檢測欺騙攻擊的潛力很大，但檢測以前無法預見的欺騙攻擊仍然具有挑戰性，該研究認為，從研究特徵而不是分類器中可以獲得更多收益，並介紹了一種基於恆定 Q 變換的欺騙檢測新特徵，這是一種在音樂研究中流行的受感知啟發的時頻分析工具。使用標準 ASVspoof 2015 數據庫獲得的實驗結果表明，當與基於標準高斯混合模型的分類器結合使用時，所提出的恆定 Q 倒譜係數 (CQCC) 的性能明顯優於所有先前報告的結果，特別是，對於未知欺騙攻擊子集（未使用匹配的訓練數據）的攻擊為 0.46%，相對於先前報告的最佳結果提高了 72%。
 
 Bibliography
 
@@ -2347,6 +2355,8 @@ Using our new dataset, we introduce benchmarks for classical image forensic task
 In addition, we introduce a benchmark evaluation for creating indistinguishable forgeries with known ground truth; for instance with generative refinement models.
 ```
 
+隨著計算機視覺和圖形學的最新進展，現在甚至可以實時生成具有極其逼真的合成人臉的視頻，無數的應用是可能的，其中一些會發出合理的警報，需要可靠的假視頻檢測器。事實上，區分原始視頻和經過處理的視頻對於人類和計算機來說都是一個挑戰，尤其是當視頻被壓縮或分辨率低時，因為它經常發生在社交網絡上。同時由於缺乏足夠的數據集，人臉操作檢測的研究受到了嚴重阻礙。為此，研究者引入了一個新穎的人臉處理數據集，其中包含大約 50 萬張編輯圖像（來自 1000 多個視頻），這些操作是使用最先進的面部編輯方法生成的。它比所有現有的視頻操作數據集至少高出一個數量級。使用研究者的新數據集，我們介紹了經典圖像取證任務的基準，包括分類和分割，考慮到以各種質量級別壓縮的視頻。此外，該研究引入了一個基準評估，用於創建具有已知基本事實的難以區分的偽造品；例如生成細化模型。
+
 Bibliography
 
 ```
@@ -2378,6 +2388,8 @@ Based on this data, we performed a thorough analysis of data-driven forgery dete
 
 We show that the use of additional domainspecific knowledge improves forgery detection to unprecedented accuracy, even in the presence of strong compression, and clearly outperforms human observers.
 ```
+
+合成圖像生成和處理的快速進展現在已經到了引發對社會影響的重大擔憂的地步。充其量，這會導致對數字內容失去信任，但可能會通過傳播虛假信息或虛假新聞而造成進一步的傷害，該研究研究了最先進的圖像處理的真實性，以及自動或人工檢測它們的難度，而為了標準化檢測方法的評估，研究者提出了面部操作檢測的自動化基準。特別是，該基準基於 DeepFakes、Face2Face、FaceSwap 和 NeuralTextures 作為隨機壓縮級別和大小的面部操作的突出代表。該基準是公開的，包含一個隱藏的測試集以及一個包含超過 180 萬張操縱圖像的數據庫，而且該數據集相對於可比較的、公開可用的偽造數據集大一個數量級。基於這些數據，研究者們對數據驅動的偽造檢測器進行了徹底的分析。其研究表明，即使在存在強壓縮的情況下，使用額外的特定領域知識也可以將偽造檢測提高到前所未有的準確性，並且明顯優於人類觀察者。
 
 Bibliography
 
