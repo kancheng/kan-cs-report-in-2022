@@ -5530,6 +5530,8 @@ Bibliography
 
 133. Van Den Oord A, Dieleman S, Zen H, Simonyan K, Vinyals O, Graves A, Kalchbrenner N, Senior AW, Kavukcuoglu K. Wavenet: A generative model for raw audio. In: Proc. of the 9th Speech Synthesis Workshop. 2016.
 
+Oord, A. V. D., Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A., ... & Kavukcuoglu, K. (2016). Wavenet: A generative model for raw audio. arXiv preprint arXiv:1609.03499.
+
 Link : https://arxiv.org/abs/1609.03499
 
 Note : WaveNet ,这是第一个端到端的语音合成器,一种基于音频生成模型,能够产生于人相似的音频
@@ -5553,10 +5555,18 @@ When trained to model music, we find that it generates novel and often highly re
 Bibliography
 
 ```
+@article{oord2016wavenet,
+  title={Wavenet: A generative model for raw audio},
+  author={Oord, Aaron van den and Dieleman, Sander and Zen, Heiga and Simonyan, Karen and Vinyals, Oriol and Graves, Alex and Kalchbrenner, Nal and Senior, Andrew and Kavukcuoglu, Koray},
+  journal={arXiv preprint arXiv:1609.03499},
+  year={2016}
+}
 ```
 
 
 134. Arik S, Chrzanowski M, Coates A, Diamos G, Kang Y, Li X, Miller J, Ng A, Raiman J, Sengupta S, Shoeybi M. Deep voice: Real-time neural text-to-speech. In: Proc. of the 34th Int’l Conf. on Machine Learning. 2017. 195−204.
+
+Arık, S. Ö., Chrzanowski, M., Coates, A., Diamos, G., Gibiansky, A., Kang, Y., ... & Shoeybi, M. (2017, July). Deep voice: Real-time neural text-to-speech. In International Conference on Machine Learning (pp. 195-204). PMLR.
 
 Link : https://arxiv.org/abs/1702.07825
 
@@ -5583,10 +5593,20 @@ Finally, we show that inference with our system can be performed faster than rea
 Bibliography
 
 ```
+@inproceedings{arik2017deep,
+  title={Deep voice: Real-time neural text-to-speech},
+  author={Ar{\i}k, Sercan {\"O} and Chrzanowski, Mike and Coates, Adam and Diamos, Gregory and Gibiansky, Andrew and Kang, Yongguo and Li, Xian and Miller, John and Ng, Andrew and Raiman, Jonathan and others},
+  booktitle={International Conference on Machine Learning},
+  pages={195--204},
+  year={2017},
+  organization={PMLR}
+}
 ```
 
 
 135. Wang Y, Skerry-Ryan RJ, Stanton D, Wu Y, Weiss R, Jaitly N, Yang Z, Xiao Y, Chen Z, Bengio S, Le Q, Agiomyrgiannakis Y, Clark B, Saurous R. Tacotron: Towards end-to-end speech synthesis. In: Proc. of the Interspeech 2017, 18th Annual Conf. of the Int’l Speech Communication Association. 2017. 4006−4010.
+
+Wang, Y., Skerry-Ryan, R. J., Stanton, D., Wu, Y., Weiss, R. J., Jaitly, N., ... & Saurous, R. A. (2017). Tacotron: Towards end-to-end speech synthesis. arXiv preprint arXiv:1703.10135.
 
 Link : https://arxiv.org/abs/1703.10135
 
@@ -5611,10 +5631,18 @@ In addition, since Tacotron generates speech at the frame level, it's substantia
 Bibliography
 
 ```
+@article{wang2017tacotron,
+  title={Tacotron: Towards end-to-end speech synthesis},
+  author={Wang, Yuxuan and Skerry-Ryan, RJ and Stanton, Daisy and Wu, Yonghui and Weiss, Ron J and Jaitly, Navdeep and Yang, Zongheng and Xiao, Ying and Chen, Zhifeng and Bengio, Samy and others},
+  journal={arXiv preprint arXiv:1703.10135},
+  year={2017}
+}
 ```
 
 
 136. Arik S, Diamos G, Gibiansky A, Miller J, Peng K, Ping W, Raiman J, Zhou Y. Deep voice 2: Multi-speaker neural text-to-speech. In: Proc. of the Advances in Neural Information Processing Systems. 2017. 2962−2970.
+
+Gibiansky, A., Arik, S., Diamos, G., Miller, J., Peng, K., Ping, W., ... & Zhou, Y. (2017). Deep voice 2: Multi-speaker neural text-to-speech. Advances in neural information processing systems, 30.
 
 Link : https://arxiv.org/abs/1705.08947
 
@@ -5637,10 +5665,19 @@ We then demonstrate our technique for multi-speaker speech synthesis for both De
 Bibliography
 
 ```
+@article{gibiansky2017deep,
+  title={Deep voice 2: Multi-speaker neural text-to-speech},
+  author={Gibiansky, Andrew and Arik, Sercan and Diamos, Gregory and Miller, John and Peng, Kainan and Ping, Wei and Raiman, Jonathan and Zhou, Yanqi},
+  journal={Advances in neural information processing systems},
+  volume={30},
+  year={2017}
+}
 ```
 
 
 137. Ping W, Peng K, Gibiansky A, Arik S, Kannan A, Narang S. Deep voice 3: 2000-speaker neural text-to-speech. In: Proc. of the ICLR. 2018. 214−217.
+
+Ping, W., Peng, K., Gibiansky, A., Arik, S. Ö., Kannan, A., Narang, S., ... & Miller, J. (2017). Deep Voice 3: 2000-Speaker Neural Text-to-Speech.
 
 Link : https://arxiv.org/abs/1710.07654
 
@@ -5661,10 +5698,17 @@ We also describe how to scale inference to ten million queries per day on one si
 Bibliography
 
 ```
+@article{ping2017deep,
+  title={Deep Voice 3: 2000-Speaker Neural Text-to-Speech.},
+  author={Ping, Wei and Peng, Kainan and Gibiansky, Andrew and Arik, Sercan {\"O}mer and Kannan, Ajay and Narang, Sharan and Raiman, Jonathan and Miller, John},
+  year={2017}
+}
 ```
 
 
 138. Pascual S, Bonafonte A, Serra J. SEGAN: Speech enhancement generative adversarial network. In: Proc. of the Interspeech 2017, 18th Annual Conf. of the Int’l Speech Communication Association. 2017. 3642−3646.
+
+Pascual, S., Bonafonte, A., & Serra, J. (2017). SEGAN: Speech enhancement generative adversarial network. arXiv preprint arXiv:1703.09452.
 
 Link : https://arxiv.org/abs/1703.09452
 
@@ -5693,10 +5737,18 @@ With that, we open the exploration of generative architectures for speech enhanc
 Bibliography
 
 ```
+@article{pascual2017segan,
+  title={SEGAN: Speech enhancement generative adversarial network},
+  author={Pascual, Santiago and Bonafonte, Antonio and Serra, Joan},
+  journal={arXiv preprint arXiv:1703.09452},
+  year={2017}
+}
 ```
 
 
 139. Donahue C, McAuley J, Puckette M. Adversarial audio synthesis. In: Proc. of the 7th Int’l Conf. on Learning Representations (ICLR). 2019.
+
+Donahue, C., McAuley, J., & Puckette, M. (2018). Adversarial audio synthesis. arXiv preprint arXiv:1802.04208.
 
 Link : https://arxiv.org/abs/1802.04208
 
@@ -5721,10 +5773,18 @@ We compare WaveGAN to a method which applies GANs designed for image generation 
 Bibliography
 
 ```
+@article{donahue2018adversarial,
+  title={Adversarial audio synthesis},
+  author={Donahue, Chris and McAuley, Julian and Puckette, Miller},
+  journal={arXiv preprint arXiv:1802.04208},
+  year={2018}
+}
 ```
 
 
 140. Li XR, Yu K. A Deepfakes detection technique based on two-stream network. Journal of Cyber Security, 2020,5(2):84−91 (in Chinese with English abstract).
+
+LI, X., & YU, K. (2020). A Deepfakes detection technique based on two-stream network. Journal of Cyber Security, 5(2), 84-91.
 
 Link : https://jcs.iie.ac.cn/xxaqxben/ch/reader/view_abstract.aspx?file_no=20200208
 
@@ -5749,6 +5809,16 @@ By testing on a large open source dataset, FaceForensics++, our detection method
 Bibliography
 
 ```
+@article{li2020deepfakes,
+  title={A Deepfakes detection technique based on two-stream network},
+  author={LI, Xurong and YU, Kun},
+  journal={Journal of Cyber Security},
+  volume={5},
+  number={2},
+  pages={84--91},
+  year={2020},
+  publisher={Beijing Zhongke Journal Publising Co. Ltd.}
+}
 ```
 
 
@@ -5758,10 +5828,13 @@ Link : https://www.deepfakescn.com
 
 Note : 商业化工具, 深度伪造生成技术
 
-
 Bibliography
 
 ```
+@online{list1141,
+    title     = "FakeApp.",
+    url       = "https://www.deepfakescn.com"
+}
 ```
 
 
@@ -5775,6 +5848,10 @@ Note : 商业化工具, 深度伪造生成技术
 Bibliography
 
 ```
+@online{list1142,
+    title     = "Faceapp.",
+    url       = "https://www.faceapp.com/"
+}
 ```
 
 
@@ -5788,6 +5865,10 @@ Note : DeepfaceLab 对 Faceswap 项目的模型进行扩充,对人脸模型进�
 Bibliography
 
 ```
+@online{list1143,
+    title     = "DeepFaceLab.",
+    url       = "https://github.com/iperov/DeepFaceLab"
+}
 ```
 
 
@@ -5800,6 +5881,10 @@ Note : DFaker, 使用 DSSIM loss 函数
 Bibliography
 
 ```
+@online{list1144,
+    title     = "Dfaker.",
+    url       = "https://github.com/dfaker/df"
+}
 ```
 
 
@@ -5812,6 +5897,10 @@ Note : DeepFake-tf,同 Dfakeer 项目,使用 tensorflow 实现
 Bibliography
 
 ```
+@online{list1145,
+    title     = "DeepFake-tf.",
+    url       = "https://github.com/StromWine/DeepFake-tf"
+}
 ```
 
 
@@ -5824,6 +5913,10 @@ Note : Faceswap-DeepfakePytorch,原理同 Faceswap 项目,使用 Pytorch 实现
 Bibliography
 
 ```
+@online{list1146,
+    title     = "Faceswap-Deepfake-Pytorch.",
+    url       = "https://github.com/Oldpan/Faceswap-Deepfake-Pytorch"
+}
 ```
 
 
@@ -5838,6 +5931,10 @@ Note : Deep-voicevconversion, 只需要目标说话者的音波素材, 即可转
 Bibliography
 
 ```
+@online{list1147,
+    title     = "Deep-voice-conversion.",
+    url       = "https://github.com/andabi/deep-voice-conversion"
+}
 ```
 
 
@@ -5851,10 +5948,16 @@ Note : MelNet 基于频谱图的端到端语音生成
 Bibliography
 
 ```
+@online{list1148,
+    title     = "MelNet.",
+    url       = "https://sjvasquez.github.io/blog/melnet/"
+}
 ```
 
 
 149. Matern F, Riess C, Stamminger M. Exploiting visual artifacts to expose Deepfakes and face manipulations. In: Proc. of the IEEE Winter Applications of Computer Vision Workshops (WACVW). IEEE, 2019. 83−92.
+
+Matern, F., Riess, C., & Stamminger, M. (2019, January). Exploiting visual artifacts to expose deepfakes and face manipulations. In 2019 IEEE Winter Applications of Computer Vision Workshops (WACVW) (pp. 83-92). IEEE.
 
 Link : https://ieeexplore.ieee.org/document/8638330
 
@@ -5883,6 +5986,14 @@ Despite their simplicity, the methods are able to achieve AUC values of up to 0.
 Bibliography
 
 ```
+@inproceedings{matern2019exploiting,
+  title={Exploiting visual artifacts to expose deepfakes and face manipulations},
+  author={Matern, Falko and Riess, Christian and Stamminger, Marc},
+  booktitle={2019 IEEE Winter Applications of Computer Vision Workshops (WACVW)},
+  pages={83--92},
+  year={2019},
+  organization={IEEE}
+}
 ```
 
 
