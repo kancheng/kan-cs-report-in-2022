@@ -8,6 +8,18 @@ PKU 2022 個人實驗報告作業
 
 深度偽造科普簡報
 
+## 1. 何謂深度偽造
+
+- 應用與時事
+
+## 2. Deepfakes 歷史
+
+## 3. 使用技術與方案
+
+## 4. 運用現有工具與成果
+
+## 5. 檢測
+
 ## Reference
 
 1. https://www.youtube.com/watch?v=gLoI9hAX9dw
@@ -19,3 +31,5 @@ PKU 2022 個人實驗報告作業
 4. https://www.youtube.com/watch?v=zS2iaHSwg1c
 
 5. https://www.youtube.com/watch?v=t59gRbpYMiY
+
+6. https://www.youtube.com/watch?v=fNiqYv5uA2Q

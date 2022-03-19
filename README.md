@@ -20,4 +20,10 @@ During the second semester in my first year. (PKU)
 
 5. 模式识别导论 (Introduction to Pattern Recognition)
 
+## Links
+
+1. https://github.com/kancheng/learn-in-works
+
+2. https://github.com/kancheng/kan-cs-report-in-2021
+
 
