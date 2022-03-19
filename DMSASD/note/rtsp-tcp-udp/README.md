@@ -78,6 +78,8 @@ Example client-server app:
 
 ![](tu1.png)
 
+![](tu2.png)
+
 ```
 int main(const int argc, const char** argv)
 {
@@ -90,13 +92,13 @@ int main(const int argc, const char** argv)
 	if (argc < 3 || ((port = atoi(argv[2])) <= 0 || port > 65535))
 		error processing;
 	
-	// parameter checking - end
+	// - end
 
 	// create socket
 	if ((s = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0)
 		error processing;
 
-	// create socket - end
+	// - end
 
 	// name lookup
 	if ((hp = gethostbyname(argv[1])) == NULL)
@@ -108,32 +110,207 @@ int main(const int argc, const char** argv)
 	if (connect(s, (struct sockaddr *)&addr, sizeof(addr)) < 0)
 		error processing;
 
-	// name lookup - end
+	// - end
 
 	// Read a line from stdin
 	if (fgets(buf, sizeof(buf), stdin) == NULL)
 		error processing;
 
-	// Read a line from stdin - end
+	// - end
 
 	// Send the line to server
 	if ((res = write(s, buf, len)) <= 0)
 		error processing;
 
-	// Send the line to server - end
+	// - end
 
-	// Receive the line from
+	// Receive the line from server
 	if ((res = read(s, buf, sizeof(buf)-1) <= 0)
 		error processing;
 
+	// - end
+
+	// Print out the line from server, Close socket
 	buf[res] = 0;
 	printf(“received: %s”, buf);
 
 	close(s);
+	// - end
 	return 0;
 }
 ```
 
+## C Server TCP
+
+![](tu3.png)
+
+![](tu4.png)
+
+```
+int main(const int argc, const char** argv) {
+	int i, s, c, len, pos, res, port; 
+	char buf[MAX_LINE];
+	struct sockaddr_in saddr;
+
+	if (argc < 2 || ((port = atoi(argv[1])) <= 0 || port > 65535))
+		error processing;
+
+	// Create socket
+	if ((s = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0)
+		error processing;
+
+	// - end
+
+	// Reserve the port on interfaces
+	memset(&saddr, 0, sizeof(saddr)); 
+
+	saddr.sin_family = AF_INET; 
+
+	saddr.sin_addr.s_addr = INADDR_ANY;
+	saddr.sin_port = htons(port);
+	if (bind(s, (struct sockaddr *)&saddr, sizeof(saddr)) < 0) 
+	error processing;
+	// - end
+
+	// Declare it is is a server socket; Create a client connection queue
+	if (listen(s, 32) < 0)
+		error processing;
+	// - end
+
+	// Accept a new client connection
+	while ((c = accept(s, NULL, NULL)) >= 0) {
+
+		// Read in line from socket
+		if ((len = read(c, buf, sizeof(buf) -1)) <= 0)
+			error processing;
+
+		buf[len] = 0;
+		for (i = 0; i < len; i++) {
+			if (islower(buf[i]))
+				buf[i] = toupper(buf[i]);
+		}
+
+		// Write out line to socket
+		if ((res = write(c, buf, len)) <= 0)
+			error processing;
+		close(c);
+	}
+	// End of while loop, loop back and wait for another client connection
+	close(s);
+	return(0);
+}
+```
+
+## Socket programming with UDP
+
+![](tu5.png)
+
+## Client/server socket interaction: UDP
+
+![](tu6.png)
+
+## C Client UDP
+
+![](tu7.png)
+
+![](tu8.png)
+
+```
+int main(const int argc, const char** argv) {
+	int s, port, len, res, fromlen; 
+	char buf[MAX_LINE];
+	struct hostent *hp;
+	struct sockaddr_in saddr, raddr;
+
+	if (argc < 3 || ((port = atoi(argv[2])) <= 0 || port > 65535))
+		error processing;
+
+	// Create client socket
+	if ((s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0) 
+		error processing;
+
+	// Translate hostname to IP address using DNS
+	if ((hp = gethostbyname(argv[1])) == NULL)
+		error processing;
+
+	memset(&saddr, 0, sizeof(saddr));
+	saddr.sin_family = AF_INET;
+	memcpy(&saddr.sin_addr.s_addr, hp->h_addr, hp->h_length); 
+	saddr.sin_port = htons(port);
+	if (fgets(buf, sizeof(buf), stdin) == NULL)
+		error processing;
+
+	// Create datagram with data-to-send, length, IP addr, port
+	len = strlen(buf);
+
+	// Send datagram to server
+	if ((res = sendto(s, buf, len, 0,
+	(struct sockaddr *)&saddr, sizeof(saddr))) < 0)
+		error processing;
+	fromlen = sizeof(raddr);
+
+	// Read datagram from server
+	if ((res = recvfrom(s, buf, sizeof(buf)-1, 0,
+	(struct sockaddr *)&raddr, &fromlen) < 0)
+		error processing;
+	buf[res] = 0;
+	printf(“received: %s”, buf);
+	close(s);
+	return 0; 
+}
+```
+
+## C Server UDP
+
+![](tu9.png)
+
+![](tu10.png)
+
+```
+int main(const int argc, const char** argv) {
+	int i, s, len, res, port, fromlen;
+	char buf[MAX_LINE];
+	struct sockaddr_in saddr, claddr;
+
+	if (argc < 2 || ((port = atoi(argv[1])) <= 0 || port > 65535))
+		error processing;
+
+	// Create a socket
+	if ((s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0)
+		error processing;
+
+	memset(&saddr, 0, sizeof(saddr));
+	saddr.sin_family = AF_INET;
+	saddr.sin_addr.s_addr = INADDR_ANY;
+	saddr.sin_port = htons(port);
+
+	// Reserve a port to receive datagram
+	if (bind(s, (struct sockaddr *)&saddr, sizeof(saddr)) < 0)
+		error processing;
+
+	while (1) {
+		fromlen = sizeof(claddr);
+		// Receive datagram
+		// Get IP addr port #, of sender
+		if ((len = recvfrom(s, buf, sizeof(buf)-1, 0,
+			(struct sockaddr *)&claddr, &fromlen)) <= 0)
+			error processing;
+
+		buf[len] = 0;
+		for (i = 0; i < len; i++) {
+			if (islower(buf[i]))
+				buf[i] = toupper(buf[i]);
+		}
+		// Create and send datagram to client
+		if ((res = sendto(s, buf, len, 0,
+			(struct sockaddr *)&claddr, fromlen)) <= 0)
+			error processing;
+	} //  End of while loop, loop back and wait for another datagram
+
+	close(s);
+	return(0);
+}
+```
 
 ## Reference
 
