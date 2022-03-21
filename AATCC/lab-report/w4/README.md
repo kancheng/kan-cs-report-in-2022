@@ -9,6 +9,12 @@ PKU 2022 個人實驗報告作業
 
 第四週課堂複習與作業，LeetCode: 56, 148, 274
 
+## Reference
+
+1. Jserv Linux 核心設計/實作 : https://hackmd.io/@sysprog/linux2022-lab0
+
+2. 你所不知道的 C 語言: linked list 和非連續記憶體 : https://hackmd.io/@sysprog/c-linked-list
+
 
 
 
