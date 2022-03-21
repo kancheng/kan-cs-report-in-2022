@@ -706,4 +706,152 @@ License: LGPL version 2.1 or later
 
 ```
 
+2. 編譯成功
+
+
+```
+(base) HaoyeMacBookPro:ffmpeg kancheng$ ffmpeg
+ffmpeg version 5.0 Copyright (c) 2000-2022 the FFmpeg developers
+  built with Apple clang version 13.0.0 (clang-1300.0.29.30)
+  configuration: --prefix=/usr/local/Cellar/ffmpeg/5.0 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox
+  libavutil      57. 17.100 / 57. 17.100
+  libavcodec     59. 18.100 / 59. 18.100
+  libavformat    59. 16.100 / 59. 16.100
+  libavdevice    59.  4.100 / 59.  4.100
+  libavfilter     8. 24.100 /  8. 24.100
+  libswscale      6.  4.100 /  6.  4.100
+  libswresample   4.  3.100 /  4.  3.100
+  libpostproc    56.  3.100 / 56.  3.100
+Hyper fast Audio and Video encoder
+usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
+
+Use -h to get full help or, even better, run 'man ffmpeg'
+```
+
+
+```
+(base) HaoyeMacBookPro:ffmpeg kancheng$ ffmpeg -h
+ffmpeg version 5.0 Copyright (c) 2000-2022 the FFmpeg developers
+  built with Apple clang version 13.0.0 (clang-1300.0.29.30)
+  configuration: --prefix=/usr/local/Cellar/ffmpeg/5.0 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox
+  libavutil      57. 17.100 / 57. 17.100
+  libavcodec     59. 18.100 / 59. 18.100
+  libavformat    59. 16.100 / 59. 16.100
+  libavdevice    59.  4.100 / 59.  4.100
+  libavfilter     8. 24.100 /  8. 24.100
+  libswscale      6.  4.100 /  6.  4.100
+  libswresample   4.  3.100 /  4.  3.100
+  libpostproc    56.  3.100 / 56.  3.100
+Hyper fast Audio and Video encoder
+usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
+
+Getting help:
+    -h      -- print basic options
+    -h long -- print more options
+    -h full -- print all options (including all format and codec specific options, very long)
+    -h type=name -- print all options for the named decoder/encoder/demuxer/muxer/filter/bsf/protocol
+    See man ffmpeg for detailed description of the options.
+
+Print help / information / capabilities:
+-L                  show license
+-h topic            show help
+-? topic            show help
+-help topic         show help
+--help topic        show help
+-version            show version
+-buildconf          show build configuration
+-formats            show available formats
+-muxers             show available muxers
+-demuxers           show available demuxers
+-devices            show available devices
+-codecs             show available codecs
+-decoders           show available decoders
+-encoders           show available encoders
+-bsfs               show available bit stream filters
+-protocols          show available protocols
+-filters            show available filters
+-pix_fmts           show available pixel formats
+-layouts            show standard channel layouts
+-sample_fmts        show available audio sample formats
+-dispositions       show available stream dispositions
+-colors             show available color names
+-sources device     list sources of the input device
+-sinks device       list sinks of the output device
+-hwaccels           show available HW acceleration methods
+
+Global options (affect whole program instead of just one file):
+-loglevel loglevel  set logging level
+-v loglevel         set logging level
+-report             generate a report
+-max_alloc bytes    set maximum size of a single allocated block
+-y                  overwrite output files
+-n                  never overwrite output files
+-ignore_unknown     Ignore unknown stream types
+-filter_threads     number of non-complex filter threads
+-filter_complex_threads  number of threads for -filter_complex
+-stats              print progress report during encoding
+-max_error_rate maximum error rate  ratio of decoding errors (0.0: no errors, 1.0: 100% errors) above which ffmpeg returns an error instead of success.
+-vol volume         change audio volume (256=normal)
+
+Per-file main options:
+-f fmt              force format
+-c codec            codec name
+-codec codec        codec name
+-pre preset         preset name
+-map_metadata outfile[,metadata]:infile[,metadata]  set metadata information of outfile from infile
+-t duration         record or transcode "duration" seconds of audio/video
+-to time_stop       record or transcode stop time
+-fs limit_size      set the limit file size in bytes
+-ss time_off        set the start time offset
+-sseof time_off     set the start time offset relative to EOF
+-seek_timestamp     enable/disable seeking by timestamp with -ss
+-timestamp time     set the recording timestamp ('now' to set the current time)
+-metadata string=string  add metadata
+-program title=string:st=number...  add program with specified streams
+-target type        specify target file type ("vcd", "svcd", "dvd", "dv" or "dv50" with optional prefixes "pal-", "ntsc-" or "film-")
+-apad               audio pad
+-frames number      set the number of frames to output
+-filter filter_graph  set stream filtergraph
+-filter_script filename  read stream filtergraph description from a file
+-reinit_filter      reinit filtergraph on input parameter changes
+-discard            discard
+-disposition        disposition
+
+Video options:
+-vframes number     set the number of video frames to output
+-r rate             set frame rate (Hz value, fraction or abbreviation)
+-fpsmax rate        set max frame rate (Hz value, fraction or abbreviation)
+-s size             set frame size (WxH or abbreviation)
+-aspect aspect      set aspect ratio (4:3, 16:9 or 1.3333, 1.7777)
+-vn                 disable video
+-vcodec codec       force video codec ('copy' to copy stream)
+-timecode hh:mm:ss[:;.]ff  set initial TimeCode value.
+-pass n             select the pass number (1 to 3)
+-vf filter_graph    set video filters
+-ab bitrate         audio bitrate (please use -b:a)
+-b bitrate          video bitrate (please use -b:v)
+-dn                 disable data
+
+Audio options:
+-aframes number     set the number of audio frames to output
+-aq quality         set audio quality (codec-specific)
+-ar rate            set audio sampling rate (in Hz)
+-ac channels        set number of audio channels
+-an                 disable audio
+-acodec codec       force audio codec ('copy' to copy stream)
+-vol volume         change audio volume (256=normal)
+-af filter_graph    set audio filters
+
+Subtitle options:
+-s size             set frame size (WxH or abbreviation)
+-sn                 disable subtitle
+-scodec codec       force subtitle codec ('copy' to copy stream)
+-stag fourcc/tag    force subtitle tag/fourcc
+-fix_sub_duration   fix subtitles duration
+-canvas_size size   set canvas size (WxH or abbreviation)
+-spre preset        set the subtitle options to the indicated preset
+
+
+(base) HaoyeMacBookPro:ffmpeg kancheng$ 
+```
 
