@@ -96,6 +96,7 @@ Date:   Sat Nov 2 17:05:28 2013 +0100
 ```
 https://github.com/FFmpeg/FFmpeg/commit/ab81f24ad43bddf77ddd25cba86780c1c884996c
 
+![](g1.png)
 
 追檔案更動
 
@@ -108,6 +109,12 @@ git reset --hard HEAD^
 git reset --hard [COMMIT]
 ```
 
+再來對比兩個版本的更動
+
+```
+vim -d output.c output-example.c
+```
+![](v1.png)
 
 ## Reference
 
@@ -130,6 +137,49 @@ git reset --hard [COMMIT]
 8. https://batchloaf.wordpress.com/2017/02/12/a-simple-way-to-read-and-write-audio-and-video-files-in-c-using-ffmpeg-part-2-video/
 
 ## Logs
+
+0. Cloc 分析 FFMPEG
+
+```
+(base) PS D:\FFmpeg-n3.0\ffmpeg-raw> cloc .
+    7698 text files.
+    4341 unique files.
+    3359 files ignored.
+
+github.com/AlDanial/cloc v 1.92  T=92.26 s (47.1 files/s, 18264.0 lines/s)
+-----------------------------------------------------------------------------------
+Language                         files          blank        comment           code
+-----------------------------------------------------------------------------------
+C                                 2884         161056         107146        1068012
+C/C++ Header                      1034          17405          57010         121608
+Assembly                           281          11238          12309         100291
+Bourne Shell                        22            936            459           8150
+make                                40            319             86           4370
+C++                                  3            343            143           2206
+Objective-C                          5            427            214           2092
+CUDA                                 5            259            121           1399
+OpenCL                              13            273            359           1349
+Perl                                 7            256            349           1050
+Markdown                             7            204              0            868
+Python                               6            119             97            577
+XML                                  9              4              0            432
+XSD                                  1             45              4            337
+Windows Resource File                8             24            176            240
+Metal                                1             34             42            202
+CSS                                  3             31             22            140
+Verilog-SystemVerilog                8              0              0             56
+awk                                  1              6              5             53
+Ruby                                 1              9              0             52
+HTML                                 1              5              4             44
+YAML                                 1              0              0             30
+-----------------------------------------------------------------------------------
+SUM:                              4341         192993         178546        1313558
+-----------------------------------------------------------------------------------
+(base) PS D:\FFmpeg-n3.0\ffmpeg-raw>
+```
+
+
+![](r1.png)
 
 1. ./configure --disable-x86asm
 
@@ -802,8 +852,9 @@ License: LGPL version 2.1 or later
 
 ```
 
-2. 編譯成功
+![](r2.png)
 
+2. 編譯成功
 
 ```
 (base) HaoyeMacBookPro:ffmpeg kancheng$ ffmpeg
