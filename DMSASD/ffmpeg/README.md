@@ -10,10 +10,103 @@ FFMGEG 下載，並說明 output_example 。
 
 ## Code
 
-https://github.com/FFmpeg/FFmpeg
+1. https://github.com/FFmpeg/FFmpeg
 
-https://www.ffmpeg.org/download.html
+2. https://www.ffmpeg.org/download.html
 
+3. https://ffmpeg.org/doxygen/0.6/output-example_8c.html
+
+4. https://ffmpeg.org/doxygen/0.6/output-example_8c-source.html
+
+5. https://libav.org/documentation/doxygen/master/output_8c-example.html
+
+6. https://ffmpeg.org/doxygen/trunk/output-example_8c.html
+
+7. https://ffmpeg.org/doxygen/trunk/output-example_8c-source.html
+
+8. https://ffmpeg.org/doxygen/trunk/avformat_8h-source.html
+
+9. https://ffmpeg.org/doxygen/trunk/swscale_8h-source.html
+
+
+## GitHub 版本追蹤
+
+將所有 Log 紀錄用指令輸出。
+
+```
+git log > log.txt
+```
+0.6 還有，但在 0.7 版此檔案就已經被拔掉，其大的版本可以在 v0.6.1 中找到。
+
+從 GitHub 的版本號中可以看到是由 Michael Niedermayer 所提交的合併更動時消失。
+
+```
+commit fbe02459dc4f3c8f4d758c1a90ed8e35a800f3b9
+Merge: 9a1963fbb8 b4675d0fbf
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jul 16 01:32:52 2012 +0200
+
+    Merge remote-tracking branch 'qatar/master'
+    
+    * qatar/master:
+      configure: Check for CommandLineToArgvW
+      vc1dec: Do not use random pred_flag if motion vector data is skipped
+      vp8: Enclose pthread function calls in ifdefs
+      snow: refactor code to work around a compiler bug in MSVC.
+      vp8: Include the thread headers before using the pthread types
+      configure: Check for getaddrinfo in ws2tcpip.h, too
+      vp8: implement sliced threading
+      vp8: move data from VP8Context->VP8Macroblock
+      vp8: refactor decoding a single mb_row
+      doc: update api changes with the right commit hashes
+      mem: introduce av_malloc_array and av_mallocz_array
+    
+    Conflicts:
+            configure
+            doc/APIchanges
+            libavcodec/vp8.c
+            libavutil/mem.h
+            libavutil/version.h
+    
+    Merged-by: Michael Niedermayer <michaelni@gmx.at>
+```
+
+追檔案更動
+
+```
+git log --full-history -- libavformat/output-example.c
+```
+
+最後發現被搬移至此，更後面就沒有該範例的存在。
+
+```
+ libavformat/output-example.c → doc/examples/output.c
+```
+
+Log
+
+```
+commit ab81f24ad43bddf77ddd25cba86780c1c884996c
+Author: Diego Biurrun <diego@biurrun.de>
+Date:   Sat Nov 2 17:05:28 2013 +0100
+
+    build: Integrate multilibrary examples into the build system
+
+    This includes moving libavformat/output-example to doc/examples/output.
+```
+https://github.com/FFmpeg/FFmpeg/commit/ab81f24ad43bddf77ddd25cba86780c1c884996c
+
+
+追檔案更動
+
+```
+git log --full-history -- doc/examples/output.c
+```
+
+```
+git reset --hard HEAD^
+git reset --hard [COMMIT]
+```
 
 
 ## Reference
@@ -32,6 +125,9 @@ https://www.ffmpeg.org/download.html
 
 6. https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/694897/
 
+7. https://blog.csdn.net/teng_ontheway/article/details/50217953
+
+8. https://batchloaf.wordpress.com/2017/02/12/a-simple-way-to-read-and-write-audio-and-video-files-in-c-using-ffmpeg-part-2-video/
 
 ## Logs
 
