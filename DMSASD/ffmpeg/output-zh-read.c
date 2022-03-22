@@ -87,7 +87,7 @@ static AVStream *add_audio_stream(AVFormatContext *oc, enum AVCodecID codec_id)
     AVCodecContext *c;
     AVStream *st;
     AVCodec *codec;
-
+// 找到音頻編碼器
     /* find the audio encoder */
     codec = avcodec_find_encoder(codec_id);
     if (!codec) {
@@ -103,12 +103,14 @@ static AVStream *add_audio_stream(AVFormatContext *oc, enum AVCodecID codec_id)
 
     c = st->codec;
 
+// 放樣本參數
     /* put sample parameters */
     c->sample_fmt  = AV_SAMPLE_FMT_S16;
     c->bit_rate    = 64000;
     c->sample_rate = 44100;
     c->channels    = 2;
 
+// 某些格式希望 stream header 是分開的
     // some formats want stream headers to be separate
     if (oc->oformat->flags & AVFMT_GLOBALHEADER)
         c->flags |= CODEC_FLAG_GLOBAL_HEADER;
@@ -128,10 +130,11 @@ static void open_audio(AVFormatContext *oc, AVStream *st)
         fprintf(stderr, "could not open codec\n");
         exit(1);
     }
-
+// 初始化信號發生器
     /* init signal generator */
     t     = 0;
     tincr = 2 * M_PI * 110.0 / c->sample_rate;
+// 以每秒 110 Hz 的速度遞增頻率
     /* increment frequency by 110 Hz per second */
     tincr2 = 2 * M_PI * 110.0 / c->sample_rate / c->sample_rate;
 
@@ -166,7 +169,7 @@ static void get_audio_frame(int16_t *samples, int frame_size, int nb_channels)
 static void write_audio_frame(AVFormatContext *oc, AVStream *st)
 {
     AVCodecContext *c;
-    AVPacket pkt = { 0 }; // data and size must be 0;
+    AVPacket pkt = { 0 }; // data and size must be 0; 數據和大小必須為 0；
     AVFrame *frame = av_frame_alloc();
     int got_packet;
 
@@ -186,7 +189,7 @@ static void write_audio_frame(AVFormatContext *oc, AVStream *st)
         return;
 
     pkt.stream_index = st->index;
-
+// 將壓縮幀寫入媒體文件。
     /* Write the compressed frame to the media file. */
     if (av_interleaved_write_frame(oc, &pkt) != 0) {
         fprintf(stderr, "Error while writing audio frame\n");
@@ -312,7 +315,7 @@ static void open_video(AVFormatContext *oc, AVStream *st)
     /* If the output format is not YUV420P, then a temporary YUV420P
      * picture is needed too. It is then converted to the required
      * output format. */
-    // If the output format is not YUV420P, then a temporary YUV420P picture is needed too. It is then converted to the required output format.
+    // 如果輸出格式不是 YUV420P，那麼也需要一張臨時的 YUV420P 圖片。 然後將其轉換為所需的輸出格式。
     tmp_picture = NULL;
     if (c->pix_fmt != AV_PIX_FMT_YUV420P) {
         tmp_picture = alloc_picture(AV_PIX_FMT_YUV420P, c->width, c->height);

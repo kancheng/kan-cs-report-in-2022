@@ -14,7 +14,6 @@ FFMGEG 下載，並說明 output_example 。
 
 - libavformat/output-example.c -> 最後的正式版本。(2012)
 
-- 
 
 ## Code
 
@@ -36,6 +35,7 @@ FFMGEG 下載，並說明 output_example 。
 
 9. https://ffmpeg.org/doxygen/trunk/swscale_8h-source.html
 
+10. https://ffmpeg.org/doxygen/trunk/mathematics_8h_source.html
 
 ## GitHub 版本追蹤
 
@@ -145,6 +145,8 @@ vim -d output.c output-example.c
 8. https://batchloaf.wordpress.com/2017/02/12/a-simple-way-to-read-and-write-audio-and-video-files-in-c-using-ffmpeg-part-2-video/
 
 9. https://vimjc.com/vimdiff.html
+
+10. https://blog.csdn.net/weixin_34214500/article/details/91465460
 
 ## Logs
 
