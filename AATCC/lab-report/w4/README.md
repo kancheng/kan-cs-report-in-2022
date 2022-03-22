@@ -9,6 +9,13 @@ PKU 2022 個人實驗報告作業
 
 第四週課堂複習與作業，LeetCode: 56, 148, 274
 
+- LeetCode 56. Merge Intervals 合并区间
+
+- LeetCode 148. Sort List 排序链表
+
+- LeetCode 274. H-Index, H 指数
+
+
 ## Reference
 
 1. Jserv Linux 核心設計/實作 : https://hackmd.io/@sysprog/linux2022-lab0
