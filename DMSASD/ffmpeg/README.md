@@ -8,6 +8,14 @@ PKU 2022 個人實驗報告作業
 
 FFMGEG 下載，並說明 output_example 。
 
+- output.c -> 為最後的搬到 doc/examples/output.c 的版本。
+
+- output-zh-read.c -> 根據 output.c 所進行的中文說明註解版本。
+
+- libavformat/output-example.c -> 最後的正式版本。(2012)
+
+- 
+
 ## Code
 
 1. https://github.com/FFmpeg/FFmpeg
@@ -135,6 +143,8 @@ vim -d output.c output-example.c
 7. https://blog.csdn.net/teng_ontheway/article/details/50217953
 
 8. https://batchloaf.wordpress.com/2017/02/12/a-simple-way-to-read-and-write-audio-and-video-files-in-c-using-ffmpeg-part-2-video/
+
+9. https://vimjc.com/vimdiff.html
 
 ## Logs
 
