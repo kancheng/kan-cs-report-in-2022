@@ -5,61 +5,7 @@
 PKU 2022 個人實驗報告作業
 
 
-## Details
-
-針對算法分析和复杂性理论所做的針對性知識點筆記。
-
-## Log
-
-1. W1 : 
-
-- LeetCode : `1. Two Sum 兩數之和` , `69. Sqrt(x) x 的平方根`, `70. Climbing Stairs 爬楼梯`.
-
-- Knowledge Point : LeetCode 1, 69, 70.
-
-2. W2 : 
-
-- LeetCode : `7. Reverse Integer 整数反转`, `13. Roman to Integer 羅馬數字轉整數`, `66. Plus One 加一`.
-
-- Knowledge Point : `平方根函數`, `＊牛頓法`,  - `乱序字符串检查 - 逐字检查`, `乱序字符串检查 - 排序与比较`, `＊乱序字符串检查 - 计数与比较(ASCII)`, `＊栈 - 十进制转二进制`, `栈 - 2 ~ 16 进制轉換`
-
-3. W3 :
-
-- LeetCode :
-
-LeetCode 16. 3Sum Closest 整数反转
-
-LeetCode 17. Letter Combinations of a Phone Number 电话号码的字母组合
-
-LeetCode 19. Remove Nth Node From End of List 删除链表的倒数第 N 个结点
-
-LeetCode 20. Valid Parentheses 有效的括号
-
-LeetCode 24. Swap Nodes in Pairs 两两交换链表中的节点
-
-LeetCode 206. Reverse Linked List 反转链表
-
-LeetCode 232. Implement Queue using Stacks 用栈实现队列
-
-LeetCode 239. Sliding Window Maximum 滑动窗口最大值
-
-LeetCode 242. Valid Anagram 有效的字母异位词
-
-- Knowledge Point : 堆疊、链表
-
-## 名詞
-
-- 数据结构, 資料結構, Data Stracture
-
-- 栈, Stack, 堆疊
-
-- 队列, Queue, 佇列
-
-- 双向队列, Deque(double-ended queue), 雙端佇列
-
-- 链表, Linked List, 鏈結串列
-
-- 线程, Thread, 執行緒、引線
+## Knowledge Point
 
 
 ## 平方根函數
