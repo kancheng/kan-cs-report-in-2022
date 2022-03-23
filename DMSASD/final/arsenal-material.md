@@ -209,6 +209,8 @@ Bibliography
 }
 ```
 
+5. https://www.researchgate.net/publication/317378240_Deep_Alignment_Network_A_convolutional_neural_network_for_robust_face_alignment
+
 
 ## Laws
 
@@ -4332,9 +4334,9 @@ Bibliography
 ```
 
 
-102. Zao app. 2019. https://zao-app.com/
+102. Zao app. 2019. https://zaodownload.com/
 
-Link : https://zao-app.com/
+Link : https://zaodownload.com/
 
 Note : Zao APP 提供大众换脸娱乐服务等
 
