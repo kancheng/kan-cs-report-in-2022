@@ -6,19 +6,19 @@ PKU 2022 個人實驗報告作業
 
 ## Log
 
-1. W1 : 
+### 1. W1 : 
 
 - LeetCode : `1. Two Sum 兩數之和` , `69. Sqrt(x) x 的平方根`, `70. Climbing Stairs 爬楼梯`.
 
 - Knowledge Point : LeetCode 1, 69, 70.
 
-2. W2 : 
+### 2. W2 : 
 
 - LeetCode : `7. Reverse Integer 整数反转`, `13. Roman to Integer 羅馬數字轉整數`, `66. Plus One 加一`.
 
 - Knowledge Point : `平方根函數`, `＊牛頓法`,  - `乱序字符串检查 - 逐字检查`, `乱序字符串检查 - 排序与比较`, `＊乱序字符串检查 - 计数与比较(ASCII)`, `＊栈 - 十进制转二进制`, `栈 - 2 ~ 16 进制轉換`
 
-3. W3 :
+### 3. W3 :
 
 - LeetCode :
 
@@ -42,7 +42,7 @@ LeetCode 242. Valid Anagram 有效的字母异位词
 
 - Knowledge Point : 堆疊、链表
 
-4. W4 :
+### 4. W4 :
 
 - LeetCode :
 
@@ -67,7 +67,6 @@ LeetCode 232. Implement Queue using Stacks 用栈实现队列
 LeetCode 239. Sliding Window Maximum 滑动窗口最大值
 
 LeetCode 274. H-Index, H 指数
-
 
 - Knowledge Point : 
 

@@ -7,6 +7,18 @@ PKU 2022 個人實驗報告作業
 
 ## Knowledge Point
 
+### Define
+
+名詞對應 : 
+
+https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/define.md
+
+### Log
+
+課堂紀錄 :
+
+https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
+
 
 ## 平方根函數
 
