@@ -690,3 +690,1005 @@ class Solution:
             pre = a
         return self.next
 ```
+
+## LeetCode 141. Linked List Cycle 环形链表
+
+
+Given head, the head of a linked list, determine if the linked list has a cycle in it.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+
+Return true if there is a cycle in the linked list. Otherwise, return false.
+
+
+给你一个链表的头节点 head ，判断链表中是否有环。
+
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
+
+如果链表中存在环，则返回 true 。 否则，返回 false 
+
+###  circular linked list
+
+> 引用段落 : 自你所不知道的 C 語言: linked list 和非連續記憶體
+
+
+環狀鏈結串列 (circular linked list) 是鏈結串列的最後一個節點所指向的下一個節點，會是第一個節點，而不像鏈結串列中的最後一個結點指向 NULL:
+![](w4-kp-1.png)
+
+其優點為:
+
+從 head 找到 tail 的時間複雜度為 O(n)，但若新增一個 tail pointer (此為 last) 時間複雜度可降為 O(1)
+
+- 容易做到反向查詢
+
+- 若要走訪整個 linked list，任何節點都可作為起始節點
+
+- 避免保留 NULL 這樣特別的記憶體地址 (在沒有 MMU 的 bare metal 環境中，(void `*`) 0 地址空間存取時，沒有特別的限制)
+
+
+bare metal : https://en.wikipedia.org/wiki/Bare_machine
+
+### 用「龜兔賽跑」(Floyd’s Cycle detection)來偵測是否有 cycle 產生。
+
+Floyd’s Cycle detection : https://en.wikipedia.org/wiki/Cycle_detection
+
+有 3 種狀態需要做討論
+
+> * $a$ 為起始點
+> * $b$ 為連接點
+> * $c$ 為龜兔相遇位置
+
+![](w4-kp-2.png)
+
+我們需要求得 a, b, c 三點位置，才能進行處理。
+假設 $\overline{ac}$ 距離為 $X$ ，這代表 tortoise 行經 $X$ 步，那麼 hare 走了 $2X$ 步，$X$ 數值為多少並不重要，只代表要花多少時間兩點才會相遇，不影響求出 $\mu$ 和 $\lambda$。
+
+接下來要分成三個步驟來處理
+1. tortoise 速度為每次一步，hare 為每次兩步，兩者同時從起點 $a$ 出發，相遇時可以得到點 $c$。若是上述「狀況 2: 頭尾相連」，在第 1 步結束就求完三點了
+2. 兩點分別從點 $a$ 和 $c$ 出發，速度皆為一次一步，相遇時可得到點 $b$。因為 $\overline{ac}$ 長度為 $X$，那麼 $cycle$ $c$ 長度也為 $X$，相遇在點 $b$ 時，所走的距離剛好都是 $X - \overline{bc}$
+3. 從點 $b$ 出發，速度為一次一步，再次回到點 $b$ 可得到 cycle 的長度
+
+### cycle finding
+
+如果只需要判斷是否為 circular linked list，那麼只要執行上述的第 1 部分。
+
+除了計算 $\mu$ 和 $\lambda$，還需要記錄整個串列的長度，若不記錄，會影響到後續進行 sorting 一類的操作。
+
+```cpp
+static inline Node *move(Node *cur) { return cur ? cur->next : NULL; }
+
+bool cycle_finding(Node *HEAD, Node **TAIL, int *length, int *mu, int *lambda) {
+    // lambda is length
+    // mu is the meet node's index
+    Node *tortoise = move(HEAD);
+    Node *hare = move(move(HEAD));
+
+    // get meet point
+    while (hare && tortoise) {    /* Maybe while (hare && tortoise && (hare != tortoise)) ?*/
+        tortoise = move(tortoise);
+        hare = move(move(hare));
+    }
+
+    // not loop
+    if (!hare) {
+        *TAIL = NULL;
+        *length = 0;
+        tortoise = HEAD;
+        while (tortoise && (tortoise = move(tortoise)))
+            (*length)++;
+        return false;
+    }
+
+    // get mu
+    *mu = 0;
+    tortoise = HEAD;
+    while (tortoise != hare) {
+        (*mu)++;
+        tortoise = tortoise->next;
+        hare = hare->next;
+    }
+
+    // get lambda
+    *lambda = 1;
+    tortoise = move(tortoise);
+    *TAIL = tortoise;
+    while (tortoise != hare) {
+        *TAIL = tortoise;
+        (*lambda)++;
+        tortoise = move(tortoise);
+    }
+    *length = *mu + *lambda;
+
+    return true;
+}
+```
+
+## LeetCode 15. 3Sum 三数之和
+
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+Notice that the solution set must not contain duplicate triplets.
+
+
+
+给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。
+
+滑动窗口每次只向右移动一位。返回 滑动窗口中的最大值 。
+
+
+Example 1:
+
+```
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+```
+
+Example 2:
+
+```
+Input: nums = []
+Output: []
+```
+
+Example 3:
+
+```
+Input: nums = [0]
+Output: []
+```
+
+Constraints:
+
+- 0 <= nums.length <= 3000
+- -10^5 <= nums[i] <= 10^5
+
+
+## 解题思路
+
+用 map 提前计算好任意 2 个数字之和，保存起来，可以将时间复杂度降到 O(n^2)。这一题比较麻烦的一点在于，最后输出解的时候，要求输出不重复的解。数组中同一个数字可能出现多次，同一个数字也可能使用多次，但是最后输出解的时候，不能重复。例如 [-1，-1，2] 和 [2, -1, -1]、[-1, 2, -1] 这 3 个解是重复的，即使 -1 可能出现 100 次，每次使用的 -1 的数组下标都是不同的。
+
+这里就需要去重和排序了。map 记录每个数字出现的次数，然后对 map 的 key 数组进行排序，最后在这个排序以后的数组里面扫，找到另外 2 个数字能和自己组成 0 的组合。
+
+![](w4-kp-3.png)
+
+```
+class Solution(object):
+    def threeSum(self, nums):
+        if len(nums) < 3:
+            return[]
+        if all (num == 0 for num in nums):
+            return [[ 0, 0, 0]]
+        found = []
+        nums = sorted(nums)
+        rightmost = len(nums) - 1
+        for index, eachNum in enumerate(nums):
+            left = index + 1
+            right = rightmost
+            while left < right:
+                check_sum = (eachNum + nums[left] + nums[right])
+                if check_sum == 0:
+                    new_found = [eachNum, nums[left], nums[right]]
+                    if new_found not in found:
+                        found.append(new_found)
+                    right -= 1
+                elif check_sum < 0:
+                    left += 1
+                else :
+                    right -= 1
+        return found
+
+## 複雜度低版本
+class Solution2(object):
+    def threeSum(self, nums):
+        if len(nums) < 3:
+            return []
+        if all (num == 0 for num in nums):
+            return [[0, 0, 0]]
+        found = []
+        nums = sorted(nums)
+        rightmost = len(nums) - 1
+        for index, eachNum in enumerate(nums):
+            if index > 0 and nums[index] == nums[index - 1]:
+                continue
+            left = index + 1
+            right = rightmost
+            while left < right:
+                check_sum = (eachNum + nums[left] + nums[right])
+                if check_sum == 0:
+                    found.append([eachNum, nums[left], nums[right]])
+                    left += 1
+                    while left < right and nums[left] == nums[left - 1]:
+                        left += 1
+                elif check_sum < 0:
+                    left += 1
+                else :
+                    right -= 1
+        return found
+```
+
+## 查找, Search, 搜索, 搜尋
+
+- 順序查找
+
+- 二分查找
+
+-  Hash 查找
+
+# 13. Search 名詞釋疑
+
+> 整理於台灣義守大學與維基百科
+
+
+## 雜湊 (Hash), 哈希
+
+雜湊是因為他的特性很適合來做加密的運算，但真的不等同於加密。
+
+> 雜湊（英語：Hashing）是電腦科學中一種對資料的處理方法，通過某種特定的函式/演算法（稱為雜湊函式/演算法）將要檢索的項與用來檢索的索引（稱為雜湊，或者雜湊值）關聯起來，生成一種便於搜尋的資料結構（稱為雜湊表）。舊譯哈希（誤以為是人名而採用了音譯）。它也常用作一種資訊安全的實作方法，由一串資料中經過雜湊演算法（Hashing algorithms）計算出來的資料指紋（data fingerprint），經常用來識別檔案與資料是否有被竄改，以保證檔案與資料確實是由原創者所提供。
+>
+> 如今，雜湊演算法也被用來加密存在資料庫中的密碼（password）字串，由於雜湊演算法所計算出來的雜湊值（Hash Value）具有不可逆（無法逆向演算回原本的數值）的性質，因此可有效的保護密碼。
+
+## 雜湊函數 (Hash function)
+
+主要是將不定長度訊息的輸入，演算成固定長度雜湊值的輸出，且所計算出來的雜湊值必須符合兩個主要條件：
+
+由雜湊值是無法反推出原來的訊息
+雜湊值必須隨明文改變而改變。
+舉例來說，雜湊函數就像一台果汁機，我們把蘋果香蕉你個芭樂 (資料) 都丟進去打一打、攪一攪，全部變得爛爛的很噁心對吧？！這時候出來的產物 (經過雜湊函數後的值)，是獨一無二的，沒有辦法反向組合成原來的水果 (資料)。倘若我們把蘋果改成紅龍果，出來的產物 (經過雜湊函數後的值) 就會跟著改變，變成桃紅色的，不再是原來的淡黃色。
+
+承上述的例子，用紅龍果香蕉你個芭樂經過雜湊函數出來的顏色是桃紅色 (雜湊值)，那有沒有可能我用其他的水果也可以打出相同的顏色呢？但因為雜湊值的特性是無法反推的，所以如果真的打出相同的顏色的話，我們稱為碰撞 (Collision)。這就代表說這個雜湊值已經不安全，不再是獨一無二的了，需要更改雜湊函數。
+
+## 雜湊表 (Hash table)
+
+在用雜湊函數運算出來的雜湊值，根據 鍵 (key) 來儲存在數據結構中。而存放這些記錄的數組就稱為 雜湊表。
+
+
+## 搜尋(Search)
+
+搜尋就是在一堆資料中找出所要之特定資料。搜尋之主要核心動作為「比較」動作，必需透過比較才有辦法判斷是否尋找到特定資料。當資料量少時很容易，當資料量龐大時，如何快速搜尋為一重要課題。
+
+一般電腦檔案都是一群結構記錄之集合(如上一單元之成績結構)。為了排序與搜尋，至少會設定其中一個欄位為資料之鍵值(key)。透過鍵值將資料排列順序，稱為排序。透過鍵值找到特定資料，稱為搜尋(search)。一般資料搜尋有下列分類：
+
+## 依資料量大小
+
+1. 內部搜尋：欲搜尋之資料較少，可直接載入記憶體中，進行搜尋動作。
+
+2. 外部搜尋：欲搜尋之資料較多，無法一次載入記憶體進行搜尋動作。需使用外部輔助記憶體分批處理。
+
+## 依搜尋時資料表格是否異動
+
+1. 靜態搜尋：搜尋過程中，資料表格不會有任何異動(如：新增、刪除或更新)。例如：查閱紙本字典、電話簿。
+
+2. 動態搜尋：搜尋過程中，資料表格會經常異動。
+
+一般搜尋常見之演算法有，「循序搜尋」、「二分搜尋」、「二元樹搜尋」、「雜湊搜尋」。
+
+## 循序搜尋法 (Sequential Search)
+
+【定義】從第一個資料開始取出，依序一一與「目標資料」相互比較，直到找到所要元素或所有資料均尋找完為止，此方法稱「循序搜尋」。
+
+【優點】(1) 程式容易撰寫。(2) 資料不須事先排序(Sorting)。
+
+【缺點】 搜尋效率比較差(平均次數=(N+1)/2)，不管是否有排序，每次都必須要從頭到尾找一次。
+
+【時間複雜度】
+
+(1) 如果資料沒有重覆，找到資料就可終止，否則要找到資料結束。N筆資料，在最差之情況下，需作 N 次比較，O(N)。
+
+(2) 在平均狀況下(假設資料出現與分佈之機率相等)需(N+1)/2次比較，所以平均時間與最差時間為O(N)，最好為O(1)=1次。
+
+【演算法】
+
+```c
+int sequential_search(int list[], int n, int key) {
+    int i;
+    for (i = 0; i < n; i++){
+        if (list[i] == key) return i+1;
+        //比對陣列內的資料是否等於欲搜尋的條件
+        //若找到符合條件的資料，就傳回其索引
+    }
+    return(-1);    
+    //若找不到符合條件的資料，就傳回 -1
+}
+```
+## 二分搜尋法 (Binary Search)
+
+【定義】如果資料已先排序過，則可使用二分法來進行搜尋。二分法是將資料分成兩部份，再將鍵值與中間值比較，如鍵值相等則找到，小於再比前半段，大於再比後半段。如此，分段比較至找到或無資料為止。
+
+【優點】搜尋效率佳(平均次數=Log2N)。
+
+【缺點】 (1) 資料必需事先排序。(2) 檔案資料必需使是可直接存取或隨機檔。
+
+【時間複雜度】因為每次比較都會比上一次少一半之資料，因此最多只需要比較。
+
+【演算法】
+
+```c
+    Searchtime = 0;                   //搜尋次數初值設定為
+    Middle = (int)((Low + High)/2);   //搜尋中間值
+    do {
+        Searchtime = Searchtime + 1;
+        if (Temp[Middle] == Key)       //找到資料
+        {
+            printf("該數字是排在第 %d 個順位",Middle);
+            //顯示資料位置
+            printf("一共搜尋 %d 次",Searchtime);
+            //顯示搜尋次數
+            break;    //跳出迴圈
+        }
+        else if(Temp[Middle] < Key)
+                Low = Middle + 1;          //改變左半部
+            else  High = Middle - 1;     //改變右半部
+        Middle = (int)((Low + High) / 2);  //改變中間值
+    }
+    while(Low <= High);
+```
+
+## 二元樹搜尋法 (Tree Search)
+
+【定義】二元數是先將資料列建立為一棵二元搜尋樹，樹中每節點皆不小於左子樹(葉)，也不大於右子樹(葉)，也就是 左子樹的值≦樹根值≦右子樹的值。
+
+【優點】 (1) 插入與刪除時，只需改變指標。(2) 二元樹效率較高(介於循序法與二分法間)。
+
+【缺點】 (1) 有左、右兩指標，需較大記憶體空間。(2) 資料必須事先排序。
+
+【時間複雜度】平均與最差時間為 O(N)
+
+## 內插搜尋法(Interpolation Search)
+
+【定義】內插搜尋法是二分搜尋法之改良版。是依照資料位置分佈，運用公式預測資料所在位置，再以二分法方式逼近。內插之預測公式為：
+
+【優點】資料分佈平均時，搜尋速度極快。
+
+【缺點】 (1) 需計算預測公式。(2) 資料必須事先排序。
+
+【時間複雜度】取決於資料分部情形，平均而言優於 Log2N。
+
+【演算法】
+```c
+int intsrch(int A[], int find) {
+    int low, mid, high,Searchtime;
+    low = 0;
+    high = MAX - 1;
+    Searchtime = 0;// 搜尋次數初值設定為
+    while(low <= high) {
+        mid = (high-low)* (find-A[low])/(A[high]-A[low])+ low;
+        Searchtime = Searchtime + 1;   
+        if(mid < low || mid > high)  return -1;
+        if(find < A[mid])   high = mid - 1;
+        else if(find > A[mid])
+            low = mid + 1;
+        else {
+            printf("一共搜尋 %d 次, ",Searchtime);//顯示搜尋次數
+            return mid;
+        }
+    }
+    return -1;
+}
+```
+## 雜湊搜尋法(Hashing Search)
+
+存取資料時，並不依資料順序存取，是應用資料中某欄位之值代入事先設計好之函數(雜湊函數)，計算資料存放之位置。這種方式稱雜湊法(Hashing)。
+
+【定義】將資料按照某特定法則轉換為資料儲存位置，應用時是以資料鍵值(key value)轉換。
+
+【優點】 
+
+(1) 搜尋速度最快。
+
+(2) 資料不須是先排序。
+
+(3) 在沒發生碰撞(collision)與溢位(overflow)之情況下，只需一次即可讀取。
+
+(4) 搜尋速度與資料量大小無關。
+
+(5) 保密性高，若不知雜湊函術，無法取得資料。
+
+【缺點】 
+
+(1) 浪費空間(因有溢位資料區)，並且儲存空間的利用率比循序檔差。
+
+(2) 有碰撞問題，當資料檔記錄到一定量時會嚴重影響處理速度存取速度。
+
+(3) 程式設計比較複雜。
+
+(4) 大量資料無效率。
+
+(5) 不適合循序型煤體，如磁帶。
+
+【演算法】主要依雜湊函數之計算、碰撞與溢位為考量依據。以下簡單討論幾種雜湊函數與溢位處理方法。
+
+## Reference
+
+1. https://en.wikipedia.org/wiki/Search_algorithm
+
+2. https://ithelp.ithome.com.tw/articles/10208884
+
+3. https://en.wikipedia.org/wiki/Hash_function
+
+4. https://zh.wikipedia.org/wiki/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B8
+
+
+## 顺序查找, 循序搜尋法, Sequential Search
+
+從第一個資料開始取出，依序與「目標資料」相互比較，直到找到所要元素或所有資料均尋找完為止，此方法稱「循序搜尋」。
+
+```
+# KP
+def squentialSearch(alist, item):
+    pos = 0
+    found = False
+    while pos < len(alist) and not found:
+        if alist[pos] == item:
+            found = True
+        else :
+            pos = pos + 1
+    return found
+testlist = [1, 2, 32, 8, 17, 19, 42, 13, 0]
+print(squentialSearch(testlist, 3))
+print(squentialSearch(testlist, 13))
+
+# KP
+def orderedSeqentialSearch(alist, item):
+    pos = 0
+    found = False
+    stop = False
+    while pos < len(alist) and not found and not stop:
+        if alist[pos] == item:
+            found = True
+        else :
+            if alist[pos] > item:
+                stop = True
+            else :
+                pos = pos + 1
+    return found
+testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42]
+print(orderedSeqentialSearch(testlist, 3))
+print(orderedSeqentialSearch(testlist, 13))
+```
+
+## 二分查找, 二分搜尋法, Binary Search
+
+```
+# KP
+# 二分查找
+def binarySearch(alist, item):
+    first = 0
+    last = len(alist) -1
+    found = False
+    while first <= last and not found:
+        midpoint = (first + last) // 2
+        if alist[midpoint] == item:
+            found = True
+        else:
+            if item < alist[midpoint]:
+                last = midpoint - 1
+            else :
+                first = midpoint + 1
+    return found
+testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42]
+print(binarySearch(testlist, 3))
+print(binarySearch(testlist, 13))
+
+# KP
+# 二分查找
+# 遞歸
+def binarySearch(alist, item):
+    if len(alist) == 0:
+        return False
+    else:
+        midpoint = len(alist)//2
+        if alist[midpoint] == item:
+            return True
+        else:
+            if item < alist[midpoint]:
+                return binarySearch(alist[:midpoint], item)
+            else :
+                return binarySearch(alist[midpoint + 1:], item)
+
+testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42]
+print(binarySearch(testlist, 3))
+print(binarySearch(testlist, 13))
+```
+
+## Hash 查找, 雜湊搜尋法, Hashing Search
+
+存取資料時，並不依資料順序存取，是應用資料中某欄位之值代入事先設計好之函數(雜湊函數)，計算資料存放之位置。這種方式稱雜湊法(Hashing)。
+
+- 簡單餘數法
+
+- 分組求和法
+
+- 平方取中法
+
+![](w4-kp-4.png)
+
+![](w4-kp-5.png)
+
+![](w4-kp-6.png)
+
+
+衝突 & List & 線性探測的開放尋址技術 e.g. [ 54, 26, 93, 17, 77, 31, 44, 55, 20]
+
+## Map 抽象数据类型
+
+- Map() 创建一个新的 map 。它返回一个空的 map 集合。
+
+- put(key, val) 向 map 中添加一个新的键值对。如果键已经在 map 中，那么用新值替换旧值。
+
+- get(key) 给定一个键，返回存储在 map 中的值或 None。
+
+- del 使用 `del map[key]` 形式的语句从 map 中删除键值对。
+
+- len() 返回存储在 map 中的键值对的数量。
+
+- in 返回 True 对于 `key in map` 语句，如果给定的键在 map 中，否则为False。
+
+最有用的 Python 集合之一是字典。
+
+回想一下，字典是一种关联数据类型，你可以在其中存储键-值对。该键用于查找关联的值。我们经常将这个想法称为 `map`。
+
+map 抽象数据类型定义如下。该结构是键与值之间的关联的无序集合。
+
+map 中的键都是唯一的，因此键和值之间存在一对一的关系。
+
+字典一个很大的好处是，给定一个键，我们可以非常快速地查找相关的值。
+
+为了提供这种快速查找能力，我们需要一个支持高效搜索的实现。
+
+我们可以使用具有顺序或二分查找的列表，但是使用如上所述的哈希表将更好，因为查找哈希表中的项可以接近 $O(1)$ 性能
+
+```
+class HashTable:
+    def __init__(self):
+        self.size = 11
+        self.slots = [None] * self.size
+        self.data = [None] * self.size
+    def put(self, key, data):
+        hashvalue = self.hashfunction(key, len(self.slots))
+        if self.slots[hashvalue] == None:
+            self.slots[hashvalue] = key
+            self.data[hashvalue] = data
+        else:
+            if self.slots[hashvalue] == key:
+                self.data[hashvalue] = data  # replace
+            else:
+                nextslot = self.rehash(hashvalue, len(self.slots))
+                while self.slots[nextslot] != None and self.slots[nextslot] != key:
+                    nextslot = self.rehash(nextslot, len(self.slots))
+                if self.slots[nextslot] == None:
+                    self.slots[nextslot] = key
+                    self.data[nextslot] = data
+                else:
+                    self.data[nextslot] = data  # replace
+    def hashfunction(self, key, size):
+        return key % size
+    def rehash(self, oldhash, size):
+        return (oldhash + 1) % size
+    def get(self, key):
+        startslot = self.hashfunction(key, len(self.slots))
+        data = None
+        stop = False
+        found = False
+        position = startslot
+        while self.slots[position] != None and not found and not stop:
+            if self.slots[position] == key:
+                found = True
+                data = self.data[position]
+            else:
+                position = self.rehash(position, len(self.slots))
+                if position == startslot:
+                    stop = True
+        return data
+    def __getitem__(self, key):
+        return self.get(key)
+    def __setitem__(self, key, data):
+        self.put(key, data)
+
+H = HashTable()
+H[54] = "cat"
+H[26] = "dog"
+H[93] = "lion"
+H[17] = "tiger"
+H[77] = "bird"
+H[31] = "cow"
+H[44] = "goat"
+H[55] = "pig"
+H[20] = "chicken"
+print(H.slots)
+print(H.data)
+```
+
+## 递归与分治
+
+story = function (){
+    从前有个山，
+    山里有个庙，
+    庙里有个和尚讲故事 story()
+}
+ 
+> 从前有个山，山里有个庙，庙里有个和尚讲故事，而故事是从前有个山，山里有个庙，庙里有个和尚讲故事
+
+```c
+def recursion(level, param1, param2, ...):
+    # recursion terminator
+    if level > MAX_LEVEL:
+        print_result
+        return
+    # process logic in current level
+    process_data(level, data ...)
+
+    # drill down
+    self.recursion(level + 1, p1, p2, ...)
+
+    # reverse the current status if needed
+    reverse_state(level)
+```
+
+### 递归 計算 n 的階乘 n!
+
+$n! = 1 * 2 * 3 * ... * n$
+
+```
+def Factorial(n):
+    if n <= 1:
+        return 1
+    return n * Factorial(n - 1)
+```
+
+### Recursion 压栈
+
+```c
+factorial(6)
+6 * factorial(5)
+6 * (5 * factorial(4))
+6 * (5 * (4 * factorial(3)))
+6 * (5 * (4 * (3 * factorial(2))))
+6 * (5 * (4 * (3 *(2 *factorial(1)))))
+6 * (5 * (4 * (3 *(2 *1 ))))
+6 * (5 * (4 * (3 * 2)))
+6 * (5 * (4 * 6))
+6 * (5 * 24)
+6 * 120
+720
+```
+Fibonacci array: 1, 1, 2, 3, 4, 8, 13, 21, 34, …
+
+$$ F(n) = F(n-1) + F(n-2) $$
+
+```
+def fib(n):
+    if n == 0 or n == 1:
+        return n
+    return fib(n - 1) + fib (n - 2)
+```
+
+### 分治
+
+```c
+def divide_conquer(problem, param1, param2, ...):
+    # recursion terminator
+    if problem is None:
+        print_result
+        return
+    # prepare data
+    data = prepare_data(problem)
+    subproblems = split_problem(problem, data)
+
+    # conquer subproblems
+    subresults1 = self.divide_conquer(subproblems[0], p1, ...)
+    subresults2 = self.divide_conquer(subproblems[1], p1, ...)
+    subresults3 = self.divide_conquer(subproblems[2], p1, ...)
+    ...
+
+    # process and generate the final result
+    result = process_result(subresults1, subresults2, subresults3, ...)
+```
+
+### LeetCode 50. Pow(x, n) 遞迴與非遞迴
+
+Implement pow(x, n), which calculates x raised to the power n (i.e., $x^n$).
+
+实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，$x^n$ ）。
+
+解题思路
+
+要求计算 Pow(x, n)
+
+这一题用递归的方式，不断的将 n 2 分下去。注意 n 的正负数，n 的奇偶性。
+
+```
+# KP
+# LC 50 Pow(x, n)
+
+# 递归
+def myPow(x, n):
+    if not n:
+        return 1
+    if n < 0:
+        return 1/ myPow(x, -n)
+    if n % 2:
+        return x * myPow(x, n - 1)
+    return myPow(x * x, n / 2)
+
+# 非递归
+def myPow2(x, n):
+    if n < 0:
+        x = 1 / x
+        n = -n
+    pow = 1
+    while n:
+        if n & 1:
+            pow *= x
+        x *= x
+        n >>= 1
+    return pow
+```
+
+## 排序
+
+- 冒泡排序
+
+- 选择排序
+
+- 归并排序
+
+- 快速排序
+
+- 插入排序
+
+
+- 冒泡排序, 氣泡排序法, Bubble Sort
+
+又稱交換排序法，原理是從第一筆資料開始，逐一比較相鄰兩筆資料，如果兩筆大小順序有誤則做交換，反之則不動，接者再進行下一筆資料比較，所有資料比較完第1回合後，可以確保最後一筆資料是正確的位置。
+
+
+- 选择排序, 選擇排序法, Selection Sort
+
+原理是反覆從未排序數列中找出最小值，將它與左邊的數做交換。可以有兩種方式排序，一為由大到小排序時，將最小值放到末端;若由小到大排序時，則將最小值放到前端。例如:未排序的數列中找到最小值的資料，和第1筆資料交換位置，再從剩下未排序的資料列中找到最小值的資料，和第2筆資料交換位置，以此類推。
+
+
+- 归并排序, 合併排序法, Merge Sort
+
+原理是會先將原始資料分割成兩個資料列，接著再將兩個資料繼續分割成兩個資料列，依此類推，直到無法再分割，也就是每組都只剩下一筆資料時，再兩兩合併各組資料，合併時也會進行該組排序，每次排序都是比較最左邊的資料，將較小的資料加到新的資料列中，依此類推，直到最後合併成一個排序好的資料列為止。
+
+
+- 快速排序, 快速排序法, Quick Sort
+
+又稱分割交換排序法，是目前公認效率極佳的演算法，使用了分治法(Divide and Conquer)的概念。原理是先從原始資料列中找一個基準值(Pivot)，接著逐一將資料與基準值比較，小於基準值的資料放在左邊，大於基準值的資料放在右邊，再將兩邊區塊分別再找出基準值，重複前面的步驟，直到排序完為止。
+
+
+- 插入排序, 插入排序法, Insertion Sort
+
+原理是逐一將原始資料加入已排序好資料中，並逐一與已排序好的資料作比較，找到對的位置插入。例如:已有2筆排序好資料，將第3筆資料與前面已排序好的2筆資料作比較，找到對的位置插入，再將第4筆資料與前面已排序好的3筆資料作比較，找到對的位置插入，以此類推。
+
+氣泡排序法 - Bubble Sort : https://ithelp.ithome.com.tw/articles/10276184
+
+選擇排序法 - Selection Sort : https://ithelp.ithome.com.tw/articles/10276719
+
+合併排序法 - Merge Sort : https://ithelp.ithome.com.tw/articles/10278179
+
+快速排序法 - Quick Sort : https://ithelp.ithome.com.tw/articles/10278644
+
+http://pages.di.unipi.it/marino/pythonads/SortSearch/TheQuickSort.html
+
+插入排序法 - Insertion Sort : https://ithelp.ithome.com.tw/articles/10277360
+
+### Python 相同結果，不同寫法
+
+```
+# method 1
+temp = alist[i]
+alistp[i] = alist[i + 1]
+alist[i + 1] = temp
+
+# method 2
+alist[i], alist[i + 1] = alist[i + 1], alist[i]
+```
+
+```
+# KP
+# 冒泡排序
+# code
+def bubbleSort(alist):
+    for passnum in range(len(alist) -1, 0, -1):
+        for i in range(passnum):
+            if alist[i] > alist[i + 1]:
+                temp = alist[i]
+                alist[i] = alist[i + 1]
+                alist[i + 1] = temp
+alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+bubbleSort(alist)
+print(alist)
+
+# Run Test
+def bubbleSort(alist):
+    for passnum in range(len(alist)-1, 0, -1):
+        print(passnum)
+        for i in range(passnum):
+            if alist[i] > alist[i + 1]:
+                temp = alist[i]
+                alist[i] = alist[i+1]
+                alist[i+1] = temp
+            print(alist)
+
+alist = [54, 26, 93, 17]
+print("bubbleSort :")
+print(alist)
+bubbleSort(alist)
+print(alist)
+```
+
+```
+# KP
+# 选择排序
+
+def selectionSort(alist):
+    for fillslot in range(len(alist) - 1, 0, -1):
+        positionOfMax = 0
+        for location in range(1, fillslot + 1):
+            if alist[location] > alist[positionOfMax]:
+                positionOfMax = location
+        temp = alist[fillslot]
+        alist[fillslot] = alist[positionOfMax]
+        alist[positionOfMax] = temp
+alist = [ 54, 26, 93, 17, 77, 31, 44, 55 ,20]
+selectionSort(alist)
+print(alist)
+
+# Run Test
+def selectionSort(alist):
+    for fillsolt in range(len(alist)-1,0,-1):
+        print(fillsolt)
+        positionOfMax = 0
+        for location in range(1, fillsolt + 1):
+            if alist[location] > alist[positionOfMax]:
+                positionOfMax = location
+        temp = alist[fillsolt]
+        alist[fillsolt] = alist[positionOfMax]
+        alist[positionOfMax] = temp
+        print(alist)
+
+print("selectionSort : ")
+alist = [54, 26, 93, 17]
+print(alist)
+selectionSort(alist)
+print(alist)
+```
+
+```
+# KP
+# 归并排序
+def mergeSort(alist):
+    if len(alist) > 1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+        l, j, k = 0,0,0
+        while i < len(lefthalf) and j < len (righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k] = lefthalf[i]
+                i = i + 1
+            else :
+                alist[k] = righthalf[j]
+                j = j + 1
+            k = k + 1
+        while i < len(lefthalf):
+            alist[k] = lefthalf[i]
+            i = i + 1
+            k = k + 1
+        while j < len(righthalf):
+            alist[k] = righthalf[j]
+            j = j + 1
+            k = k + 1
+
+k = 0
+def mergeSort(alist):
+    global k
+    k = k + 1
+    print("invoke function %d" %(k))
+    print("Splitting ", alist)
+    if len(alist) > 1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+        i, j, k = 0,0,0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k] = lefthalf[i]
+                i = i + 1
+            else:
+                alist[k] = righthalf[j]
+                j = j + 1
+            k = k + 1
+        while i < len(lefthalf):
+            alist[k] = lefthalf[i]
+            i = i + 1
+            k = k + 1
+        while j < len(righthalf):
+            alist[k] = righthalf[j]
+            j = j + 1
+            k = k + 1
+    print("Merging ", alist)
+print("mergeSort : ")
+alist = [ 54, 26, 93, 17]
+print(alist)
+mergeSort(alist)
+print(alist)
+```
+
+```
+# KP
+# 插入排序
+
+def insertionSort(alist):
+    for index in range(1, len(alist)):
+        currentvalue = alist[index]
+        position = index
+        while position > 0 and alist[position - 1] > currentvalue:
+            alist[position] = alist[position - 1]
+            position = position - 1
+        alist[position] = currentvalue
+alist = [ 54, 26, 93, 17, 77, 31, 44, 55, 20]
+insertionSort(alist)
+print(alist)
+
+def insertionSort(alist):
+    for index in range(1, len(alist)):
+        print(index)
+        currentvalue = alist[index]
+        position = index
+        while position > 0 and alist[position - 1] > currentvalue:
+            alist[position] = alist[position - 1]
+            position = position - 1
+        alist[position] = currentvalue
+        print(alist)
+print("insertionSort : ")
+alist = [54, 26, 93, 17]
+print(alist)
+insertionSort(alist)
+print(alist)
+```
+
+```
+# KP
+# 快速排序
+
+def quickSort(alist):
+    quickSortHelper(alist, 0, len(alist)-1)
+def quickSortHelper(alist, first, last):
+    if first < last:
+        splitpoint = partition(alist, first, last)
+        quickSortHelper(alist, first, splitpoint-1)
+        quickSortHelper(alist, splitpoint+1, last)
+def partition(alist,first,last):
+    pivotvalue = alist[first]
+    leftmark = first+1
+    rightmark = last
+    done = False
+    while not done:
+        while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+            leftmark = leftmark + 1
+        while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
+            rightmark = rightmark -1
+
+        if rightmark < leftmark:
+            done = True
+        else:
+            temp = alist[leftmark]
+            alist[leftmark] = alist[rightmark]
+            alist[rightmark] = temp
+    temp = alist[first]
+    alist[first] = alist[rightmark]
+    alist[rightmark] = temp
+    return rightmark
+
+
+alist = [54,26,93,17,77,31,44,55,20]
+print(alist)
+quickSort(alist)
+print(alist)
+```
