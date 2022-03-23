@@ -7,6 +7,61 @@ PKU 2022 個人實驗報告作業
 
 ## LeetCode
 
+### Define
+
+名詞對應 : 
+
+https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/define.md
+
+### Log
+
+課堂紀錄 :
+
+https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
+
+1. Two Sum 兩數之和
+
+7. Reverse Integer 整数反转
+
+13. Roman to Integer 羅馬數字轉整數
+
+15. 3Sum 三数之和
+
+16. 3Sum Closest 整数反转
+
+17. Letter Combinations of a Phone Number 电话号码的字母组合
+
+19. Remove Nth Node From End of List 删除链表的倒数第 N 个结点
+
+20. Valid Parentheses 有效的括号
+
+24. Swap Nodes in Pairs 两两交换链表中的节点
+
+50. Pow(x, n)
+
+56. Merge Intervals 合并区间
+
+66. Plus One 加一
+
+69. Sqrt(x) x 的平方根
+
+70. Climbing Stairs 爬楼梯
+
+141. Linked List Cycle 环形链表
+
+148. Sort List 排序链表
+
+206. Reverse Linked List 反转链表
+
+232. Implement Queue using Stacks 用栈实现队列
+
+239. Sliding Window Maximum 滑动窗口最大值
+
+242. Valid Anagram 有效的字母异位词
+
+274. H-Index, H 指数
+
+
 
 ## LeetCode 1. Two Sum 兩數之和
 
@@ -310,6 +365,110 @@ x = "III"
 ob2 = Solution2()
 print(ob2.romanToInt(x))
 ```
+
+## LeetCode 15. 3Sum 三数之和
+
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+Notice that the solution set must not contain duplicate triplets.
+
+
+
+给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。
+
+滑动窗口每次只向右移动一位。返回 滑动窗口中的最大值 。
+
+
+Example 1:
+
+```
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+```
+
+Example 2:
+
+```
+Input: nums = []
+Output: []
+```
+
+Example 3:
+
+```
+Input: nums = [0]
+Output: []
+```
+
+Constraints:
+
+- 0 <= nums.length <= 3000
+- -10^5 <= nums[i] <= 10^5
+
+
+## 解题思路
+
+用 map 提前计算好任意 2 个数字之和，保存起来，可以将时间复杂度降到 O(n^2)。这一题比较麻烦的一点在于，最后输出解的时候，要求输出不重复的解。数组中同一个数字可能出现多次，同一个数字也可能使用多次，但是最后输出解的时候，不能重复。例如 [-1，-1，2] 和 [2, -1, -1]、[-1, 2, -1] 这 3 个解是重复的，即使 -1 可能出现 100 次，每次使用的 -1 的数组下标都是不同的。
+
+这里就需要去重和排序了。map 记录每个数字出现的次数，然后对 map 的 key 数组进行排序，最后在这个排序以后的数组里面扫，找到另外 2 个数字能和自己组成 0 的组合。
+
+![](lc-15-p-example.png)
+
+```
+class Solution(object):
+    def threeSum(self, nums):
+        if len(nums) < 3:
+            return[]
+        if all (num == 0 for num in nums):
+            return [[ 0, 0, 0]]
+        found = []
+        nums = sorted(nums)
+        rightmost = len(nums) - 1
+        for index, eachNum in enumerate(nums):
+            left = index + 1
+            right = rightmost
+            while left < right:
+                check_sum = (eachNum + nums[left] + nums[right])
+                if check_sum == 0:
+                    new_found = [eachNum, nums[left], nums[right]]
+                    if new_found not in found:
+                        found.append(new_found)
+                    right -= 1
+                elif check_sum < 0:
+                    left += 1
+                else :
+                    right -= 1
+        return found
+
+## 複雜度低版本
+class Solution2(object):
+    def threeSum(self, nums):
+        if len(nums) < 3:
+            return []
+        if all (num == 0 for num in nums):
+            return [[0, 0, 0]]
+        found = []
+        nums = sorted(nums)
+        rightmost = len(nums) - 1
+        for index, eachNum in enumerate(nums):
+            if index > 0 and nums[index] == nums[index - 1]:
+                continue
+            left = index + 1
+            right = rightmost
+            while left < right:
+                check_sum = (eachNum + nums[left] + nums[right])
+                if check_sum == 0:
+                    found.append([eachNum, nums[left], nums[right]])
+                    left += 1
+                    while left < right and nums[left] == nums[left - 1]:
+                        left += 1
+                elif check_sum < 0:
+                    left += 1
+                else :
+                    right -= 1
+        return found
+```
+
 
 ## LeetCode 16. 3Sum Closest 整数反转
 
@@ -729,7 +888,7 @@ print(ob.isValid(x))
 
 ## LeetCode 24. Swap Nodes in Pairs 两两交换链表中的节点
 
-Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
 
 给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
 
@@ -806,6 +965,128 @@ class Solution:
         return self.next
 ```
 
+## LeetCode 50. Pow(x, n)
+
+Implement pow(x, n), which calculates x raised to the power n (i.e., $x^n$).
+
+实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，$x^n$ ）。
+
+
+Example 1:
+
+```
+Input: x = 2.00000, n = 10
+Output: 1024.00000
+```
+
+Example 2:
+
+```
+Input: x = 2.10000, n = 3
+Output: 9.26100
+```
+
+Example 3:
+
+```
+Input: x = 2.00000, n = -2
+Output: 0.25000
+Explanation:$ 2^{-2} = {1/2}^{2} = 1/4 = 0.25$
+```
+
+Constraints:
+
+- $-100.0 < x < 100.0$
+- $-2^{31} <= n <= 2^{31}-1$
+- $-10^4 <= x^n <= 10^4$
+
+## 解题思路
+
+要求计算 Pow(x, n)
+
+这一题用递归的方式，不断的将 n 2 分下去。注意 n 的正负数，n 的奇偶性。
+
+```
+# KP
+# LC 50 Pow(x, n)
+
+# 递归
+def myPow(x, n):
+    if not n:
+        return 1
+    if n < 0:
+        return 1/ myPow(x, -n)
+    if n % 2:
+        return x * myPow(x, n - 1)
+    return myPow(x * x, n / 2)
+
+# 非递归
+def myPow2(x, n):
+    if n < 0:
+        x = 1 / x
+        n = -n
+    pow = 1
+    while n:
+        if n & 1:
+            pow *= x
+        x *= x
+        n >>= 1
+    return pow
+```
+
+## LeetCode 56. Merge Intervals 合并区间
+
+Given an array of intervals where intervals[i] = [$start_{i}, end_{i}$], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+
+以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [$start_{i}, end_{i}$] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。
+
+
+Example 1:
+
+```
+Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output: [[1,6],[8,10],[15,18]]
+Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+```
+
+Example 2:
+
+```
+Input: intervals = [[1,4],[4,5]]
+Output: [[1,5]]
+Explanation: Intervals [1,4] and [4,5] are considered overlapping.
+```
+
+Constraints:
+
+- 1 <= intervals.length <= $10^4$
+
+- intervals[i].length == 2
+
+- 0 <= $start_{i}$ <= $end_{i}$ <= $10^4$
+
+
+## 解题思路
+
+先按照区间起点进行排序。然后从区间起点小的开始扫描，依次合并每个有重叠的区间。
+
+```
+from typing import List
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()   #排序列表，以区间开头升序排列
+        ans = [intervals[0]]
+        L, R = 1, 0
+        while L < len(intervals):
+            if ans[R][1] < intervals[L][0]:   #如果区间不重合，直接append
+                ans.append(intervals[L])
+                L += 1
+                R += 1
+            else:      #如果区间重合，就合并区间
+                ans[R] = [ans[R][0], max(ans[R][1], intervals[L][1])]
+                L += 1
+        return ans
+```
 
 ## LeetCode 69. Sqrt(x) x 的平方根
 
@@ -977,6 +1258,150 @@ print(ob1.climbStairs(x2))
 
 1. 動態規劃，遞迴公式 f(n-1) + f(n-2)，其結果就是費氏數列。來判斷該值有沒有在字典裡面。相對與第一種課堂範例來的理想。
 
+
+
+## LeetCode 141. Linked List Cycle 环形链表
+
+Given head, the head of a linked list, determine if the linked list has a cycle in it.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+
+Return true if there is a cycle in the linked list. Otherwise, return false.
+
+给你一个链表的头节点 head ，判断链表中是否有环。
+
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。
+
+如果链表中存在环 ，则返回 true 。 否则，返回 false 。
+
+![](lc-141-p-example.png)
+
+Example 1:
+
+```
+Input: head = [3,2,0,-4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+链表中有一个环，其尾部连接到第二个节点。
+```
+
+Example 2:
+
+```
+Input: head = [1,2], pos = 0
+Output: true
+Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
+链表中有一个环，其尾部连接到第一个节点。
+```
+
+Example 3:
+
+```
+Input: head = [1], pos = -1
+Output: false
+Explanation: There is no cycle in the linked list.
+链表中没有环。
+```
+
+Constraints:
+
+- The number of the nodes in the list is in the range(链表中节点的数目范围是) [0, $10^4$].
+- $-10^5 <= Node.val <= 10^5$
+- pos is -1 or a valid index in the linked-list.(pos 为 -1 或者链表中的一个 有效索引 。)
+
+Follow up: Can you solve it using O(1) (i.e. constant) memory?(你能用 O(1)（即，常量）内存解决此问题吗？)
+
+## 解题思路
+
+给 2 个指针，一个指针是另外一个指针的下一个指针。快指针一次走 2 格，慢指针一次走 1 格。如果存在环，那么前一个指针一定会经过若干圈之后追上慢的指针。
+
+## Reference
+
+- Jserv Linux 核心設計/實作 : https://hackmd.io/@sysprog/linux2022-lab0
+
+- 你所不知道的 C 語言: linked list 和非連續記憶體 : https://hackmd.io/@sysprog/c-linked-list
+
+```
+# Linked List Cycle
+class Solution(object):
+    def hasCycle(self, head):
+        fast, slow = head, head
+        while fast and fast.next:
+            fast, slow = fast.next.next, slow.next
+            if fast == slow:
+                return True
+        return False
+```
+
+## LeetCode 148. Sort List 排序链表
+
+Given the head of a linked list, return the list after sorting it in ascending order.
+
+给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
+
+![](lc-148-p-example.png)
+
+Example 1:
+
+```
+Input: head = [4,2,1,3]
+Output: [1,2,3,4]
+```
+
+Example 2:
+
+```
+Input: head = [-1,5,3,4,0]
+Output: [-1,0,3,4,5]
+```
+
+Example 3:
+
+```
+Input: head = []
+Output: []
+```
+
+Constraints:
+
+- The number of nodes in the list is in the range [0, 5 * $10^4$].(链表中节点的数目在范围 [0, 5 * $10^4$])
+
+- $-10^5$ <= Node.val <= $10^5$
+
+Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?
+
+你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+
+
+## 解题思路
+
+归并排序 ..
+
+```
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def sortList(self, head: ListNode) -> ListNode:
+        h_head = ListNode(-1, head)
+        mem = []
+        while(head is not None):
+            next_h = head.next
+            head.next = None
+            mem.append(head)
+            head = next_h
+        mem = sorted(mem, key=lambda x: x.val)
+        n = len(mem)
+        if n == 0:
+            return None
+        h_head.next = mem[0]
+        for i in range(n-1):
+            mem[i].next = mem[i+1]     
+        return h_head.next
+```
 
 ## LeetCode 206. Reverse Linked List 反转链表
 
@@ -1461,4 +1886,62 @@ s = "anagram"
 t = "nagaram"
 ob = Solution()
 print(ob.isAnagram(s, t))
+```
+
+## LeetCode 274. H-Index, H 指数
+
+
+Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper, return compute the researcher's h-index.
+
+According to the definition of h-index on Wikipedia: A scientist has an index h if h of their n papers have at least h citations each, and the other n − h papers have no more than h citations each.
+
+If there are several possible values for h, the maximum one is taken as the h-index.
+
+给你一个整数数组 citations ，其中 citations[i] 表示研究者的第 i 篇论文被引用的次数。计算并返回该研究者的 h 指数。
+
+根据维基百科上 h 指数的定义：h 代表“高引用次数”，一名科研人员的 h指数是指他（她）的 （n 篇论文中）总共有 h 篇论文分别被引用了至少 h 次。且其余的 n - h 篇论文每篇被引用次数不超过 h 次。
+
+如果 h 有多种可能的值，h 指数 是其中最大的那个。
+
+Example 1:
+
+```
+Input: citations = [3,0,6,1,5]
+Output: 3
+Explanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of them had received 3, 0, 6, 1, 5 citations respectively.
+Since the researcher has 3 papers with at least 3 citations each and the remaining two with no more than 3 citations each, their h-index is 3.
+
+给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
+由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
+```
+
+Example 2:
+
+```
+Input: citations = [1,3,1]
+Output: 1
+```
+
+Constraints:
+
+- n == citations.length
+
+- 1 <= n <= 5000
+
+- 0 <= citations[i] <= 1000
+
+
+## 解题思路
+
+可以先将数组里面的数从小到大排序。因为要找最大的 h-index，所以从数组末尾开始往前找，找到第一个数组的值，小于，总长度减去下标的值，这个值就是 h-index。
+
+```
+class Solution(object):
+    def hIndex(self, citations):
+        index = 0
+        citations.sort(reverse=True)
+        for i in citations:
+            if i > index:
+                index +=1
+        return index
 ```

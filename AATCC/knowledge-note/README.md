@@ -19,6 +19,40 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/define.md
 
 https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
+1. 平方根函數
+
+2. ＊牛頓法
+
+3. 乱序字符串检查 - 逐字检查
+
+4. 乱序字符串检查 - 排序与比较
+
+5. ＊乱序字符串检查 - 计数与比较(ASCII)
+
+6. ＊栈 - 十进制转二进制
+
+7. 栈 - 2 ~ 16 进制轉換
+
+8. 堆疊、链表應用
+
+9. 链表, Linked List, 鏈結串列
+
+10. 数组, Array, 陣列
+
+11. 栈, Stack, 堆疊
+
+12. 队列, Queue, 佇列
+
+13. 查找, Search, 搜索, 搜尋 - 順序查找, 二分查找, Hash 查找
+
+14. Map 抽象数据类型
+
+15. 递归与分治
+
+16. 排序 - 冒泡排序, 选择排序, 归并排序, 快速排序, 插入排序
+
+17. 环形链表
+
 
 ## 平方根函數
 
