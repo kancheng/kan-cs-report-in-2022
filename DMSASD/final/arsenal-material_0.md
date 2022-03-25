@@ -3909,6 +3909,9 @@ Furthermore, we first integrate Fully Connected Conditional Random Fields as pos
 We show that our method outperforms other state-of-the-art methods in three popular datasets.
 ```
 
+該研究解決了圖像拼接定位的問題：給定一張輸入圖像，定位從另一張圖像中剪下的拼接區域，並將其製定為分類任務，但關鍵的是，我們不是通過局部補丁對拼接區域進行分類，而是利用整個圖像和局部補丁的特徵來對補丁進行分類。而研究者們稱這種結構為 Semi-Global Network，其方法利用了拼接區域不僅應與局部特徵（拼接邊緣）高度相關，還應與整個圖像的全局特徵（語義信息、照明等）高度相關的觀察結果。此外，該研究首先將全連接條件隨機場作為圖像拼接中的後處理技術，以提高輸入圖像和網絡輸出之間的一致性。
+
+
 Bibliography
 
 ```
@@ -3939,6 +3942,8 @@ In this paper we show that a class of residual-based descriptors can be actually
 
 Then, by relaxing the constraints, and fine-tuning the net on a relatively small training set, we obtain a significant performance improvement with respect to the conventional detector.
 ```
+
+基於圖像噪聲殘差的局部描述符已被證明對於許多取證應用非常有效，例如偽造檢測和定位，儘管如此，在計算機視覺領域取得可喜成果的推動下，研究界的重點現在正在轉向深度學習。該研究展示了一類基於殘差的描述符實際上可以被視為一個簡單的約束卷積神經網絡（CNN）。通過放鬆約束，並在相對較小的訓練集上微調網絡，其成果相對於傳統檢測器獲得了顯著的性能提升。
 
 Bibliography
 
