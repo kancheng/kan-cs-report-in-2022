@@ -81,6 +81,16 @@ Combining EfficientNet and Vision Transformers for Video Deepfake Detection
 
 6. https://cloud.tencent.com/developer/article/1386693
 
+7. https://zhuanlan.zhihu.com/p/97305204
+
+8. https://zhuanlan.zhihu.com/p/115070797
+
+9. https://zhuanlan.zhihu.com/p/443947569
+
+10. https://zhuanlan.zhihu.com/p/426211432
+
+11. https://blog.csdn.net/landing_guy_/article/details/121261517
+
 ### Workshop Links
 
 1. https://github.com/cutz-j/T-GD
