@@ -31,39 +31,17 @@ Deepfakes
 
 1. 深度偽造、檢測前言
 
-其技術發展、背景與動機，跟近期臺灣發生的社會事件。
-
-(法學研究 & 過去的綜述)
-
 2. 深度偽造、檢測分類
-
-(1) 臉 (2) 表情 (3) 語言 (4) 工具
 
 3. 深度偽造、檢測資料集
 
-(1) 影 (2) 音
-
 4. 深度偽造、檢測技術
-
-(1) 傳統圖像 (2) 生理信號特徵 (3) 圖像串改 (4) GAN (5) 根據資料驅動 (基於圖片、基於影像) (6) 深度偽造語音 (7) 檢測技術
 
 5. 深度偽造對抗性研究
 
-(1) 深度偽造生成 
+- M2TR: Multi-modal Multi-scale Transformers for Deepfake Detection
 
-(1) - 1 對抗
-
-(1) - 2 Transformers 
-
-(2) 深度偽造檢測
-
-(2) - 1 對抗
-
-(2) - 2 Transformers
-
-M2TR: Multi-modal Multi-scale Transformers for Deepfake Detection
-
-Combining EfficientNet and Vision Transformers for Video Deepfake Detection
+- Combining EfficientNet and Vision Transformers for Video Deepfake Detection
 
 6. 結論
 
