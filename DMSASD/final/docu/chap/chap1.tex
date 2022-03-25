@@ -4,12 +4,12 @@
 
 综上所述这些技术好的部分则是应用于将古老的照片变成动态的影像，或者是用于一些艺术与网路次文化的创作，又或者是 Reface APP\cite{list1102} 等服务带给大众娱乐，但同时负面的因素也有造成社会动荡的可能，包含知名人士被伪造影像、近而被广泛散布不实资讯与谣言的危险，造成当事人的声誉、社会地位与事业严重打击，还有近期大量知名女姓人士被用于成人色情网站，而受害当事人却因执法基层人员不理解相对应技术亦或是没有完善的检测工具，因而在此方面无法给予有效的协助，而受害人在描述其受害过程时受到再次的心理创伤，同时其深度伪造的假影片在网路散布时，对当事人的伤害就已经造成。再者此技术近期被应用在战争宣传战，将敌对方的政治人物伪造出用于其不正确的政治发言影片，进而造成某方的士气遭到打击。
 
-\begin{figure}[htb]
-\centering 
-\includegraphics[width=0.40\textwidth]{img/ch1m1.png} 
-\caption{Reface APP 苹果商店页面}
-\label{Test}
-\end{figure}
+%\begin{figure}[htb]
+%\centering 
+%\includegraphics[width=0.40\textwidth]{img/ch1m1.png} 
+%\caption{Reface APP 苹果商店页面}
+%\label{Test}
+%\end{figure}
 
 另外需要注意的在于这些工具非常容易取得，与之相应的是一些相继机构发现这些问题后，进而举办相应的竞赛\cite{list1103}，来推广该技术在此领域的热度。所以本作业即目标即探讨在人工智能下的深度学习领域中深度伪造与其检测的研究整理，同时调研过去Girish N 等人所汇整的早期图像篡改工作 \cite{girish2019review}与 Nguyen TT 等人 对该领域工作地早期总结 \cite{nguyen2019deep}与 Li XR 等人近期来的汇整工作\cite{2021496} 与研读，同时对使用深度学习方法下深度伪造与相对应的前沿检测技术进行调查，并对目前最新的研究进行补充。
 
@@ -135,7 +135,7 @@ Lample G 等人 \cite{NIPS2017_3fd60983} 介绍了一种新的编码器-解码�
 
 所谓的语音伪造则是根据人工智能的发展下利用相关的技术对人类语音进行合成，其技术分为两大部分，其一为所谓的语音变换(Voice Conversion)，其二为文本对语音资料的合成 (Text-to-speech)，前者意义为将人的说话的音调改变为目标人物的音调，后者则是搜集大量的语音与对应文本资料来完成指定语音资讯的输出。这些成果除了可以让一些人无法辨识出是否为当事人，跟甚者能够欺骗过一些语音辨识系统。过往语音伪造都为高斯混合模型（Gaussian Mixture Model，GMM）与隐马尔可夫模型（Hidden Markov Model, HMM），但随人工智能等领域带动深度学习的技术改进，在这块语音伪造技术则有着明显的突破。
 
-其 Van Den Oord A 等人 提出 WaveNet，一种用于生成原始音频波形的深度神经网络。该模型是完全概率和自回归的，每个音频样本的预测分布都以所有先前的样本为条件；尽管如此，该研究证明它可以在每秒数万个音频样本的数据上进行有效训练。当应用于文本到语音时，它产生了最先进的性能，人类听众认为它比英语和普通话的最佳参数和连接系统听起来更自然。单个 WaveNet 可以以相同的保真度捕获许多不同说话者的特征，并且可以通过调节说话者身份在它们之间切换。当训练为音乐建模时，我们发现它会生成新颖且通常高度逼真的音乐片段。其研究者还表明它可以用作判别模型，为音素识别返回有希望的结果。
+其 Van Den Oord A 等人 提出第一个端到端的语音合成器 WaveNet，一种用于生成原始音频波形的深度神经网络。该模型是完全概率和自回归的，每个音频样本的预测分布都以所有先前的样本为条件；尽管如此，该研究证明它可以在每秒数万个音频样本的数据上进行有效训练。当应用于文本到语音时，它产生了最先进的性能，人类听众认为它比英语和普通话的最佳参数和连接系统听起来更自然。单个 WaveNet 可以以相同的保真度捕获许多不同说话者的特征，并且可以通过调节说话者身份在它们之间切换。当训练为音乐建模时，我们发现它会生成新颖且通常高度逼真的音乐片段。其研究者还表明它可以用作判别模型，为音素识别返回有希望的结果。
 
 \begin{figure}[htb]
 \centering 
@@ -144,17 +144,66 @@ Lample G 等人 \cite{NIPS2017_3fd60983} 介绍了一种新的编码器-解码�
 \label{Test}
 \end{figure}
 
-\subsection{商用化软体产品与现有开源工具}
+Arik S 等人 \cite{arik2017deep}展示了 Deep Voice，这是一个完全由深度神经网络构建的生产质量的文本到语音系统，Deep Voice 为真正的端到端神经语音合成奠定了基础。该系统包括五个主要构建块：定位音素边界的分割模型、字素到音素的转换模型、音素持续时间预测模型、基频预测模型和音频合成模型。对于分割模型，该研究提出了一种使用连接主义时间分类 (CTC) 损失的深度神经网络执行音素边界检测的新方法，对于音频合成模型，研究者实现了 WaveNet 的变体，它需要的参数更少，训练速度比原始模型快。通过为每个组件使用神经网络，研究者的系统比传统的文本到语音系统更简单、更灵活，传统的文本到语音系统的每个组件都需要费力的特征工程和广泛的领域专业知识。最后，研究者展示其系统的推理可以比实时更快地执行，并描述了在 CPU 和 GPU 上优化的 WaveNet 推理内核，与现有实现相比可实现高达 400 倍的加速。
 
+Wang Y 等人 \cite{wang2017tacotron}文本到语音合成系统通常由多个阶段组成，例如文本分析前端、声学模型和音频合成模块，构建这些组件通常需要广泛的领域专业知识，并且可能包含脆弱的设计选择。该研究介绍了 Tacotron，这是一种直接从字符合成语音的端到端生成文本到语音模型。给定 text and audio 对，可以通过随机初始化完全从头开始训练模型。研究者提出了几种关键技术，以使序列到序列框架在这项具有挑战性的任务中表现良好。 Tacotron 在美国英语上的主观 5 级平均意见得分为 3.82，在自然度方面优于生产参数系统。此外，由于 Tacotron 在帧级别生成语音，因此它比样本级别的自回归方法要快得多。
 
+同时 Arik S 等人 \cite{gibiansky2017deep} 介绍了一种使用低维可训练说话人嵌入来增强神经文本到语音 (TTS) 的技术，以从单个模型生成不同的声音。作为起点，研究者展示了对单说话人神经 TTS 的两种最先进方法的改进：Deep Voice 1 和 Tacotron。该研究介绍了 Deep Voice 2，它基于与 Deep Voice 1 类似的管道，但使用更高性能的构建块构建，并展示了与 Deep Voice 1 相比显著的音频质量改进，其研究通过引入后处理神经声码器来改进 Tacotron，并展示了显著的音频质量改进。然后，研究者在两个多说话人 TTS 数据集上演示了该研究的 Deep Voice 2 和 Tacotron 多说话人语音合成技术。并展示了单个神经 TTS 系统可以从每个说话者不到半小时的数据中学习数百个独特的声音，同时实现高音频质量合成并几乎完美地保留说话者的身份。
 
+Ping W 等人 \cite{ping2017deep}展示了 Deep Voice 3，这是一种基于全卷积注意力的神经文本到语音 (TTS) 系统，Deep Voice 3 在自然度上与最先进的神经语音合成系统相匹配，同时训练速度提高了十倍。该研究将 Deep Voice 3 扩展到 TTS 前所未有的数据集大小，对来自 2000 多个扬声器的超过 800 小时的音频进行训练。此外，研究确定了基于注意力的语音合成网络的常见错误模式，演示了如何减轻它们，并比较了几种不同的波形合成方法，最后还描述了如何在一台单 GPU 服务器上将推理扩展到每天一千万个查询。
 
+Pascual S 等人 \cite{pascual2017segan} 当前的语音增强技术在频谱域上运行和/或利用一些更高级别的特征，它们中的大多数处理有限数量的噪声条件并依赖一阶统计数据。为了规避这些问题，由于深度网络能够从大型示例集中学习复杂功能，因此越来越多地使用它们。在这项工作中，研究建议使用生成对抗网络进行语音增强。与当前技术相比，该研究在波形级别上操作，端到端训练模型，并将 28 个扬声器和 40 种不同的噪声条件合并到同一模型中，以便在它们之间共享模型参数。研究者使用具有两个扬声器和 20 种替代噪声条件的独立、看不见的测试集来评估所提出的模型，增强的样本证实了所提出模型的可行性，客观和主观评价都证实了它的有效性。有了这个，研究者开始探索用于语音增强的生成架构，这可能会逐渐结合进一步的以语音为中心的设计选择，以提高它们的性能。
+
+Donahue C 等人 \cite{donahue2018adversarial} 音频信号以高时间分辨率进行采样，学习合成音频需要在一系列时间尺度上捕获结构。生成对抗网络 (GAN) 在生成本地和全局连贯的图像方面取得了广泛成功，但它们在音频生成方面的应用却很少。该研究的研究者介绍了 WaveGAN，这是将 GAN 应用于原始波形音频的无监督合成的首次尝试，WaveGAN 能够合成一秒钟的具有全局相干性的音频波形切片，适用于音效生成。其实验表明，在没有标签的情况下，WaveGAN 在小词汇量语音数据集上训练时学会了生成可理解的单词，并且还可以合成来自其他领域的音频，例如鼓、鸟的发声和钢琴。研究者将 WaveGAN 与将设计用于图像生成的 GAN 应用于类似图像的音频特征表示的方法进行比较，发现这两种方法都有前景。
+
+\subsection{现有开源工具}
+
+由 Thanh Thi Nguyen 等人 \cite{https://doi.org/10.48550/arxiv.1909.11573}的工作可以看到深度学习已成功应用于解决从大数据分析到计算机视觉和人类水平控制的各种复杂问题。然而，深度学习的进步也被用于创建可能对隐私、民主和国家安全造成威胁的软件。最近出现的深度学习驱动的应用之一是 deepfake。 Deepfake 算法可以创建人类无法区分真实图像和视频的虚假图像和视频。因此，能够自动检测和评估数字视觉媒体完整性的技术的提议是必不可少的。本文介绍了用于创建深度伪造的算法的调查，更重要的是，介绍了迄今为止文献中提出的用于检测深度伪造的方法。我们对与深度伪造技术相关的挑战、研究趋势和方向进行了广泛的讨论。通过回顾 deepfake 的背景和最先进的 deepfake 检测方法，本研究提供了 deepfake 技术的全面概述，并有助于开发新的、更强大的方法来处理日益具有挑战性的 deepfake。当中他们为其为深度伪造的工具进行现有的总结条列如下 :
+
+\begin{itemize}
+
+\item [-]Faceswap : https://github.com/deepfakes/faceswap
+
+\item [-]Faceswap-GAN : https://github.com/shaoanlu/faceswap-GAN
+
+\item [-]Few-Shot Face Translation : https://github.com/shaoanlu/fewshot-facetranslation-GAN
+
+\item [-]DeepFaceLab : https://github.com/iperov/DeepFaceLab
+
+\item [-]DFaker : https://github.com/dfaker/df
+
+\item [-]DeepFake tf : https://github.com/StromWine/DeepFake
+
+\item [-]AvatarMe : https://github.com/lattas/AvatarMe
+
+\item [-]MarioNETte : https://hyperconnect.github.io/MarioNETte
+
+\item [-]DiscoFaceGAN : https://github.com/microsoft/DiscoFaceGAN
+
+\item [-]StyleRig : https://gvv.mpi-inf.mpg.de/projects/StyleRig
+
+\item [-]FaceShifter : https://lingzhili.com/FaceShifterPage
+
+\item [-]FSGAN : https://github.com/YuvalNirkin/fsgan
+
+\item [-]StyleGAN : https://github.com/NVlabs/stylegan
+
+\item [-]Face2Face : https://justusthies.github.io/posts/face2face/
+
+\item [-]Neural Textures : https://github.com/SSRSGJYD/NeuralTexture
+
+\item [-]Transformable Bottleneck Networks : https://github.com/kyleolsz/TB-Networks
+
+\item [-]"Do as I Do" Motion Transfer : https://github.com/carolineec/EverybodyDanceNow
+
+\item [-]Neural Voice Puppetry : https://justusthies.github.io/posts/neural-voicepuppetry
+
+\end{itemize}
 
 %\begin{itemize}
 %\item [-][7,7] 空间卷积到 1*1*2048 然后一维卷积到 1*1*128
 %\item [-]池化层到 1*1*2048 然后一维卷积到 1*1*128
 %\end{itemize}
-
 
 
 %\begin{itemize}

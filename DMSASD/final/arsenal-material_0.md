@@ -14,6 +14,10 @@ Arsenal 中文素材
 
 https://www.researchgate.net/publication/336055871_Deep_Learning_for_Deepfakes_Creation_and_Detection_A_Survey
 
+有持續更新，但是該版本是早期的版本。
+
+- list1 - 105 ,2022 v4, https://arxiv.org/pdf/1909.11573.pdf
+
 ```
 Deep learning has been successfully applied to solvevarious complex problems ranging from big data analytics tocomputer vision and human-level control. 
 
@@ -209,7 +213,27 @@ Bibliography
 }
 ```
 
-5. https://www.researchgate.net/publication/317378240_Deep_Alignment_Network_A_convolutional_neural_network_for_robust_face_alignment
+5. Deep Alignment Network: A convolutional neural network for robust face alignment
+
+https://www.researchgate.net/publication/317378240_Deep_Alignment_Network_A_convolutional_neural_network_for_robust_face_alignment
+
+```
+In this paper, we propose Deep Alignment Network (DAN), a robust face alignment method based on a deep neural network architecture. 
+
+DAN consists of multiple stages, where each stage improves the locations of the facial landmarks estimated by the previous stage. 
+
+Our method uses entire face images at all stages, contrary to the recently proposed face alignment methods that rely on local patches. 
+
+This is possible thanks to the use of landmark heatmaps which provide visual information about landmark locations estimated at the previous stages of the algorithm. 
+
+The use of entire face images rather than patches allows DAN to handle face images with large variation in head pose and difficult initializations. 
+
+An extensive evaluation on two publicly available datasets shows that DAN reduces the state-of-the-art failure rate by up to 70%. 
+
+Our method has also been submitted for evaluation as part of the Menpo challenge.
+```
+
+該研究提出了深度對齊網絡（DAN），這是一種基於深度神經網絡架構的魯棒人臉對齊方法，其 DAN 由多個階段組成，每個階段都改進了前一階段估計的面部標誌的位置。而研究者們的方法在所有階段都使用整個人臉圖像，這與最近提出的依賴局部補丁的人臉對齊方法相反。這要歸功於地標熱圖的使用，它提供了在算法的前一階段估計的地標位置的視覺信息。使用整個人臉圖像而不是補丁允許 DAN 處理頭部姿勢變化很大且初始化困難的人臉圖像。對兩個公開可用數據集的廣泛評估表明，DAN 可將最先進的故障率降低多達 70%。
 
 
 ## Laws
@@ -4417,7 +4441,7 @@ Nguyen, T. T., Nguyen, Q. V. H., Nguyen, C. M., Nguyen, D., Nguyen, D. T., & Nah
 
 Link : https://arxiv.org/abs/1909.11573
 
-Note : 只有针对早期图像篡改工作的一些总结
+Note : 2019 年只有针对早期图像篡改工作的一些总结，該 arXiv 有持續更新至 2022。
 
 ```
 Deep learning has been successfully applied to solve various complex problems ranging from big data analytics to computer vision and human-level control. 
