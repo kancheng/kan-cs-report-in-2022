@@ -241,6 +241,12 @@ Our method has also been submitted for evaluation as part of the Menpo challenge
 http://injoit.org/index.php/j1/article/viewFile/1152/1131
 
 
+7. AdaBins Depth Estimation using Adaptive Bins
+
+> adabins & CVPR 21
+
+https://arxiv.org/abs/2011.14141
+
 ## Laws
 
 ```

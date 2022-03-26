@@ -43,6 +43,15 @@ Deepfakes
 
 - Combining EfficientNet and Vision Transformers for Video Deepfake Detection
 
+- Multi-Attentional Deepfake Detection, Hanqing Zhao, Wenbo Zhou, Dongdong Chen, Tianyi Wei, Weiming Zhang, Nenghai Yu; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2021, pp. 2185-2194
+
+https://openaccess.thecvf.com/content/CVPR2021/html/Zhao_Multi-Attentional_Deepfake_Detection_CVPR_2021_paper.html
+
+- Block shuffling learning for Deepfake Detection
+
+https://arxiv.org/pdf/2202.02819.pdf
+
+
 6. 結論
 
 ## Reference
