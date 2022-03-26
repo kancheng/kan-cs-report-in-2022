@@ -69,6 +69,9 @@ Deepfakes
 
 11. https://blog.csdn.net/landing_guy_/article/details/121261517
 
+12. https://zhuanlan.zhihu.com/p/353518563
+
+
 ### Workshop Links
 
 1. https://github.com/cutz-j/T-GD

@@ -236,6 +236,11 @@ Our method has also been submitted for evaluation as part of the Menpo challenge
 該研究提出了深度對齊網絡（DAN），這是一種基於深度神經網絡架構的魯棒人臉對齊方法，其 DAN 由多個階段組成，每個階段都改進了前一階段估計的面部標誌的位置。而研究者們的方法在所有階段都使用整個人臉圖像，這與最近提出的依賴局部補丁的人臉對齊方法相反。這要歸功於地標熱圖的使用，它提供了在算法的前一階段估計的地標位置的視覺信息。使用整個人臉圖像而不是補丁允許 DAN 處理頭部姿勢變化很大且初始化困難的人臉圖像。對兩個公開可用數據集的廣泛評估表明，DAN 可將最先進的故障率降低多達 70%。
 
 
+6. A deep learning approach to face swap detection
+
+http://injoit.org/index.php/j1/article/viewFile/1152/1131
+
+
 ## Laws
 
 ```
