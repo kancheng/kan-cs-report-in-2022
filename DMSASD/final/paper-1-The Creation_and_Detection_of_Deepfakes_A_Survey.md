@@ -499,6 +499,56 @@ A. 表情重演
 表情重演將身份變成傀儡，為攻擊者提供最大的靈活性來實現他們想要的影響。在我們回顧這個主題之前，我們注意到表情重演早在深度偽造普及之前就已經存在了。2003 年，研究人員對 3D 掃描頭部模型進行了變形。2005 年，展示瞭如何在沒有 3D 模型的情況下完成此操作。後來，在 2015 年至 2018 年間，Thies et al. 演示瞭如何使用 3D 參數模型通過深度傳感和普通相機實現高質量和實時結果（[54] 和 [55]、[56]）。
 無論如何，今天的深度學習方法被認為是生成可信內容的最簡單方法。為了幫助讀者理解網絡並遵循文本，我們在圖 4 中提供了網絡示意圖及其損失函數。
 
+1) One-to-One (Identity to Identity):
 
+In 2017, the auhtors of [57] proposed using a CycleGAN for facial reenactment, without the need for data pairing. 
 
+The two domains where video frames of s and t. 
 
+However, to avoid artifacts in xg, the authors note that both domains must share a similar distributions (e.g., poses and expressions). 
+
+In 2018, Bansal et al. proposed a generic translation network based on CycleGAN called Recycle-GAN [58]. 
+
+Their framework improves temporal coherence and mitigates artifacts by including next-frame predictor networks for each domain. 
+
+For facial reenactment, the authors train their network to translate the facial landmarks of xs into portraits of xt.
+
+一對一 (One-to-One, Identity to Identity)：
+
+Runze Xu 等人 CycleGAN 進行臉部重演，無需數據配對，s 和 t 的視頻幀所在的兩個域，為了避免 $x_g$ 中的偽影，研究者指出兩個域必須如姿勢和表情等共享相似的分佈。另外在 2018 年時由 Bansal 等人提出了一個基於 CycleGAN 的通用翻譯網絡，稱為 Recycle-GAN，其框架通過包含每個域的下一幀預測器網絡來提高時間一致性並減輕偽影。對於臉部重演，研究者者訓練他們的網絡將 $x_s$ 的面部標誌轉換為 $x_t$ 的肖像。
+
+2) Many-to-One (Multiple Identities to a Single Identity):
+
+In 2017, the authors of [59] proposed CVAE-GAN, a conditional VAE-GAN where the generator is conditioned on an attribute vector or class label. 
+
+However, reenactment with CVAE-GAN requires manual attribute morphing by interpolating the latent variables (e.g., between target poses).
+
+Later, in 2018, a large number of source-identity agnostic models were published, each proposing a different method to decoupling s from t:
+
+Facial Boundary Conversion. One approach was to first convert the structure of source’s facial boundaries to that of the target’s before passing them through the generator [19].
+
+Their framework ‘ReenactGAN’ the authors use a CycleGAN to transform the boundary bs to the target’s face shape as bt before generating xg with a pix2pix-like generator.
+
+多對一 (Many-to-One, Multiple Identities to a Single Identity)：
+
+2017 年，Jianmin Bao 等人提出了 CVAE-GAN，這是一種條件 VAE-GAN，其中生成器以屬性向量或類標籤為條件，然而使用 CVAE-GAN 重新制定需要在類似於在目標姿勢之間通過插值潛在變量進行手動屬性變形，後來在 2018 年時，發布了大量與源身份無關的模型，其每個模型都提出了一種不同的方法來將 s 與 t 進行解耦，而所謂的面部邊界轉換，是一種方法是首先將源面部邊界的結構轉換為目標的面部邊界結構，然後再將它們傳遞給生成器。如框架 "ReenactGAN" 的研究者使用 CycleGAN 將邊界 $b_s$ 轉換為目標的面部形狀作為 $b_t$ ，然後使用類似 pix2pix 的生成器生成 $x_g$。
+
+...
+
+3) Many-to-Many (Multiple IDs to Multiple IDs): 
+
+The first attempts at identity agnostic models were made in 2017, where the authors of [60] used a conditional GAN (CGAN) for the task. 
+
+Their approach was to (1) extract the inner-face regions as (xt, xs), and then (2) pass them an ED to produce xg subjected to L1 and Ladv losses. 
+
+The challenge of using a CGAN was that the training data had to be paired (images of different identities with the same expression). 
+
+Going one step further, in [61] the authors reenacted full portraits at low resolutions. 
+
+Their approach was to decoupling the identities was to use a conditional adversarial autoencoder to disentangle the identity from the expression in the latent space.
+
+However, their approach is limited to driving xt with discreet AU expression labels (fixed expressions) that capture xs.
+
+多對多 (Many-to-Many, Multiple IDs to Multiple IDs)：
+
+身份不可知模型的首次嘗試是在 2017 年，Kyle Olszewski 等人使用 conditional GAN（CGAN）來完成任務，其方法是 (1) 將內面區域提取為 ($x_t$, $x_s$)，然後 (2) 將它們傳遞給 ED 以產生 $x_g$ 受到 $L_1$ 和 $L_{adv}$ 損失，同時使用 CGAN 的挑戰在於必須對訓練數據進行配對，比如具有相同表情的不同身份的圖像。更進一步來說，在 Yuqian Zhou 等人的工作中，作者以低分辨率重新製作了完整的肖像，他們的方法是將身份解耦，即使用條件對抗自動編碼器將身份與潛在空間中的表達式分離。然而，他們的方法僅限於使用捕獲 $x_s$ 的謹慎 AU 表達式標籤（固定表達式）來驅動 $x_t$。

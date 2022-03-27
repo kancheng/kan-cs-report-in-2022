@@ -46,3 +46,64 @@ Bibliography
   year={2021}
 }
 ```
+
+## Note
+
+此外該研究提出了一種名為 M2TR 的多模態多尺度變壓器 ，首先運用 CNN 模型提取特徵，然後生成作為 Transformer 模型的輸入，用於捕捉不同區域在多尺度上的不一致性，並在此基礎上增加了頻域信息，融合後輸出結果。
+
+0. DCT 部分
+
+DCT 也就是離散餘弦變換的縮寫，將圖像從空域轉化到頻域，其研究者認為，圖像的低頻信息集中在 0-1/16 部分，中頻信息集中在 1/16-1/8，剩下的部分是圖像的高頻信息，通過構造三個濾波器來完成提取低中高頻信息。通過經過 DCT 變換後的圖像中黑色的部分而捨棄白色的部分，從而得到提取低頻，中頻，高頻信息。並用將得到的信息進行逆變換，將低中高頻信息組合在一起，作為頻域信息的輸入，送入卷積網絡中，將其輸出作為提取到的頻域特徵。
+
+
+1. Multi-scale Transformer
+
+希望定位篡改偽影與其他區域不一致，因此需要建模長期關係，計算相似度，引入多尺度的 Transformer，來覆蓋不同大小的區域。
+
+
+輸入圖片再 backbone 提取 shallow feature，然後分成不同的大小去計算 patch-wise 的 self attention，也就是每個 Patch（rh*rh*c）展開成一維向量，使用 FC 層 embed 到 Query Embeddings，同樣得到 k 和 v，最後通過矩陣相乘得到相速度最後通過 Softmax 輸出。
+
+$$
+\alpha_{i, j}^{h}=\operatorname{softmax}\left(\frac{\boldsymbol{q}_{i}^{h} \cdot\left(\boldsymbol{k}_{j}^{h}\right)^{T}}{\sqrt{r_{h} \times r_{h} \times C}}\right), 1 \leq i, j \leq N
+$$
+
+最後相乘相加得到查詢 Patch 的輸出：
+
+$$
+\boldsymbol{o}_{i}^{h}=\sum_{j=1}^{N} \alpha_{i, j}^{h} v_{j}^{h}
+$$
+
+接收所有輸出 Sitch and Reshape 原本的 Resolution，不同的頭拼接通過 Residual Block 得到輸出結果。
+
+$$
+f_{m t} \in \mathbb{R}(H / 4) \times(W / 4) \times C
+$$
+
+這一部分與視覺注意力機制類似，唯一的區別是，這一部分使用多種不同尺度的 Patch 對圖像進行採樣。
+
+舉個例子，假設使用的是分辨率為 56 * 56 的圖像，一般的視覺注意力機制會使用 14 * 14 的 Patch 對圖像進行採樣，採樣後將圖片分為 4 * 4 也就是 16 個塊，隨後再對這16個塊進行編碼，得到 16 個 token，最後使用自註意力機制，通過每個串得到 qkv，最後得到輸出結果。
+
+而所謂的多尺度是將這一過程重複數次，每次使用的 Patch 大小不同，第一次我們使用與圖像相同大小的 Patch，採用後得到 1 個塊。第二次使用 28 * 28 大小的 Patch，得到 2 * 2 也就是 4 個塊。第三次使用 14 * 14 大小的 Patch，得到 4 * 4 = 16 個塊，最後使用 7 * 7 大小的 Patch，得到 8 * 8 = 64 個塊。每一個尺度都會再各自尺度分別利用自註意力機制進行計算，得到各自尺度的輸出結果，最後將各個輸出結合再一起，送入卷積中，得到 Transformer 部分的特徵提取。
+
+
+另外再詳細說明單個多頭自註意力 (Mutil-head Self Attention, MSA) 的操作過程。
+
+在 VIT 中，首先將圖片按照一定的尺寸進行分割，變成一個個 Token，舉例來說，當輸入圖片是 224 * 224， 而 Patch 大小為 16 * 16，就會得到 14 * 14 也就是 196 個塊。隨後將每個塊放入 embed 模塊，映射成 196 個 Token，每個 Token 的長度被規定為 768(14 * 14 * 3)。這時圖片從 [b, 3, 224, 224] 變成了 [b, 196, 768]。然後此時需要增加一個 cls 和一個位置信息 pos，所謂的 cls 是一個特殊字符，它的具體作用是用於分類，在 nlp 中 cls 通常位於第一位，位置信息表示每一個 Token 的位置，由於改變 Token 的位置會將整張圖片的語義信息改變，所以添加位置信息是必要的。 cls 的大小是 [b, 1, 768], 位置信息的大小是 [ b, 197, 768]，至於是用 197 的原因呢，是因為在原始 Token 的基礎上會將 cls 與 Token 進行 concatenate，從而使 Token 的大小變成了 [b, 196+1, 768]，然後將 Token 與位置信息相加，而不是 concatenate，這樣就完成了 embed 操作。 Embed 完成後，我們將 Token 送入到 ATTENTION 中，同時為了並行計算，此工作會直接使用 nn.Linear, 將輸出從 [b, 197, 768] 變成 [b, 197, 3*768]，然後 reshape 成 [3,b, 197, 768]，依次得到 qkv，然後按照 VIT 論文中的計算公式，得到輸出結果。此時要注意的地方在於，如果是有多個頭部，那麼得到的 qkv 應該是 [3,b, head_num, 197, 768/head_num]，所有的操作分成多個頭部進行，得到的輸出再拼接在一起，但由於此工作是並行計算，所以最後得到的輸出應該是 [b, head_num, 197, 768/head_num]，然後直接 reshape 變成 [b, 197, 768]就完成了全部操作。在該問題中，由於是使用 Transformer 來提取特徵圖，而非直接分類，所以並不需要使用 cls token，並且這樣也方便後續處理工作。
+
+
+2. Cross Modality Fusion
+
+CMF 模塊是一個特徵融合模塊，將上述三個模塊的輸出融合再一起。具體的操作與一個多頭自註意力機制類似，而與 MSA 相似地方在於，CMF 模塊中也存在 qkv ，其 q 是通過空域特徵圖卷積得到，k 和 v 是通過頻域特徵圖卷積得到。首先按照 MSA 算法將空域特徵圖和頻域特徵圖融合，具體的計算公式如下所示。
+
+$$
+\begin{aligned}
+&Q=\operatorname{Conv}_{q}\left(f_{s}\right), K=\operatorname{Conv}_{k}\left(f_{f q}\right), V=\operatorname{Conv}_{v}\left(f_{f q}\right) \\
+&f_{\text {fuse }}=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{H / 4 \times W / 4 \times C}}\right) V
+\end{aligned}
+$$
+
+得到的融合特徵 $f_{fuse}$ 在和空域特徵和 Transformer 輸出的特徵圖相加，作為特徵圖送入卷積網絡中進一步提取特徵。其具體的計算公式如下。
+
+$$
+f_{c m f}=C o n v_{3 \times 3}\left(f_{s}+f_{m t}+f_{f u s e}\right)
+$$
