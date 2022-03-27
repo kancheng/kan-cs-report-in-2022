@@ -312,4 +312,24 @@ namely StyleGAN, was introduced in [51].
 StyleGAN is motivated by style transfer literature [62] with a special generator network architecture that is able to create realistic face images.
 
 
+5. Conclusions
 
+Deepfakes have begun to erode trust of people in media contents as seeing them is no longer commensurate with believing in them. 
+
+They could cause distress and negative effects to those targeted, heighten disinformation and hate speech, and even could stimulate political tension, inflame the public, violence or war. 
+
+This is especially critical nowadays as the technologies for creating deepfakes are increasingly approachable and social media platforms can spread those fake contents quickly.
+
+This survey provides a timely overview of deepfake creation and detection methods and presents a broad discussion on challenges, potential trends, and future directions in this area. 
+
+This study therefore will be valuable for the artificial intelligence research community to develop effective methods for tackling deepfakes.
+
+Deepfake 已经开始削弱人们对媒体内容的信任，因为看到它们与相信它们不再相称。
+
+它们可能对目标人群造成痛苦和负面影响，加剧虚假信息和仇恨言论，甚至可能刺激政治紧张局势、煽动公众、暴力或战争。
+
+这在如今尤其重要，因为创建深度伪造的技术越来越容易接近，社交媒体平台可以迅速传播这些虚假内容。
+
+本调查及时概述了 deepfake 创建和检测方法，并就该领域的挑战、潜在趋势和未来方向进行了广泛讨论。
+
+因此，这项研究对于人工智能研究界开发处理深度伪造的有效方法具有重要意义。

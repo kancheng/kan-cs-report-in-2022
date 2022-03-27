@@ -149,7 +149,85 @@ $$
 
 
 
-\section{Transformers 與 增量学习}
+\section{Transformers}
+
+% 增量学习!??
+Coccomini, D 等人 \cite{coccomini2021combining} 认为 Deepfakes 是用数位的方式去操作跟伪造出逼真但虚假图像的结果，而随着深度生成模型的惊人进步，现在可以使用变分自动编码器 (VAE) 或生成对抗网络 (GAN) 两种技术去获得虚假图像或影片，而这些技术变得越来越容易获得和准确，导致很难检测到假影像。传统上，卷积神经网络 (CNN) 已被用于执行影像深度伪造检测，使用基于 EfficientNet B7 的方法获得了最佳结果，在此项研究中，研究者专注于人脸的视频深度伪造检测，因为大多数方法在生成逼真的人脸方面变得非常准确。具体来说，该研究将各种类型的视觉转换器与用作特征提取器的卷积 EfficientNet B0 相结合，同时与一些使用视觉转换器的最新方法获得了可比较的结果。而本研究最先进的方法不同，研究者既不使用蒸馏也不使用集成方法。研究者也提出了一个基于简单投票方案的简单推理程序，用于处理同一影像镜头中的多个人脸。同时最佳模型的 AUC 为 0.951，F1 得分为 88.0\%，非常接近 DeepFake 检测挑战赛 (DFDC) 的最新水平。
+
+另外 Khan, S 等人 \cite{khan2021video} 提出了一种具有增量学习功能的新型影像转换器，用于检测深度伪造影像，而为了更好地对齐输入人脸图像，我们使用 3D 人脸重建方法从单个输入人脸图像生成 UV 纹理。其对齐的人脸图像还可以提供在 UV 纹理图像中无法感知的姿势、眨眼和嘴巴运动资讯，因此研究者使用人脸图像及其 UV 纹理图来提取图像特征。最后研究者提出了一种增量学习策略，可以在更少量的资料上微调所提出的模型，并实现更好的深度伪造检测性能。对各种公共 deepfake 数据集的综合实验表明，所提出的具有增量学习的视频转换器模型通过对序列数据的增强特征学习，在 deepfake 视频检测任务中实现了最先进的性能。
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.90\textwidth]{img/ch4m13.png} 
+\caption{Khan, S 等人 \cite{khan2021video}}
+\label{Test}
+\end{figure}
+
+Wang, J 等人 \cite{wang2021m2tr} 发现 Deepfake 技术所产生的伪造图像广泛传播对数位资讯的可信度构成了严重威胁，这需要有效的方法来检测由先进技术所生成具有感知力的 Deepfake 成果。大多数现有方法通过将输入图像对应到二进制预测而不捕获不同像素之间的一致性来使用深度神经网络来对抗 Deepfakes 技术。在该研究中，研究者旨在为 Deepfake 检测捕获不同尺度的细微操作伪影，并通过转换器模型实现了这一点，该模型最近在为计算机视觉中的各种识别任务建模像素之间的依赖关系方面表现出卓越的性能。同时研究者介绍了一种多模态多尺度变换器（M2TR），它使用多尺度变换器对不同大小的补丁进行操作，以检测不同空间级别的局部不一致性，为了改善检测结果并增强我们方法对图像压缩的鲁棒性，M2TR 还获取频率信息，并使用交叉模态融合模块将其与 RGB 特征进一步结合。开发和评估 Deepfake 检测方法需要大规模的数据集。此研究观察到现有基准中的样本包含严重的伪影并且缺乏多样性，这促使此研究引入了一个高品质的 Deepfake 资料集 SR-DF，它由 4,000 个由最先进的面部交换和面部重演方法去生成的 DeepFake 组成影像，最后在三个 Deepfake 资料集上，研究者进行了广泛的实验来验证所提出方法的有效性，该方法优于最先进的 Deepfake 检测方法。
+
+此外该研究提出了一种名为 M2TR 的多模态多尺度变压器 ，首先运用 CNN 模型提取特征，然后生成作为 Transformer 模型的输入，用于捕捉不同区域在多尺度上的不一致性，并在此基础上增加了频域信息，融合后输出结果。
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.90\textwidth]{img/ch4m12.png} 
+\caption{Multi-scale Transformer 架构}
+\label{Test}
+\end{figure}
+
+\subsection{离散余弦变换(DCT)}
+
+DCT 也就是离散余弦变换的缩写，将图像从空域转化到频域，其研究者认为，图像的低频信息集中在 0-1/16 部分，中频信息集中在 1/16-1/8，剩下的部分是图像的高频信息，通过构造三个滤波器来完成提取低中高频信息。通过经过 DCT 变换后的图像中黑色的部分而舍弃白色的部分，从而得到提取低频，中频，高频信息。并用将得到的信息进行逆变换，将低中高频信息组合在一起，作为频域信息的输入，送入卷积网络中，将其输出作为提取到的频域特征。
+
+\subsection{Multi-scale Transformer}
+
+希望定位篡改伪影与其他区域不一致，因此需要建模长期关系，计算相似度，引入多尺度的 Transformer，来覆盖不同大小的区域。输入图片再 backbone 提取 shallow feature，然后分成不同的大小去计算 patch-wise 的 self attention，也就是每个 Patch（rh*rh*c）展开成一维向量，使用 FC 层 embed 到 Query Embeddings，同样得到 k 和 v，最后通过矩阵相乘得到相速度最后通过 Softmax 输出。
+
+$$
+\alpha_{i, j}^{h}=\operatorname{softmax}\left(\frac{\boldsymbol{q}_{i}^{h} \cdot\left(\boldsymbol{k}_{j}^{h}\right)^{T}}{\sqrt{r_{h} \times r_{h} \times C}}\right), 1 \leq i, j \leq N
+$$
+
+最后相乘相加得到查询 Patch 的输出：
+
+$$
+\boldsymbol{o}_{i}^{h}=\sum_{j=1}^{N} \alpha_{i, j}^{h} v_{j}^{h}
+$$
+
+接收所有输出 Sitch and Reshape 原本的 Resolution，不同的头拼接通过 Residual Block 得到输出结果。
+
+$$
+f_{m t} \in \mathbb{R}(H / 4) \times(W / 4) \times C
+$$
+
+这一部分与视觉注意力机制类似，唯一的区别是，这一部分使用多种不同尺度的 Patch 对图像进行采样。举个例子，假设使用的是分辨率为 56 * 56 的图像，一般的视觉注意力机制会使用 14 * 14 的 Patch 对图像进行采样，采样后将图片分为 4 * 4 也就是 16 个块，随后再对这16个块进行编码，得到 16 个 token，最后使用自注意力机制，通过每个串得到 qkv，最后得到输出结果。
+
+而所谓的多尺度是将这一过程重复数次，每次使用的 Patch 大小不同，第一次我们使用与图像相同大小的 Patch，采用后得到 1 个块。第二次使用 28 * 28 大小的 Patch，得到 2 * 2 也就是 4 个块。第三次使用 14 * 14 大小的 Patch，得到 4 * 4 = 16 个块，最后使用 7 * 7 大小的 Patch，得到 8 * 8 = 64 个块。每一个尺度都会再各自尺度分别利用自注意力机制进行计算，得到各自尺度的输出结果，最后将各个输出结合再一起，送入卷积中，得到 Transformer 部分的特征提取。
 
 
+\subsection{多头自注意力 (Mutil-head Self Attention, MSA)}
+
+另外再详细说明单个多头自注意力 (Mutil-head Self Attention, MSA) 的操作过程。在 VIT 中，首先将图片按照一定的尺寸进行分割，变成一个个 Token，举例来说，当输入图片是 224 * 224， 而 Patch 大小为 16 * 16，就会得到 14 * 14 也就是 196 个块。随后将每个块放入 embed 模块，映射成 196 个 Token，每个 Token 的长度被规定为 768(14 * 14 * 3)。这时图片从 [b, 3, 224, 224] 变成了 [b, 196, 768]。然后此时需要增加一个 cls 和一个位置信息 pos，所谓的 cls 是一个特殊字符，它的具体作用是用于分类，在 nlp 中 cls 通常位于第一位，位置信息表示每一个 Token 的位置，由于改变 Token 的位置会将整张图片的语义信息改变，所以添加位置信息是必要的。 cls 的大小是 [b, 1, 768], 位置信息的大小是 [ b, 197, 768]，至于是用 197 的原因呢，是因为在原始 Token 的基础上会将 cls 与 Token 进行 concatenate，从而使 Token 的大小变成了 [b, 196+1, 768]，然后将 Token 与位置信息相加，而不是 concatenate，这样就完成了 embed 操作。 Embed 完成后，我们将 Token 送入到 ATTENTION 中，同时为了并行计算，此工作会直接使用 nn.Linear, 将输出从 [b, 197, 768] 变成 [b, 197, 3*768]，然后 reshape 成 [3,b, 197, 768]，依次得到 qkv，然后按照 VIT 论文中的计算公式，得到输出结果。此时要注意的地方在于，如果是有多个头部，那么得到的 qkv 应该是 [3,b, head\_num, 197, 768/head\_num]，所有的操作分成多个头部进行，得到的输出再拼接在一起，但由于此工作是并行计算，所以最后得到的输出应该是 [b, head\_num, 197, 768/head\_num]，然后直接 reshape 变成 [b, 197, 768]就完成了全部操作。在该问题中，由于是使用 Transformer 来提取特征图，而非直接分类，所以并不需要使用 cls token，并且这样也方便后续处理工作。
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.90\textwidth]{img/ch4m13.png} 
+\caption{Multi-scale Transformer 说明}
+\label{Test}
+\end{figure}
+
+\subsection{Cross Modality Fusion}
+
+CMF 模块是一个特征融合模块，将上述三个模块的输出融合再一起。具体的操作与一个多头自注意力机制类似，而与 MSA 相似地方在于，CMF 模块中也存在 qkv ，其 q 是通过空域特征图卷积得到，k 和 v 是通过频域特征图卷积得到。首先按照 MSA 算法将空域特征图和频域特征图融合，具体的计算公式如下所示。
+
+$$
+\begin{aligned}
+&Q=\operatorname{Conv}_{q}\left(f_{s}\right), K=\operatorname{Conv}_{k}\left(f_{f q}\right), V=\operatorname{Conv}_{v}\left(f_{f q}\right) \\
+&f_{\text {fuse }}=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{H / 4 \times W / 4 \times C}}\right) V
+\end{aligned}
+$$
+
+得到的融合特征 $f_{fuse}$ 在和空域特征和 Transformer 输出的特征图相加，作为特征图送入卷积网络中进一步提取特征。其具体的计算公式如下。
+
+$$
+f_{c m f}=C o n v_{3 \times 3}\left(f_{s}+f_{m t}+f_{f u s e}\right)
+$$
 

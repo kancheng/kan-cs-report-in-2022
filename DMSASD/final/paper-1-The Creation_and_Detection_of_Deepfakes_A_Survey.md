@@ -552,3 +552,26 @@ However, their approach is limited to driving xt with discreet AU expression lab
 多對多 (Many-to-Many, Multiple IDs to Multiple IDs)：
 
 身份不可知模型的首次嘗試是在 2017 年，Kyle Olszewski 等人使用 conditional GAN（CGAN）來完成任務，其方法是 (1) 將內面區域提取為 ($x_t$, $x_s$)，然後 (2) 將它們傳遞給 ED 以產生 $x_g$ 受到 $L_1$ 和 $L_{adv}$ 損失，同時使用 CGAN 的挑戰在於必須對訓練數據進行配對，比如具有相同表情的不同身份的圖像。更進一步來說，在 Yuqian Zhou 等人的工作中，作者以低分辨率重新製作了完整的肖像，他們的方法是將身份解耦，即使用條件對抗自動編碼器將身份與潛在空間中的表達式分離。然而，他們的方法僅限於使用捕獲 $x_s$ 的謹慎 AU 表達式標籤（固定表達式）來驅動 $x_t$。
+
+
+VIII. CONCLUSION
+
+Not all deepfakes are malicious. 
+
+However, because the technology makes it so easy to create believable media, malicious users are exploiting it to perform attacks. 
+
+These attacks are targeting individuals and causing psychological, political, monetary, and physical harm. 
+
+As time goes on, we expect to see these malicious deepfakes spread to many other modalities and industries.
+
+In this SoK we focused on reenactment and replacement deepfakes of humans.
+
+We provided a deep review of how these technologies work, the differences between their architectures, and what is being done to detect them. 
+
+We hope this information will be helpful to the community in understanding and preventing malicious deepfakes.
+
+并非所有深度伪造都是恶意的。然而，由于该技术使得创建可信媒体变得如此容易，恶意用户正在利用它进行攻击。
+
+这些攻击针对个人并造成心理、政治、金钱和身体伤害。随着时间的推移，我们希望看到这些恶意深度伪造传播到许多其他模式和行业。
+
+在这个 SoK 中，我们专注于人类的重演和替换 deepfakes。我们深入回顾了这些技术的工作原理、它们的架构之间的差异，以及正在采取哪些措施来检测它们。我们希望这些信息有助于社区了解和防止恶意深度伪造。
