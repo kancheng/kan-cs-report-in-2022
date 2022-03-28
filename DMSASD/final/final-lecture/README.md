@@ -1,4 +1,4 @@
-# DIP - 数字图像处理 - Digital Image Processing
+# DMSASD - 数字媒体软件与系统开发 - Digital Media Software And System Development
 
 > 2101212850 干皓丞
 

@@ -247,9 +247,15 @@ http://injoit.org/index.php/j1/article/viewFile/1152/1131
 
 https://arxiv.org/abs/2011.14141
 
+
 8. DFDT: An End-to-End DeepFake Detection Framework Using Vision Transformer
 
 Aminollah Khormali and Jiann-Shiun Yuan
+
+
+9. Defending Your Voice: Adversarial Attack on Voice Conversion
+
+https://arxiv.org/abs/2005.08781
 
 
 
