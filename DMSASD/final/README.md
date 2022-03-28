@@ -19,7 +19,7 @@ PKU 2022 個人實驗報告作業
 
 ## Homework
 
-1. 簡報 - 深度偽造、檢測導覽與 Workshop
+1. 簡報
 
 2. 綜述文章
 
@@ -79,6 +79,14 @@ https://arxiv.org/pdf/2202.02819.pdf
 11. https://blog.csdn.net/landing_guy_/article/details/121261517
 
 12. https://zhuanlan.zhihu.com/p/353518563
+
+13. https://blog.csdn.net/lgzlgz3102/article/details/121347244
+
+14. https://blog.csdn.net/moxibingdao/article/details/108957999
+
+15. https://bbs.cvmart.net/articles/3599
+
+16. https://www.youtube.com/watch?v=YjfzJdimPDA
 
 
 ### Workshop Links
