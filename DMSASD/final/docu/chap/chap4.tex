@@ -57,6 +57,17 @@ Du M 等人 \cite{du2019towards} 提出了 Locality-Aware AutoEncoder (LAE) 来�
 
 Huang, R 等人 \cite{huang2020security} 通过实验证明了个体对抗性扰动 (IAP) 和普遍对抗性扰动 (UAP) 的存在，它们可能导致表现良好的 FFM 行为不端。基于迭代过程，梯度信息用于生成两种可用于制造分类和分割输出的 IAP。相比之下，UAP 是在过火的基础上生成的。研究者们设计了一个新的目标函数，鼓励神经元过度激发，即使不使用训练数据也可以生成 UAP，实验证明了 UAP 在未见数据集和未见 FFM 之间的可转移性。此外，研究者对对抗性扰动的不可察觉性进行了主观评估，表明精心制作的 UAP 在视觉上可以忽略不计。这些发现为评估 FFM 的对抗性安全性提供了基准。
 
+\section{深度伪造语音的对抗性}
+
+Huang, C. Y 等人 \cite{9383529} 近年来在语音转换方面取得了实质性的改进，将一个话语的说话者特征转换为另一个说话者的特征，而不改变话语的语言内容。尽管如此，改进的转换技术也导致了对隐私和身份验证的担忧。因此，非常希望能够通过这种语音转换技术来防止一个人的语音被不当使用。这就是为什么该研究报告了对语音转换执行对抗性攻击的第一次已知尝试，研究者将人类难以察觉的噪音引入说话人的话语中，而说话人的声音要受到保护。鉴于这些对抗性示例，语音转换模型无法将其他话语转换为听起来像是被防御者发出的声音。在两个当前最先进的零样本语音转换模型上进行了初步实验。报告了白盒和黑盒场景中的客观和主观评估结果。结果表明，转换后的话语的说话人特征与被辩护人的说话人特征明显不同，而被辩护人的对抗样本与真实话语没有区别。
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.90\textwidth]{img/ch4m15.png} 
+\caption{ Huang, C. Y 等人 \cite{9383529}}
+\label{Test}
+\end{figure}
+
 \section{深度伪造的生成与 GAN 分析}
 
 从 Yisroel Mirsky 等人 \cite{DBLP:journals/corr/abs-2004-11138} 对其的工作中，认为生成式深度学习算法已经发展到难以区分真假的程度，而自 2018 年起，人们发现将这项技术用于不道德和恶意应用是多么容易，例如传播错误信息、冒充政治领导人以及诽谤无辜个人。从那时起，这些“深度伪造”取得了显著进展。该研究探讨了 deepfakes 的创建和检测，并深入了解这些架构的工作原理。
@@ -158,7 +169,7 @@ Coccomini, D 等人 \cite{coccomini2021combining} 认为 Deepfakes 是用数位�
 
 \begin{figure}[htb]
 \centering 
-\includegraphics[width=0.90\textwidth]{img/ch4m13.png} 
+\includegraphics[width=0.90\textwidth]{img/ch4m14.png} 
 \caption{Khan, S 等人 \cite{khan2021video}}
 \label{Test}
 \end{figure}
