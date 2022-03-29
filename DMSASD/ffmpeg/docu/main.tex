@@ -67,11 +67,10 @@ FFMGEG 下載，並說明 output\_example 。
 
 \begin{figure}[H]
 \centering 
-\includegraphics[width=0.50\textwidth]{f1.png} 
-\caption{官方文件}
+\includegraphics[width=0.90\textwidth]{m1.png} 
+\caption{最後測試結果}
 \label{Test}
 \end{figure}
-
 
 \section{文章與作業狀況}
 
@@ -81,11 +80,20 @@ https://github.com/kancheng/kan-cs-report-in-2022/tree/main/DMSASD/ffmpeg
 
 \section{作業內容概述}
 
-此作業分為二大部分，第一部分說明前置準備與分析專案，第二部分則描述 output-example 該過程。
+此作業分為二大部分，第一部分說明前置準備與分析專案，第二部分則描述 output-example 原始碼與測試該過程，最後補充 /doc/example/muxing.c。
 
 1. 前置準備與分析專案
 
-2. output-example
+2. output-example 原始碼與測試該過程
+
+3. /doc/example/muxing.c。
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=0.50\textwidth]{f1.png} 
+\caption{官方文件}
+\label{Test}
+\end{figure}
 
 \section{前置準備與分析專案}
 
@@ -284,13 +292,13 @@ vim -d output.c output-example.c
 
 \section{output-example}
 
-\subsection{output-example}
+\subsection{output-example 作業項目}
 
 在此本作業在此針對  doc/examples/output.c 整理成一份檔名為 output-zh-read.c 的中文註解說明版本如下。而後分析都根據官方文件與專案程式碼。
 
 https://github.com/kancheng/kan-cs-report-in-2022/blob/main/DMSASD/ffmpeg/output-zh-read.c
 
-\subsection{output-example}
+\subsection{output-example 源代碼說明}
 
 該程式碼開頭為給使用者版權宣告註解與先前從 libavformat API example 遷移過來的說明。
 
@@ -793,6 +801,104 @@ int main(int argc, char **argv)
 }
 
 \end{lstlisting}
+
+
+\subsection{output-example 測試工作}
+
+在此使用 GCC 進行編譯，並針對 ffmpeg 0.5.13 的版本進行測試。架設過去的 Linux 跟 GCC 按照當時的技術文件進行還原。
+
+\begin{lstlisting}[language={python}]
+# 下載早期版本
+# wget http://www.ffmpeg.org/releases/ffmpeg-0.5.13.tar.bz2
+
+# 解壓縮
+# tar -jxvf ffmpeg-0.5.13.tar.bz2
+
+# vim ffmpeg_configure.sh
+./configure \
+--prefix=/YOUR_INSTLL_DIRECTORY \
+--enable-gpl --enable-nonfree --enable-version3 \
+--enable-swscale --enable-avfilter  \
+--enable-pthreads
+【保存并退出】
+
+\end{lstlisting}
+
+進入目錄用 vim 建立 ffmpeg\_configure.sh ，完成後退出。
+
+\begin{lstlisting}[language={python}]
+# vim ffmpeg_configure.sh
+\end{lstlisting}
+
+\begin{lstlisting}[language={python}]
+./configure \
+--prefix=/YOUR_INSTLL_DIRECTORY \
+--enable-gpl --enable-nonfree --enable-version3 \
+--enable-swscale --enable-avfilter  \
+--enable-pthreads
+\end{lstlisting}
+
+改變權限後用 make 
+
+\begin{lstlisting}[language={python}]
+# chmod +x ffmpeg_configure.sh
+# ./ffmpeg_configure.sh
+# make
+# make install
+\end{lstlisting}
+
+將安裝目錄“”下的 
+
+YOUR\_INSTLL\_DIRECTORY/include
+YOUR\_INSTLL\_DIRECTORY/lib
+
+打包，就可以生成一個開發用的SDK
+
+\begin{lstlisting}[language={python}]
+# tar -czvf YOUR_INSTLL_DIRECTORY/ ffmpeg_sdk.tar.gz
+\end{lstlisting}
+
+引入後編譯，解决：
+
+\begin{lstlisting}[language={python}]
+# gcc output_example.c -o output_example 
+-I/opt/ffmpeg/sourcecode/ffmpeg-0.5.13.install/include 
+-L/opt/ffmpeg/sourcecode/ffmpeg-0.5.13.install/lib  
+-lavformat -lavdevice -lavcodec  -lavutil -lavfilter 
+-pthread -ldl -lswscale -lbz2 -lasound  -lz -lm
+\end{lstlisting}
+
+運行
+
+\begin{lstlisting}[language={python}]
+# ./output_example xxx.flv
+\end{lstlisting}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=0.50\textwidth]{tem1.png} 
+\caption{output-example 測試結果}
+\label{Test}
+\end{figure}
+
+\section{muxing.c 測試工作}
+
+後來經過調研才發現類似的 Code 於此， 其測試內容於之前雷同，但是這回使用 Mac。
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=0.50\textwidth]{new.png} 
+\caption{muxing.c 目錄}
+\label{Test}
+\end{figure}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=0.50\textwidth]{tem2.png} 
+\caption{muxing.c 測試結果}
+\label{Test}
+\end{figure}
+
 
 %\section{附錄}
 
