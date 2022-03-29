@@ -155,6 +155,8 @@ vim -d output.c output-example.c
 
 13. https://github.com/BtbN/FFmpeg-Builds
 
+14. https://www.jianshu.com/p/cf0d9b633bac
+
 
 ## Logs
 
