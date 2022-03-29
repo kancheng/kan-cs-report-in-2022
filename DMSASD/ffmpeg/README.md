@@ -37,6 +37,7 @@ FFMGEG 下載，並說明 output_example 。
 
 10. https://ffmpeg.org/doxygen/trunk/mathematics_8h_source.html
 
+
 ## GitHub 版本追蹤
 
 將所有 Log 紀錄用指令輸出。
@@ -147,6 +148,13 @@ vim -d output.c output-example.c
 9. https://vimjc.com/vimdiff.html
 
 10. https://blog.csdn.net/weixin_34214500/article/details/91465460
+
+11. https://www.cxyzjd.com/article/fireroll/24139443
+
+12. https://blog.csdn.net/nicolelili1/article/details/103093850
+
+13. https://github.com/BtbN/FFmpeg-Builds
+
 
 ## Logs
 
