@@ -38,4 +38,16 @@ PKU 2022 個人實驗報告作業
 
 6. https://pipelinedp.io/
 
-### Awsom
+### Keyword
+
+1. rfc2119 : https://www.rfc-editor.org/info/rfc2119
+
+2. FIPS 46-3 : https://csrc.nist.gov/csrc/media/publications/fips/46/3/archive/1999-10-25/documents/fips46-3.pdf
+
+3. FIPS 197 : https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf
+
+https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
+
+
+
+
