@@ -86,3 +86,47 @@ Map 抽象数据类型
 
 排序 - 冒泡排序, 选择排序, 归并排序, 快速排序, 插入排序
 
+### 5. W5 :
+
+- LeetCode :
+
+LeetCode 5. Longest Palindromic Substring 最长回文子串
+
+LeetCode 62. Unique Paths 不同路径
+
+LeetCode 63. Unique Paths II 不同路径 II
+
+LeetCode 64. Minimum Path Sum 最小路径和
+
+LeetCode 70. Climbing Stairs 爬楼梯
+
+LeetCode 120. Triangle, 三角形最小路径和
+
+LeetCode 122. Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II
+
+LeetCode 263. Ugly Number 丑数
+
+LeetCode 392. Is Subsequence 判断子序列
+
+- Knowledge Point : 
+
+貪心法
+
+貪心法 - 找最少硬币
+
+貪心法 - LC 122. 买卖股票的最佳时机 II
+
+貪心法 - LC 392. 判断子序列
+
+貪心法 - LC 263. 丑数
+
+动态规划 Dynamic Programming, DP
+
+动态规划 - 找最少硬币
+
+动态规划 - LC 70. 爬楼梯
+
+动态规划 - LC 62 & 63 不同路径 & 从一维到二维的扩展
+
+矩阵相乘加括号
+

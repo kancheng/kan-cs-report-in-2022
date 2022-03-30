@@ -21,6 +21,8 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 1. Two Sum 兩數之和
 
+5. Longest Palindromic Substring 最长回文子串
+
 7. Reverse Integer 整数反转
 
 13. Roman to Integer 羅馬數字轉整數
@@ -41,11 +43,21 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 56. Merge Intervals 合并区间
 
+62. Unique Paths 不同路径
+
+63. Unique Paths II 不同路径 II
+
+64. Minimum Path Sum 最小路径和
+
 66. Plus One 加一
 
 69. Sqrt(x) x 的平方根
 
 70. Climbing Stairs 爬楼梯
+
+120. Triangle, 三角形最小路径和
+
+122. Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II
 
 141. Linked List Cycle 环形链表
 
@@ -59,8 +71,11 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 242. Valid Anagram 有效的字母异位词
 
+263. Ugly Number 丑数
+
 274. H-Index, H 指数
 
+392. Is Subsequence 判断子序列
 
 
 ## LeetCode 1. Two Sum 兩數之和
@@ -122,6 +137,69 @@ print(ob1.twoSum(input_list, target))
 
 2. 運用 Python 的字典可以直接去找。用 For 去找，剩下用 IF 來判斷該值有沒有在字典裡面。相對與第一種課堂範例來的理想。
 
+
+## LeetCode 5. Longest Palindromic Substring 最长回文子串
+
+Given a string s, return the longest palindromic substring in s.
+
+给你一个字符串 s，找到 s 中最长的回文子串。
+
+Example 1:
+
+```
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+```
+
+解释："aba" 同样是符合题意的答案。
+
+Example 2:
+
+```
+Input: s = "cbbd"
+Output: "bb"
+```
+
+Constraints:
+
+- 1 <= s.length <= 1000
+
+- s consist of only digits and English letters.
+
+s 仅由数字和英文字母组成
+
+
+## 解题思路
+
+
+解法一，动态规划。定义 dp[i][j] 表示从字符串第 i 个字符到第 j 个字符这一段子串是否是回文串。由回文串的性质可以得知，回文串去掉一头一尾相同的字符以后，剩下的还是回文串。所以状态转移方程是 dp[i][j] = (s[i] == s[j]) && ((j-i < 3) || dp[i+1][j-1])，注意特殊的情况，j - i == 1 的时候，即只有 2 个字符的情况，只需要判断这 2 个字符是否相同即可。j - i == 2 的时候，即只有 3 个字符的情况，只需要判断除去中心以外对称的 2 个字符是否相等。每次循环动态维护保存最长回文串即可。时间复杂度 O(n^2)，空间复杂度 O(n^2)。
+
+解法二，中心扩散法。动态规划的方法中，我们将任意起始，终止范围内的字符串都判断了一遍。其实没有这个必要，如果不是最长回文串，无需判断并保存结果。所以动态规划的方法在空间复杂度上还有优化空间。判断回文有一个核心问题是找到“轴心”。如果长度是偶数，那么轴心是中心虚拟的，如果长度是奇数，那么轴心正好是正中心的那个字母。中心扩散法的思想是枚举每个轴心的位置。然后做两次假设，假设最长回文串是偶数，那么以虚拟中心往 2 边扩散；假设最长回文串是奇数，那么以正中心的字符往 2 边扩散。扩散的过程就是对称判断两边字符是否相等的过程。这个方法时间复杂度和动态规划是一样的，但是空间复杂度降低了。时间复杂度 O(n^2)，空间复杂度 O(1)。
+
+解法三，滑动窗口。这个写法其实就是中心扩散法变了一个写法。中心扩散是依次枚举每一个轴心。滑动窗口的方法稍微优化了一点，有些轴心两边字符不相等，下次就不会枚举这些不可能形成回文子串的轴心了。不过这点优化并没有优化时间复杂度，时间复杂度 O(n^2)，空间复杂度 O(1)。
+
+解法四，马拉车算法。这个算法是本题的最优解，也是最复杂的解法。时间复杂度 O(n)，空间复杂度 O(n)。中心扩散法有 2 处有重复判断，第一处是每次都往两边扩散，不同中心扩散多次，实际上有很多重复判断的字符，能否不重复判断？第二处，中心能否跳跃选择，不是每次都枚举，是否可以利用前一次的信息，跳跃选择下一次的中心？马拉车算法针对重复判断的问题做了优化，增加了一个辅助数组，将时间复杂度从 O(n^2) 优化到了 O(n)，空间换了时间，空间复杂度增加到 O(n)。
+
+https://books.halfrost.com/leetcode/ChapterFour/0001~0099/0005.Longest-Palindromic-Substring/
+
+
+```
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        if s == s[::-1]:
+            return s
+        max_len = 1
+        ans = s[0]
+        for i in range(1, len(s)):
+            if i - max_len - 1 >= 0 and s[i - max_len - 1: i + 1] == s[i - max_len - 1: i + 1][::-1]:
+                ans = s[i - max_len - 1: i + 1]
+                max_len += 2
+            if i - max_len >= 0 and s[i - max_len: i + 1] == s[i - max_len: i + 1][::-1]:
+                ans = s[i - max_len: i + 1]
+                max_len += 1
+        return ans
+```
 
 ## LeetCode 7. Reverse Integer 整数反转
 
@@ -1088,63 +1166,232 @@ class Solution:
         return ans
 ```
 
-## LeetCode 69. Sqrt(x) x 的平方根
+## LeetCode 62. Unique Paths 不同路径
 
-Given a non-negative integer x, compute and return the square root of x.
+There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
 
-Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returned.
+Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
 
-Note: You are not allowed to use any built-in exponent function or operator, such as pow(x, 0.5) or x ** 0.5.
+The test cases are generated so that the answer will be less than or equal to $2 * 10^9$
 
-给你一个非负整数 x ，计算并返回 x 的 算术平方根 。
+一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。
 
-由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去 。
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。
 
-注意：不允许使用任何内置指数函数和算符，例如 pow(x, 0.5) 或者 x ** 0.5 。
+问总共有多少条不同的路径？
 
-### 二分查找
-
-```
-class Solution:
-    def mySqrt(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
-        if x < 2:
-            return x
-        left, right = 1, x // 2
-        while left <= right:
-            mid = left + (right - left) // 2
-            if mid > x / mid:
-                right = mid - 1
-            else:
-                left = mid + 1
-        return left - 1
-x1 = 4
-x2 = 9
-ob1 = Solution()
-print(ob1.mySqrt(x1))
-print(ob1.mySqrt(x2))
-```
-
-### 牛頓法
+Example 1:
 
 ```
-def squareroot(input_num):
-    root = input_num/2
-    for k in range(20):
-        root = (1/2)* (root + (input_num/root))
-    return root
-
-print(squareroot(3))
+Input: m = 3, n = 7
+Output: 28
 ```
 
-思路總結
+![](lc-62-p-example.png)
 
-1. 二分查找，分成左右區間。
+Example 2:
 
-2. 牛頓法
+```
+Input: m = 3, n = 2
+Output: 3
+Explanation: From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1. Right -> Down -> Down
+2. Down -> Down -> Right
+3. Down -> Right -> Down
+```
+
+从左上角开始，总共有 3 条路径可以到达右下角。
+1. 向右 -> 向下 -> 向下
+2. 向下 -> 向下 -> 向右
+3. 向下 -> 向右 -> 向下
+
+
+Example 3:
+
+```
+输入：m = 7, n = 3
+输出：28
+```
+
+
+Example 4:
+
+```
+输入：m = 3, n = 3
+输出：6
+```
+
+Constraints:
+
+- 1 <= m, n <= 100
+
+- 题目数据保证答案小于等于 $2 * 10^9$
+
+
+## 解题思路
+
+- 一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。问总共有多少条不同的路径？
+
+- 这是一道简单的 DP 题。输出地图上从左上角走到右下角的走法数。
+
+- 由于机器人只能向右走和向下走，所以地图的第一行和第一列的走法数都是 1，地图中任意一点的走法数是 dp[i][j] = dp[i-1][j] + dp[i][j-1]
+
+
+```
+# 走方格
+# 62
+class Solution(object):
+    def uniquePaths(self, m, n):
+        dp = [[0 for _ in range(n)] for _ in range(m)]
+        for index in range(m):
+            dp[index][0] = 1
+        for index in range(n):
+            dp[0][index] = 1
+        for index_i in range(1, m): 
+            for index_j in range(1, n):
+                dp[index_i][index_j] = dp[index_i-1][index_j] + dp[index_i][index_j-1]
+        return dp[m-1][n-1]
+if __name__ == "__main__":
+    print(Solution().uniquePaths(3,2))
+    print(Solution().uniquePaths(9,4))
+```
+
+## LeetCode 63. Unique Paths II 不同路径 II
+
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
+
+An obstacle and space is marked as 1 and 0 respectively in the grid.
+
+一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。
+
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish”）。
+
+现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？
+
+网格中的障碍物和空位置分别用 1 和 0 来表示。
+
+![](lc-63-p-example.png)
+
+Example 1:
+
+```
+Input: obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
+Output: 2
+Explanation: There is one obstacle in the middle of the 3x3 grid above.
+There are two ways to reach the bottom-right corner:
+1. Right -> Right -> Down -> Down
+2. Down -> Down -> Right -> Right
+```
+
+解释：3x3 网格的正中间有一个障碍物。
+从左上角到右下角一共有 2 条不同的路径：
+1. 向右 -> 向右 -> 向下 -> 向下
+2. 向下 -> 向下 -> 向右 -> 向右
+
+
+Example 2:
+
+```
+Input: obstacleGrid = [[0,1],[0,0]]
+Output: 1
+```
+
+
+Constraints:
+
+- m == obstacleGrid.length
+- n == obstacleGrid[i].length
+- 1 <= m, n <= 100
+- obstacleGrid[i][j] is 0 or 1.
+
+
+
+## 解题思路
+
+- 一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？
+
+- 这一题是第 62 题的加强版。也是一道考察 DP 的简单题。
+
+- 这一题比第 62 题增加的条件是地图中会出现障碍物，障碍物的处理方法是 dp[i][j]=0。
+
+- 需要注意的一种情况是，起点就是障碍物，那么这种情况直接输出 0 。
+
+
+## LeetCode 64. Minimum Path Sum 最小路径和
+
+Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
+
+Note: You can only move either down or right at any point in time.
+
+
+给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+
+说明：每次只能向下或者向右移动一步。
+
+![](lc-64-p-example.png)
+
+Example 1:
+
+```
+Input: grid = [[1,3,1],[1,5,1],[4,2,1]]
+Output: 7
+Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
+```
+
+因为路径 1→3→1→1→1 的总和最小。
+
+Example 2:
+
+```
+Input: grid = [[1,2,3],[4,5,6]]
+Output: 12
+```
+
+Constraints:
+
+- m == grid.length
+
+- n == grid[i].length
+
+- 1 <= m, n <= 200
+
+- 0 <= grid[i][j] <= 100
+
+
+## 解题思路
+
+- 给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。说明：每次只能向下或者向右移动一步。
+
+- 在地图上求出从左上角到右下角的路径中，数字之和最小的一个，输出数字和。
+
+- 这一题最简单的想法就是用一个二维数组来 DP，当然这是最原始的做法。由于只能往下和往右走，只需要维护 2 列信息就可以了，从左边推到最右边即可得到最小的解。
+
+```
+class Solution(object):
+    def minPathSum(self, grid):
+        #此数组用于记忆化搜索
+        dp = [[0]*len(grid[0]) for i in range(len(grid))]
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                #在起点的时候
+                if (i == 0 and j == 0):
+                    dp[i][j] = grid[0][0]
+                #在左边缘的时候
+                elif (j == 0 and i != 0):
+                    dp[i][j] = dp[i - 1][j]  + grid[i][j]
+                #在上边缘的时候
+                elif (i == 0 and j != 0):
+                    dp[i][j] = dp[i][j-1] + grid[i][j]
+                # 普遍情况下
+                else:
+                    dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]                    
+        return dp[len(grid)-1][len(grid[0])-1]
+```
+
 
 ## LeetCode 66. Plus One 加一
 
@@ -1230,6 +1477,65 @@ print(ob2.plusOne([1,2,3]))
 ```
 
 
+## LeetCode 69. Sqrt(x) x 的平方根
+
+Given a non-negative integer x, compute and return the square root of x.
+
+Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returned.
+
+Note: You are not allowed to use any built-in exponent function or operator, such as pow(x, 0.5) or x ** 0.5.
+
+给你一个非负整数 x ，计算并返回 x 的 算术平方根 。
+
+由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去 。
+
+注意：不允许使用任何内置指数函数和算符，例如 pow(x, 0.5) 或者 x ** 0.5 。
+
+### 二分查找
+
+```
+class Solution:
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x < 2:
+            return x
+        left, right = 1, x // 2
+        while left <= right:
+            mid = left + (right - left) // 2
+            if mid > x / mid:
+                right = mid - 1
+            else:
+                left = mid + 1
+        return left - 1
+x1 = 4
+x2 = 9
+ob1 = Solution()
+print(ob1.mySqrt(x1))
+print(ob1.mySqrt(x2))
+```
+
+### 牛頓法
+
+```
+def squareroot(input_num):
+    root = input_num/2
+    for k in range(20):
+        root = (1/2)* (root + (input_num/root))
+    return root
+
+print(squareroot(3))
+```
+
+思路總結
+
+1. 二分查找，分成左右區間。
+
+2. 牛頓法
+
+
 ## LeetCode 70. Climbing Stairs 爬楼梯
 
 You are climbing a staircase. It takes n steps to reach the top.
@@ -1258,7 +1564,153 @@ print(ob1.climbStairs(x2))
 
 1. 動態規劃，遞迴公式 f(n-1) + f(n-2)，其結果就是費氏數列。來判斷該值有沒有在字典裡面。相對與第一種課堂範例來的理想。
 
+## LeetCode 120. Triangle, 三角形最小路径和
 
+Given a triangle array, return the minimum path sum from top to bottom.
+
+For each step, you may move to an adjacent number of the row below. More formally, if you are on index i on the current row, you may move to either index i or index i + 1 on the next row.
+
+给定一个三角形 triangle ，找出自顶向下的最小路径和。
+
+每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。
+
+
+Example 1:
+
+```
+Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
+Output: 11
+Explanation: The triangle looks like:
+   2
+  3 4
+ 6 5 7
+4 1 8 3
+The minimum path sum from top to bottom is 2 + 3 + 5 + 1 = 11 (underlined above).
+```
+
+自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 = 11）。
+
+Example 2:
+
+```
+Input: triangle = [[-10]]
+Output: -10
+```
+
+Constraints:
+
+- 1 <= triangle.length <= 200
+
+- triangle[0].length == 1
+
+- triangle[i].length == triangle[i - 1].length + 1
+
+- $-10^{4} <= triangle[i][j] <= 10^{4}$
+
+Follow up: Could you do this using only O(n) extra space, where n is the total number of rows in the triangle?
+
+你可以只使用 O(n) 的额外空间（n 为三角形的总行数）来解决这个问题吗？
+
+## 解题思路
+
+- 求出从三角形顶端到底端的最小和。要求最好用 O(n) 的时间复杂度。
+
+- 这一题最优解是不用辅助空间，直接从下层往上层推。普通解法是用二维数组 DP，稍微优化的解法是一维数组 DP。
+
+
+```
+from typing import List
+class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -> int:
+        depth = len(triangle)
+        for i in range(-2, -depth-1, -1):
+            for j in range(depth + 1 + i):
+                triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1])
+        return triangle[0][0]
+```
+
+
+## LeetCode 122. Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II
+
+You are given an integer array prices where prices[i] is the price of a given stock on the $i^{th}$ day.
+
+On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.
+
+Find and return the maximum profit you can achieve.
+
+
+给定一个数组 prices ，其中 prices[i] 表示股票第 i 天的价格。
+
+在每一天，你可能会决定购买和/或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以购买它，然后在 同一天 出售。
+返回 你能获得的 最大 利润 。
+
+Example 1:
+
+```
+Input: prices = [7,1,5,3,6,4]
+Output: 7
+Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+Total profit is 4 + 3 = 7.
+```
+在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。
+
+
+Example 2:
+
+```
+Input: prices = [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+Total profit is 4.
+```
+
+在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+
+
+Example 3:
+
+```
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
+```
+
+在这种情况下, 没有交易完成, 所以最大利润为 0。
+
+Constraints:
+
+- $1 <= prices.length <= 3 * 10^4$
+- $0 <= prices[i] <= 10^4$
+
+## 解题思路
+
+- 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+
+- 要求输出最大收益，这一题不止买卖一次，可以买卖多次，买卖不能在同一天内操作。
+
+- 最大收益来源，必然是每次跌了就买入，涨到顶峰的时候就抛出。只要有涨峰就开始计算赚的钱，连续涨可以用两两相减累加来计算，两两相减累加，相当于涨到波峰的最大值减去谷底的值。这一点看通以后，题目非常简单。
+
+
+```
+# 122(KP) 
+class Solution:
+    def maxProfit (self, prices):
+        if len(prices) <= 1:
+            return 0
+        total = 0
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i-1]:
+                total += prices[i] - prices[i-1]
+        return total
+if __name__ == '__main__':
+    # prices = [ 6, 1, 3, 2, 4, 7]
+    prices = [7, 1, 5, 3, 6,4]
+    # prices = [1, 2, 3, 4, 5]
+    print(Solution().maxProfit(prices))
+```
 
 ## LeetCode 141. Linked List Cycle 环形链表
 
@@ -1888,6 +2340,66 @@ ob = Solution()
 print(ob.isAnagram(s, t))
 ```
 
+## LeetCode 263. Ugly Number 丑数
+
+An ugly number is a positive integer whose prime factors are limited to 2, 3, and 5.
+
+Given an integer n, return true if n is an ugly number.
+
+判断一个数字是否是“丑陋数字”，“丑陋数字”的定义是一个正数，并且因子只包含 2，3，5 。
+
+
+Example 1:
+
+```
+Input: n = 6
+Output: true
+Explanation: 6 = 2 × 3
+```
+
+Example 2:
+
+```
+Input: n = 1
+Output: true
+Explanation: 1 has no prime factors, therefore all of its prime factors are limited to 2, 3, and 5.
+```
+
+没有质因数，因此它的全部质因数是 {2, 3, 5} 的空集。习惯上将其视作第一个丑数。
+
+Example 3:
+
+```
+Input: n = 14
+Output: false
+Explanation: 14 is not ugly since it includes the prime factor 7.
+```
+
+14 不是丑数，因为它包含了另外一个质因数 7 。
+
+Constraints:
+
+- $-2^{31} <= n <= 2^{31} - 1$
+
+
+## 解题思路
+
+判断一个数字是否是“丑陋数字”，“丑陋数字”的定义是一个正数，并且因子只包含 2，3，5 。
+
+```
+class Solution:
+    def isUgly(self, num):
+        if num == 0:
+            return False
+        for i in [2,3,5]:
+            while num % i == 0:
+                num /= i
+        return num == 1
+if __name__ == "__main__":
+    print(Solution().isUgly(18))
+    print(Solution().isUgly(14))
+```
+
 ## LeetCode 274. H-Index, H 指数
 
 
@@ -1945,3 +2457,66 @@ class Solution(object):
                 index +=1
         return index
 ```
+
+## LeetCode 392. Is Subsequence 判断子序列
+
+Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
+
+字符串的一个子序列是原始字符串删除一些（也可以不删除）字符而不改变剩余字符相对位置形成的新字符串。（例如，"ace"是"abcde"的一个子序列，而"aec"不是）。
+
+进阶：
+
+如果有大量输入的 S，称作 S1, S2, ... , Sk 其中 k >= 10亿，你需要依次检查它们是否为 T 的子序列。在这种情况下，你会怎样改变代码？
+
+
+Example 1:
+
+```
+Input: s = "abc", t = "ahbgdc"
+Output: true
+```
+
+Example 2:
+
+```
+Input: s = "axc", t = "ahbgdc"
+Output: false
+```
+
+Constraints:
+
+- $0 <= s.length <= 100$
+- $0 <= t.length <= 10^4$
+- s and t consist only of lowercase English letters.
+
+两个字符串都只由小写字符组成。
+
+
+## 解题思路
+
+- 给定字符串 s 和 t ，判断 s 是否为 t 的子序列。你可以认为 s 和 t 中仅包含英文小写字母。字符串 t 可能会很长，而 s 是个短字符串（长度 <=100）。字符串的一个子序列是原始字符串删除一些（也可以不删除）字符而不改变剩余字符相对位置形成的新字符串。（例如，“ace"是"abcde"的一个子序列，而"aec"不是）。
+
+- 给定 2 个字符串 s 和 t，问 s 是不是 t 的子序列。注意 s 在 t 中还需要保持 s 的字母的顺序。
+
+- 贪心算法。
+
+```
+class Solution:
+    def isSubsequence(self, s, t):
+        if not s:
+            return True
+        i, l_s = 0, len(s)
+        for v in t:
+            if s[i] == v:
+                i += 1
+            if i == l_s:
+                return True
+        return False
+if __name__ == '__main__':
+    print(Solution().isSubsequence('dck', 'goodluck'))
+```
+

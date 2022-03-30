@@ -53,6 +53,26 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 17. 环形链表
 
+18. 貪心法
+
+貪心法 - 找最少硬币
+
+貪心法 - LC 122. 买卖股票的最佳时机 II
+
+貪心法 - LC 392. 判断子序列
+
+貪心法 - LC 263. 丑数
+
+19. 动态规划 Dynamic Programming, DP
+
+动态规划 - 找最少硬币
+
+动态规划 - LC 70. 爬楼梯
+
+动态规划 - LC 62 & 63 不同路径 & 从一维到二维的扩展
+
+20. 矩阵相乘加括号
+
 
 ## 平方根函數
 
@@ -1691,4 +1711,412 @@ alist = [54,26,93,17,77,31,44,55,20]
 print(alist)
 quickSort(alist)
 print(alist)
+```
+
+## 貪心法
+
+### 貪心法 - 找最少硬币
+
+贪心法，又称贪心算法、贪婪算法:在对问题求解时， 总是做出在当前看来是最好的选择。
+
+简单地说，问题能够分解成子问题来解决，子问题的 最优解能递推到最终问题的最优解。这种子问题最优 解成为最优子结构。
+
+
+![](w5-kp-1.png)
+
+### 貪心法 - LC 122. 买卖股票的最佳时机 II
+
+You are given an integer array prices where prices[i] is the price of a given stock on the $i^{th}$ day.
+
+On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.
+
+Find and return the maximum profit you can achieve.
+
+
+给定一个数组 prices ，其中 prices[i] 表示股票第 i 天的价格。
+
+在每一天，你可能会决定购买和/或出售股票。你在任何时候最多只能持有 一股 股票。你也可以购买它，然后在 同一天 出售。
+返回 你能获得的 最大 利润。
+
+```
+# 122(KP) 
+class Solution:
+    def maxProfit (self, prices):
+        if len(prices) <= 1:
+            return 0
+        total = 0
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i-1]:
+                total += prices[i] - prices[i-1]
+        return total
+if __name__ == '__main__':
+    # prices = [ 6, 1, 3, 2, 4, 7]
+    prices = [7, 1, 5, 3, 6,4]
+    # prices = [1, 2, 3, 4, 5]
+    print(Solution().maxProfit(prices))
+```
+
+### 貪心法 - LC 392. 判断子序列
+
+Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
+
+字符串的一个子序列是原始字符串删除一些（也可以不删除）字符而不改变剩余字符相对位置形成的新字符串。（例如，"ace"是"abcde"的一个子序列，而"aec"不是）。
+
+```
+class Solution:
+    def isSubsequence(self, s, t):
+        if not s:
+            return True
+        i, l_s = 0, len(s)
+        for v in t:
+            if s[i] == v:
+                i += 1
+            if i == l_s:
+                return True
+        return False
+if __name__ == '__main__':
+    print(Solution().isSubsequence('dck', 'goodluck'))
+```
+
+### 貪心法 - LC 263. 丑数
+
+An ugly number is a positive integer whose prime factors are limited to 2, 3, and 5.
+
+Given an integer n, return true if n is an ugly number.
+
+判断一个数字是否是“丑陋数字”，“丑陋数字”的定义是一个正数，并且因子只包含 2，3，5 。
+
+```
+class Solution:
+    def isUgly(self, num):
+        if num == 0:
+            return False
+        for i in [2,3,5]:
+            while num % i == 0:
+                num /= i
+        return num == 1
+if __name__ == "__main__":
+    print(Solution().isUgly(18))
+    print(Solution().isUgly(14))
+```
+
+## 动态规划 Dynamic Programming, DP
+
+动态规划算法通常基于一个递推公式及一个或多个初始状态。当前子问题的解将由上一次子问题的解推出。
+
+使用动态规划来解题只需要多项式时间复杂度，因此它比递归法、暴力法等要快许多。
+
+状态 : 用来描述该问题的子问题的解。
+
+状态转移方程 : 描述状态之间是如何转移的关系式。
+
+DP 的基本原理 : 找到某个状态的最优解，然后在其帮助下，找到下一个状态的最优解。
+
+1. 递归 + 记忆化→递推
+
+2. 状态的定义: dp[n], dp[i][j], ...
+
+3. 状态转移方程:dp[n] = best_of(dp[n-1], dp[n-2], ... ) 
+
+4. 最优子结构
+
+EX : (1) 找最少硬币 (2) 爬楼梯 (3) 走方格 (4) 从一维到二维的扩展 (5) 矩阵相乘加括号
+
+### 动态规划 - 找最少硬币
+
+以 26 分递归换硬币为例:
+
+coinValueList = [1,5,10,25]
+
+change = 26
+
+$$
+\text { numCoins }=\min \left\{\begin{array}{l}
+1+\text { numCoins }(\text { originalamount }-1) \\
+1+\text { numCoins }(\text { originalamount }-5) \\
+1+\text { numCoins }(\text { originalamount }-10) \\
+1+\text { numCoins }(\text { originalamount }-25)
+\end{array}\right.
+$$
+
+![](w5-kp-2.png)
+
+(1) 自上而下，递归求解
+
+```
+def recMC( coinValueList, change):
+    minCoins = change
+    if change in coinValueList:
+        return 1
+    else:
+        for i in [c for c in coinValueList if c <= change]:
+            numCoins = 1 + recMC(coinValueList, change - i)
+            if numCoins < minCoins:
+                minCoins = numCoins
+    return minCoins
+```
+
+(2) 加入“备忘录”，去除冗余的递归求解
+
+```
+def recMC(coinValueList, change, knownResults):
+    minCoins = change
+    if change in coinValueList:
+        knownResults[change] = 1
+        return 1
+    elif knownResults[change] > 0:
+        return knownResults[change]
+    else:
+        for i in [c for c in coinValueList if c <= change]:
+            numCoins = 1 + recDC(coinValueList, change - i, knownResults)
+            if numCoins < minCoins:
+                minCoins = numCoins
+                knownResults[change] = minCoins
+    return minCoins
+```
+
+(3) 自下而上，动态规划求解，状态转移方程
+
+$$
+\text { numCoins }=\min \left\{\begin{array}{l}
+1+\text { numCoins }(\text { originalamount }-1) \\
+1+\text { numCoins }(\text { originalamount }-5) \\
+1+\text { numCoins }(\text { originalamount }-10) \\
+1+\text { numCoins }(\text { originalamount }-25)
+\end{array}\right.
+$$
+
+```
+def dpMakeChange(coinValueList, change, minCoins):
+    for cents in range(change + 1):
+        coinCount = cents
+        for j in [c for c in coinValueList if c <= cents]:
+            if minCoins[cents - j] + 1 < coinCount:
+                coinCount = minCoins[cents - j] + 1
+        minCoins[cents] = coinCount
+    return minCoins[change]
+```
+
+(4) 带自动找零功能，动态规划求解
+
+```
+def dpMakeChange(coinValueList, change, minCoins, coinsUsed):
+    for cents in range(change + 1):
+        coinCount = cents
+        newCoin = 1
+        for j in [c for c in coinValueList if c <= cents]:
+            if minCoins[cents - j] + 1 < coinCount:
+                coinCount = minCoins[cents - j] + 1
+                newCoin = j
+        minCoins[cents] = coinCount
+        coinsUsed[cents] = newCoin
+    return minCoins[change]
+def printCoins(coinsUsed, change):
+    coin = change
+    while coin > 0:
+        thisCoin = coinsUsed[coin]
+        print(thisCoin)
+        coin = coin - thisCoin
+```
+
+### 动态规划 - LC 70. 爬楼梯
+
+You are climbing a staircase. It takes n steps to reach the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+
+每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+
+爬樓梯，状态转移方程，空间节省策略
+
+$$𝑑𝑝[𝑛] = 𝑑𝑝 [𝑛 − 1] + 𝑑𝑝 [𝑛 − 2]$$
+
+```
+# 70 爬樓梯 (KP)
+class Solution:
+    def climbStairs(self, n):
+        prev, current = 0, 1
+        for i in range(n):
+            prev, current = current, prev + current
+        return current
+```
+
+### 动态规划 - LC 62 & 63 不同路径 & 从一维到二维的扩展
+
+There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
+
+Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
+
+The test cases are generated so that the answer will be less than or equal to $2 * 10^9$
+
+一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。
+
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。
+
+问总共有多少条不同的路径？
+
+```
+# 走方格
+# 62
+class Solution(object):
+    def uniquePaths(self, m, n):
+        dp = [[0 for _ in range(n)] for _ in range(m)]
+        for index in range(m):
+            dp[index][0] = 1
+        for index in range(n):
+            dp[0][index] = 1
+        for index_i in range(1, m): 
+            for index_j in range(1, n):
+                dp[index_i][index_j] = dp[index_i-1][index_j] + dp[index_i][index_j-1]
+        return dp[m-1][n-1]
+if __name__ == "__main__":
+    print(Solution().uniquePaths(3,2))
+    print(Solution().uniquePaths(9,4))
+```
+
+![](w5-kp-3.png)
+
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
+
+An obstacle and space is marked as 1 and 0 respectively in the grid.
+
+一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。
+
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish”）。
+
+现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？
+
+网格中的障碍物和空位置分别用 1 和 0 来表示。
+
+```
+class Solution(object):
+    def uniquePathsWithObstacles(self, obstacleGrid):
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
+        dp = [[0 for _ in range(n)] for _ in range(m)]
+
+        if obstacleGrid[0][0] == 1 or obstacleGrid[m-1][n-1] == 1: 
+            return 0
+        dp[0][0] = 1
+        for index in range(1, m):
+            if obstacleGrid[index][0] == 1:
+                dp[index][0] = 0
+            else:
+                dp[index][0] = dp[index-1][0]
+        for index in range(1, n):
+            if obstacleGrid[0][index] == 1:
+                dp[0][index] = 0
+            else:
+                dp[0][index] = dp[0][index-1]
+        for index_i in range(1, m):
+            for index_j in range(1, n):
+                if obstacleGrid[index_i][index_j] == 1:
+                    dp[index_i][index_j] = 0
+                else:
+                    dp[index_i][index_j] = dp[index_i-1][index_j] + dp[index_i][index_j-1] 
+        return dp[m-1][n-1]
+```
+
+## 矩阵相乘加括号
+
+1. 描述:
+
+设 $A_1, A_2, ... , A_n$ 为矩阵序列，$A_i$ 为 $P_{i-1} \times P_{i}$ 阶矩阵，$i = 1,2,...,n$.
+
+确定 乘法顺序使得元素相乘的总次数最少.
+
+2. 输入:
+
+向量 $P = <P_0, P_1, ... , P_n>$，n 个矩阵的行数、列数 实例:
+
+$$P = <10, 100, 5, 50>$$
+
+$$A_1: 10 \times 100, A_2: 100 \times 5, A_3: 5 \times 50$$
+
+3. 括号位置不同，相乘总次数不同:
+
+$$
+(A_{1}A_{2})A_{3}: 10 \times 100 \times 5 + 10 \times 5 \times 50 = 7500 
+A_{1}(A_{2}A_{3}): 10 \times 100 \times 50 + 100 \times 5 \times 50 = 75000
+$$
+
+4. 枚举算法:
+
+加n个括号的方法有 $\frac{1}{n+1}\left(\begin{array}{c}2 n \\ n\end{array}\right)$ 是一个Catalan数，是指数级别:
+
+搜索空间规模
+
+$$
+\begin{aligned}
+W(n) &=\Omega\left(\frac{1}{n+1} \frac{(2 n) !}{n ! n !}\right)=\Omega\left(\frac{1}{n+1} \frac{\sqrt{2 \pi 2 n}\left(\frac{2 n}{e}\right)^{2 n}}{\sqrt{2 \pi n}\left(\frac{n}{e}\right)^{n \sqrt{2 \pi n}\left(\frac{n}{e}\right)^{n}}}\right) \\
+&=\Omega\left(\frac{1}{n+1} \frac{n^{\frac{1}{2}} 2^{2 n} n^{2 n} e^{n} e^{n}}{e^{2 n} n^{\frac{1}{2}} n^{n} n^{\frac{1}{2}} n^{n}}\right)=\Omega\left(2^{2 n} / n^{\frac{3}{2}}\right)
+\end{aligned}
+$$
+
+5. 确定子问题的边界:
+
+输入 $P=< P_0, P_1, ..., P_n> , A_{i..j}$ 表示乘积 $A_{i}A_{i+1}...A{j}$ 的结果，其最后一次相乘是 $A_{i..j} = A_{i..k} A_{k+1..j}$
+
+6. 确定优化函数和递推方程:
+
+$m[i,j]$ 表示得到 $A_{i..j}$ 的最少的相乘次数，则递推方程和初值.
+
+$$
+m[i, j]= \begin{cases}0 & i=j \\ \min _{i \leq k<j}\left\{m[i, k]+m[k+1, j]+P_{i-1} P_{k} P_{j}\right\} & i<j\end{cases}
+$$
+
+输入 $P= <30, 35, 15, 5, 10, 20>, n=5$，矩阵链:$A_{1}A_{2}A_{3}A_{4}A{5}$，其中 $A_{1}$: $30 \times 35$，$A_{2}$: $35 \times 15$，$A_{3}$: $15 \times 5$，$A_{4}$: $5 \times 10$，$A_{5}$: $10 \times 20$
+
+7. 备忘录:
+
+| r | m[1,n] | m[2,n] | m[3,n] | m[4,n] | m[5,n] |
+| - | - | - | - | - | - |
+| r=1 | m[1,1]=0 | m[2,2]=0 | m[3,3]=0 | m[4,4]=0 | m[5,5]=0 |
+| r=2 | m[1,2]=15750 | m[2,3]=2625 | m[3,4]=750 | m[4,5]=1000 |  |
+| r=3 | m[1,3]=7875 | m[2,4]=4375 | m[3,5]=2500 |   |   |
+| r=4 | m[1,4]=9375 | m[2,5]=7125 |   |   |   |
+| r=5 | m[1,5]=11875 |   |   |   |   |
+
+8. 解: 
+
+$$(A_{1} (A_{2} A_{3})) (A_{4}A_{5})$$
+
+```
+class Matrix:
+    def __init__(self, row_num=0, col_num=0, matrix=None):
+        if matrix != None:
+            self.row_num = len(matrix)
+            self.col_num = len(matrix[0])
+        else:
+            self.row_num = row_num
+            self.col_num = col_num
+        self.matrix = matrix
+
+def matrix_chain(matrixs):
+    matrix_num = len(matrixs)
+    m = [[0 for j in range(matrix_num)] for i in range(matrix_num)]
+    for interval in range(1, matrix_num + 1): 
+        for i in range(matrix_num - interval):
+            j = i + interval
+            m[i][j] = m[i][i] + m[i + 1][j] + matrixs[i].row_num * matrixs[i + 1].row_num * matrixs[j].col_num
+            for k in range(i + 1, j):
+                temp = m[i][k] + m[k + 1][j] + matrixs[i].row_num * matrixs[k + 1].row_num * matrixs[j].col_num
+                if temp < m[i][j]:
+                    m[i][j] = temp 
+    return m[0][matrix_num - 1]
+
+# Test
+matrixs = [Matrix(30, 35), Matrix(35, 15), Matrix(15, 5), Matrix(5, 10), Matrix(10, 20)]
+# print(matrixs)
+result = matrix_chain(matrixs)
+print(result)
 ```
