@@ -48,6 +48,11 @@ PKU 2022 個人實驗報告作業
 
 https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 
+## Reference
+
+1. http://neuroinfo-cclolab.blogspot.com/2020/03/blog-post_16.html?m=1
+
+
 
 
 
