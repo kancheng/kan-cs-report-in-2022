@@ -19,7 +19,7 @@ PKU 2022 個人實驗報告作業
 
 2. 易思達 - Flask & Vue & YoLo ，功能整合
 
-3. 徐華陽 - 單元功能測試 OpenCV & Flask、文件
+3. 徐華陽 - 單元功能測試 OpenCV & Flask 報告
 
 4. 鄭翰濃 - 單元功能測試 RTS、Go 串流可能性、Flask & RTS
 

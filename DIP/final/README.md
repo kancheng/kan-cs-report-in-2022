@@ -85,6 +85,7 @@ PKU 2022 個人實驗報告作業
 
 3. https://github.com/Sharpiless/Yolov5-Flask-VUE
 
+4. https://github.com/Kevinnan-teen/Intelligent-Traffic-Based-On-CV
 
 ### Train Data
 
