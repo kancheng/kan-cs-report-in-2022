@@ -91,6 +91,10 @@ PKU 2022 個人實驗報告作業
 
 4. https://github.com/Kevinnan-teen/Intelligent-Traffic-Based-On-CV
 
+5. https://github.com/pickedDeng/videoEdit
+
+6. https://github.com/CCZX/wechat
+
 
 ### Train Data
 
@@ -99,7 +103,6 @@ PKU 2022 個人實驗報告作業
 2. http://parnec.nuaa.edu.cn/_upload/tpl/02/db/731/template731/pages/xtan/ClosedEyeDatabases.html
 
 3. http://vis-www.cs.umass.edu/lfw/
-
 
 
 ### Paper
