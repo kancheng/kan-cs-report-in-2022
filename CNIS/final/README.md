@@ -18,6 +18,24 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 ## Reference
 
+1. PKI 和 X509 证书
+
+https://blog.csdn.net/code_segment/article/details/89647358
+
+
+2. 后量子时代的数据保护
+
+https://www.pwccn.com/zh/issues/cybersecurity-and-data-privacy/digital-security-post-quantum-world-mar2021.pdf
+
+
+3. 朱晓波、陆朝阳、潘建伟：量子计算 - 后摩尔时代计算能力提升的解决方案
+
+https://www.cas.cn/zjs/202203/t20220302_4826718.shtml
+
+
+4. 量子信息技术发展与应用研究报告
+
+https://pdf.dfcfw.com/pdf/H3_AP202112291537269645_1.pdf?1640773504000.pdf
 
 
 
