@@ -52,6 +52,10 @@ https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 
 1. http://neuroinfo-cclolab.blogspot.com/2020/03/blog-post_16.html?m=1
 
+2. https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6
+
+
+
 
 
 
