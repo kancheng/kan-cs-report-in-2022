@@ -18,7 +18,7 @@ PKU 2022 個人實驗報告作業
 
 2. 投资问题
 
-设有 m 元钱, n 项投资， 函数 $f_{i}(x)$ 表示将 x 元钱投入到第 i 项项目所产生的效益， i=1 ,... , n。
+设有 m 元钱, n 项投资， 函数 $f_{i}(x)$ 表示将 x 元钱投入到第 i 项项目所产生的效益， i = 1 ,... , n。
 
 问:如何分配这 m 元钱，使得投资的总效益最高?
 
@@ -32,6 +32,14 @@ PKU 2022 個人實驗報告作業
 3. https://web.ntnu.edu.tw/~algo/KnapsackProblem.html
 
 4. https://www.coursera.org/lecture/algorithms/040tou-zi-wen-ti-MbJJj
+
+5. https://leetcode.com/discuss/study-guide/1152328/01-Knapsack-Problem-and-Dynamic-Programming
+
+6. https://leetcode.com/problems/word-break/discuss/1702338/dynamic-programming-knapsack-problem-python-3
+
+7. https://blog.csdn.net/littleshi00/article/details/105397192
+
+8. https://icode.best/i/18557543908876
 
 
 
