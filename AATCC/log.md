@@ -130,3 +130,32 @@ LeetCode 392. Is Subsequence 判断子序列
 
 矩阵相乘加括号
 
+### 6. W6 :
+
+- LeetCode :
+
+LeetCode 53. Maximum Subarray 最长递增子序列
+
+LeetCode 123. Best Time to Buy and Sell Stock III 买卖股票的最佳时机 III
+
+LeetCode 136. Single Number 只出现一次的数字
+
+LeetCode 300. Longest Increasing Subsequence 最长递增子序列
+
+LeetCode 746. Min Cost Climbing Stairs 爬楼梯的最小损失
+
+- Knowledge Point : 
+
+从一维到二维的扩展 with LC 746 & LC 120 說明
+
+矩阵相乘加括号 with LC 123 說明
+
+多起点多终点最短路径问题
+
+不满足优化子结构的例子 with LC 300 & LC 53
+
+最长公共子序列 (Longest Common Subsequence, LCS)
+
+背包问题 (Knapsack Problem)
+
+投资问题

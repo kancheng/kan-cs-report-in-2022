@@ -55,23 +55,37 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 18. 貪心法
 
-貪心法 - 找最少硬币
+- 貪心法 - 找最少硬币
 
-貪心法 - LC 122. 买卖股票的最佳时机 II
+- 貪心法 - LC 122. 买卖股票的最佳时机 II
 
-貪心法 - LC 392. 判断子序列
+- 貪心法 - LC 392. 判断子序列
 
-貪心法 - LC 263. 丑数
+- 貪心法 - LC 263. 丑数
 
 19. 动态规划 Dynamic Programming, DP
 
-动态规划 - 找最少硬币
+- 动态规划 - 找最少硬币
 
-动态规划 - LC 70. 爬楼梯
+- 动态规划 - LC 70. 爬楼梯
 
-动态规划 - LC 62 & 63 不同路径 & 从一维到二维的扩展
+- 动态规划 - LC 62 & 63 不同路径 & 从一维到二维的扩展
 
 20. 矩阵相乘加括号
+
+21. 从一维到二维的扩展 with LC 746 & LC 120 說明
+
+22. 矩阵相乘加括号 with LC 123 說明
+
+23. 多起点多终点最短路径问题
+
+24. 不满足优化子结构的例子 with LC 300 & LC 53
+
+25. 最长公共子序列 (Longest Common Subsequence, LCS)
+
+26. 背包问题 (Knapsack Problem)
+
+27. 投资问题
 
 
 ## 平方根函數
@@ -2120,3 +2134,17 @@ matrixs = [Matrix(30, 35), Matrix(35, 15), Matrix(15, 5), Matrix(5, 10), Matrix(
 result = matrix_chain(matrixs)
 print(result)
 ```
+
+## 从一维到二维的扩展 with LC 746 & LC 120 說明
+
+## 矩阵相乘加括号 with LC 123 說明
+
+## 多起点多终点最短路径问题
+
+## 不满足优化子结构的例子 with LC 300 & LC 53
+
+## 最长公共子序列 (Longest Common Subsequence, LCS)
+
+## 背包问题 (Knapsack Problem)
+
+## 投资问题

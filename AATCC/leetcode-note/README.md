@@ -41,6 +41,8 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 50. Pow(x, n)
 
+53. Maximum Subarray 最长递增子序列
+
 56. Merge Intervals 合并区间
 
 62. Unique Paths 不同路径
@@ -59,6 +61,10 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 122. Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II
 
+123. Best Time to Buy and Sell Stock III 买卖股票的最佳时机 III
+
+136. Single Number 只出现一次的数字
+
 141. Linked List Cycle 环形链表
 
 148. Sort List 排序链表
@@ -75,7 +81,11 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 274. H-Index, H 指数
 
+300. Longest Increasing Subsequence 最长递增子序列
+
 392. Is Subsequence 判断子序列
+
+746. Min Cost Climbing Stairs 爬楼梯的最小损失
 
 
 ## LeetCode 1. Two Sum 兩數之和
@@ -1112,6 +1122,99 @@ def myPow2(x, n):
     return pow
 ```
 
+## LeetCode 53. Maximum Subarray 最长递增子序列
+
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+A subarray is a contiguous part of an array.
+
+给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+子数组 是数组中的一个连续部分。
+
+
+Example 1:
+
+```
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+```
+
+解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。
+
+
+Example 2:
+
+```
+Input: nums = [1]
+Output: 1
+```
+
+
+Example 3:
+
+```
+Input: nums = [5,4,-1,7,8]
+Output: 23
+```
+
+
+Constraints:
+
+- $1 <= nums.length <= 10^5$
+- $10^4 <= nums[i] <= 10^4$
+
+Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+
+如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。
+
+### Reference
+
+https://books.halfrost.com/leetcode/ChapterFour/0001~0099/0053.Maximum-Subarray/
+
+
+```
+class Solution(object):
+    def maxSubArray(self, nums):
+        for i in range(1, len(nums)):
+            nums[i]= nums[i] + max(nums[i-1], 0)
+        return max(nums)
+
+# LC 53  (KP)
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        maxSeq =[0]*len(nums) 
+        maxSeq[0] = nums[0]
+        for i in range(1, len(nums)):
+            maxSeq[i] = max(maxSeq[i-1]+nums[i], nums[i])
+        maximum = max(maxSeq)
+        return maximum
+
+# Sample
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        maximum = min(nums)
+        m = 0
+        for i in range(len(nums)):
+            m = max(m+nums[i], nums[i])
+            if m > maximum:
+                maximum = m 
+        return maximum
+
+# More Sample
+
+class Solution:
+    def maxSubArray(self, nums):
+        for i in range(1, len(nums)):
+            if nums[i - 1] > 0:
+                nums[i] += nums[i - 1]
+        print(nums)
+        return max(nums)
+```
+
 ## LeetCode 56. Merge Intervals 合并区间
 
 Given an array of intervals where intervals[i] = [$start_{i}, end_{i}$], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
@@ -1710,6 +1813,180 @@ if __name__ == '__main__':
     prices = [7, 1, 5, 3, 6,4]
     # prices = [1, 2, 3, 4, 5]
     print(Solution().maxProfit(prices))
+```
+
+## LeetCode 123. Best Time to Buy and Sell Stock III 买卖股票的最佳时机 III
+
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+Find the maximum profit you can achieve. You may complete at most two transactions.
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。
+
+设计一个算法来计算你所能获取的最大利润。你最多可以完成 两笔 交易。
+
+注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+
+
+Example 1:
+
+```
+Input: prices = [3,3,5,0,0,3,1,4]
+Output: 6
+Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
+Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
+```
+
+解释：在第 4 天（股票价格 = 0）的时候买入，在第 6 天（股票价格 = 3）的时候卖出，这笔交易所能获得利润 = 3-0 = 3 。
+     随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天 （股票价格 = 4）的时候卖出，这笔交易所能获得利润 = 4-1 = 3 。
+
+
+Example 2:
+
+```
+Input: prices = [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
+```
+
+解释：在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。   
+     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。   
+     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+
+
+Example 3:
+
+```
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transaction is done, i.e. max profit = 0.
+```
+
+解释：在这个情况下, 没有交易完成, 所以最大利润为 0。
+
+Constraints:
+
+- $1 <= prices.length <= 10^5$
+- $0 <= prices[i] <= 10^5$
+
+
+## 解题思路
+
+- 要求输出最大收益，这一题不止买卖一次，可以买卖多次，买卖不能在同一天内操作。
+
+- 最大收益来源，必然是每次跌了就买入，涨到顶峰的时候就抛出。只要有涨峰就开始计算赚的钱，连续涨可以用两两相减累加来计算，两两相减累加，相当于涨到波峰的最大值减去谷底的值。这一点看通以后，题目非常简单。
+
+## 定义状态:
+
+dp[i][j][k] 
+
+i 天结束时的最高利润 = [天数][是否持有股票][卖出次数] 
+
+i: 0, ..., n
+
+j: 0, 1
+
+k: 0, 1, 2
+
+## Reference
+
+1. https://blog.csdn.net/m0_52043808/article/details/121456025
+
+
+```
+class Solution:
+    def maxProfit(self, prices):
+        if prices==[]:
+            return 0
+        length=len(prices)
+        #结束时的最高利润=[天数][是否持有股票][卖出次数] 
+        dp=[ [[0,0,0],[0,0,0] ] for i in range(0,length) ]
+        #第一天休息
+        dp[0][0][0]=0 
+        #第一天买入
+        dp[0][1][0]=-prices[0]
+        # 第一天不可能已经有卖出
+        dp[0][0][1] = float('-inf') 
+        dp[0][0][2] = float('-inf')
+        #第一天不可能已经卖出
+        dp[0][1][1]=float('-inf')
+        dp[0][1][2]=float('-inf')
+        for i in range(1,length):
+            #未持股，未卖出过，说明从未进行过买卖
+            dp[i][0][0]=0 
+            #未持股，卖出过1次，可能是今天卖的，可能是之前卖的
+            dp[i][0][1]=max(dp[i-1][1][0]+prices[i],dp[i-1][0][1]) 
+            #未持股，卖出过2次，可能是今天卖的，可能是之前卖的
+            dp[i][0][2]=max(dp[i-1][1][1]+prices[i],dp[i-1][0][2]) 
+            #持股，未卖出过，可能是今天买的，可能是之前买的
+            dp[i][1][0]=max(dp[i-1][0][0]-prices[i],dp[i-1][1][0]) 
+            #持股，卖出过1次，可能是今天买的，可能是之前买的
+            dp[i][1][1]=max(dp[i-1][0][1]-prices[i],dp[i-1][1][1]) 
+            #持股，卖出过2次，不可能
+            dp[i][1][2]=float('-inf')
+        return max(dp[length-1][0][1],dp[length-1][0][2],0)
+if __name__ == "__main__":
+    list = [3,1,5,2,1,3,1,9] 
+    print(Solution().maxProfit(list))
+```
+
+## LeetCode 136. Single Number 只出现一次的数字
+
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+
+说明：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+
+
+Example 1:
+
+```
+Input: nums = [2,2,1]
+Output: 1
+```
+
+Example 2:
+
+```
+Input: nums = [4,1,2,1,2]
+Output: 4
+```
+
+Example 3:
+
+```
+Input: nums = [1]
+Output: 1
+```
+
+Constraints:
+
+- $1 <= nums.length <= 3 * 10^{4}$
+- $-3 * 10^{4} <= nums[i] <= 3 * 10^{4}$
+- Each element in the array appears twice except for one element which appears only once.
+
+```
+class Solution:
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        a = 0
+        for num in nums:
+            a = a ^ num
+        return a
+
+from typing import List
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        return functools.reduce(int.__xor__,nums)
 ```
 
 ## LeetCode 141. Linked List Cycle 环形链表
@@ -2458,6 +2735,101 @@ class Solution(object):
         return index
 ```
 
+## LeetCode 300. Longest Increasing Subsequence 最长递增子序列
+
+
+Given an integer array nums, return the length of the longest strictly increasing subsequence.
+
+A subsequence is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements. For example, [3,6,2,7] is a subsequence of the array [0,3,1,6,2,2,7].
+
+
+给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+
+子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。
+
+
+Example 1:
+
+```
+Input: nums = [10,9,2,5,3,7,101,18]
+Output: 4
+Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+
+```
+
+最长递增子序列是 [2,3,7,101]，因此长度为 4 。
+
+Example 2:
+
+```
+Input: nums = [0,1,0,3,2,3]
+Output: 4
+```
+
+
+Example 3:
+
+```
+Input: nums = [7,7,7,7,7,7,7]
+Output: 1
+```
+
+
+Constraints:
+
+- $1 <= nums.length <= 2500$
+
+- $10^4 <= nums[i] <= 10^4$
+
+Follow up: Can you come up with an algorithm that runs in O(n log(n)) time complexity?
+
+你能将算法的时间复杂度降低到 O(n log(n)) 吗?
+
+## Tip
+
+你能将算法的时间复杂度降低到 O(n log(n)) 吗?  ... 利用二叉搜索
+
+
+## Reference
+
+https://books.halfrost.com/leetcode/ChapterFour/0300~0399/0300.Longest-Increasing-Subsequence/
+
+
+```
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        if not nums:
+            return 0
+        N = len(nums)
+        dp = [1 for _ in range(N)]
+        ans = 1
+        for i in range(1, N):
+            temp = []
+            temp.append(1)
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    temp.append(dp[j] + 1)
+            dp[i] = max(temp)
+            ans = max(ans, dp[i]) 
+        return ans
+
+# Sample 简洁版
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        if not nums:
+            return 0
+        N = len(nums)
+        dp = [1 for _ in range(N)]
+        ans = 1
+        for i in range(1, N):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], dp[j] + 1)
+            ans = max(ans, dp[i])
+        return ans
+```
+
+
 ## LeetCode 392. Is Subsequence 判断子序列
 
 Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
@@ -2520,3 +2892,74 @@ if __name__ == '__main__':
     print(Solution().isSubsequence('dck', 'goodluck'))
 ```
 
+## LeetCode 746. Min Cost Climbing Stairs 爬楼梯的最小损失
+
+You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.
+
+You can either start from the step with index 0, or the step with index 1.
+
+Return the minimum cost to reach the top of the floor.
+
+给你一个整数数组 cost ，其中 cost[i] 是从楼梯第 i 个台阶向上爬需要支付的费用。一旦你支付此费用，即可选择向上爬一个或者两个台阶。
+
+你可以选择从下标为 0 或下标为 1 的台阶开始爬楼梯。
+
+请你计算并返回达到楼梯顶部的最低花费。
+
+
+Example 1:
+
+```
+Input: cost = [10,15,20]
+Output: 15
+Explanation: You will start at index 1.
+- Pay 15 and climb two steps to reach the top.
+The total cost is 15.
+```
+输入：cost = [10,15,20]
+输出：15
+解释：你将从下标为 1 的台阶开始。
+- 支付 15 ，向上爬两个台阶，到达楼梯顶部。
+总花费为 15 。
+
+
+Example 2:
+
+```
+Input: cost = [1,100,1,1,1,100,1,1,100,1]
+Output: 6
+Explanation: You will start at index 0.
+- Pay 1 and climb two steps to reach index 2.
+- Pay 1 and climb two steps to reach index 4.
+- Pay 1 and climb two steps to reach index 6.
+- Pay 1 and climb one step to reach index 7.
+- Pay 1 and climb two steps to reach index 9.
+- Pay 1 and climb one step to reach the top.
+The total cost is 6.
+```
+
+输入：cost = [1,100,1,1,1,100,1,1,100,1]
+输出：6
+解释：你将从下标为 0 的台阶开始。
+- 支付 1 ，向上爬两个台阶，到达下标为 2 的台阶。
+- 支付 1 ，向上爬两个台阶，到达下标为 4 的台阶。
+- 支付 1 ，向上爬两个台阶，到达下标为 6 的台阶。
+- 支付 1 ，向上爬一个台阶，到达下标为 7 的台阶。
+- 支付 1 ，向上爬两个台阶，到达下标为 9 的台阶。
+- 支付 1 ，向上爬一个台阶，到达楼梯顶部。
+总花费为 6 。
+
+
+Constraints:
+
+- 2 <= cost.length <= 1000
+- 0 <= cost[i] <= 999
+
+```
+class Solution:
+    def minCostClimbingStairs(self, cost):
+        cost.append(0)
+        for i in range(2, len(cost)):
+            cost[i] += min(cost[i - 1], cost[i - 2])
+        return cost[-1]
+```
