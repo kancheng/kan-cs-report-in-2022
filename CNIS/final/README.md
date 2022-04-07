@@ -86,4 +86,29 @@ https://www.jsjkx.com/CN/article/openArticlePDF.jsp?id=688
 https://zh.wikipedia.org/wiki/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8
 
 
+14. 網站常見的資安問題
+
+https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-29-web-%E7%B6%B2%E7%AB%99%E5%B8%B8%E8%A6%8B%E7%9A%84%E8%B3%87%E5%AE%89%E5%95%8F%E9%A1%8C%E6%9C%89%E5%93%AA%E4%BA%9B-bc47b572d94d
+
+
+15. Fundamentals of Top 10 Open Web Application Security Project
+
+https://medium.com/@yalexcortes/fundamentals-of-top-10-open-web-application-security-project-af8d5b7aa7dd
+
+
+16. 机器学习系统的隐私和安全问题综述
+
+https://crad.ict.ac.cn/CN/10.7544/issn1000-1239.2019.20190437
+
+
+17. 人工智能系统安全与隐私风险 - Security and Privacy Risks in Artificial Intelligence Systems
+
+https://scholars.cityu.edu.hk/en/publications/untitled(03889802-b8e3-4be4-8a82-59b4c2a5bc76).html
+
+
+18. Detecting web attacks with end-to-end deep learning
+
+https://jisajournal.springeropen.com/articles/10.1186/s13174-019-0115-x
+
+
 
