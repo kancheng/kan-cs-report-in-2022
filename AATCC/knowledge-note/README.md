@@ -2137,14 +2137,585 @@ print(result)
 
 ## 从一维到二维的扩展 with LC 746 & LC 120 說明
 
+1. LC 746. Min Cost Climbing Stairs
+
+You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.
+
+You can either start from the step with index 0, or the step with index 1.
+
+Return the minimum cost to reach the top of the floor.
+
+给你一个整数数组 cost ，其中 cost[i] 是从楼梯第 i 个台阶向上爬需要支付的费用。一旦你支付此费用，即可选择向上爬一个或者两个台阶。
+
+你可以选择从下标为 0 或下标为 1 的台阶开始爬楼梯。
+
+请你计算并返回达到楼梯顶部的最低花费。
+
+```
+class Solution:
+    def minCostClimbingStairs(self, cost):
+        cost.append(0)
+        for i in range(2, len(cost)):
+            cost[i] += min(cost[i - 1], cost[i - 2])
+        return cost[-1]
+```
+
+![](w6-kp-6.png)
+
+2. 动态规划
+
+- (1). 状态定义: dp[i]表示到达第i级台阶最小花费
+
+- (2). 初始化: dp[0] = cost[0]; dp[1]=cost[1]
+
+- (3). 转移方程: dp[i] = min(dp[i-1], dp[i-2]) + cost[i] (i >= 2)
+
+可直接在 cost 列表空间上 DP
+
+转移方程改为: cost[i] += min(cost[i-1], cost[i-2]) (i >= 2)
+
+也為 O(n) time, O(1) space
+
+![](w6-kp-7.png)
+
+3. LC 120
+
+Given a triangle array, return the minimum path sum from top to bottom.
+
+For each step, you may move to an adjacent number of the row below. More formally, if you are on index i on the current row, you may move to either index i or index i + 1 on the next row.
+
+给定一个三角形 triangle ，找出自顶向下的最小路径和。
+
+每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。
+
+```
+from typing import List
+class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -> int:
+        depth = len(triangle)
+        for i in range(-2, -depth-1, -1):
+            for j in range(depth + 1 + i):
+                triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1])
+        return triangle[0][0]
+```
+
+### (1) 定义状态函数:
+
+dp[i][j] 表示( i,j) 位置的点到最低端的最小路径值。
+
+### (2) 状态转移方程:
+
+dp[i][j] = min {dp[i + 1][j], dp[i + 1][j + 1]} + triangle[i][j]
+
+
+```{python}
+import copy 
+class Solution:
+    def minimumTotal1(self, triangle):
+        if not triangle or triangle == [[]]: return 0
+        dp = copy.deepcopy(triangle)
+        for items in range(len(dp) - 2, -1, -1):
+            for idx in range(len(dp[items])):
+                dp[items][idx] = min(dp[items + 1][idx], dp[items + 1][idx + 1]) + triangle[items][idx]
+        # print(dp)
+        # return dp[0][0] -> 引入二维列表
+        return dp[0][0]
+```
+
+### (3) 引入一维列表
+
+res = triangle[-1] -> 引入一维列表
+
+```
+def minimumTotal2(self, triangle):
+    if not triangle or triangle == [[]]: return 0
+    # res = triangle[-1] -> 引入一维列表
+    res = triangle[-1]
+    for items in range(len(triangle) - 2, -1, -1):
+        for idx in range(len(triangle[items])):
+            res[idx] = min(res[idx], res[idx+1]) + triangle[items][idx]
+    return res[0]
+```
+
+### (4) 无需引入其他变量
+
+return triangle[0][0] -> 无需引入其他变量
+
+```
+def minimumTotal3(self, triangle):
+    if not triangle or triangle == [[]]: return 0
+    for items in range(len(triangle) - 2, -1, -1): 
+        for idx in range(len(triangle[items])):
+            triangle[items][idx] = min(triangle[items + 1][idx], triangle[items + 1][idx + 1]) + triangle[items][idx] 
+    # return triangle[0][0] -> 无需引入其他变量
+    return triangle[0][0]
+```
+
 ## 矩阵相乘加括号 with LC 123 說明
+
+1. LC 123. Best Time to Buy and Sell Stock III 买卖股票的最佳时机 III
+
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+Find the maximum profit you can achieve. You may complete at most two transactions.
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。
+
+设计一个算法来计算你所能获取的最大利润。你最多可以完成两笔交易。
+
+注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+
+### (1) 定义状态:
+
+dp[i][j][k] 
+
+i 天结束时的最高利润 = [天数][是否持有股票][卖出次数] 
+
+i: 0, ..., n
+
+j: 0, 1
+
+k: 0, 1, 2
+
+```
+class Solution:
+    def maxProfit(self, prices):
+        if prices==[]:
+            return 0
+        length=len(prices)
+        #结束时的最高利润=[天数][是否持有股票][卖出次数] 
+        dp=[ [[0,0,0],[0,0,0] ] for i in range(0,length) ]
+        #第一天休息
+        dp[0][0][0]=0 
+        #第一天买入
+        dp[0][1][0]=-prices[0]
+        # 第一天不可能已经有卖出
+        dp[0][0][1] = float('-inf') 
+        dp[0][0][2] = float('-inf')
+        #第一天不可能已经卖出
+        dp[0][1][1]=float('-inf')
+        dp[0][1][2]=float('-inf')
+        for i in range(1,length):
+            #未持股，未卖出过，说明从未进行过买卖
+            dp[i][0][0]=0 
+            #未持股，卖出过1次，可能是今天卖的，可能是之前卖的
+            dp[i][0][1]=max(dp[i-1][1][0]+prices[i],dp[i-1][0][1]) 
+            #未持股，卖出过2次，可能是今天卖的，可能是之前卖的
+            dp[i][0][2]=max(dp[i-1][1][1]+prices[i],dp[i-1][0][2]) 
+            #持股，未卖出过，可能是今天买的，可能是之前买的
+            dp[i][1][0]=max(dp[i-1][0][0]-prices[i],dp[i-1][1][0]) 
+            #持股，卖出过1次，可能是今天买的，可能是之前买的
+            dp[i][1][1]=max(dp[i-1][0][1]-prices[i],dp[i-1][1][1]) 
+            #持股，卖出过2次，不可能
+            dp[i][1][2]=float('-inf')
+        return max(dp[length-1][0][1],dp[length-1][0][2],0)
+if __name__ == "__main__":
+    list = [3,1,5,2,1,3,1,9] 
+    print(Solution().maxProfit(list))
+```
 
 ## 多起点多终点最短路径问题
 
+![](w6-kp-8.png)
+
+边上的数字代表路径的距离，任意起点 $S_{i}$ 到任意终点 $T_{k}$ 的所有路径最短距离是多少?
+
+![](w6-kp-9.png)
+
+存在两条最短路径，距离都是10。
+
+![](w6-kp-11.png)
+
+定义状态: F(V) 表示点到终点最短的距离。
+
+状态转移方程:
+    
+$$
+\begin{aligned}
+&F\left(C_{l}\right)=\min _{m}\left\{C_{l} T_{m}\right\} \\
+&F\left(B_{k}\right)=\min _{l}\left\{B_{k} C_{l}+F\left(C_{l}\right)\right\} \\
+&F\left(A_{j}\right)=\min _{k}\left\{A_{j} B_{k}+F\left(B_{k}\right)\right\} \\
+&F\left(S_{i}\right)=\min _{j}\left\{S_{i} A_{j}+F\left(A_{j}\right)\right\}
+\end{aligned}
+$$
+
+- 优化函数的特点: 任何最短路径的子路径都是相对于子路径始点和终点的最短路径
+
+- 求解步骤: 确定子问题的边界、从最小的子问题开始进行多步判断
+
+![](w6-kp-10.png)
+
+
+$$
+\min _{i}\left\{F\left(\boldsymbol{S}_{\boldsymbol{i}}\right)\right\}=\mathbf{1 0}
+$$
+
 ## 不满足优化子结构的例子 with LC 300 & LC 53
+
+1. 說明
+
+优化原则:
+
+一个最优决策序列的任何子序列本身一定是相对于子序列的初始和结束状态的最优的决策序列。
+
+例 : 求总长模 10 的最小路径
+
+![](w6-kp-12.png)
+
+最优解: 下、下、下、下
+
+动态规划算法的解: 下、上、上、上
+
+不满足优化原则，不能使用动态规划设计技术
+
+2. LC 300
+
+Given an integer array nums, return the length of the longest strictly increasing subsequence.
+
+A subsequence is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements. For example, [3,6,2,7] is a subsequence of the array [0,3,1,6,2,2,7].
+
+
+给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+
+子序列是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。
+
+定义状态函数 :
+
+dp[i] 表示包含第 i 个元素的最大上升子序列的长度。
+
+$$
+\begin{gathered}
+\operatorname{nums}=[10,9,2,5,3,7,101,18] \\
+d p=[1,1,1,2,2,3,4,4] \\
+\end{gathered}
+$$
+
+状态转移方程 :
+
+$$
+\begin{gathered}
+d p[i]=\max _{0 \leq j<i}\{d p[j]+1,1\}, \text { if nums }[i]>\text { nums }[j] \\
+\end{gathered}
+$$
+
+最终结果 :
+
+$$
+\begin{gathered}
+\max _{i}\{d p[i]\}
+\end{gathered}
+$$
+
+![](w6-kp-13.png)
+
+```
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        if not nums:
+            return 0
+        N = len(nums)
+        dp = [1 for _ in range(N)]
+        ans = 1
+        for i in range(1, N):
+            temp = []
+            temp.append(1)
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    temp.append(dp[j] + 1)
+            dp[i] = max(temp)
+            ans = max(ans, dp[i]) 
+        return ans
+
+# Sample 简洁版
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        if not nums:
+            return 0
+        N = len(nums)
+        dp = [1 for _ in range(N)]
+        ans = 1
+        for i in range(1, N):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], dp[j] + 1)
+            ans = max(ans, dp[i])
+        return ans
+```
+
+3. LC 53
+
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+A subarray is a contiguous part of an array.
+
+给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+子数组 是数组中的一个连续部分。
+
+```
+class Solution(object):
+    def maxSubArray(self, nums):
+        for i in range(1, len(nums)):
+            nums[i]= nums[i] + max(nums[i-1], 0)
+        return max(nums)
+```
+
+LC 53 概念說明
+
+![](w6-kp-14.png)
+
+![](w6-kp-15.png)
+
+![](w6-kp-16.png)
+
+```
+# LC 53  (KP)
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        maxSeq =[0]*len(nums) 
+        maxSeq[0] = nums[0]
+        for i in range(1, len(nums)):
+            maxSeq[i] = max(maxSeq[i-1]+nums[i], nums[i])
+        maximum = max(maxSeq)
+        return maximum
+
+# Sample
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        maximum = min(nums)
+        m = 0
+        for i in range(len(nums)):
+            m = max(m+nums[i], nums[i])
+            if m > maximum:
+                maximum = m 
+        return maximum
+
+# More Sample
+
+class Solution:
+    def maxSubArray(self, nums):
+        for i in range(1, len(nums)):
+            if nums[i - 1] > 0:
+                nums[i] += nums[i - 1]
+        print(nums)
+        return max(nums)
+```
 
 ## 最长公共子序列 (Longest Common Subsequence, LCS)
 
+![](w6-kp-17.png)
+
+![](w6-kp-18.png)
+
+![](w6-kp-19.png)
+
+![](w6-kp-20.png)
+
+![](w6-kp-21.png)
+
+![](w6-kp-22.png)
+
+
 ## 背包问题 (Knapsack Problem)
 
+>
+> 一个旅行者随身携带一个背包，可以放入背包的物品有 n 种，每种物品的重量和价值分别是 $w_{i}$ , $v_j$, $i = 1$, ... , n 。
+>
+> 如果背包的最大容量限制是 b，怎样选择放入背包的物品以使得背包的价值最大 ?
+>
+
+
+0/1 背包是動態規劃研究的重要問題，因為它提供了許多有用的見解。
+
+語句：給定一組從 1 到 n 編號的 n 個物品，每個物品都有一個重量 wi 和一個值 vi，以及最大重量容量 W，最大化背包中物品的值的總和，使得重量小於或等於背包的容量。
+
+天真的解決方案：
+
+讓我們看看天真的解決方案 - 每個項目只有 2 個選擇，要么包含在背包中，要么忽略該項目。
+如果包含項目，則通過減少容量 W - vi 並累積項目值來檢查剩餘項目 (N - 1)。否則，在容量和價值不變的情況下檢查剩餘項目 (N - 1)。同樣，下一個項目將有兩個選擇。如果您將其可視化為樹，它將類似於下面的決策樹：
+
+![](w6-kp-1.png)
+
+每個級別 d 有 $2^d$ 個選項，有 N 個項目，因此復雜度為 $2^N$。
+
+另一種將每個項目視為位的方法，然後我們檢查設置和取消設置的所有可能組合，並找到在滿足權重約束時獲得的最大值。很明顯，我們需要檢查 (1 << n) 或 $2^N$ 次迭代。所以，天真的解決方案是 $2^N$。
+
+
+表格法：
+
+考慮一個非常簡單的例子 - 權重 = {1, 2, 3} 和值 ={6, 10, 12}，我們有容量為 5 的背包。
+
+現在，讓我們使用表格方法實現相同的功能
+
+![](w6-kp-2.png)
+
+在列上，我們將容量從 0 增加到 W，即最大容量從 0 增加到 5。在每一行上，我們考慮項目，我們注意到它的權重和值。對於每一行，我們只考慮前幾行中考慮的項目，對於每一列，我們考慮那麼多容量。基本情況是重量為 0（無物品），無論容量如何，值都是 0，同樣，如果容量為 0，那麼我們不能放置任何物品，因此值將為 0。
+
+第一行（權重為 1 的行）很簡單，我們的權重為 1，因此我們可以從容量 1 填充它的值。因為只有整行才會有值 6
+
+對於第二行，現在權重為 2，我們可以將與其上方行相同的值填充到容量 2。對於容量 2，它將是 2 選擇 - 包括或排除當前項目。如果我們排除當前項目，則值將與最上面的第 6 行相同。如果我們包括，則值將是 = 當前值 (10) + d(1，當前容量 (2) - 重量(2)) = 10 + d( 1, 2- 2) = 10 + 0 = 10。最大值為 10，因此結果為 10。現在，d 函數是前一項 (1)，零權重 = 0。
+這就是我們得到公式的方式：
+
+```
+d(i, w) = Math.Max( d(i - 1, w), d(i - 1, w - weight[i]) + value[i])
+```
+
+
+考慮第 3 行和容量 4，不包括第 3 項，我們從上面的行得到 16 個值，包括它我們發現值 = 12 + d(2, 1) = 12 + 6 = 18。
+
+很明顯，我們對每個容量 0 到 W 和每個項目 0 到 N 只計算一次，所以復雜度是 O(NW)。
+
+參考代碼：
+
+```
+// given N, maxWeight, weights and values
+long[,] d = new long[N + 1, maxWeight + 1];
+
+for (long i = 0; i < N; i++)
+{
+    for (long w = 0; w <= maxWeight; w++)
+    {                    
+        if (weights[i] <= w)
+        {
+            // Exclude or include
+            d[i + 1, w] = Math.Max(d[i, w], d[i, w - weights[i]] + values[i]);
+        }
+
+        else
+        {
+            // Exclude
+            d[i + 1, w] = d[i, w];
+        }                    
+    }
+}
+```
+
+等等，我們如何將時間複雜度從 O(2 ^ N) 提高到 O(N * W)？
+
+這是因為我們重用了已經計算好的解決方案。例如，如果容量 = 7，而不是嘗試不同的項目組合，如 4 + 3、2 + 5、1 + 6、2 + 4 等。我們只做一個計算來排除或包含當前項目。當我們包含當前項目時，我們正在重用已發現容量減少和項目更少的解決方案。
+
+許多動態規劃問題遵循類似的模式，例如
+
+- 1. 我們有優化功能 - 最大化價值，最小化距離等
+
+- 2. 最優子結構 - 遞歸地找到子問題的最優解
+
+- 3. 重疊子問題 - 相同的子問題一次又一次地解決。
+
+動態編程解決每個子問題一次並重用結果。有兩種方法：
+
+1. 自上而下：在子問題的遞歸計算過程中，我們存儲結果，所以當我們再次嘗試子問題時，我們直接使用存儲的結果而不是重新計算。因此，結果應該以可以在 O(1) 時間內檢索到的方式存儲 - 就像使用數組/字典一樣。
+
+2. 自下而上：這裡我們嘗試解決較小的子問題，例如上面的項目和容量，然後到達更大的問題。更大的子問題的解決方案是通過使用已經計算的子問題的解決方案來生成的。
+
+無論哪種情況，我們都需要找出子問題建立的狀態。例如，考慮的項目和剩餘容量是我們的狀態，無論剩餘的項目數量和相同 i 和 w 的總容量如何，我們都具有相同的值。識別狀態對於動態規劃至關重要。
+
+
+```
+from typing import List
+
+def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        bagSize = len(s)+1
+        itemSize = len(wordDict)
+        dp = [False] * bagSize
+        dp[0] = True
+        # 排列而不是组合。 外遍历中的背包。
+        # 允许重叠物品，背包溯源应从小值开始。
+        # 当我们同时遇到一个 True 时中断
+        # Permutation instead of combination. knapsack in outer traversal。
+        # Allowed overlapping items，tracersal of knapsack should start with small value。
+        # break when we meet a True at once
+        for j in range(1, bagSize):
+            for i in range(itemSize):
+                if j-len(wordDict[i])>=0 and dp[j-len(wordDict[i])] and wordDict[i]==s[j-len(wordDict[i]):j]:                    
+                    dp[j] = True
+                    break
+        return dp[-1]
+```
+
+
 ## 投资问题
+
+
+>
+> 设有 m 元钱, n 项投资， 函数 $f_{i}(x)$ 表示将 x 元钱投入到第 i 项项目所产生的效益， i=1 ,... , n。
+>
+> 问:如何分配这 m 元钱，使得投资的总效益最高?
+>
+
+![](w6-kp-3.png)
+
+1. 暴力求解
+
+算法思想为对所有项目进行循环，通过限定条件：总投资金额 = y，得到所有符合的答案，从中选取最大值，即为所求。
+
+```
+if __name__ == '__main__':
+    profitMatrix=[[0,11,12,13,14,15],
+                  [0,0,5,10,15,20],
+                  [0,2,10,30,32,40],
+                  [0,20,21,22,23,24]]
+    a=[0,0,0,0] #存放最优投资方案
+    maxProfit=0
+    sumMoney=0
+    for x1 in range(6):
+        for x2 in range(6):
+            for x3 in range(6):
+                for x4 in range(6):
+                    x=x1+x2+x3+x4
+                    if x==5:
+                        sumMoney=profitMatrix[0][x1]+profitMatrix[1][x2]+profitMatrix[2][x3]+profitMatrix[3][x4]
+                    if sumMoney>maxProfit:
+                        maxProfit=sumMoney
+                        a[0]=x1
+                        a[1]=x2
+                        a[2]=x3
+                        a[3]=x4
+    print("最大利润为："+str(maxProfit))
+    print("最优投资方案为："+str(a))
+```
+
+2. 动态规划
+
+算法思想為假设第 x 个项目投资 m 万元，则将 x 个项目的 y 万元投资问题分解为前 x-1 个项目投资 y-m 万元和第 x 个项目投资 m 万元。这样就可以将问题规模减小，直至仅有一个项目，此时的最佳投资方案就是其本身。
+
+令 outspace[x][y] 表示前 x 个项目投资 y 万元得到的最大利润，令
+
+profitMatrix[i][m]=fi(m)，则动态方程为：
+
+outspace[x][y]=profitMatrix[x][m]+outspace[x-1][y-m]
+
+限定边界为 outspace[0][k]=profitMatrix[0][k]
+
+```
+def getProfit(profitMatrix,outspace,maxProfit):
+    for i in range(6):
+        outspace[0][i]=profitMatrix[0][i]
+    for i in range(1,4):
+        for j in range(6):
+            for m in range(j+1):
+                if outspace[i][j]<profitMatrix[i][m]+outspace[i-1][j-m]:
+                    outspace[i][j]=profitMatrix[i][m]+outspace[i-1][j-m]
+                if maxProfit<outspace[i][j]:
+                    maxProfit=outspace[i][j]
+    return maxProfit
+                
+if __name__ =='__main__':
+    profitMatrix=[[0,11,12,13,14,15],
+                  [0,0,5,10,15,20],
+                  [0,2,10,30,32,40],
+                  [0,20,21,22,23,24]]
+    outspace=[]
+    for i in range(4):
+        outspace.append([])
+        for j in range(6):
+            outspace[i].append(0)
+    maxProfit=0
+    a=getProfit(profitMatrix,outspace,maxProfit)
+    print("最大利润为："+str(a))
+```
+
