@@ -121,6 +121,10 @@ https://www.iis.sinica.edu.tw/zh/page/report/8106.html
 https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E5%AF%86%E7%A2%BC%E5%AD%B8
 
 
+21. 可信计算/可信用计算（Trusted Computing，TC）
+
+https://zh.wikipedia.org/wiki/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97
+
 
 
 
