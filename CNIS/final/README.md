@@ -111,4 +111,16 @@ https://scholars.cityu.edu.hk/en/publications/untitled(03889802-b8e3-4be4-8a82-5
 https://jisajournal.springeropen.com/articles/10.1186/s13174-019-0115-x
 
 
+19. 量子世代下的密碼學：機會與挑戰
+
+https://www.iis.sinica.edu.tw/zh/page/report/8106.html
+
+
+20. 量子密碼學
+
+https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E5%AF%86%E7%A2%BC%E5%AD%B8
+
+
+
+
 
