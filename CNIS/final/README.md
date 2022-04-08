@@ -126,5 +126,27 @@ https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E5%AF%86%E7%A2%BC%E5%AD%B8
 https://zh.wikipedia.org/wiki/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97
 
 
+22. 量子计算与量子密码的原理及研究进展综述, Principle and Research Progress of Quantum Computation and Quantum Cryptography
+
+https://crad.ict.ac.cn/CN/10.7544/issn1000-1239.2020.20200615
+
+
+23. 量子密码学综述
+
+https://blog.csdn.net/weixin_37773108/article/details/106064311
+
+
+24. 可信计算概述
+
+https://zhuanlan.zhihu.com/p/80413237
+
+
+
+
+
+
+
+
+
 
 
