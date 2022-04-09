@@ -160,10 +160,11 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 36. Wireshark 抓包分析 HTTP 和 HTTPS : https://bjjdkp.github.io/post/wireshark-http-https/
 
+37. wireshark 抓包比较 http 与 https 头信息 : https://blog.csdn.net/dengjili/article/details/88745875
 
+38. wireshark 如何扑捉无线局域网数据？ : https://www.zhihu.com/question/28838507/answer/424537660
 
-
-
+39. Research on trusted computing and its development : https://www.researchgate.net/publication/220361980_Research_on_trusted_computing_and_its_development
 
 
 
