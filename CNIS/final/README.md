@@ -7,10 +7,77 @@ PKU 2022 個人實驗報告作業
 
 ## 個人
 
+### 1.
+
+在深圳研究院的 WLAN 中，从请求接入开始，分别运行一种 http 应用以及一种 https 应用，使用 Wireshark 网络抓包工具，进行抓包，并对抓取的信息流程进行分析，试论 Wi-Fi 探针的原理与应用。
+
+
+### 2. 
+
 A) 试论量子计算机的发展对信息安全领域的影响，包括带来的挑战与对策。
 
 B) 综述可信计算技术的最新发展，试论如何利用可信，计算技术提升目前的系统安全。
 
+### PHP
+
+1. XAMPP
+
+2. PHP
+
+```
+php -h
+```
+
+```
+(base) PS D:\git-project\github\kan-cs-report-in-2022\CNIS\final\code> php -h
+Usage: php [options] [-f] <file> [--] [args...]
+   php [options] -r <code> [--] [args...]
+   php [options] [-B <begin_code>] -R <code> [-E <end_code>] [--] [args...]
+   php [options] [-B <begin_code>] -F <file> [-E <end_code>] [--] [args...]
+   php [options] -S <addr>:<port> [-t docroot] [router]
+   php [options] -- [args...]
+   php [options] -a
+
+  -a               Run as interactive shell
+  -c <path>|<file> Look for php.ini file in this directory
+  -n               No configuration (ini) files will be used
+  -d foo[=bar]     Define INI entry foo with value 'bar'
+  -e               Generate extended information for debugger/profiler
+  -f <file>        Parse and execute <file>.
+  -h               This help
+  -i               PHP information
+  -l               Syntax check only (lint)
+  -m               Show compiled in modules
+  -r <code>        Run PHP <code> without using script tags <?..?>
+  -B <begin_code>  Run PHP <begin_code> before processing input lines
+  -R <code>        Run PHP <code> for every input line
+  -F <file>        Parse and execute <file> for every input line
+  -E <end_code>    Run PHP <end_code> after processing all input lines
+  -H               Hide any passed arguments from external tools.
+  -S <addr>:<port> Run with built-in web server.
+  -t <docroot>     Specify document root <docroot> for built-in web server.
+  -s               Output HTML syntax highlighted source.
+  -v               Version number
+  -w               Output source with stripped comments and whitespace.
+  -z <file>        Load Zend extension <file>.
+
+  args...          Arguments passed to script. Use -- args when first argument
+                   starts with - or script is read from stdin
+
+  --ini            Show configuration file names
+
+  --rf <name>      Show information about function <name>.
+  --rc <name>      Show information about class <name>.
+  --re <name>      Show information about extension <name>.
+  --rz <name>      Show information about Zend extension <name>.
+  --ri <name>      Show configuration for extension <name>.
+
+(base) PS D:\git-project\github\kan-cs-report-in-2022\CNIS\final\code>
+```
+
+```
+php -S 127.0.0.1:8989
+```
 
 ## 團隊
 
@@ -21,126 +88,71 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 ## Reference
 
-1. PKI 和 X509 证书
+1. PKI 和 X509 证书 : https://blog.csdn.net/code_segment/article/details/89647358
 
-https://blog.csdn.net/code_segment/article/details/89647358
+2. 后量子时代的数据保护 : https://www.pwccn.com/zh/issues/cybersecurity-and-data-privacy/digital-security-post-quantum-world-mar2021.pdf
 
+3. 朱晓波、陆朝阳、潘建伟：量子计算 - 后摩尔时代计算能力提升的解决方案 : https://www.cas.cn/zjs/202203/t20220302_4826718.shtml
 
-2. 后量子时代的数据保护
+4. 量子信息技术发展与应用研究报告 : https://pdf.dfcfw.com/pdf/H3_AP202112291537269645_1.pdf?1640773504000.pdf
 
-https://www.pwccn.com/zh/issues/cybersecurity-and-data-privacy/digital-security-post-quantum-world-mar2021.pdf
+5. How to create your own PKI with openssl : https://evilshit.wordpress.com/2013/06/19/how-to-create-your-own-pki-with-openssl/
 
+6. Tutorial: Using OpenSSL to create test certificates : https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-x509-openssl
 
-3. 朱晓波、陆朝阳、潘建伟：量子计算 - 后摩尔时代计算能力提升的解决方案
+7. How to Use OpenSSL with a Windows Certificate Authority to Generate TLS Certificates to use with XenServer : https://support.citrix.com/article/CTX128656
 
-https://www.cas.cn/zjs/202203/t20220302_4826718.shtml
+8. 量子计算综述报告 : https://www.163.com/dy/article/GP6O5B960552NPC3.html
 
+9. Research Directions in Quantum Cryptography : https://www.researchgate.net/publication/220840552_Research_Directions_in_Quantum_Cryptography
 
-4. 量子信息技术发展与应用研究报告
+10. State-of-the-Art Survey of Quantum Cryptography : https://link.springer.com/article/10.1007/s11831-021-09561-2
 
-https://pdf.dfcfw.com/pdf/H3_AP202112291537269645_1.pdf?1640773504000.pdf
+11. Quantum cryptography: A survey : https://dl.acm.org/doi/10.1145/1242471.1242474
 
+12. 量子技术时代下的信息安全 : https://www.jsjkx.com/CN/article/openArticlePDF.jsp?id=688
 
-5. How to create your own PKI with openssl
+13. 信息安全 : https://zh.wikipedia.org/wiki/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8
 
-https://evilshit.wordpress.com/2013/06/19/how-to-create-your-own-pki-with-openssl/
+14. 網站常見的資安問題 : https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-29-web-%E7%B6%B2%E7%AB%99%E5%B8%B8%E8%A6%8B%E7%9A%84%E8%B3%87%E5%AE%89%E5%95%8F%E9%A1%8C%E6%9C%89%E5%93%AA%E4%BA%9B-bc47b572d94d
 
+15. Fundamentals of Top 10 Open Web Application Security Project : https://medium.com/@yalexcortes/fundamentals-of-top-10-open-web-application-security-project-af8d5b7aa7dd
 
-6. Tutorial: Using OpenSSL to create test certificates
+16. 机器学习系统的隐私和安全问题综述 : https://crad.ict.ac.cn/CN/10.7544/issn1000-1239.2019.20190437
 
-https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-x509-openssl
+17. 人工智能系统安全与隐私风险 - Security and Privacy Risks in Artificial Intelligence Systems : https://scholars.cityu.edu.hk/en/publications/untitled(03889802-b8e3-4be4-8a82-59b4c2a5bc76).html
 
+18. Detecting web attacks with end-to-end deep learning : https://jisajournal.springeropen.com/articles/10.1186/s13174-019-0115-x
 
-7. How to Use OpenSSL with a Windows Certificate Authority to Generate TLS Certificates to use with XenServer
+19. 量子世代下的密碼學：機會與挑戰 : https://www.iis.sinica.edu.tw/zh/page/report/8106.html
 
-https://support.citrix.com/article/CTX128656
+20. 量子密碼學 : https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E5%AF%86%E7%A2%BC%E5%AD%B8
 
+21. 可信计算/可信用计算（Trusted Computing，TC）: https://zh.wikipedia.org/wiki/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97
 
-8. 量子计算综述报告
+22. 量子计算与量子密码的原理及研究进展综述, Principle and Research Progress of Quantum Computation and Quantum Cryptography : https://crad.ict.ac.cn/CN/10.7544/issn1000-1239.2020.20200615
 
-https://www.163.com/dy/article/GP6O5B960552NPC3.html
+23. 量子密码学综述 : https://blog.csdn.net/weixin_37773108/article/details/106064311
 
+24. 可信计算概述 : https://zhuanlan.zhihu.com/p/80413237
 
-9. Research Directions in Quantum Cryptography
+25. Wireshark 抓包使用指南 : https://zhuanlan.zhihu.com/p/82498482
 
-https://www.researchgate.net/publication/220840552_Research_Directions_in_Quantum_Cryptography
+26. HTTPS 运行流程 : https://zhuanlan.zhihu.com/p/60033345
 
+27. NodeJS-Web Server I : https://ithelp.ithome.com.tw/articles/10273478
 
-10. State-of-the-Art Survey of Quantum Cryptography
+28. Apache 安裝及設定 PHP 環境、SSL 及查看 DNS: https://hoohoo.top/blog/apache-installs-and-sets-php-environments-ssl-and-view-dns/
 
-https://link.springer.com/article/10.1007/s11831-021-09561-2
+29. SSL 憑證加密網站, 從 HTTP 到 HTTPS : https://www.j2h.tw/bbs/bbs16/806.html
 
+30. XAMPP 設定本地端 (localhost) SSL(https) 方法 10 步驟 : https://www.barryblogs.com/xampp-localhost-ssl-certificate/
 
-11. Quantum cryptography: A survey
+31. 關於 PHP 設定 HTTPS 的問題 : https://tw511.com/a/01/17375.html
 
-https://dl.acm.org/doi/10.1145/1242471.1242474
+32. PHP 实现 http 与 https 转化 : https://blog.csdn.net/jimlong/article/details/50549712
 
-
-12. 量子技术时代下的信息安全
-
-https://www.jsjkx.com/CN/article/openArticlePDF.jsp?id=688
-
-
-13. 信息安全
-
-https://zh.wikipedia.org/wiki/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8
-
-
-14. 網站常見的資安問題
-
-https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-29-web-%E7%B6%B2%E7%AB%99%E5%B8%B8%E8%A6%8B%E7%9A%84%E8%B3%87%E5%AE%89%E5%95%8F%E9%A1%8C%E6%9C%89%E5%93%AA%E4%BA%9B-bc47b572d94d
-
-
-15. Fundamentals of Top 10 Open Web Application Security Project
-
-https://medium.com/@yalexcortes/fundamentals-of-top-10-open-web-application-security-project-af8d5b7aa7dd
-
-
-16. 机器学习系统的隐私和安全问题综述
-
-https://crad.ict.ac.cn/CN/10.7544/issn1000-1239.2019.20190437
-
-
-17. 人工智能系统安全与隐私风险 - Security and Privacy Risks in Artificial Intelligence Systems
-
-https://scholars.cityu.edu.hk/en/publications/untitled(03889802-b8e3-4be4-8a82-59b4c2a5bc76).html
-
-
-18. Detecting web attacks with end-to-end deep learning
-
-https://jisajournal.springeropen.com/articles/10.1186/s13174-019-0115-x
-
-
-19. 量子世代下的密碼學：機會與挑戰
-
-https://www.iis.sinica.edu.tw/zh/page/report/8106.html
-
-
-20. 量子密碼學
-
-https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E5%AF%86%E7%A2%BC%E5%AD%B8
-
-
-21. 可信计算/可信用计算（Trusted Computing，TC）
-
-https://zh.wikipedia.org/wiki/%E5%8F%AF%E4%BF%A1%E8%AE%A1%E7%AE%97
-
-
-22. 量子计算与量子密码的原理及研究进展综述, Principle and Research Progress of Quantum Computation and Quantum Cryptography
-
-https://crad.ict.ac.cn/CN/10.7544/issn1000-1239.2020.20200615
-
-
-23. 量子密码学综述
-
-https://blog.csdn.net/weixin_37773108/article/details/106064311
-
-
-24. 可信计算概述
-
-https://zhuanlan.zhihu.com/p/80413237
-
-
+33. PHP - 利用 Openssl 實作 ssl 網頁加密 : https://joe01032002.pixnet.net/blog/post/92665237
 
 
 

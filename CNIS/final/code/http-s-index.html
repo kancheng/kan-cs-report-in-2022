@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TEST - HTTP & HTTPS</title>
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>TEST - HTTP & HTTPS</h1>
+	<div>
+		<span id="show"></span>
+	</div>
+</body>
+<script type="text/javascript">
+	var ishttps = 'https:' == document.location.protocol ? true: false;
+	if(ishttps){
+		// alert("这是一个 HTTPS 请求");
+		document.getElementById("show").textContent="这是一个 HTTPS 请求";
+	}else{
+		// alert("这是一个 HTTP 请求");
+		document.getElementById("show").textContent="这是一个 HTTP 请求";
+	}
+</script>
+</html>
