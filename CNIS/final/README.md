@@ -166,5 +166,13 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 39. Research on trusted computing and its development : https://www.researchgate.net/publication/220361980_Research_on_trusted_computing_and_its_development
 
+40. WiFi 探针的原理与安全 : https://www.yisu.com/zixun/76931.html
+
+41. WiFi 探针技术 : https://zhuanlan.zhihu.com/p/98103330
+
+42. WiFi 探针获取无线网络信息技术简介与测试 : https://www.anquanke.com/post/id/181171
+
+
+
 
 
