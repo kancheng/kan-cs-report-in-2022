@@ -82,6 +82,10 @@ PKU 2022 個人實驗報告作業
 
 9. https://github.com/luanshiyinyang/FacialExpressionRecognition
 
+10. https://github.com/zhaohaodang/vue-WeChat
+
+11. https://github.com/zhangpengpengpeng/PedestrianDetectionSystem
+
 
 ## Web GitHub & Code
 

@@ -154,7 +154,9 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 33. PHP - 利用 Openssl 實作 ssl 網頁加密 : https://joe01032002.pixnet.net/blog/post/92665237
 
+34. Create a self signed certificate in Windows [Full Guide]: https://windowsreport.com/create-self-signed-certificate/
 
+35. 如何刪除裝置憑證？ (Windows 10): https://support.hdeone.com/hc/zh-tw/articles/360014871753-%E5%A6%82%E4%BD%95%E5%88%AA%E9%99%A4%E8%A3%9D%E7%BD%AE%E6%86%91%E8%AD%89-Windows-10-
 
 
 
