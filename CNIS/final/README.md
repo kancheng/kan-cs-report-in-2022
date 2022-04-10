@@ -172,7 +172,7 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 42. WiFi 探针获取无线网络信息技术简介与测试 : https://www.anquanke.com/post/id/181171
 
-
+43. 量子计算与机器学习: 量子生成对抗网络 QGAN : https://zhuanlan.zhihu.com/p/72534334
 
 
 
