@@ -178,3 +178,5 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 45. OpticalFlow-in-Deepfake-Detection-Application : https://github.com/NUISTGY/OpticalFlow-in-Deepfake-Detection-Application
 
+46. Deepfakes-Detection-Papers : https://github.com/chenshen03/Deepfakes-Detection-Papers
+
