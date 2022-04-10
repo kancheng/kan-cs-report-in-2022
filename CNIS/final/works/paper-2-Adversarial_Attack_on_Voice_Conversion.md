@@ -45,3 +45,11 @@ It was shown that the speaker characteristics of the converted utterances were m
   pages={552-559},
   doi={10.1109/SLT48900.2021.9383529}}
 ```
+
+## Code
+
+1. https://yistlin.github.io/attack-vc-demo/
+
+2. https://github.com/cyhuang-tw/attack-vc
+
+3. https://github.com/resemble-ai/Resemblyzer
