@@ -174,5 +174,5 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 43. 量子计算与机器学习: 量子生成对抗网络 QGAN : https://zhuanlan.zhihu.com/p/72534334
 
-
+44. TPM分析笔记 TPM 2.0 规范文档 : https://blog.csdn.net/xy010902100449/article/details/123312545
 
