@@ -114,6 +114,8 @@ $$
 Figure 1: Visual artifacts of forged images in existing datasets, including color mismatch (row 1 col 1, row 2 col 3,
 row 3 col 1, row 3 col 2, row 3 col 3) , shape distortion (row 1 col 3, row 2 col 1), visible boundaries (row 2 col 2), and facial blurring (row 1 col 2, row 4 col 1, row 4 col 2, row 4 col3).
 
+圖 1：現有數據集中偽造圖像的視覺偽影，包括顏色不匹配（第 1 行第 1 行，第 2 行第 3 行，第 3 行第 1 行、第 3 行第 2 行、第 3 行第 3 行）、形狀失真（第 1 行第 3 行、第 2 行第 1 行）、可見邊界（第 2 行第 2 行）和臉部模糊（第 1 行第 2 行、第 4 行）第 1 列，第 4 行 第 2 列，第 4 行 col3)。
+
 Recent years have witnessed the rapid development of Deepfake techniques, which enable attackers to manipulate the facial area of an image and generate a forged image. 
 
 As synthesized images are becoming more photo-realistic, it is extremely difficult to distinguish whether an image/video has been manipulated even for human eyes. 
@@ -132,6 +134,14 @@ to consider the relationships of pixels globally due to constrained receptive fi
 We posit that relationships among pixels are particularly useful for Deepfake detection, since pixels in certain artifacts are clearly different from the remaining pixels in the image. 
 
 On the other hand, we observe that forgery patterns vary in sizes. 
+
+
+
+
+近年來 Deepfake 技術迅速發展，使攻擊者能夠操縱圖像的面部區域並生成偽造圖像，且隨著合成圖像變得更加逼真，即使是人眼也很難區分圖像/視頻是否已被操縱。同時這些偽造的圖像可能會出於惡意目的在互聯網上傳播，這可能會帶來社會影響。上述挑戰推動了使用深度神經網絡的 Deepfake 取證技術的發展。
+
+大多數現有方法將從整個圖像中裁剪出的人臉區域作為輸入，並使用深度 CNN 模型生成二進制真實/虛假預測。這些方法通過堆疊卷積操作以單一尺度從面部區域捕獲偽影。雖然通過堆疊卷積實現了不錯的檢測結果，但它們擅長對局部信息進行建模但失敗了
+由於受約束的感受野，全局考慮像素的關係。假設像素之間的關係對於 Deepfake 檢測特別有用，因為某些偽像中的像素明顯不同於圖像中的其餘像素。另一方面，研究者也觀察到偽造圖案的大小各不相同。
 
 For instance, Figure 1 gives examples from popular Deepfake datasets. 
 
