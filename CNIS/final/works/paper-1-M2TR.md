@@ -107,3 +107,217 @@ $$
 $$
 f_{c m f}=C o n v_{3 \times 3}\left(f_{s}+f_{m t}+f_{f u s e}\right)
 $$
+
+
+## 1. INTRODUCTION
+
+Figure 1: Visual artifacts of forged images in existing datasets, including color mismatch (row 1 col 1, row 2 col 3,
+row 3 col 1, row 3 col 2, row 3 col 3) , shape distortion (row 1 col 3, row 2 col 1), visible boundaries (row 2 col 2), and facial blurring (row 1 col 2, row 4 col 1, row 4 col 2, row 4 col3).
+
+Recent years have witnessed the rapid development of Deepfake techniques, which enable attackers to manipulate the facial area of an image and generate a forged image. 
+
+As synthesized images are becoming more photo-realistic, it is extremely difficult to distinguish whether an image/video has been manipulated even for human eyes. 
+
+At the same time, these forged images might be distributed on the Internet for malicious purposes, which could bring societal implications. 
+
+The above challenges have driven the development of Deepfake forensics using deep neural networks.
+
+Most existing approaches take as inputs a face region cropped out of an entire image and produce a binary real/fake prediction with deep CNN models. 
+
+These methods capture artifacts from the face regions in a single scale with stacked convolutional operations. 
+
+While decent detection results are achieved by stacked convolutions, they excel at modeling local information but fails
+to consider the relationships of pixels globally due to constrained receptive field.
+
+We posit that relationships among pixels are particularly useful for Deepfake detection, since pixels in certain artifacts are clearly different from the remaining pixels in the image. 
+
+On the other hand, we observe that forgery patterns vary in sizes. 
+
+For instance, Figure 1 gives examples from popular Deepfake datasets. 
+
+We can see that some forgery traces such as color mismatch occur in small regions (like the mouth corners), while other forgery signals such as visible boundaries that almost span the entire image (see row 3 col 2 in Figure 1). 
+
+Therefore, how to effectively explore regions of different scales in images is extremely critical for Deepfake detection.
+
+To address the above limitations, we explore transformers to model the relationships of pixels due to their strong capability of long-term dependency modeling for both natural language processing tasks and computer vision tasks.
+
+Unlike traditional transformers operating on a single-scale, we propose a multi-scale architecture to capture forged regions that potentially have different sizes. 
+
+Furthermore, suggest that the artifacts of forged images will be destroyed by perturbations such as JPEG compression, making them imperceptible in the RGB domain but can still be detected in the frequency domain. 
+
+This motivates us to use frequency information as a complementary modality in order to reveal artifacts that are no longer perceptible in the RGB domain.
+
+Figure 2: Overview of the proposed M2TR.
+
+The input is a suspicious face image (H x W x C), and the output includes both a forgery detection result and a predicted mask (H x W x 1), which locates the forgery regions.
+
+To this end, we introduce M2TR, a Multi-modal Multi-scale Transformer, for Deepfake detection. M2TR is a multimodal framework, consisting of a Multi-scale Transformer (MT) module and a Cross Modality Fusion (CMF) module. 
+
+In particular, M2TR first extracts features of an input image with a few convolutional layers.
+
+We then generate patches of different sizes from the feature map, which are used as inputs to different heads of the transformer. 
+
+Similarities of spatial patches across different scales are calculated to capture the inconsistency among different regions at multiple scales.
+
+This benefits the discovery of forgery artifacts, since certain subtle forgery clues, e.g., blurring and color inconsistency, are often times hidden in small local patches. 
+
+The outputs from the multi-scale transformer are further augmented with frequency information to derive fused feature representations using a cross modality fusion module. 
+
+Finally, the integrated features are used as inputs to several convolutional layers to generate prediction results. 
+
+In addition to binary classification, we also predict the manipulated regions of the face image in a multi-task manner. 
+
+The rationale behind is that binary classification tends to result in easily overfitted models.
+
+Therefore, we use face masks as additional supervisory signals to mitigate overfitting.
+
+The availability of large-scale training data is an essential factor in the development of Deepfake detection methods.
+
+Existing Deepfake datasets include the UADFV dataset, the DeepFake-TIMIT dataset (DF-TIMIT), the FaceForensics++ dataset (FF++), the Google DeepFake detection dataset (DFD), the FaceBook DeepFake detection challenge (DFDC) dataset, the WildDeepfake dataset, and the Celeb-DF dataset. 
+
+However, the quality of visual samples in current Deepfake datasets is limited, containing clear artifacts (see Figure 1) like color mismatch, shape distortion, visible boundaries, and facial blurring.
+
+Therefore, there is still a huge gap between the images in existing datasets and forged images in the wild which are circulated on the Internet.
+
+Although the visual quality of Celeb-DF is relatively high compared to others, they use only one face swapping method to generate forged images, lacking sample diversity. 
+
+In addition, there are no unbiased and comprehensive evaluation metrics to measure the quality of Deepfake datasets, which is not conducive to the development of subsequent Deepfake research.
+
+In this paper, we present a large-scale and high-quality Deepfake dataset, Swapping and Reenactment DeepFake (SR-DF) dataset, which is generated using the state-of-the-art face swapping and facial reenactment methods for the development and evaluation of Deepfake detection methods. 
+
+We visualize in Figure 4 the sampled forged faces in the proposed SR-DF dataset.
+
+Besides, we propose a set of evaluation criteria to measure the quality of Deepfake
+datasets from different perspectives.
+
+We hope the release of SR-DF dataset and the evaluation systems will benefit the future research of Deepfake detection.
+
+Our work makes the following key contributions:
+
+- We propose a Multi-modal Multi-scale Transformer (M2TR) for Deepfake forensics, which uses a multi-scale transformer to detect local inconsistency at different scales and leverages frequency features to improve the robustness of detection. Extensive experiments demonstrate that our method achieves state-of-the-art detection performance on different datasets.
+
+- We introduce a large-scale and challenging Deepfake dataset SR-DF, which is generated with state-of-the-art face swapping and facial reenactment methods.
+
+- We construct the most comprehensive evaluation system and demonstrate that SR-DF dataset is well-suited for the
+training Deepfake detection methods due to its visual quality and diversity.
+
+## 2. RELATED WORK
+
+- Deepfake Generation
+
+- Deepfake Detection 
+
+- Visual Transformers
+
+## 3. APPROACH
+
+Figure 3: Illustration of the Multi-scale Transformer.
+
+3.1 Multi-scale Transformer
+
+3.2 Cross Modality Fusion
+
+3.3 Loss functions
+
+- Cross-entropy loss.
+
+- Segmentation loss
+
+- Contrastive loss
+
+## 4. SR-DF DATASET
+
+4.1 Dataset Construction
+
+- Synthesis Approaches
+
+- Post-processing
+
+Figure 4: Example frames from the SR-DF dataset. The first two rows are generated by manipulating facial expressions: (a) First-order-motion and (b) IcFace, while the last two rows are generated by manipulating facial identity: (c) FaceShifter and (d) FSGAN.
+
+
+Figure 5: Synthesized images of blending the altered face into the background image.We compare three blending methods: naive stitching (left), stitching with color transfer (middle), and stitching with DoveNet (right).
+
+Table 1: A comparison of SR-DF dataset with existing datasets for Deepfake detection. LQ: low-quality, HQ: highquality.
+
+- Existing Deepfake Datasets
+
+4.2 Visual Quality Assessment
+
+- Mask-SSIM
+
+- Perceptual Loss
+
+Table 2: Average Mask-SSIM scores and perceptual loss of different Deepfake datasets.
+
+The value of Mask-SSIM is in the range of [0,1], with the higher value corresponding to better image quality.
+
+We follow to calculate MaskSSIM on videos that we have exact corresponding correspondences for DFD and DFDC dataset. 
+
+For perceptual loss, lower value indicates the better image quality.
+
+Figure 6: A feature perspective comparison of Celeb-DF, FF++ dataset (RAW) and SR-DF dataset. 
+
+We use an ImageNetpretrained ResNet-18 network to extract features and t-SNE for dimension reduction.
+
+Note that we only select one frame in each video for visualization.
+
+Table 3: Average 𝐸𝑤𝑎𝑟𝑝 values of different datasets, with lower value corresponding to smoother temporal results.
+
+We also calculate the 𝐸𝑤𝑎𝑟𝑝 of pristine videos in our dataset.
+
+- Ewarp
+
+- Feature Space Distribution
+
+## 5. EXPERIMENTS
+
+5.1 Experimental Settings
+
+- Datasets
+
+- Evaluation
+
+- Implementation Details
+
+5.2 Evaluation on FaceForensics++
+
+Table 4: Quantitative frame-level detection results on FaceForensics++ dataset under all quality settings. 
+
+The best results are marked as bold.
+
+5.3 Evaluation on Celeb-DF and SR-DF
+
+5.4 Generalization Ability
+
+Table 5: Frame-level AUC scores (%) of various Deepfake detection methods on Celeb-DF and SR-DF dataset.
+
+5.5 From Frames to Videos
+
+5.6 Ablation study
+
+Table 6: AUC scores (%) for cross-dataset evaluation on FF++, Celeb-DF, and SR-DF datasets. 
+
+Note that some methods have not made their code public, so we directly use the data reported in their paper.
+
+“−” denotes the results are unavailable.
+
+- Effectiveness of Different Components
+
+Table 7: Quantitative video-level detection results on different versions of FF++ dataset and SR-DF dataset.
+
+M2TR mean denotes averaging the extracted features obtained by M2TR for all frames as the video-level representation, while M2TR vt f denotes using VTF Block for temporal fusion.
+
+The best results are marked as bold.
+
+Table 8: Ablation results on FF++ (HQ) and FF++ (LQ) with and without Multi-scale Transformer and CMF.
+
+- Effectiveness of the Multi-scale Design
+
+- Effectiveness of the Contrastive Loss
+
+Table 9: Ablation results on FF++ (HQ) using multi-scale Transformer (MT) or single-scale transformer.
+
+Table 10: AUC (%) for cross-dataset evaluation on FF++ (HQ), Celeb-DF, and SR-DF with (denoted as M2TR) and without (denoted as M2TR ncl) the supervision of constrative loss.
+
+## 6. CONCLUSION
