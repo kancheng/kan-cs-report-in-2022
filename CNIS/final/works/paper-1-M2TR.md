@@ -114,7 +114,8 @@ $$
 Figure 1: Visual artifacts of forged images in existing datasets, including color mismatch (row 1 col 1, row 2 col 3,
 row 3 col 1, row 3 col 2, row 3 col 3) , shape distortion (row 1 col 3, row 2 col 1), visible boundaries (row 2 col 2), and facial blurring (row 1 col 2, row 4 col 1, row 4 col 2, row 4 col3).
 
-圖 1：現有數據集中偽造圖像的視覺偽影，包括顏色不匹配（第 1 行第 1 行，第 2 行第 3 行，第 3 行第 1 行、第 3 行第 2 行、第 3 行第 3 行）、形狀失真（第 1 行第 3 行、第 2 行第 1 行）、可見邊界（第 2 行第 2 行）和臉部模糊（第 1 行第 2 行、第 4 行）第 1 列，第 4 行 第 2 列，第 4 行 col3)。
+圖 1：現有數據集中偽造圖像的視覺偽影，包括顏色不匹配 (row 1 col 1, row 2 col 3,
+row 3 col 1, row 3 col 2, row 3 col 3) 、形狀失真 (row 1 col 3, row 2 col 1)、可見邊界 (row 2 col 2) 和臉部模糊 (row 1 col 2, row 4 col 1, row 4 col 2, row 4 col3)。
 
 Recent years have witnessed the rapid development of Deepfake techniques, which enable attackers to manipulate the facial area of an image and generate a forged image. 
 
