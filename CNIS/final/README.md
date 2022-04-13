@@ -180,3 +180,6 @@ B) 利用信息安全技术，提升一种智能应用的安全性。并试论�
 
 46. Deepfakes-Detection-Papers : https://github.com/chenshen03/Deepfakes-Detection-Papers
 
+47. 微軟突破技術限制，實現拓撲量子位元 : https://www.ithome.com.tw/news/149916
+
+
