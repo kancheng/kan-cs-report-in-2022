@@ -57,6 +57,10 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 70. Climbing Stairs 爬楼梯
 
+72. Edit Distance 编辑距离
+
+85. Maximal Rectangle 最大矩形
+
 120. Triangle, 三角形最小路径和
 
 122. Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II
@@ -68,6 +72,8 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 141. Linked List Cycle 环形链表
 
 148. Sort List 排序链表
+
+152. Maximum Product Subarray 乘积最大子数组
 
 206. Reverse Linked List 反转链表
 
@@ -83,9 +89,12 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 300. Longest Increasing Subsequence 最长递增子序列
 
+312. Burst Balloons 戳气球
+
 392. Is Subsequence 判断子序列
 
 746. Min Cost Climbing Stairs 爬楼梯的最小损失
+
 
 
 ## LeetCode 1. Two Sum 兩數之和
@@ -1667,6 +1676,249 @@ print(ob1.climbStairs(x2))
 
 1. 動態規劃，遞迴公式 f(n-1) + f(n-2)，其結果就是費氏數列。來判斷該值有沒有在字典裡面。相對與第一種課堂範例來的理想。
 
+
+## LeetCode 72. Edit Distance 编辑距离
+
+Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2.
+
+You have the following three operations permitted on a word:
+
+- Insert a character
+
+- Delete a character
+
+- Replace a character
+
+
+给你两个单词 word1 和 word2， 请返回将 word1 转换成 word2 所使用的最少操作数 。
+
+你可以对一个单词进行如下三种操作：
+
+- 插入一个字符
+
+- 删除一个字符
+
+- 替换一个字符
+
+
+Example 1:
+
+```
+Input: word1 = "horse", word2 = "ros"
+Output: 3
+Explanation: 
+horse -> rorse (replace 'h' with 'r')
+rorse -> rose (remove 'r')
+rose -> ros (remove 'e')
+
+```
+
+输入：word1 = "horse", word2 = "ros"
+输出：3
+解释：
+horse -> rorse (将 'h' 替换为 'r')
+rorse -> rose (删除 'r')
+rose -> ros (删除 'e')
+
+
+Example 2:
+
+```
+Input: word1 = "intention", word2 = "execution"
+Output: 5
+Explanation: 
+intention -> inention (remove 't')
+inention -> enention (replace 'i' with 'e')
+enention -> exention (replace 'n' with 'x')
+exention -> exection (replace 'n' with 'c')
+exection -> execution (insert 'u')
+```
+
+输入：word1 = "intention", word2 = "execution"
+输出：5
+解释：
+intention -> inention (删除 't')
+inention -> enention (将 'i' 替换为 'e')
+enention -> exention (将 'n' 替换为 'x')
+exention -> exection (将 'n' 替换为 'c')
+exection -> execution (插入 'u')
+
+
+Constraints:
+
+
+- 0 <= word1.length, word2.length <= 500
+
+- word1 and word2 consist of lowercase English letters.
+
+- word1 和 word2 由小写英文字母组成
+
+```
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        dp = [[0] * (len(word2)+1) for _ in range(len(word1)+1)]
+        for i in range(len(word1)+1):
+            dp[i][0] = i
+        for j in range(len(word2)+1):
+            dp[0][j] = j
+        for i in range(1, len(word1)+1):
+            for j in range(1, len(word2)+1):
+                if word1[i-1] == word2[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1]) + 1
+        return dp[-1][-1]
+
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        n1 = len(word1)
+        n2 = len(word2)
+        if not n1 or not n2:
+            return n1 + n2
+        dp=[[0] * (n2+1) for _ in range(n1 +1)]
+        for j in range(1, n2 + 1):
+            dp[0][j] = dp[0][j-1] + 1
+        for i in range(1, n1 + 1):
+            dp[i][0] = dp[i-1][0]+ 1
+        for i in range(1, n1 + 1):
+            for j in range(1, n2 + 1):
+                if word1[i-1] == word2[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j]= min(dp[i][j-1],dp[i-1][j],dp[i-1][j-1]) + 1
+        return dp[-1][-1]
+
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        n1 = len(word1)
+        n2 = len(word2)
+        if not n1 or not n2:
+            return n1 + n2
+        dp0 = list(range(n2+1))
+        dp1=[0]*(n2+1)
+        for i in range(n1):
+            dp1[0]=i+1
+            for j in range(len(word2)):
+                if word1[i] == word2[j]:
+                    dp1[j+1] = dp0[j]
+                else:
+                    dp1[j+1] = min(dp0[j+1], dp1[j], dp0[j]) + 1
+            dp0 = dp1[:]
+        return dp1[-1]
+```
+
+## LeetCode 85. Maximal Rectangle 最大矩形
+
+Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
+
+给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
+
+
+![](lc-85-p-example.png)
+
+Example 1:
+
+```
+Input: matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]
+Output: 6
+Explanation: The maximal rectangle is shown in the above picture.
+```
+
+最大矩形如上图所示。
+
+Example 2:
+
+```
+Input: matrix = []
+Output: 0
+```
+
+Example 3:
+
+```
+Input: matrix = [["0"]]
+Output: 0
+```
+
+Example 4:
+
+```
+Input: matrix = [["1"]]
+Output: 1
+```
+
+Example 5:
+
+```
+Input: matrix = [["0","0"]]
+Output: 0
+```
+
+Constraints:
+
+- rows == matrix.length
+
+- cols == matrix[i].length
+
+- 1 <= row, cols <= 200
+
+- matrix[i][j] is '0' or '1'.
+
+```
+from typing import List
+class Solution:
+    def maximalRectangle(self, matrix: List[List[str]]) -> int:
+        if not matrix or not matrix[0]:
+            return 0
+        nums = [int(''.join(row), base=2) for row in matrix] # 先将每一行变成2进制的数字
+        ans, N = 0, len(nums)
+        for i in range(N):# 遍历每一行，求以这一行为第一行的最大矩形
+            j, num = i, nums[i]
+            while j < N: # 依次与下面的行进行与运算。
+                num = num & nums[j]  # num 中为1的部分，说明上下两行该位置都是1，相当于求矩形的高，高度为j-i+1
+                # print('num=',bin(num))
+                if not num: # 没有1说明没有涉及第i到第j行的竖直矩形
+                    break
+                width, curnum = 0, num
+                while curnum: 
+                    # 将cursum与自己右移一位进行&操作。如果有两个1在一起，那么cursum才为1，相当于求矩形宽度
+                    width += 1
+                    curnum = curnum & (curnum >> 1)
+                    # print('curnum',bin(curnum))
+                ans = max(ans, width * (j-i+1))
+                # print('i','j','width',i,j,width)
+                # print('ans=',ans)
+                j += 1
+        return ans
+
+class Solution:
+    def maximalRectangle(self, matrix) -> int:
+        if len(matrix) == 0:
+            return 0
+        res = 0
+        m, n = len(matrix), len(matrix[0])
+        heights = [0] * n
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == '0':
+                    heights[j] = 0
+                else:
+                    heights[j] = heights[j] + 1
+            res = max(res, self.largestRectangleArea(heights))
+        return res
+
+    def largestRectangleArea(self, heights):
+        heights.append(0)
+        stack = []
+        res = 0
+        for i in range(len(heights)):
+            while stack and heights[i] < heights[stack[-1]]:
+                s = stack.pop()
+                res = max(res, heights[s] * ((i - stack[-1] - 1) if stack else i))
+            stack.append(i)
+        return res
+```
+
 ## LeetCode 120. Triangle, 三角形最小路径和
 
 Given a triangle array, return the minimum path sum from top to bottom.
@@ -2130,6 +2382,70 @@ class Solution:
         for i in range(n-1):
             mem[i].next = mem[i+1]     
         return h_head.next
+```
+
+## LeetCode 152. Maximum Product Subarray 乘积最大子数组
+
+Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product, and return the product.
+
+The test cases are generated so that the answer will fit in a 32-bit integer.
+
+A subarray is a contiguous subsequence of the array.
+
+给你一个整数数组 nums，请你找出数组中乘积最大的非空连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。
+
+测试用例的答案是一个 32-位 整数。
+
+子数组 是数组的连续子序列。
+
+
+Example 1:
+
+```
+Input: nums = [2,3,-2,4]
+Output: 6
+Explanation: [2,3] has the largest product 6.
+```
+
+子数组 [2,3] 有最大乘积 6。
+
+Example 2:
+
+```
+Input: nums = [-2,0,-1]
+Output: 0
+Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
+```
+
+结果不能为 2, 因为 [-2,-1] 不是子数组。
+
+Constraints:
+
+- $1 <= nums.length <= 2 * 10^{4}$
+
+- -10 <= nums[i] <= 10
+
+- The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+nums 的任何前缀或后缀的乘积都 保证 是一个 32-位 整数
+
+
+## 解题思路
+
+1. 给定一个整数数组 nums ，找出一个序列中乘积最大的连续子序列（该序列至少包含一个数）。
+
+2. 给出一个数组，要求找出这个数组中连续元素乘积最大的值。
+
+3. 这一题是 DP 的题，状态转移方程是：最大值是 Max(f(n)) = Max( Max(f(n-1)) * n, Min(f(n-1)) * n)；最小值是 Min(f(n)) = Min( Max(f(n-1)) * n, Min(f(n-1)) * n)。只要动态维护这两个值，如果最后一个数是负数，最大值就在负数 * 最小值中产生，如果最后一个数是正数，最大值就在正数 * 最大值中产生。
+
+```
+class Solution:
+    def maxProduct(self, A):
+        B = A[::-1]
+        for i in range(1, len(A)):
+            A[i] *= A[i - 1] or 1
+            B[i] *= B[i - 1] or 1
+        return max(max(A),max(B)) 
 ```
 
 ## LeetCode 206. Reverse Linked List 反转链表
@@ -2829,7 +3145,89 @@ class Solution(object):
         return ans
 ```
 
+## LeetCode 312. Burst Balloons 戳气球
 
+You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with a number on it represented by an array nums. You are asked to burst all the balloons.
+
+If you burst the ith balloon, you will get nums[i - 1] * nums[i] * nums[i + 1] coins. If i - 1 or i + 1 goes out of bounds of the array, then treat it as if there is a balloon with a 1 painted on it.
+
+Return the maximum coins you can collect by bursting the balloons wisely.
+
+有 n 个气球，编号为0 到 n - 1，每个气球上都标有一个数字，这些数字存在数组 nums 中。
+
+现在要求你戳破所有的气球。戳破第 i 个气球，你可以获得 nums[i - 1] * nums[i] * nums[i + 1] 枚硬币。 这里的 i - 1 和 i + 1 代表和 i 相邻的两个气球的序号。如果 i - 1或 i + 1 超出了数组的边界，那么就当它是一个数字为 1 的气球。
+
+求所能获得硬币的最大数量。
+
+
+Example 1:
+
+```
+Input: nums = [3,1,5,8]
+Output: 167
+Explanation:
+nums = [3,1,5,8] --> [3,5,8] --> [3,8] --> [8] --> []
+coins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167
+```
+
+
+Example 2:
+
+```
+Input: nums = [1,5]
+Output: 10
+```
+
+
+Constraints:
+
+- n == nums.length
+
+- 1 <= n <= 300
+
+- 0 <= nums[i] <= 100
+
+```
+from typing import List
+def maxCoins(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
+        if len(nums) < 2:
+            return nums[0]
+        nums = [1] + nums + [1]
+        dp = [[0] * len(nums) for _ in range(len(nums))]
+        for i in range(len(nums) - 1, -1, -1):
+            for j in range(i + 2, len(nums)):
+                for k in range(i + 1, j):
+                    dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j] + nums[i] * nums[k] * nums[j])
+        # print(dp)
+        return dp[0][-1]
+
+class Solution:
+    def maxCoins(self, nums):
+        if not nums: return 0
+        if len(nums) == 1: return nums[0]
+        nums = [1] + nums + [1]
+        dp = [[0] * len(nums) for _ in range(len(nums))]
+        for i in range(len(nums)-1, -1, -1): 
+            for j in range(i+2, len(nums)):
+                for k in range(i+1, j):
+                    dp[i][j] = max(dp[i][j], dp[i][k]+dp[k][j]+nums[i]*nums[k]*nums[j])
+        return dp[0][-1]
+
+class Solution:
+    def maxCoins(self, nums): 
+        n = len(nums) 
+        nums.insert(0, 1)
+        nums.append(1)
+        c = [[0] * (n + 2) for _ in range(n + 2)]
+        for len_ in range(1, n + 1):
+            for left in range(1, n - len_ + 2):
+                right = left + len_ - 1
+                for k in range(left, right + 1):
+                    c[left][right] = max(c[left][right], c[left][k - 1] + nums[left - 1] * nums[k] * nums[right + 1] + c[k + 1][right])
+        return c[1][n]
+```
 ## LeetCode 392. Is Subsequence 判断子序列
 
 Given two strings s and t, return true if s is a subsequence of t, or false otherwise.

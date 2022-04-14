@@ -159,3 +159,34 @@ LeetCode 746. Min Cost Climbing Stairs 爬楼梯的最小损失
 背包问题 (Knapsack Problem)
 
 投资问题
+
+
+### 7. W7 :
+
+- LeetCode :
+
+LeetCode 72. Edit Distance 编辑距离
+
+LeetCode 85. Maximal Rectangle 最大矩形
+
+LeetCode 152. Maximum Product Subarray 乘积最大子数组
+
+LeetCode 312. Burst Balloons 戳气球
+
+- Knowledge Point : 
+
+背包问题 (Knapsack Problem)
+
+投资问题
+
+编辑距离, LC 72, LC 312
+
+
+### 8. W8 :
+
+- LeetCode :
+
+
+- Knowledge Point : 
+
+
