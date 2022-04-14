@@ -87,6 +87,8 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 27. 投资问题
 
+28. 编辑距离, LC 72, LC 312
+
 
 ## 平方根函數
 
@@ -2719,3 +2721,345 @@ if __name__ =='__main__':
     print("最大利润为："+str(a))
 ```
 
+## 背包问题 (Knapsack Problem)
+
+# 15. 背包问题 (Knapsack Problem)
+
+一个旅行者随身携带一个背包，可以放入背包的物品有 $n$ 种，每种物品的重量和价值分别是 $w_{j}, v_{j}, i = 1, .., n $。如果背包的最大容量限制是 $b$，怎样选择放入背包的物品以使得背包的价值最大 ?
+
+## 背包问题是什么?
+
+定义:给定一组物品,每种物品都有自己的重量和价格,在限定的总重量内,我们如何选择,才能使得物品的总价格最高;
+
+背包问题的一个例子:应该选择哪些盒子,才能使价格尽可能地大,而保持重量小于或等于 15kg?
+
+1. 0-1 背包问题;
+2. 有界背包问题 (多重背包问题);
+3. 无界背包问题 (完全背包问题);
+
+1. 当每种物体都只有一个时, 上述描述为 0-1 背包问题;
+2. 当每种物体都有多个时, 上述描述为有界背包问题;
+3. 当每种物体都有无限个时, 上述描述为无界背包问题; 
+
+(1) 01背包问题
+
+- 二维动态规划
+
+- 一维动态规划
+
+(2) 完全背包问题
+
+- 二维动态规划
+
+- 一维动态规划
+
+- 一维动态规划 + 省略取物品次数 k 操作
+
+## 1) 01包问题
+
+### 二维动态规划
+
+若每種物品只能使用一次，則該問題為 01 背包問題。
+
+定义状态 : dp[i][j]，代表前个物品，存入容量为的背包里的最大价值。
+
+状态转移 : dp[ilil= max(dp[i-1][j],dp[i-1][j - w[i]] + v[i])，其中不取第个物品对应的项是 dp[i][j] = dp[i-1][j]，取第 i 个物品对应的是 dp[i][j] = dp[i-1][j-w[i]] + v[i]。
+
+### 一维动态规划
+
+从状态转移公式中可以看出来当前层的状态只与上一层状态有关，因此可以优化 dp 二维列表为一维列表，要注意的是要从后往前更新确保更新第 i 层用的是第 i-1 层的状态值。
+
+## 2)完全背包问题
+
+### 二维动态规划
+
+完全背包问题与 01 背包问题最大的区别就是每一个物品可以选无数次，因此当我们考虑到第个物品时，我们应该考虑的情况是: 不选这个物品、选一次这个物品、选两次这个物品。到选的物品重量超过背包容量(k*w[i]>j)，然后再在这些情况中选价值最大的。
+
+定义状态: dp[i][j]，代表前个物品，存入容量为的背包里的最大价值。
+
+状态转移: dp[i][j] = max(dp[i-1][j], dp[i-1][j- k * w[i] + k * v[i])。
+
+### 一维动态规划
+
+与 01 背包问题同理,由于第 i 层状态只与第 1 层状态有关,因此从后往前更新确保更新第 i 层用的是第 i- 1 层的状态值。
+
+一维动态规划 + 省略取物品次数 k 操作
+
+在完全背包问题中,二维 dp 中求解 dp[i][j] 时用到它的上一格dp[i-1][j] 和 dp[i][j-w[i]]，它与 01 背包的区别就在于 dp[i][j-w[i]]是当前行的内容，在 dp[i][j] 之前它需要先被修改，所以在一维 dp 中 dp[j] 的求解顺序是从左往右。
+
+
+
+
+## 0-1 背包问题 – 回溯法
+
+每种物体被限制为只能选一次;
+
+复杂度分析: $O(2^{n})$
+
+## 0-1 背包问题 – 动态规划法:
+
+复杂度分析: $O(nb)$
+
+每种物体被限制为只能选一次;
+
+首先定义动态规划的 dp 数组含义, 将 dp_{\{i,j\}} 定义为 :
+
+在 0-i 的索引范围中挑选物体, 在最大负重为 j 时, 背包内物体的最大价值;
+
+1) i == 0 时, 无论背包的负重如何都最大只能放入第 0 个物体
+
+$d p^{\{0, j\}}=v^{\{0\}}, j=w^{\{0\}}, \ldots, b ;$
+
+2) i > 0 时, 可知状态转移方程
+
+$d p^{\{i, j\}}=\max \left(d p^{\{i-1, j\}}, d p^{\{i-1, j-w[i]\}}+v[i]\right)$
+
+$i=1, \ldots, n-1 ; j=1, \ldots, b$
+
+
+## 有界背包问题 – 转成 0-1 背包:
+
+每种物体选择次数有限;
+
+复杂度分析: $O\left(\sum n b\right)$
+
+首先定义动态规划的 dp 数组含义，将 $d p^{\{i, j\}}$ 定义为:
+
+在 0-i 的索引范围中挑选物体, 在最大负重为 j 时, 背包内物体的最大价值;
+
+第 i 种物体有 $N_{i}$ 个, 那么此时总共有 $\boldsymbol{n}^{\prime}=\sum_{i}^{n} \boldsymbol{N}_{\boldsymbol{i}}$ 个物体，再根据 0-1 背包的方法来求解:
+
+1) i == 0 时, 无论背包的负重如何都最大只能放入第 0 个物体,
+
+$\boldsymbol{d} \boldsymbol{p}^{\{\mathbf{0}, j\}}=\boldsymbol{v}^{\{\mathbf{0}\}}, \boldsymbol{j}=\boldsymbol{w}^{\{\mathbf{0}\}}, \ldots, \boldsymbol{n}^{\prime} ;$
+
+2) i > 0 时, 可知状态转移方程:
+
+$\boldsymbol{d} \boldsymbol{p}^{\{\boldsymbol{i}, \boldsymbol{j}\}=} \boldsymbol{\operatorname { m a x }}\left(\boldsymbol{d} \boldsymbol{p}^{\{\boldsymbol{i}-\mathbf{1}, \boldsymbol{j}\}}, \boldsymbol{d} \boldsymbol{p}^{\{\boldsymbol{i}-\mathbf{1}, \boldsymbol{j}-w[i]\}}+\boldsymbol{v}[\boldsymbol{i}]\right)$
+$\boldsymbol{i}=\mathbf{1}, \ldots, \boldsymbol{n}-\mathbf{1}^{\prime} ; \boldsymbol{j}=\mathbf{1}, \ldots, \boldsymbol{b}$
+
+## 无界背包问题
+
+每种物体能够无限选择;
+
+复杂度分析: O(nb)
+
+首先定义动态规划的 dp 数组含义, 将 $dp_{\{i, j\}}$定义为:在 1-i 的索引范围中挑选物体, 在最大负重为 j 时, 背包内物体的最大价值;
+
+1) 当 i == 0 时, 无法挑选任何物体, 所以初始化为 0;
+
+2) i > 0 时, 可知状态转移方程:
+
+$d p^{\{i, j\}}=\max \left(d p^{\{i-1, j\}}, d p^{\{i, j-w[i]\}}+v[i]\right)$
+$i=1, \ldots, n ; j=1, \ldots, b$
+
+
+## 投资问题整理
+
+每个项目不能重复投资，产生的效益为非负数 m 元钱全用来投资,即
+
+$\sum_{i=1}^{n} x_{i}=m$
+
+### 解题思路
+
+动归求解
+
+状态 dp[item][tot_m] 表示前 item 个项目，共投资 tot_m，能得到的最大收益。
+
+状态转移方程:
+
+dp[item][tot_m] = max(dp[item - 1][tot_m - now_m]), tot_m $\epsilon$ e [0,m], now_m $\epsilon$ [0,tot_m]
+
+初始化:
+
+dp[O][tot_m] = fun[O][tot_m], tot_m $\epsilon$ [0,m]
+
+```
+def invest(money, num_items, fun):
+    dp = [[0 for col in range(money+1)] for row in range(num_items)]
+    for tot_m in range(money + 1):
+        dp[0][tot_m] = fun[0][tot_m]
+    for item in range(1, num_items):
+        for tot_m in range(money + 1):
+            for now_m in range(tot_m + 1):
+                dp [item] [tot_m]=max(dp[item][tot_m], dp[item - 1][tot_m - now_m] + fun[item] [now_m])
+    return dp[num_items-1] [money]
+
+if __name__ == '__main__':
+    money = 5
+    num_items = 4
+    fun = [[0, 20, 1, 9, 12, 5],
+           [0, 0, 3, 10, 4, 32],
+           [0, 14, 6, 20, 17, 33],
+           [0, 15, 16, 18, 20, 22]]
+    print('MaxIncome = ', invest(money, num_items, fun))
+```
+
+
+## 编辑距离, LC 72, LC 312
+
+### LC 72. Edit Distance 编辑距离
+
+Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2.
+
+You have the following three operations permitted on a word:
+
+- Insert a character
+
+- Delete a character
+
+- Replace a character
+
+给你两个单词 word1 和 word2， 请返回将 word1 转换成 word2 所使用的最少操作数 。
+
+你可以对一个单词进行如下三种操作：
+
+- 插入一个字符
+
+- 删除一个字符
+
+- 替换一个字符
+
+其编辑距离算法概念是俄罗斯科学家弗拉基米尔·莱文斯坦在1965年提出。
+
+- DNA 分析
+
+- 拼写检查 
+
+- 抄袭识别(比如论文查重) 
+
+- 语音识别
+
+```
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        dp = [[0] * (len(word2)+1) for _ in range(len(word1)+1)]
+        for i in range(len(word1)+1):
+            dp[i][0] = i
+        for j in range(len(word2)+1):
+            dp[0][j] = j
+        for i in range(1, len(word1)+1):
+            for j in range(1, len(word2)+1):
+                if word1[i-1] == word2[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1]) + 1
+        return dp[-1][-1]
+```
+
+![](w7-kp-1.png)
+
+![](w7-kp-2.png)
+
+![](w7-kp-3.png)
+
+
+```
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        n1 = len(word1)
+        n2 = len(word2)
+        if not n1 or not n2:
+            return n1 + n2
+        dp=[[0] * (n2+1) for _ in range(n1 +1)]
+        for j in range(1, n2 + 1):
+            dp[0][j] = dp[0][j-1] + 1
+        for i in range(1, n1 + 1):
+            dp[i][0] = dp[i-1][0]+ 1
+        for i in range(1, n1 + 1):
+            for j in range(1, n2 + 1):
+                if word1[i-1] == word2[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j]= min(dp[i][j-1],dp[i-1][j],dp[i-1][j-1]) + 1
+        return dp[-1][-1]
+```
+
+![](w7-kp-4.png)
+
+```
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        n1 = len(word1)
+        n2 = len(word2)
+        if not n1 or not n2:
+            return n1 + n2
+        dp0 = list(range(n2+1))
+        dp1=[0]*(n2+1)
+        for i in range(n1):
+            dp1[0]=i+1
+            for j in range(len(word2)):
+                if word1[i] == word2[j]:
+                    dp1[j+1] = dp0[j]
+                else:
+                    dp1[j+1] = min(dp0[j+1], dp1[j], dp0[j]) + 1
+            dp0 = dp1[:]
+        return dp1[-1]
+```
+
+### LC 312. Burst Balloons 戳气球
+
+
+You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with a number on it represented by an array nums. You are asked to burst all the balloons.
+
+If you burst the ith balloon, you will get nums[i - 1] * nums[i] * nums[i + 1] coins. If i - 1 or i + 1 goes out of bounds of the array, then treat it as if there is a balloon with a 1 painted on it.
+
+Return the maximum coins you can collect by bursting the balloons wisely.
+
+有 n 个气球，编号为0 到 n - 1，每个气球上都标有一个数字，这些数字存在数组 nums 中。
+
+现在要求你戳破所有的气球。戳破第 i 个气球，你可以获得 nums[i - 1] * nums[i] * nums[i + 1] 枚硬币。这里的 i - 1 和 i + 1 代表和 i 相邻的两个气球的序号。如果 i - 1或 i + 1 超出了数组的边界，那么就当它是一个数字为 1 的气球。
+
+求所能获得硬币的最大数量。
+
+```
+from typing import List
+def maxCoins(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
+        if len(nums) < 2:
+            return nums[0]
+        nums = [1] + nums + [1]
+        dp = [[0] * len(nums) for _ in range(len(nums))]
+        for i in range(len(nums) - 1, -1, -1):
+            for j in range(i + 2, len(nums)):
+                for k in range(i + 1, j):
+                    dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j] + nums[i] * nums[k] * nums[j])
+        # print(dp)
+        return dp[0][-1]
+```
+
+![](w7-kp-5.png)
+
+![](w7-kp-6.png)
+
+![](w7-kp-7.png)
+
+```
+class Solution:
+    def maxCoins(self, nums):
+        if not nums: return 0
+        if len(nums) == 1: return nums[0]
+        nums = [1] + nums + [1]
+        dp = [[0] * len(nums) for _ in range(len(nums))]
+        for i in range(len(nums)-1, -1, -1): 
+            for j in range(i+2, len(nums)):
+                for k in range(i+1, j):
+                    dp[i][j] = max(dp[i][j], dp[i][k]+dp[k][j]+nums[i]*nums[k]*nums[j])
+        return dp[0][-1]
+```
+
+```
+class Solution:
+    def maxCoins(self, nums): 
+        n = len(nums) 
+        nums.insert(0, 1)
+        nums.append(1)
+        c = [[0] * (n + 2) for _ in range(n + 2)]
+        for len_ in range(1, n + 1):
+            for left in range(1, n - len_ + 2):
+                right = left + len_ - 1
+                for k in range(left, right + 1):
+                    c[left][right] = max(c[left][right], c[left][k - 1] + nums[left - 1] * nums[k] * nums[right + 1] + c[k + 1][right])
+        return c[1][n]
+```
