@@ -13,6 +13,13 @@ PKU 2022 個人實驗報告作業
 
 https://github.com/kancheng/learn-in-works
 
+## Youtube
+
+1. LeetCode - Coding Kevin BKH : https://www.youtube.com/channel/UCrLyxqR_OTny2PQLAAjEmjg
+
+2. LeetCode - Michelle 小梦想家 : https://www.youtube.com/channel/UCRCqgMdsAHK3yfvW4en6JpA
+
+
 ## Python
 
 https://docs.python.org/
