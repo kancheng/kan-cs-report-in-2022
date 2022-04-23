@@ -89,6 +89,28 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 28. 编辑距离, LC 72, LC 312
 
+29. 樹
+
+- 樹各名詞定義
+
+- 定义树（Tree）
+
+- Know Thy Complexities!
+
+- Binary Tree & Binary Search Tree
+
+- 树的表示-列表
+
+- 树的表示-类
+
+- 树和链表, LC 100, LC 112, LC 226
+
+- 树的遍历(Traversal), LC 144
+
+- 分析树 (Parse Tree)
+
+- 构建分析树
+
 
 ## 平方根函數
 
@@ -3062,4 +3084,573 @@ class Solution:
                 for k in range(left, right + 1):
                     c[left][right] = max(c[left][right], c[left][k - 1] + nums[left - 1] * nums[k] * nums[right + 1] + c[k + 1][right])
         return c[1][n]
+```
+
+## 樹
+
+- 要理解树数据结构的含义以及如何使用。
+
+- 使用列表实现树。
+
+- 使用类和引用来实现树。
+
+- 实现树作为递归数据结构。
+
+- 使用堆实现优先级队列。
+
+### 實例
+
+- 文件系统树
+
+- 网页
+
+- 句子
+
+- 公式解析
+
+![](w8-kp-1.png)
+
+### 樹各名詞定義
+
+![](w8-kp-2.png)
+
+### 定义树（Tree）
+
+定义一：树由一组节点和一组连接节点的边组成。且树具有以下属性：
+
+- 树的一个节点被指定为根节点
+- 除了根节点之外，每个节点 n 通过一个其他节点 p 的边连接，其中 p 是 n 的父节点
+- 从根路径遍历到每个节点路径唯一
+- 如果树中的每个节点最多有两个子节点，我们说该树是一个二叉树
+
+定义二：树是空的，或者由一个根节点和零个或多个子树组成，每个子树也是一棵树。每个子树的根节点通过边连接到父树的根节点。
+
+![](w8-kp-3.png)
+
+### Know Thy Complexities!
+
+Reference: https://www.bigocheatsheet.com/
+
+![](w8-kp-4.png)
+
+![](w8-kp-5.png)
+
+### Binary Tree & Binary Search Tree
+
+- Binary Tree : 基于二叉堆实现优先队列
+    
+- Binary Search Tree : 二叉查找树
+
+![](w8-kp-6.png)
+
+### 树的表示-列表
+
+![](w8-kp-7.png)
+
+```
+myTree = ['a', #root
+    ['b', #left subtree
+        ['d', [], []],
+        ['e', [], []] ],
+    ['c', #right subtree
+        ['f', [], []],
+        [] ]
+    ]
+
+print(myTree)
+print('left subtree = ', myTree[1])
+print('root = ', myTree[0])
+print('right subtree = ', myTree[2])
+```
+```
+['a', ['b', ['d', [], []], ['e', [], []]], ['c', ['f', [], []], []]]
+left subtree =  ['b', ['d', [], []], ['e', [], []]]
+root =  a
+right subtree =  ['c', ['f', [], []], []]
+```
+
+```
+def BinaryTree(r):
+    return [r, [], []]
+
+def insertLeft(root,newBranch):
+    t = root.pop(1)
+    if len(t) > 1:
+        root.insert(1,[newBranch,t,[]])
+    else:
+        root.insert(1,[newBranch, [], []])
+    return root
+
+def insertRight(root,newBranch):
+    t = root.pop(2)
+    if len(t) > 1:
+        root.insert(2,[newBranch,[],t])
+    else:
+        root.insert(2,[newBranch,[],[]])
+    return root
+
+def getRootVal(root):
+    return root[0]
+
+def setRootVal(root,newVal):
+    root[0] = newVal
+
+def getLeftChild(root):
+    return root[1]
+
+def getRightChild(root):
+    return root[2]
+
+r = BinaryTree(3)
+insertLeft(r,4)
+insertLeft(r,5)
+insertRight(r,6)
+insertRight(r,7)
+l = getLeftChild(r)
+print(l)
+setRootVal(l,9)
+print(r)
+insertLeft(l,11)
+print(r)
+print(getRightChild(getRightChild(r)))
+```
+
+```
+[5, [4, [], []], []]
+[3, [9, [4, [], []], []], [7, [], [6, [], []]]]
+[3, [9, [11, [4, [], []], []], []], [7, [], [6, [], []]]]
+[6, [], []]
+```
+
+### 树的表示-类
+
+```
+class BinaryTree:
+    def __init__(self,rootObj):
+        self.key = rootObj
+        self.leftChild = None
+        self.rightChild = None
+    def insertLeft(self,newNode):
+        if self.leftChild == None:
+            self.leftChild = BinaryTree(newNode)
+        else:
+            t = BinaryTree(newNode)
+            t.leftChild = self.leftChild
+            self.leftChild = t
+    def insertRight(self,newNode):
+        if self.rightChild == None:
+            self.rightChild = BinaryTree(newNode)
+        else:
+            t = BinaryTree(newNode)
+            t.rightChild = self.rightChild
+            self.rightChild = t
+    def getRightChild(self):
+        return self.rightChild
+    def getLeftChild(self):
+        return self.leftChild
+    def setRootVal(self,obj):
+        self.key = obj
+    def getRootVal(self):
+        return self.key
+
+r = BinaryTree('a')
+print(r.getRootVal())
+print(r.getLeftChild())
+r.insertLeft('b')
+print(r.getLeftChild())
+print(r.getLeftChild().getRootVal())
+r.insertRight('c')
+print(r.getRightChild())
+print(r.getRightChild().getRootVal())
+r.getRightChild().setRootVal('hello')
+print(r.getRightChild().getRootVal())
+```
+```
+a
+None
+<__main__.BinaryTree object at 0x000002A248647A30>
+b
+<__main__.BinaryTree object at 0x000002A248591580>
+c
+hello
+```
+
+### 树和链表, LC 100, LC 112, LC 226
+
+```
+class Node:
+    def __init__(self, initdata):
+        self.data = initdata
+        self.next = None
+    def getData(self):
+        return self.data
+    def getNext(self):
+        return self.next
+    def setData(self,newdata):
+        self.data = newdata
+    def setNext(self,newnext):
+        self.next = newnext
+
+class BinaryTree:
+    def __init__(self,rootObj):
+        self.key = rootObj
+        self.leftChild = None
+        self.rightChild = None
+    def insertLeft(self,newNode):
+        if self.leftChild == None:
+            self.leftChild = BinaryTree(newNode)
+        else:
+            t = BinaryTree(newNode)
+            t.leftChild = self.leftChild
+            self.leftChild = t
+    def insertRight(self,newNode):
+        if self.rightChild == None:
+            self.rightChild = BinaryTree(newNode)
+        else:
+            t = BinaryTree(newNode)
+            t.rightChild = self.rightChild
+            self.rightChild = t
+```
+
+1. LC 100 Same Tree 相同的树
+
+Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+
+
+给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。
+
+如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    # def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+    def isSameTree(self, p, q):
+        if not p and not q:
+            return True
+        elif p is not None and q is not None:
+            if p.val == q.val:
+                return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+            else:
+                return False
+        else:
+            return False
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+class Solution(object):
+    def isSameTree(self, p, q):
+        if p is None and q is None:
+            return True
+        if p is not None and q is not None:
+            return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        return False
+if __name__ == "__main__":
+    root1, root1.left, root1.right = TreeNode(1), TreeNode(2), TreeNode(3)
+    root2, root2.left, root2.right = TreeNode(1), TreeNode(2), TreeNode(3)
+    print(Solution().isSameTree(root1, root2))
+```
+
+2. LC 112 Path Sum 路径总和
+
+Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+
+A leaf is a node with no children.
+
+给你二叉树的根节点 root 和一个表示目标和的整数 targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 targetSum 。如果存在，返回 true ；否则，返回 false 。
+
+叶子节点 是指没有子节点的节点。
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        if not root: return False
+        res = []
+        def pathval(root, path):
+            path = path.copy()
+            if not (root.left or root.right): 
+                res.append(path)
+                return
+            if root.left:
+                path.append(root.left.val)
+                pathval(root.left, path)
+                path.pop()
+            if root.right:
+                path.append(root.right.val)
+                pathval(root.right, path)
+                path.pop()
+        pathval(root, [root.val])
+        for path in res: 
+            if sum(path) == targetSum: return True
+        return False
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution(object):
+    def hasPathSum(self, root, sum):
+        if not root:
+            return False
+        if not root.left and not root.right and root.val == sum:
+            return True
+        sum -= root.val
+        return self.hasPathSum(root.left, sum) or self.hasPathSum(root.right, sum)
+
+if __name__ == '__main__':
+    root = TreeNode(5)
+    root.left = TreeNode(4)
+    root.right = TreeNode(8)
+    root.right.left = TreeNode(13)
+    root.right.right = TreeNode(4)
+    root.right.right.right = TreeNode(1)
+    root.left.left = TreeNode(11)
+    root.left.left.left = TreeNode(7)
+    root.left.left.right = TreeNode(2)
+    print(Solution().hasPathSum(root, 22))
+```
+3. LC 226
+
+Given the root of a binary tree, invert the tree, and return its root.
+
+给你一棵二叉树的根节点 root ，翻转这棵二叉树，并返回其根节点。
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        self.spyxfamily(root)
+        return root
+    def spyxfamily(self,root):
+        if root is  None:
+            return
+        root.left,root.right=root.right,root.left
+        self.spyxfamily(root.left)
+        self.spyxfamily(root.right)
+
+# Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = No
+class Solution(object):
+    def invertTree(self, root):
+        if root:
+            root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+            return root
+```
+
+### 树的遍历(Traversal), LC 144
+
+- 1. 前序(Pre-order)：根-左-右
+
+- 2. 中序(In-order)：左-根-右
+
+- 3. 后序(Post-order)：左-右-根
+
+![](w8-kp-8.png)
+
+![](w8-kp-9.png)
+
+```
+# 树的遍历
+
+def preorder(tree):
+    if tree:
+        print(tree.getRootVal())
+        preorder(tree.getLeftChild())
+        preorder(tree.getRightChild())
+
+def postorder(tree):
+    if tree != None:
+        postorder(tree.getLeftChild())
+        postorder(tree.getRightChild())
+        print(tree.getRootVal())
+
+def inorder(tree):
+    if tree != None:
+        inorder(tree.getLeftChild())
+        print(tree.getRootVal())
+        inorder(tree.getRightChild())
+```
+1. LC 144 Binary Tree Preorder Traversal 二叉树的前序遍历
+
+Given the root of a binary tree, return the preorder traversal of its nodes' values.
+
+给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+# Python 迭代
+class Solution(object):
+    def preorderTraversal(self, root):
+        if not root:
+            return []
+        
+        stack = [root]
+        res = []
+        while stack:
+            cur = stack.pop()
+            res.append(cur.val)            
+            if cur.right:
+                stack.append(cur.right)
+            if cur.left:
+                stack.append(cur.left)
+        return res
+
+# Python 递归
+class Solution(object):
+    def preorderTraversal(self, root):
+        if not root:
+            return []
+        return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution(object):
+    def preorderTraversal(self, root):
+        ret = []
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            if node:
+                ret.append(node.val)
+                stack.append(node.right)
+                stack.append(node.left)
+        return ret
+
+root = TreeNode(5)
+root.left = TreeNode(4)
+root.right = TreeNode(8)
+root.right.left = TreeNode(13)
+root.right.right = TreeNode(4)
+root.right.right.right = TreeNode(1)
+root.left.left = TreeNode(11)
+root.left.left.left = TreeNode(7)
+root.left.left.right = TreeNode(2)
+print(Solution().preorderTraversal(root))
+```
+### 分析树 (Parse Tree)
+
+![](w8-kp-11.png)
+
+1. 构建分析树： （3 +（4 * 5））
+
+四种不同的符号要考虑：左括号，右括号，运算符和操作数
+
+
+2. 定义四个规则如下：
+
+- (1) 如果当前符号是 '('，添加一个新节点作为当前节点的左子节点，并下降到左子节点。
+
+- (2) 如果当前符号在列表 `['+'，' - '，'/'，'*']` 中，请将当前节点的根值设置为由当前符号表示的运算符。 添加一个新节点作为当前节点的右子节点，并下降到右子节点。
+
+- (3) 如果当前符号是数字，请将当前节点的根值设置为该数字并返回到父节点。
+
+- (4) 如果当前符号是 ')'，则转到当前节点的父节点。
+
+### 构建分析树
+
+```
+['('，'3'，'+'，'('，'4'，'*'，'5'，')'，')']
+```
+
+1. 创建一个空树。
+
+2. 读取 ( 作为第一个标记。按规则1，创建一个新节点作为根的左子节点。使当前节点到这个新子节点。
+
+3. 读取 3 作为下一个符号。按照规则3，将当前节点的根值设置为3，使当前节点返回到父节点。
+
+4. 读取 + 作为下一个符号。根据规则2，将当前节点的根值设置为+，并添加一个新节点作为右子节点。新的右子节点成为当前节点。
+
+5. 读取 ( 作为下一个符号，按规则1，创建一个新节点作为当前节点的左子节点，新的左子节点成为当前节点。
+
+6. 读取 4 作为下一个符号。根据规则3，将当前节点的值设置为 4。使当前节点返回到父节点。
+
+7. 读取 * 作为下一个符号。根据规则2，将当前节点的根值设置为 `*`，并创建一个新的右子节点。新的右子节点成为当前节点。
+
+8. 读取 5 作为下一个符号。根据规则3，将当前节点的根值设置为5。使当前节点返回到父节点。
+
+9. 读取 ) 作为下一个符号。根据规则4，当前节点返回到父节点。
+
+10. 读取 ) 作为下一个符号。根据规则4，当前节点返回到父节点 + 。没有+的父节点，完成创建。
+
+![](w8-kp-12.png)
+
+```
+def buildParseTree(fpexp):
+    fplist = fpexp.split()
+    pStack = Stack()
+    eTree = BinaryTree('')
+    pStack.push(eTree)
+    currentTree = eTree
+    for i in fplist:
+        if i == '(':
+            currentTree.insertLeft('')
+            pStack.push(currentTree)
+            currentTree = currentTree.getLeftChild()
+        elif i not in ['+', '-', '*', '/', ')']:
+            currentTree.setRootVal(int(i))
+            parent = pStack.pop()
+            currentTree = parent
+        elif i in ['+', '-', '*', '/']:
+            currentTree.setRootVal(i)
+            currentTree.insertRight('')
+            pStack.push(currentTree)
+            currentTree = currentTree.getRightChild()
+        elif i == ')':
+            currentTree = pStack.pop()
+        else:
+            raise ValueError
+    return eTree
+```
+
+![](w8-kp-13.png)
+
+```
+import operator
+def evaluate(parseTree):
+    opers = {'+':operator.add, '-':operator.sub, '*':operator.mul, '/':operator.truediv}
+    leftC = parseTree.getLeftChild()
+    rightC = parseTree.getRightChild()
+    if leftC and rightC:
+        fn = opers[parseTree.getRootVal()]
+        return fn(evaluate(leftC),evaluate(rightC))
+    else:
+        return parseTree.getRootVal()
 ```
