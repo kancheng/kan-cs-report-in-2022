@@ -59,7 +59,13 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 72. Edit Distance 编辑距离
 
+84. Largest Rectangle in Histogram 柱状图中最大的矩形
+
 85. Maximal Rectangle 最大矩形
+
+100. Same Tree 相同的树
+
+112. Path Sum 路径总和
 
 120. Triangle, 三角形最小路径和
 
@@ -71,11 +77,15 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 141. Linked List Cycle 环形链表
 
+144. Binary Tree Preorder Traversal 二叉树的前序遍历
+
 148. Sort List 排序链表
 
 152. Maximum Product Subarray 乘积最大子数组
 
 206. Reverse Linked List 反转链表
+
+226. Invert Binary Tree 翻转二叉树
 
 232. Implement Queue using Stacks 用栈实现队列
 
@@ -94,7 +104,6 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 392. Is Subsequence 判断子序列
 
 746. Min Cost Climbing Stairs 爬楼梯的最小损失
-
 
 
 ## LeetCode 1. Two Sum 兩數之和
@@ -1807,6 +1816,80 @@ class Solution:
         return dp1[-1]
 ```
 
+## LeetCode 84. Largest Rectangle in Histogram 柱状图中最大的矩形
+
+Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
+
+给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
+
+求在该柱状图中，能够勾勒出来的矩形的最大面积。
+
+![](lc-84-p-example.png)
+
+Example 1:
+
+```
+Input: heights = [2,1,5,6,2,3]
+Output: 10
+Explanation: The above is a histogram where width of each bar is 1.
+The largest rectangle is shown in the red area, which has an area = 10 units.
+```
+最大的矩形为图中红色区域，面积为 10
+
+Example 2:
+
+```
+Input: heights = [2,4]
+Output: 4
+```
+
+Constraints:
+
+- 1 <= heights.length <= $10^5$
+
+- 0 <= heights[i] <= $10^4$
+
+```
+from typing import List
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        stack = [-1]
+        heights.append(0)
+        n,ans = len(heights),0
+        for i in range(n):
+            while len(stack) > 1 and heights[stack[-1]] > heights[i]:
+                p = stack.pop()
+                l,r = stack[-1],i
+                ans = max(ans,heights[p] * (r - l - 1))            
+            stack.append(i)
+        return ans
+
+class Solution(object):
+    def largestRectangleArea(self, heights):
+        # 定义一个栈 stack
+        stack = []
+        # 添加两个哨兵
+        # 在 heights 的前方和后方设置哨兵节点
+        heights.insert(0,0)
+        heights.append(0)
+        dp=[1]*len(heights)
+        stack.append()
+        for i in range(1, len(heights)):
+            # 当前元素大于栈內最后元素
+            if heights [i]>=heights[stack[-1]]:
+                stack.append(i)
+            # 当前元素小于栈内最后元素,需要把楼内的元素 pop 出来
+            else:
+                while(heights[stack[-1]]>heights[1]):
+                    item=stack.pop()
+                    dp[item]=i-stack[-1]-1
+                stack.append(i)
+        # dp=dp[1:-1]
+        for j in range(len(dp)):
+            dp[j]=dp[j]*heights[j]
+        return max(dp)
+```
+
 ## LeetCode 85. Maximal Rectangle 最大矩形
 
 Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
@@ -1918,6 +2001,68 @@ class Solution:
             stack.append(i)
         return res
 ```
+## LeetCode 100. Same Tree 相同的树
+
+Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+
+
+给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。
+
+如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+
+![lc-100-p-example.png](attachment:lc-100-p-example.png)
+
+Example 1:
+
+```
+Input: p = [1,2,3], q = [1,2,3]
+Output: true
+```
+
+
+Example 2:
+
+```
+Input: p = [1,2], q = [1,null,2]
+Output: false
+```
+
+Example 3:
+
+```
+Input: p = [1,2,1], q = [1,1,2]
+Output: false
+```
+
+
+Constraints:
+
+- The number of nodes in both trees is in the range [0, 100].(两棵树上的节点数目都在范围 [0, 100] 内)
+
+- -$10^4 <= Node.val <= 10^4$
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    # def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+    def isSameTree(self, p, q):
+        if not p and not q:
+            return True
+        elif p is not None and q is not None:
+            if p.val == q.val:
+                return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+            else:
+                return False
+        else:
+            return False
+```
 
 ## LeetCode 120. Triangle, 三角形最小路径和
 
@@ -1984,6 +2129,94 @@ class Solution:
         return triangle[0][0]
 ```
 
+## LeetCode 112. Path Sum 路径总和
+
+Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+
+A leaf is a node with no children.
+
+给你二叉树的根节点 root 和一个表示目标和的整数 targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 targetSum 。如果存在，返回 true ；否则，返回 false 。
+
+叶子节点 是指没有子节点的节点。
+
+Example 1:
+
+```
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+Output: true
+Explanation: The root-to-leaf path with the target sum is shown.
+```
+
+解释：等于目标和的根节点到叶节点路径如上图所示。
+
+
+Example 2:
+
+```
+Input: root = [1,2,3], targetSum = 5
+Output: false
+Explanation: There two root-to-leaf paths in the tree:
+(1 --> 2): The sum is 3.
+(1 --> 3): The sum is 4.
+There is no root-to-leaf path with sum = 5.
+```
+
+解释：树中存在两条根节点到叶子节点的路径：
+(1 --> 2): 和为 3
+(1 --> 3): 和为 4
+不存在 sum = 5 的根节点到叶子节点的路径。
+
+
+Example 3:
+
+```
+Input: root = [], targetSum = 0
+Output: false
+Explanation: Since the tree is empty, there are no root-to-leaf paths.
+```
+
+解释：由于树是空的，所以不存在根节点到叶子节点的路径。
+
+Constraints:
+
+- The number of nodes in the tree is in the range [0, 5000].
+
+树中节点的数目在范围 [0, 5000] 内
+
+- -1000 <= Node.val <= 1000
+
+- -1000 <= targetSum <= 1000
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        if not root: return False
+        res = []
+        def pathval(root, path):
+            path = path.copy()
+            if not (root.left or root.right): 
+                res.append(path)
+                return
+            if root.left:
+                path.append(root.left.val)
+                pathval(root.left, path)
+                path.pop()
+            if root.right:
+                path.append(root.right.val)
+                pathval(root.right, path)
+                path.pop()
+        pathval(root, [root.val])
+        for path in res: 
+            if sum(path) == targetSum: return True
+        return False
+```
 
 ## LeetCode 122. Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II
 
@@ -2314,6 +2547,124 @@ class Solution(object):
         return False
 ```
 
+## LeetCode 144. Binary Tree Preorder Traversal 二叉树的前序遍历
+
+Given the root of a binary tree, return the preorder traversal of its nodes' values.
+
+给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
+
+![](lc-144-p-example.png)
+
+Example 1:
+
+```
+Input: root = [1,null,2,3]
+Output: [1,2,3]
+```
+
+Example 2:
+
+```
+Input: root = []
+Output: []
+```
+
+Example 3:
+
+```
+Input: root = [1]
+Output: [1]
+```
+
+Example 4:
+
+```
+输入：root = [1,2]
+输出：[1,2]
+```
+
+Example 5:
+
+```
+输入：root = [1,null,2]
+输出：[1,2]
+```
+
+Constraints:
+
+- The number of nodes in the tree is in the range [0, 100].
+
+树中节点数目范围在 [0, 100] 内
+
+- -100 <= Node.val <= 100
+
+
+Follow up: Recursive solution is trivial, could you do it iteratively?
+
+进阶：递归算法很简单，你可以通过迭代算法完成吗？
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+# Python 迭代
+class Solution(object):
+    def preorderTraversal(self, root):
+        if not root:
+            return []
+        
+        stack = [root]
+        res = []
+        while stack:
+            cur = stack.pop()
+            res.append(cur.val)            
+            if cur.right:
+                stack.append(cur.right)
+            if cur.left:
+                stack.append(cur.left)
+        return res
+
+# Python 递归
+class Solution(object):
+    def preorderTraversal(self, root):
+        if not root:
+            return []
+        return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution(object):
+    def preorderTraversal(self, root):
+        ret = []
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            if node:
+                ret.append(node.val)
+                stack.append(node.right)
+                stack.append(node.left)
+        return ret
+
+root = TreeNode(5)
+root.left = TreeNode(4)
+root.right = TreeNode(8)
+root.right.left = TreeNode(13)
+root.right.right = TreeNode(4)
+root.right.right.right = TreeNode(1)
+root.left.left = TreeNode(11)
+root.left.left.left = TreeNode(7)
+root.left.left.right = TreeNode(2)
+print(Solution().preorderTraversal(root))
+```
+
 ## LeetCode 148. Sort List 排序链表
 
 Given the head of a linked list, return the list after sorting it in ascending order.
@@ -2556,6 +2907,74 @@ class Solution:
         next = head.next # 先把下一個記起來
         head.next = prev # 將自己反過來指向前一個
         return self.reverseList(next, head)
+```
+
+## LeetCode 226. Invert Binary Tree 翻转二叉树
+
+Given the root of a binary tree, invert the tree, and return its root.
+
+给你一棵二叉树的根节点 root ，翻转这棵二叉树，并返回其根节点。
+
+![](lc-226-p-example.png)
+
+Example 1:
+
+```
+Input: root = [4,2,7,1,3,6,9]
+Output: [4,7,2,9,6,3,1]
+```
+
+Example 2:
+
+```
+Input: root = [2,1,3]
+Output: [2,3,1]
+```
+
+Example 3:
+
+```
+Input: root = []
+Output: []
+```
+
+Constraints:
+
+- The number of nodes in the tree is in the range [0, 100].
+
+树中节点数目范围在 [0, 100] 内
+
+- -100 <= Node.val <= 100
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        self.spyxfamily(root)
+        return root
+    def spyxfamily(self,root):
+        if root is  None:
+            return
+        root.left,root.right=root.right,root.left
+        self.spyxfamily(root.left)
+        self.spyxfamily(root.right)
+
+# Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = No
+class Solution(object):
+    def invertTree(self, root):
+        if root:
+            root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+            return root
 ```
 
 ## LeetCode 232. Implement Queue using Stacks 用栈实现队列

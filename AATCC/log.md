@@ -186,7 +186,49 @@ LeetCode 312. Burst Balloons 戳气球
 
 - LeetCode :
 
+LeetCode 84. Largest Rectangle in Histogram 柱状图中最大的矩形
+
+LeetCode 85. Maximal Rectangle 最大矩形
+
+LeetCode 100. Same Tree 相同的树
+
+LeetCode 112. Path Sum 路径总和
+
+LeetCode 144. Binary Tree Preorder Traversal 二叉树的前序遍历
+
+LeetCode 152. Maximum Product Subarray 乘积最大子数组
+
+LeetCode 226. Invert Binary Tree 翻转二叉树
+
+LeetCode 312. Burst Balloons 戳气球
 
 - Knowledge Point : 
 
+樹
 
+樹各名詞定義
+
+定义树（Tree）
+
+Know Thy Complexities!
+
+Binary Tree & Binary Search Tree
+
+树的表示-列表
+
+树的表示-类
+
+树和链表, LC 100, LC 112, LC 226
+
+树的遍历(Traversal), LC 144
+
+分析树 (Parse Tree)
+
+构建分析树
+
+### 9. W9 :
+
+- LeetCode :
+
+
+- Knowledge Point : 
