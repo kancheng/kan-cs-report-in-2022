@@ -9,6 +9,10 @@ PKU 2022 個人實驗報告作業
 
 第九週課堂總結目前複習與作業。
 
+## Reference
+
+1. https://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/
+
 
 
 
