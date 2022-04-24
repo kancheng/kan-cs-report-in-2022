@@ -46,6 +46,18 @@
 
 4. MD5 算法原理及实现 : https://www.jianshu.com/p/93a8ab5bfeb9
 
+## ZIP
+
+1. Zip 压缩解压缩之 C++ 实现 : https://blog.csdn.net/Struggling_Jeff/article/details/100857364
+
+2. Zip Utils - Clean, Elegant, Simple, C++/Win32 : https://www.codeproject.com/Articles/7530/Zip-Utils-Clean-Elegant-Simple-Cplusplus-Win
+
+3. Zip 学习笔记 —— 用 C 编写的简单压缩库 : https://blog.csdn.net/qq_36347513/article/details/108709366
+
+4. https://github.com/kuba--/zip
+
+
+
 ## Reference
 
 1. http://neuroinfo-cclolab.blogspot.com/2020/03/blog-post_16.html?m=1
