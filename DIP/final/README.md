@@ -86,6 +86,12 @@ PKU 2022 個人實驗報告作業
 
 11. https://github.com/zhangpengpengpeng/PedestrianDetectionSystem
 
+12. https://github.com/taoyafan/emotion_recognition
+
+13. https://github.com/statueofmike/rtsp
+
+14. https://github.com/CaptainEven/FairMOTVehicle
+
 
 ## Web GitHub & Code
 
