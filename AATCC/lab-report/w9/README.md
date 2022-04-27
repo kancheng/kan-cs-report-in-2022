@@ -15,6 +15,12 @@ PKU 2022 個人實驗報告作業
 
 1. https://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/
 
+2. https://medium.com/pxcode/getting-started-with-pxcode-pt-3-how-to-integrate-figma-design-1e1232bc1ce9
+
+3. https://www.animaapp.com/blog/design-to-code/how-to-export-figma-to-html/
+
+
+
 
 
 
