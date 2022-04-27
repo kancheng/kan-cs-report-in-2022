@@ -65,6 +65,8 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 100. Same Tree 相同的树
 
+105. Construct Binary Tree from Preorder and Inorder Traversal 从前序与中序遍历序列构造二叉树
+
 112. Path Sum 路径总和
 
 120. Triangle, 三角形最小路径和
@@ -2064,6 +2066,131 @@ class Solution:
             return False
 ```
 
+## LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal 从前序与中序遍历序列构造二叉树
+
+Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.
+
+给定两个整数数组 preorder 和 inorder，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的中序遍历，请构造二叉树并返回其根节点。
+
+![](lc-105-p-example.png)
+
+Example 1:
+
+```
+Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+Output: [3,9,20,null,null,15,7]
+```
+
+Example 2:
+
+```
+Input: preorder = [-1], inorder = [-1]
+Output: [-1]
+```
+
+Constraints:
+
+- 1 <= preorder.length <= 3000
+
+- inorder.length == preorder.length
+
+- -3000 <= preorder[i], inorder[i] <= 3000
+
+- preorder and inorder consist of unique values.
+
+preorder 和 inorder 均 无重复 元素
+
+- Each value of inorder also appears in preorder.
+
+inorder 均出现在 preorder
+
+- preorder is guaranteed to be the preorder traversal of the tree.
+
+preorder 保证 为二叉树的前序遍历序列
+
+- inorder is guaranteed to be the inorder traversal of the tree.
+
+inorder 保证 为二叉树的中序遍历序列
+
+### Reference
+
+https://www.youtube.com/watch?v=GeltTz3Z1rw
+
+
+### LC 105 說明
+
+```
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        # ... Code ...
+        return root
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+root = Solution().buildTree(preorder, inorder)
+
+```
+
+前序遍历：遍历顺序为 父节点 -> 左子节点 -> 右子节点
+
+中序遍历：遍历顺序为 左子节点 -> 父节点 -> 右子节点
+
+前序遍历的第一个元素为根节点，而在中序遍历中，该根节点所在位置的左侧为左子树，右侧为右子树。
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        dic = {}
+        for idx,i in enumerate(inorder):
+            dic[i] = idx
+
+        def dfs(pre_left,ino_l,ino_r):
+            if pre_left>=len(preorder) or ino_l> ino_r or ino_r>=len(inorder) or ino_l<0 or ino_r<0: return None
+            node = TreeNode(preorder[pre_left])
+            mid = dic[preorder[pre_left]]
+           # print(mid)
+            pre_left = pre_left 
+            node.left = dfs(pre_left + 1,ino_l,mid-1)
+            node.right = dfs(pre_left + (mid - ino_l+1), mid+1, ino_r )
+            return node
+        return dfs(0,0,len(inorder)-1)
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        if len(inorder) == 0:
+            return None
+        # 前序遍历第一个值为根节点
+        root = TreeNode(preorder[0])
+        # 因为没有重复元素，所以可以直接根据值来查找根节点在中序遍历中的位置
+        mid = inorder.index(preorder[0])
+        # 构建左子树
+        root.left = self.buildTree(preorder[1:mid + 1], inorder[:mid])
+        # 构建右子树
+        root.right = self.buildTree(preorder[mid + 1:], inorder[mid + 1:])
+        return root
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+root = Solution().buildTree(preorder, inorder)
+```
+
 ## LeetCode 120. Triangle, 三角形最小路径和
 
 Given a triangle array, return the minimum path sum from top to bottom.
@@ -2135,7 +2262,7 @@ Given the root of a binary tree and an integer targetSum, return true if the tre
 
 A leaf is a node with no children.
 
-给你二叉树的根节点 root 和一个表示目标和的整数 targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 targetSum 。如果存在，返回 true ；否则，返回 false 。
+给你二叉树的根节点 root 和一个表示目标和的整数 targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 targetSum 。如果存在，返回 true ；否则，返回 false 。
 
 叶子节点 是指没有子节点的节点。
 
@@ -2227,7 +2354,7 @@ On each day, you may decide to buy and/or sell the stock. You can only hold at m
 Find and return the maximum profit you can achieve.
 
 
-给定一个数组 prices ，其中 prices[i] 表示股票第 i 天的价格。
+给定一个数组 prices ，其中 prices[i] 表示股票第 i 天的价格。
 
 在每一天，你可能会决定购买和/或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以购买它，然后在 同一天 出售。
 返回 你能获得的 最大 利润 。
@@ -2325,7 +2452,7 @@ Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
 ```
 
 解释：在第 4 天（股票价格 = 0）的时候买入，在第 6 天（股票价格 = 3）的时候卖出，这笔交易所能获得利润 = 3-0 = 3 。
-     随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天 （股票价格 = 4）的时候卖出，这笔交易所能获得利润 = 4-1 = 3 。
+随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天 （股票价格 = 4）的时候卖出，这笔交易所能获得利润 = 4-1 = 3 。
 
 
 Example 2:
