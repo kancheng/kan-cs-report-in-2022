@@ -111,6 +111,23 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 - 构建分析树
 
+- 树的遍历 & 分析树 (Parse Tree) LC 105
+
+31. 基于二叉堆实现优先队列
+
+- 优先队列 priority queue
+
+- 二叉堆
+
+- 二叉堆操作
+
+- 二叉堆实现
+
+- 构建二叉堆操作
+
+- 二叉查找树
+
+
 
 ## 平方根函數
 
@@ -3653,4 +3670,448 @@ def evaluate(parseTree):
         return fn(evaluate(leftC),evaluate(rightC))
     else:
         return parseTree.getRootVal()
+```
+
+### 树的遍历 & 分析树 (Parse Tree) LC 105
+
+1. LC 105. Construct Binary Tree from Preorder and Inorder Traversal 从前序与中序遍历序列构造二叉树
+
+iven two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.
+
+给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的中序遍历，请构造二叉树并返回其根节点。
+
+Example 1:
+
+```
+Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+Output: [3,9,20,null,null,15,7]
+```
+
+Example 2:
+
+```
+Input: preorder = [-1], inorder = [-1]
+Output: [-1]
+```
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        dic = {}
+        for idx,i in enumerate(inorder):
+            dic[i] = idx
+
+        def dfs(pre_left,ino_l,ino_r):
+            if pre_left>=len(preorder) or ino_l> ino_r or ino_r>=len(inorder) or ino_l<0 or ino_r<0: return None
+            node = TreeNode(preorder[pre_left])
+            mid = dic[preorder[pre_left]]
+           # print(mid)
+            pre_left = pre_left 
+            node.left = dfs(pre_left + 1,ino_l,mid-1)
+            node.right = dfs(pre_left + (mid - ino_l+1), mid+1, ino_r )
+            return node
+        return dfs(0,0,len(inorder)-1)
+```
+
+Reference
+
+https://www.youtube.com/watch?v=GeltTz3Z1rw
+
+LC 105 說明
+
+```
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        # ... Code ...
+        return root
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+root = Solution().buildTree(preorder, inorder)
+
+```
+
+前序遍历：遍历顺序为 父节点 -> 左子节点 -> 右子节点
+
+中序遍历：遍历顺序为 左子节点 -> 父节点 -> 右子节点
+
+前序遍历的第一个元素为根节点，而在中序遍历中，该根节点所在位置的左侧为左子树，右侧为右子树。
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        if len(inorder) == 0:
+            return None
+        # 前序遍历第一个值为根节点
+        root = TreeNode(preorder[0])
+        # 因为没有重复元素，所以可以直接根据值来查找根节点在中序遍历中的位置
+        mid = inorder.index(preorder[0])
+        # 构建左子树
+        root.left = self.buildTree(preorder[1:mid + 1], inorder[:mid])
+        # 构建右子树
+        root.right = self.buildTree(preorder[mid + 1:], inorder[mid + 1:])
+        return root
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+root = Solution().buildTree(preorder, inorder)
+```
+
+## 基于二叉堆实现优先队列
+
+### 优先队列 priority queue
+
+1. 优先队列
+
+- 普通的队列是一种先进先出的数据结构，元素在队列尾追加，而从队列头删除。
+
+- 在优先队列中，元素被赋予优先级。当访问元素时，具有最高优先级的元素最先删除。
+
+2. 优先队列不再遵循先入先出的原则，而是分为两种情况：
+
+- 最大优先队列，无论入队顺序，当前最大的元素优先出队。
+
+- 最小优先队列，无论入队顺序，当前最小的元素优先出队。
+
+3. 最小优先队列例子
+
+![](w9-kp-10.png)
+
+### 二叉堆
+
+1. 二叉堆本质上是一种完全二叉树，它分为两个类型：
+
+- 最大堆
+
+- 最小堆
+
+![](w9-kp-11.png)
+
+2. 什么是二叉堆？
+
+- 最大堆任何一个父节点的值，都大于等于它左右孩子节点的值。
+
+- 最小堆任何一个父节点的值，都小于等于它左右孩子节点的值。
+
+### 二叉堆操作
+
+最小二叉堆实现的基本操作如下：
+
+- BinHeap() 创建一个新的，空的二叉堆。
+
+- insert(k) 向堆添加一个新项。
+
+- findMin() 返回具有最小键值的项，并将项留在堆中。
+
+- delMin() 返回具有最小键值的项，从堆中删除该项。
+
+- 如果堆是空的，isEmpty() 返回 true，否则返回 false。
+
+- size() 返回堆中的项数。
+
+- buildHeap(list) 从键列表构建一个新的堆。
+
+```
+bh = BinHeap()
+print(bh.heapList)
+bh.buildHeap([9, 5, 6, 2, 3])
+print(bh.heapList)
+print(bh.delMin())
+print(bh.delMin())
+print(bh.delMin())
+print(bh.delMin())
+print(bh.delMin())
+```
+
+### 二叉堆实现
+
+1. 结构属性
+
+完全二叉树的一个属性是：用列表表示，则父级和子级之间是 2p 和 2p+1 关系。
+
+2. 排序属性
+
+堆的排序属性如下： 在堆中，对于具有父 p 的每个节点 x， p 中的键小于或等于 x 中的键。
+
+![](w9-kp-12.png)
+
+3. 堆操作
+
+(1). 构造函数：
+
+整个二叉堆由单个列表表示， 所以构造函数将初始化列表和一个 currentSize 属性来跟踪堆的当前大小。
+
+```
+class BinHeap:
+    def __init__(self):
+        self.heapList = [0]
+        self.currentSize = 0
+```
+
+(2). insert(k)：
+
+- 将项添加到列表中最简单最有效的方法是将项附加到列表的末尾 ，但必须维护满足结构属性和排序属性。
+
+- 方案：通过比较新添加的项与其父项，如果新添加的项小于其父项， 则将项与其父项交换。
+
+![](w9-kp-13.png)
+
+```
+def insert(self, k):
+    self.heapList.append(k)
+    self.currentSize = self.currentSize + 1
+    self.percUp(self.currentSize)
+```
+
+```
+def percUp(self, i):
+    while i // 2 > 0:
+        if self.heapList[i] < self.heapList[i // 2]:
+            tmp = self.heapList[i // 2]
+            self.heapList[i // 2] = self.heapList[i]
+            self.heapList[i] = tmp
+        i = i // 2
+```
+(3). delMin()：
+
+两步保持结构属性和顺序属性：
+
+- 获取列表中的最后一个项并将其移动到根位置保持堆结构属性
+
+- 从新根节点开始，依次向下和最小的子节点交换保持顺序属性
+
+![](w9-kp-14.png)
+
+```
+def delMin(self):
+    retval = self.heapList[1]
+    self.heapList[1] = self.heapList[self.currentSize]
+    self.currentSize = self.currentSize - 1
+    self.heapList.pop()
+    self.percDown(1)
+    return retval
+
+def percDown(self, i):
+    while (i * 2) <= self.currentSize:
+        mc = self.minChild(i)
+        if self.heapList[i] > self.heapList[mc]:
+            tmp = self.heapList[i]
+            self.heapList[i] = self.heapList[mc]
+            self.heapList[mc] = tmp
+        i = mc
+
+def minChild(self, i):
+    if i * 2 + 1 > self.currentSize:
+        return i * 2
+    else:
+        if self.heapList[i*2] < self.heapList[i*2+1]:
+            return i * 2
+        else:
+            return i * 2 + 1
+```
+
+### 构建二叉堆操作
+
+1. buildHeap(alist)：
+
+```
+def buildHeap(self, alist):
+    i = len(alist) // 2
+    self.currentSize = len(alist)
+    self.heapList = [0] + alist[:]
+    while (i > 0):
+        self.percDown(i)
+        i = i - 1
+```
+
+![](w9-kp-15.png)
+
+2. 复杂度
+
+```
+O(nlogn) or O(n) ?
+```
+
+3. Code
+
+```
+def buildHeap(self, alist):
+    i = len(alist) // 2
+    self.currentSize = len(alist)
+    self.heapList = [0] + alist[:]
+    while (i > 0):
+        self.percDown(i)
+        i = i - 1
+```
+
+4. Tip
+
+设计一个找到数据流中第K大元素的类（class）。注意是排序后的第 K 大元素，不是第 K 个不同的元素。你的 KthLargest 类需要一个同时接收整数 k 和整数数组 nums 的构造器，它包含数据流中的初始元素。
+
+每次调用 KthLargest.add，返回当前数据流中第 K 大的元素。
+
+```
+int k = 3;
+int[] arr = [4,5,8,2];
+KthLargest kthLargest = new KthLargest(3, arr);
+kthLargest.add(3); // returns 4
+kthLargest.add(5); // returns 5
+kthLargest.add(10); // returns 5
+kthLargest.add(9); // returns 8
+kthLargest.add(4); // returns 8
+```
+
+说明: 你可以假设 nums 的长度 ≥ k-1 且 k ≥ 1。
+
+```
+import heapq
+h = []
+heapq.heappush(h,5)
+heapq.heappush(h,2)
+heapq.heappush(h,8)
+heapq.heappush(h,4)
+print(heapq.heappop(h))
+print(heapq.heappop(h))
+print(heapq.heappop(h))
+print(heapq.heappop(h))
+h = [9,8,7,6,2,4,5]
+print(h)
+heapq.heapify(h)
+print(h)
+```
+
+```
+2
+4
+5
+8
+[9, 8, 7, 6, 2, 4, 5]
+[2, 6, 4, 9, 8, 7, 5]
+```
+
+```
+class KthLargest(object):
+    def __init__(self, k, nums):
+        self.pool = nums
+        self.size = len(self.pool)
+        self.k = k
+        heapq.heapify(self.pool)
+        while self.size > k:
+            heapq.heappop(self.pool)
+            self.size -= 1
+    def add(self, val):
+        if self.size < self.k:
+            heapq.heappush(self.pool, val)
+            self.size += 1
+        elif val > self.pool[0]:
+            heapq.heapreplace(self.pool, val)
+        return self.pool[0]
+
+k = 3
+arr = [4,5,8,2]
+kthLargest = KthLargest(3, arr)
+print(kthLargest.add(3))
+print(kthLargest.add(5))
+print(kthLargest.add(10))
+print(kthLargest.add(9))
+print(kthLargest.add(4))
+```
+
+```
+4
+5
+5
+8
+8
+```
+
+### 二叉查找树
+
+1. 二叉查找树（又叫作二叉搜索树或二叉排序树）是一种数据结构 。其二叉查找树的兩個性質，且每个结点最多有两个子结点。
+
+![](w9-kp-16.png)
+
+
+2. 第一个是每个结点的值均大于其左子树上任意一个结点的值。比如结点 9 大于其左子树上的3和 8。
+
+3. 第二个是每个结点的值均小于其右子树上任意一个结点的值。比如结点 15 小于其右子树上的 23、17 和 28。
+
+4. 根据这两个性质可以得到以下结论。首先，二叉查找树的最小结点要从顶端开始，往其左下的末端寻找。此处最小值为 3。
+
+5. 反过来，二叉查找树的最大结点要从顶端开始，往其右下的末端寻找。此处最大值为 28。
+
+- Map() 创建一个新的空 map 。
+
+- put(key，val) 向 map 中添加一个新的键值对。 如果键已经在 map 中，那么用新值替换旧值。
+
+- get(key) 给定一个键， 返回存储在 map 中的值， 否则为 None。
+
+- del 使用 del map[key] 形式的语句从 map 中删除键值对。
+
+- len() 返回存储在映射中的键值对的数量。
+
+- in 返回 True 如果给定的键在 map 中。
+
+6. 实现
+
+```
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+        self.size = 0
+    def length(self):
+        return self.size
+    def __len__(self):
+        return self.size
+
+class TreeNode:
+    def __init__(self,key,val,left=None,right=None,parent=None):
+        self.key = key
+        self.payload = val
+        self.leftChild = left
+        self.rightChild = right
+        self.parent = parent
+    def hasLeftChild(self):
+        return self.leftChild
+    def hasRightChild(self):
+        return self.rightChild
+    def isLeftChild(self):
+        return self.parent and self.parent.leftChild == self
+    def isRightChild(self):
+        return self.parent and self.parent.rightChild == self
+
+    def put(self,key,val):
+        if self.root:
+            self._put(key,val,self.root)
+        else:
+            self.root = TreeNode(key,val)
+        self.size = self.size + 1
+    def _put(self,key,val,currentNode):
+        if key < currentNode.key:
+            if currentNode.hasLeftChild():
+                self._put(key,val,currentNode.leftChild)
+            else:
+                currentNode.leftChild = TreeNode(key,val,parent=currentNode)
+        else:
+            if currentNode.hasRightChild():
+                self._put(key,val,currentNode.rightChild)
+            else:
+                currentNode.rightChild = TreeNode(key,val,parent=currentNode)
 ```
