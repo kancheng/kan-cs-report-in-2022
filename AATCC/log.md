@@ -230,5 +230,58 @@ Binary Tree & Binary Search Tree
 
 - LeetCode :
 
+LeetCode 20. Valid Parentheses 有效的括号
+
+LeetCode 24. Swap Nodes in Pairs 两两交换链表中的节点
+
+LeetCode 50. Pow(x, n)
+
+LeetCode 53. Maximum Subarray 最长递增子序列
+
+LeetCode 100. Same Tree 相同的树
+
+LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal 从前序与中序遍历序列构造二叉树
+
+LeetCode 112. Path Sum 路径总和
+
+LeetCode 144. Binary Tree Preorder Traversal 二叉树的前序遍历
+
+LeetCode 206. Reverse Linked List 反转链表
+
+LeetCode 226. Invert Binary Tree 翻转二叉树
+
+LeetCode 312. Burst Balloons 戳气球
+
 
 - Knowledge Point : 
+
+树的定义
+
+树的表示
+
+- 树的表示-列表
+
+- 树的表示-类
+
+递归定义的应用
+
+树的遍历 LC 105
+
+构建分析树解决实际问题
+
+分析树 (Parse Tree) LC 105
+
+BIG O(KP)
+
+基于二叉堆实现优先队列
+
+优先队列 priority queue
+
+二叉堆
+
+二叉堆操作
+
+二叉堆实现
+
+二叉查找树
+
