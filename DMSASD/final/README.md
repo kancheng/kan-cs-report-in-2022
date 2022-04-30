@@ -98,5 +98,13 @@ https://arxiv.org/pdf/2202.02819.pdf
 3. https://arxiv.org/abs/2007.09355
 
 
+### Reference
+
+自然語言處理上的對抗式攻擊
+
+- https://www.youtube.com/watch?v=z-lRPFFYVJc
+
+- https://www.youtube.com/watch?v=68lwXWFzCmg
+
 
 
