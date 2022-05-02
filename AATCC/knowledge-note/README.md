@@ -127,6 +127,11 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 - 二叉查找树
 
+- 二叉查找树 LC 235
+
+32. Trie & 实际问题
+
+- Trie 树的基本结构、核心思想、基本性质、实现
 
 
 ## 平方根函數
@@ -4114,4 +4119,279 @@ class TreeNode:
                 self._put(key,val,currentNode.rightChild)
             else:
                 currentNode.rightChild = TreeNode(key,val,parent=currentNode)
+```
+
+7. 二叉查找树 LC 235
+
+Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
+
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+
+给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+
+百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+
+例如，给定如下二叉搜索树: root = [6,2,8,0,4,7,9,null,null,3,5]
+
+https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834
+
+https://en.wikipedia.org/wiki/Lowest_common_ancestor
+
+Example 1:
+
+```
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+Output: 6
+Explanation: The LCA of nodes 2 and 8 is 6.
+节点 2 和节点 8 的最近公共祖先是 6。
+```
+
+Example 2:
+
+```
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+Output: 2
+Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
+节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+```
+
+Example 3:
+
+```
+Input: root = [2,1], p = 2, q = 1
+Output: 2
+```
+
+Constraints:
+
+- The number of nodes in the tree is in the range $[2, 10^{5}]$.
+
+- $-109$ <= Node.val <= $10^{9}$
+
+- All Node.val are unique.
+
+- p != q
+
+- p and q will exist in the BST.
+
+- 所有节点的值都是唯一的。
+
+- p、q 为不同节点且均存在于给定的二叉搜索树中。
+
+解题思路
+
+1. 在二叉搜索树中求两个节点的最近公共祖先，由于二叉搜索树的特殊性质，所以找任意两个节点的最近公共祖先非常简单。
+
+2. python3 利用二叉搜索树的特点，如果p、q的值都小于root，说明p q 肯定在root的左子树中；如果p q都大于root，说明肯定在root的右子树中，如果一个在左一个在右 则说明此时的root记为对应的最近公共祖先
+
+```
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        if p.val<root.val and q.val<root.val:
+            return self.lowestCommonAncestor(root.left,p,q)
+        if p.val>root.val and q.val>root.val:
+            return self.lowestCommonAncestor(root.right,p,q)
+```
+
+## Trie 字典树
+
+![](w10-kp-2.png)
+
+- Trie 树的基本结构
+
+- Trie 树的核心思想
+
+- Trie 树的基本性质
+
+- Trie 树的实现
+
+1. 实际问题
+
+![](w10-kp-1.png)
+
+2. 基本结构
+
+Trie 树,即字典树,又称单词查找树或键树,是一种树形结构,是一种哈希树的变种。典型应用是用于统计和排序大量的字符串但不仅限于字符串,所以经常被搜索引擎系统用于文本词频统计。
+
+它的优点是:最大限度地减少无谓的字符串比较,查询效率比哈希表高。
+
+3. 核心思想
+
+Trie 的核心思想空间换时间。利用字符串的公共前缀来降低查询时间的开销以达到提高效率的目的。
+
+4. 基本性质
+
+1.根节点不包含字符,除根节点外每一个节点都只包含一个字符。
+
+2.从根节点到某一节点,路径上经过的字符连接起来,为该节点对应的字符串。
+
+3.每个节点的所有子节点包含的字符都不相同。
+
+5. 实现
+
+LC 208. Implement Trie (Prefix Tree) 实现 Trie (前缀树)
+
+A trie (pronounced as "try") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.
+
+Implement the Trie class:
+
+- Trie() Initializes the trie object.
+
+- void insert(String word) Inserts the string word into the trie.
+
+- boolean search(String word) Returns true if the string word is in the trie (i.e., was inserted before), and false otherwise.
+
+- boolean startsWith(String prefix) Returns true if there is a previously inserted string word that has the prefix prefix, and false otherwise.
+
+Trie（发音类似 "try"）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
+
+请你实现 Trie 类：
+
+Trie() 初始化前缀树对象。
+void insert(String word) 向前缀树中插入字符串 word 。
+boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。
+boolean startsWith(String prefix) 如果之前已经插入的字符串 word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。
+
+Example 1:
+
+```
+Input
+["Trie", "insert", "search", "search", "startsWith", "insert", "search"]
+[[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]
+Output
+[null, null, true, false, true, null, true]
+
+Explanation
+Trie trie = new Trie();
+trie.insert("apple");
+trie.search("apple");   // return True
+trie.search("app");     // return False
+trie.startsWith("app"); // return True
+trie.insert("app");
+trie.search("app");     // return True
+```
+
+Constraints:
+
+- 1 <= word.length, prefix.length <= 2000
+
+- word and prefix consist only of lowercase English letters.
+
+word 和 prefix 仅由小写英文字母组成
+
+- At most 3 * $10^{4}$ calls in total will be made to insert, search, and startsWith.
+
+insert、search 和 startsWith 调用次数 总计 不超过 3 * $10^4$ 次
+
+```
+class TreeNode(object):
+    def __init__(self):
+        self.word = False
+        self.children = {}
+
+class Trie(object):
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.root = TreeNode()
+    def insert(self, word):
+        """
+        Inserts a word into the trie.
+        :type word: str
+        :rtype: void
+        """
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TreeNode()
+            node = node.children[char]
+        node.word = True
+
+    def search(self, word):
+        """
+        Returns if the word is in the trie.
+        :type word: str
+        :rtype: bool
+        """
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return node.word
+    def startsWith(self, prefix):
+        """
+        Returns if there is any word in the trie
+        that starts with the given prefix.
+        :type prefix: str
+        :rtype: bool
+        """
+        node = self.root
+        for char in prefix:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return True
+```
+
+LC 720. Longest Word in Dictionary 词典中最长的单词
+
+Given an array of strings words representing an English Dictionary, return the longest word in words that can be built one character at a time by other words in words.
+
+If there is more than one possible answer, return the longest word with the smallest lexicographical order. If there is no answer, return the empty string.
+
+
+给出一个字符串数组 words 组成的一本英语词典。返回 words 中最长的一个单词，该单词是由 words 词典中其他单词逐步添加一个字母组成。
+
+若其中有多个可行的答案，则返回答案中字典序最小的单词。若无答案，则返回空字符串。
+
+
+
+Example 1:
+
+```
+Input: words = ["w","wo","wor","worl","world"]
+Output: "world"
+Explanation: The word "world" can be built one character at a time by "w", "wo", "wor", and "worl".
+单词"world"可由"w", "wo", "wor", 和 "worl"逐步添加一个字母组成。
+```
+
+Example 2:
+
+```
+Input: words = ["a","banana","app","appl","ap","apply","apple"]
+Output: "apple"
+Explanation: Both "apply" and "apple" can be built from other words in the dictionary. However, "apple" is lexicographically smaller than "apply".
+"apply" 和 "apple" 都能由词典中的单词组成。但是 "apple" 的字典序小于 "apply" 
+```
+
+
+Constraints:
+
+- 1 <= words.length <= 1000
+
+- 1 <= words[i].length <= 30
+
+- words[i] consists of lowercase English letters.
+
+所有输入的字符串 words[i] 都只包含小写字母。
+
+```
+class Solution(object):
+    def longestWord(self, words):
+        valid = set([""])
+        for word in sorted(words, key=len):
+            if word[:-1] in valid:
+                valid.add(word)
+        return max(sorted(valid), key=len)
+if __name__ == '__main__':
+    words = ["a", "banana", "app", "appl", "ap", "apply", "apple"]
+    print(Solution().longestWord(words))
 ```
