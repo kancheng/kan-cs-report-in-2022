@@ -131,7 +131,13 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 32. Trie & 实际问题
 
-- Trie 树的基本结构、核心思想、基本性质、实现
+- Trie 树的基本结构、核心思想、基本性质、实现，LC 208 LC 720
+
+33. LC 347 (桶排序)
+
+34. 圖 & LC 997 (KP)
+
+35. BFS and DFS LC 102、LC 104、LC 111.
 
 
 ## 平方根函數
@@ -4348,7 +4354,7 @@ Given an array of strings words representing an English Dictionary, return the l
 If there is more than one possible answer, return the longest word with the smallest lexicographical order. If there is no answer, return the empty string.
 
 
-给出一个字符串数组 words 组成的一本英语词典。返回 words 中最长的一个单词，该单词是由 words 词典中其他单词逐步添加一个字母组成。
+给出一个字符串数组 words 组成的一本英语词典。返回 words 中最长的一个单词，该单词是由 words 词典中其他单词逐步添加一个字母组成。
 
 若其中有多个可行的答案，则返回答案中字典序最小的单词。若无答案，则返回空字符串。
 
@@ -4394,4 +4400,602 @@ class Solution(object):
 if __name__ == '__main__':
     words = ["a", "banana", "app", "appl", "ap", "apply", "apple"]
     print(Solution().longestWord(words))
+```
+
+## LC 347 (桶排序) Top K Frequent Elements 前 K 个高频元素
+
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+
+给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
+
+Example 1:
+
+```
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+```
+
+Example 2:
+
+```
+Input: nums = [1], k = 1
+Output: [1]
+```
+
+
+Constraints:
+
+- $1 <= nums.length <= 10^{5}$
+
+- k is in the range [1, the number of unique elements in the array].
+
+- It is guaranteed that the answer is unique.
+
+Reference :
+
+https://zh.m.wikipedia.org/zh-hant/%E6%A1%B6%E6%8E%92%E5%BA%8F
+
+0.
+
+```
+from typing import List 
+#时间复杂度：O(nlogk)
+#空间复杂度：O(n)
+import heapq
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #要统计元素出现频率
+        map_ = {} #nums[i]:对应出现的次数
+        for i in range(len(nums)):
+            map_[nums[i]] = map_.get(nums[i], 0) + 1
+        
+        #对频率排序
+        #定义一个小顶堆，大小为 k
+        pri_que = [] #小顶堆
+        
+        #用固定大小为 k 的小顶堆，扫面所有频率的数值
+        for key, freq in map_.items():
+            heapq.heappush(pri_que, (freq, key))
+            if len(pri_que) > k: #如果堆的大小大于了K，则队列弹出，保证堆的大小一直为k
+                heapq.heappop(pri_que)
+        
+        #找出前 K 个高频元素，因为小顶堆先弹出的是最小的，所以倒叙来输出到数组
+        result = [0] * k
+        for i in range(k-1, -1, -1):
+            result[i] = heapq.heappop(pri_que)[1]
+        return result
+```
+
+1. 简单排序
+
+时间复杂度O(nlogn)
+
+```
+from typing import List
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        counts = list(collections.Counter(nums).items())
+        counts.sort(key=lambda X: x[1], reverse=True)
+        return [count[0] for count in counts[:k]]
+```
+
+2. 小根堆
+
+```
+from typing import List
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        counts = list(collections.Counter(nums).items())
+        heap = []
+        def sift_down(heap, root, k):
+            tmp = heap[root]
+            while root << 1 < k:
+                child = root << 1
+                if child + 1 < k and heap[child + 1][1] < heap[child][1]:
+                    child += 1
+                if heap[child][1] < tmp[1]:
+                    heap[root] = heap[child]
+                    root = child
+                else:
+                    break
+            heap[root] = tmp
+        def sift_up(heap, child):
+            tmp = heap[child]
+            while child >> 1 > 0 and tmp[1] < heap[child >> 1][1]:
+                heap[child] = heap[child >> 1]
+                child >>= 1
+            heap[child] = tmp
+        heap = [(0, 0)]
+        for i in range(k):
+            heap.append(counts[i])
+            sift_up(heap, len(heap) - 1)
+        for i in range(k, len(counts)):
+            if counts[i][1] > heap[1][1]:
+                heap[1] = counts[i]
+                sift_down(heap, 1, k + 1)
+        return [item[0] for item in heap[1:]]
+```
+
+3. 桶排序
+
+使用桶排序的方式,倒序遍历桶,得到 k 个值后结束,时间复杂度为 O(n)
+
+```
+from typing import List
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        counts = collections.Counter (nums)
+        bucket = dict()
+        for key, value in counts.items():
+            if value not in bucket:
+                bucket[value] = [key]
+            else:
+                bucket[value].append(key)
+        res = []
+        for value in range(len(nums), -1, -1):
+            if len(res) >= k:
+                break
+            if value in bucket:
+                res.extend(bucket[value])
+        return res
+```
+
+## 圖 & LC 997 (KP)
+
+![](w12-kp-1.png)
+
+![](w12-kp-2.png)
+
+- Graph() 创建一个新的空图。
+
+- addVertex(vert) 向图中添加一个顶点实例。
+
+- addEdge(fromVert, toVert) 向连接两个顶点的图添加一个新的有向边。
+
+- addEdge(fromVert, toVert, weight) 向连接两个顶点的图添加一个新的加权的有向边。
+
+- getVertex(vertKey) 在图中找到名为 vertKey 的顶点。
+
+- getVertices() 返回图中所有顶点的列表。
+
+- in 返回 True 如果 vertex in graph 里给定的顶点在图中，否则返回False。
+
+![](w12-kp-3.png)
+
+```
+class Vertex:
+    def __init__(self, key):
+        self.id = key
+        self.connectedTo = {}
+
+    def addNeighbor(self,nbr,weight=0):
+        self.connectedTo[nbr] = weight
+
+    def __str__(self):
+        return str(self.id) + ' connectedTo: ' + str([x.id for x in self.connectedTo])
+
+    def getConnections(self):
+        return self.connectedTo.keys()
+
+    def getId(self):
+        return self.id
+
+    def getWeight(self,nbr):
+        return self.connectedTo[nbr]
+class Graph:
+    def __init__(self):
+        self.vertList = {}
+        self.numVertices = 0
+
+    def addVertex(self, key):
+        self.numVertices = self.numVertices + 1
+        newVertex = Vertex(key)
+        self.vertList[key] = newVertex
+        return newVertex
+
+    def getVertex(self,n):
+        if n in self.vertList:
+            return self.vertList[n]
+        else:
+            return None
+
+    def __contains__(self,n):
+        return n in self.vertList
+
+    def addEdge(self, f, t, cost=0):
+        if f not in self.vertList:
+            nv = self.addVertex(f)
+        if t not in self.vertList:
+            nv = self.addVertex(t)
+        self.vertList[f].addNeighbor(self.vertList[t], cost)
+
+    def getVertices(self):
+        return self.vertList.keys()
+
+    def __iter__(self):
+        return iter(self.vertList.values())
+g = Graph()
+for i in range(6):
+    g.addVertex(i)
+print(g.vertList)
+g.addEdge(0, 1, 5)
+g.addEdge(0, 5, 2)
+g.addEdge(1, 2, 4)
+g.addEdge(2, 3, 9)
+g.addEdge(3, 4, 7)
+g.addEdge(3, 5, 3)
+g.addEdge(4, 0, 1)
+g.addEdge(5, 4, 8)
+g.addEdge(5, 2, 1)
+g.addEdge(6, 2, 1)
+
+for v in g:
+    for w in v.getConnections():
+        print("( %s , %s )" % (v.getId(), w.getId()))
+```
+
+### LC 997. Find the Town Judge 找到小镇的法官
+
+In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
+
+If the town judge exists, then:
+
+1. The town judge trusts nobody.
+
+2. Everybody (except for the town judge) trusts the town judge.
+
+3. There is exactly one person that satisfies properties 1 and 2.
+
+You are given an array trust where trust[i] = [$a_i$, $b_i$] representing that the person labeled ai trusts the person labeled bi.
+
+Return the label of the town judge if the town judge exists and can be identified, or return -1 otherwise.
+
+小镇里有 n 个人，按从 1 到 n 的顺序编号。传言称，这些人中有一个暗地里是小镇法官。
+
+如果小镇法官真的存在，那么：
+
+小镇法官不会信任任何人。
+每个人（除了小镇法官）都信任这位小镇法官。
+只有一个人同时满足属性 1 和属性 2 。
+给你一个数组 trust ，其中 trust[i] = [$a_i$, $b_i$] 表示编号为 $a_i$ 的人信任编号为 $b_i$ 的人。
+
+如果小镇法官存在并且可以确定他的身份，请返回该法官的编号；否则，返回 -1 。
+
+
+Example 1:
+
+```
+Input: n = 2, trust = [[1,2]]
+Output: 2
+```
+
+Example 2:
+
+```
+Input: n = 3, trust = [[1,3],[2,3]]
+Output: 3
+```
+
+Example 3:
+
+```
+Input: n = 3, trust = [[1,3],[2,3],[3,1]]
+Output: -1
+```
+
+Constraints:
+
+- 1 <= n <= 1000
+
+- 0 <= trust.length <= $10^4$
+
+- trust[i].length == 2
+
+- All the pairs of trust are unique. (trust 中的所有 trust[i] = [$a_i$, $b_i$] 互不相同)
+
+- $a_i$ != $b_i$
+
+- 1 <= $a_i$, $b_i$ <= n
+
+```
+class Solution(object):
+    def findJudge(self, N, trust):
+        if not trust:
+            return 1
+        mapping = {}
+        unique = set()
+        for truste_list in trust:
+            unique.add(truste_list[0])
+            if truste_list[1] in mapping:
+                mapping[truste_list[1]] += 1
+            else:
+                mapping[truste_list[1]] = 1
+
+        unique_set = len(unique)
+        for key, value in mapping.items():
+            if (value == N-1) & (unique_set == N-1):
+                return key
+        return -1
+
+
+    def findJudge2(self, N, trust):
+        from collections import Counter
+        people = set([x[0] for x in trust])
+        if not len(people):
+            if N == 1:
+                return 1
+            else:
+                return -1
+
+        if len(people) == N - 1:
+            trustee = Counter([x[1] for x in trust])
+            for t in trustee.keys():
+                if trustee[t] == N - 1:
+                    return t
+            return -1
+        return -1
+
+
+if __name__ == '__main__':
+    trust = [[1, 3], [2, 3]]
+    # trust = [[1,3],[2,1], [2,1]]
+    # trust = [[1,8],[1,3],[2,8],[2,3],[4,8],[4,3],[5,8],[5,3],[6,8],[6,3],[7,8],[7,3],[9,8],[9,3],[11,8],[11,3]]
+
+    print(Solution().findJudge(3, trust))
+    # print(Solution().findJudge2(3, trust))
+```
+
+## BFS and DFS LC 102、LC 104、LC 111.
+
+广度优先搜索(Breadth-First-Search)
+
+深度优先搜索(Depth-First-Search)
+
+![](w12-kp-4.png)
+
+在树或图中寻找特定节点
+
+![](w12-kp-5.png)
+
+![](w12-kp-6.png)
+
+```
+def BFS(graph, start, end):
+    queue = []
+    queue.append([start])
+    visited.add(start)
+    while queue:
+        node = queue.pop()
+        visited.add(node)
+        process(node)
+        nodes = generate_related_nodes(node)
+        queue.push(nodes)
+```
+
+```
+# DFS 代码递归写法
+visited = set()
+def dfs(node, visited):
+    visited.add(node)
+    # process current node here.
+    for next_node in node.children():
+        if not next_node in visited:
+            dfs(next_node, visited)
+```
+
+```
+# DFS 代码非递归写法
+def DFS(self, tree):
+    if tree.root is None:
+        return []
+    visited, stack = [], [tree.root]
+    while stack:
+        node = stack.pop()
+        visited.add(node)
+        process(node)
+        nodes = generate_related_nodes(node)
+        stack.push(nodes)
+        # other processing work
+```
+
+### LC 102. Binary Tree Level Order Traversal 二叉树的层序遍历
+
+Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+
+给你二叉树的根节点 root ，返回其节点值的 层序遍历 。 （即逐层地，从左到右访问所有节点）。
+
+Example 1:
+
+```
+Input: root = [3,9,20,null,null,15,7]
+Output: [[3],[9,20],[15,7]]
+Example 2:
+```
+
+Example 2:
+
+```
+Input: root = [1]
+Output: [[1]]
+Example 3:
+```
+
+Example 3:
+
+```
+Input: root = []
+Output: []
+```
+
+Constraints:
+
+- The number of nodes in the tree is in the range [0, 2000]. (树中节点数目在范围 [0, 2000] 内)
+
+- -1000 <= Node.val <= 1000
+
+```
+# Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+class Solution(object):
+    def levelOrder(self, root):
+        if not root:
+            return []
+        queue = [(root, 0)]
+        levelMap = {}
+        while queue:
+            node, level = queue.pop(0)
+            if node.left:
+                queue.append((node.left, level+1))
+            if node.right:
+                queue.append((node.right, level+1))
+            if level in levelMap:
+                levelMap[level].append(node.val)
+            else:
+                levelMap[level] = [node.val]
+        result = []
+        for key, value in levelMap.items():
+            result.append(value)
+        return result
+if __name__ == '__main__':
+    tree = TreeNode(3)
+    tree.left = TreeNode(9)
+    tree.right = TreeNode(20)
+    tree.right.left = TreeNode(15)
+    tree.right.right = TreeNode(7)
+    print(Solution().levelOrder(tree))
+```
+
+### LC 104. Maximum Depth of Binary Tree 二叉树的最大深度
+
+Given the root of a binary tree, return its maximum depth.
+
+A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+
+说明: 叶子节点是指没有子节点的节点。
+
+Example 1:
+
+```
+给定二叉树 [3,9,20,null,null,15,7]，
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+返回它的最大深度 3 。
+
+```
+
+Example 2:
+
+```
+Input: root = [1,null,2]
+Output: 2
+```
+
+Constraints:
+
+- The number of nodes in the tree is in the range [0, $10^4$].
+- -100 <= Node.val <= 100
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution:
+    def maxDepth(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if root is None:
+            return 0
+        else:
+            return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+
+if __name__ == '__main__':
+    root = TreeNode(3)
+    root.left = TreeNode(9)
+    root.right = TreeNode(20)
+    root.left.left = TreeNode(7)
+    root.left.right = TreeNode(15)
+    print(Solution().maxDepth(root))
+```
+
+
+### LC 111. Minimum Depth of Binary Tree 二叉树的最小深度
+
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+Note: A leaf is a node with no children.
+
+给定一个二叉树，找出其最小深度。
+
+最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
+
+说明：叶子节点是指没有子节点的节点。
+
+Example 1:
+
+```
+Input: root = [3,9,20,null,null,15,7]
+Output: 2
+Example 2:
+```
+
+Example 2:
+
+```
+Input: root = [2,null,3,null,4,null,5,null,6]
+Output: 5
+```
+
+Constraints:
+
+- The number of nodes in the tree is in the range [0, $10^5$]. (树中节点数的范围在 [0, $10^5$] 内)
+
+- -1000 <= Node.val <= 1000
+
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution:
+    def minDepth(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if root is None:
+            return 0
+
+        if root.left and root.right:
+            return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
+        else:
+            return max(self.minDepth(root.left), self.minDepth(root.right)) + 1
+
+if __name__ == '__main__':
+    root = TreeNode(3)
+    root.left = TreeNode(9)
+    root.right = TreeNode(20)
+    root.right.left = TreeNode(7)
+    root.right.right = TreeNode(15)
+    print(Solution().minDepth(root))
 ```

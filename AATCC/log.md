@@ -341,8 +341,41 @@ Trie & 实际问题
 
 Trie 树的基本结构、核心思想、基本性质、实现
 
-### 11. W11 :
+### 11. W12 :
 
 - LeetCode :
 
+LeetCode 102. Binary Tree Level Order Traversal 二叉树的层序遍历
+
+LeetCode 104. Maximum Depth of Binary Tree 二叉树的最大深度
+
+LeetCode 111. Minimum Depth of Binary Tree 二叉树的最小深度
+
+LeetCode 208. Implement Trie (Prefix Tree) 实现 Trie (前缀树)
+
+LeetCode 347. Top K Frequent Elements 前 K 个高频元素
+
+LeetCode 692. Top K Frequent Words 前 K 个高频单词
+
+LeetCode 720. Longest Word in Dictionary 词典中最长的单词
+
+LeetCode 787. Cheapest Flights Within K Stops, K 站中转内最便宜的航班
+
+LeetCode 934. Shortest Bridge 最短的桥
+
+LeetCode 997. Find the Town Judge 找到小镇的法官
+
+
 - Knowledge Point :
+
+樹
+
+二叉堆
+
+Trie 樹 LC 208 LC 720
+
+LC 347 (桶排序)
+
+圖 & LC 997 (KP)
+
+BFS and DFS LC 102、LC 104、LC 111.
