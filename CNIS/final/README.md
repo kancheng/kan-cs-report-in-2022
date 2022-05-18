@@ -202,4 +202,10 @@ php -S 127.0.0.1:8989
 
 48. Federated Learning 聯邦學習簡介 : https://biic.ee.nthu.edu.tw/blog-detail.php?id=2
 
+49. linux tcpdump 命令以及结果分析 : https://blog.csdn.net/redsuntim/article/details/8892339
 
+50. Linux tcpdump 命令 : https://www.runoob.com/linux/linux-comm-tcpdump.html
+
+51. Digital footprints: Using WiFi probe and locational data to analyze human mobility trajectories in cities : https://www.sciencedirect.com/science/article/pii/S0198971517305914
+
+52. tcpdump 抓包分析 : https://blog.csdn.net/daidadeguaiguai/article/details/119758391
