@@ -211,3 +211,5 @@ php -S 127.0.0.1:8989
 52. tcpdump 抓包分析 : https://blog.csdn.net/daidadeguaiguai/article/details/119758391
 
 53. tcpdump/wireshark 抓包及分析 : https://arthurchiao.art/blog/tcpdump-practice-zh/
+
+54. Google Chrome 抓包分析详解 : https://blog.csdn.net/a12355556/article/details/113177509
