@@ -213,3 +213,5 @@ php -S 127.0.0.1:8989
 53. tcpdump/wireshark 抓包及分析 : https://arthurchiao.art/blog/tcpdump-practice-zh/
 
 54. Google Chrome 抓包分析详解 : https://blog.csdn.net/a12355556/article/details/113177509
+
+55. tcpdump permissions problem : https://askubuntu.com/questions/530920/tcpdump-permissions-problem
