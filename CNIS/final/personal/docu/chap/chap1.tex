@@ -243,6 +243,171 @@ TCP 传输控制协议是面向连接的可靠的传输层协议，在进行数�
 \label{Test}
 \end{figure}
 
+\subsection{开发者工具的结构}
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m6.png} 
+\caption{Chrome 开发者工具的结构}
+\label{Test}
+\end{figure}
+
+\begin{itemize}
+\item [-] Elements (元素面板)：使用“元素”面板可以通过自由操纵 DOM 和 CSS 来重演您网站的布局和设计。
+\item [-] Console (控制台面板)：在开发期间，可以使用控制台面板记录诊断信息，或者使用它作为 Shell，在页面上与 JavaScript 交互。
+\item [-] Sources (源代码面板)：在源代码面板中设置断点来调试 JavaScript ，或者通过 Workspaces (工作区) 连接本地文件来使用开发者工具的实时编辑器。
+\item [-] Network (网络面板)：从发起网页页面请求 Request 后得到的各个请求资源信息，當中包括了状态、资源类型、大小、所用时间等，并可以根据这个进行网络性能优化
+\item [-] Performance (性能面板)：使用时间轴面板，可以通过记录和查看网站生命周期内发生的各种事件来提高页面运行时的性能
+\item [-] Memory (内存面板)：分析 Web 应用或者页面的执行时间以及内存使用情况
+\item [-] Application (应用面板)：记录网站加载的所有资源信息，包括存储数据 (Local Storage、Session Storage、IndexedDB、Web SQL、Cookies)、缓存数据、字体、图片、脚本、样式表等
+\item [-] Security (安全面板)：使用安全面板调试混合内容问题，证书问题等等
+\item [-] Audits (审核面板)：对当前网页进行网络利用情况、网页性能方面的诊断，并给出一些优化建议。比如列出所有没有用到的 CSS 文件等
+\end{itemize}
+
+\subsection{Network 网络面板}
+
+从开发者工具的结构中可以看到 Network 面板记录页面上每个网络操作的相关信息，包括从发起网页页面请求 Request 后得到的各个请求资源信息，当中包括了状态、资源类型、大小、所用时间等，并可以根据这个进行网络性能优化，看到详细的耗时数据、HTTP 请求与响应标头和 Cookie。该结构由五个窗格组成，包含了控件 (Controls)、过滤器 (Filter)、Overview (概览)、请求列表 (Request Table)、概要 (Summary)。
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m7.png} 
+\caption{Chrome 开发者工具的 Network}
+\label{Test}
+\end{figure}
+
+\subsection{Controls 控件}
+
+Controls 控件使用记录请求、清除请求、捕获截图、保存日志、禁用缓存等选项，来控制 Network 网络面板的外观和功能。
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m8.png} 
+\caption{Chrome 开发者工具的 Network}
+\label{Test}
+\end{figure}
+
+\subsection{Filters 过滤器}
+
+Filters 过滤器使用一些选项来控制在请求列表中显示当中的资源，使用上按住键盘的 Ctrl 键（Window / Linux），然后点击过滤器可以同时选择多个过滤器。此外，筛选框可以实现很多定制化的筛选，比如字符串匹配，关键词筛选等，其中关键词筛选主要有如下几种：
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m9.png} 
+\caption{Chrome 开发者工具的 Filters}
+\label{Test}
+\end{figure}
+
+\begin{itemize}
+\item [-] domain：仅显示来自指定域的资源。您可以使用通配符（）来包括多个域。例如 .com 显示以 .com 结尾的所有域名中的资源。 DevTools 会在自动完成下拉菜单中自动填充它遇到的所有域。
+\item [-] has-response-header：显示包含指定 HTTP 响应头信息的资源。 DevTools 会在自动完成下拉菜单中自动填充它遇到的所有响应头。
+\item [-] is：通过 is:running 找出 WebSocket 请求。
+\item [-] larger-than (大于) ：显示大于指定大小的资源（以字节为单位）。设置值 1000 等效于设置值 1k。
+\item [-] method (方法)：显示通过指定的 HTTP 方法类型检索的资源。DevTools 使用它遇到的所有 HTTP 方法填充下拉列表。
+\item [-] mime-type (mime 类型)：显示指定 MIME 类型的资源。 DevTools 使用它遇到的所有 MIME 类型填充下拉列表。
+\item [-] mixed-content (混合内容)：显示所有混合内容资源（mixed-content:all）或仅显示当前显示的内容（mixed-content:displayed）。
+\item [-] Scheme（协议）：显示通过不受保护的 HTTP（scheme:http）或受保护的 HTTPS（scheme:https）检索的资源。
+\item [-] set-cookie-domain（cookie域）：显示具有 Set-Cookie 头,并且其 Domain 属性与指定值匹配的资源。DevTools 会在自动完成下拉菜单中自动填充它遇到的所有 Cookie 域。
+\item [-] set-cookie-name（cookie名）：显示具有 Set-Cookie 头,并且名称与指定值匹配的资源。DevTools 会在自动完成下拉菜单中自动填充它遇到的所有 Cookie 名。
+\item [-] set-cookie-value（cookie值）：显示具有 Set-Cookie 头,并且值与指定值匹配的资源。DevTools 会在自动完成下拉菜单中自动填充它遇到的所有cookie值。
+\item [-] status-code（状态码）：仅显示其 HTTP 状态代码与指定代码匹配的资源。DevTools 会在自动完成下拉菜单中自动填充它遇到的所有状态码。
+\end{itemize}
+
+\subsection{Overview 概览}
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m10.png} 
+\caption{Chrome 开发者工具的 Domain 操作}
+\label{Test}
+\end{figure}
+
+Overview 概览图表显示检索资源的时间轴。如果您看到多个垂直堆叠的栏，这意味着这些资源被同时检索。
+
+\subsection{Requests Table 请求列表}
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m11.png} 
+\caption{Chrome 开发者工具的 Response}
+\label{Test}
+\end{figure}
+
+Requests Table 的请求列表中列出了检索的每个资源。默认情况下，此表按时间顺序排序，也就是最早的资源在顶部。单击资源名称可以获得更多信息。提示：右键单击列表的任何标题栏可以以添加或删除信息列。
+
+查看单个资源的详细信息，可点击资源名称，其位于 Requests Table 的 Name 列下，可以查看与该资源有关的更多信息。可用标签会因您所选择资源类型的不同而不同，但下面四个标签最常见：
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m12.png} 
+\caption{Chrome 开发者工具的 Preview}
+\label{Test}
+\end{figure}
+
+\begin{itemize}
+\item [-] Headers：与资源关联的 HTTP 标头。
+\item [-] Preview：JSON、图像和文本资源的预览。
+\item [-] Response：HTTP 响应数据 (如果存在)。
+\item [-] Timing：资源请求生命周期的精细分解。
+\item [-] Headers (查看 HTTP 标头) 点击 Headers 可以显示该资源的标头。 Headers 标签可以显示资源的请求网址、HTTP 方法以及响应状态代码。 此外，该标签还会列出 HTTP 响应和请求标头、它们的值以及任何查询字符串参数，点击每一部分旁边的 view source 或 view parsed 链接，您能够以源格式或者解析格式查看响应标头、请求标头或者查询字符串参数。
+\item [-] Preview (预览资源) 点击 Preview 标签可以查看该资源的预览。Preview 标签可能显示一些有用的信息，也可能不显示，具体取决于您所选择资源的类型。
+\item [-] Response (查看 HTTP 响应内容) 点击 Response 标签可以查看资源未格式化的 HTTP 响应内容。 Preview 标签可能包含一些有用的信息，也可能不包含，具体取决于您所选择资源的类型。
+\end{itemize}
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m13.png} 
+\caption{Chrome 开发者工具的查看 Response}
+\label{Test}
+\end{figure}
+
+\subsection{查看 Cookie}
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m14.png} 
+\caption{Chrome 开发者工具的查看 Cookie}
+\label{Test}
+\end{figure}
+
+查看 Cookie，点击 Cookies 标签可以查看在资源的 HTTP 请求和响应标头中传输的 Cookie 表。 只有传输 Cookie 时，此标签才可用。
+下面是 Cookie 表中每一列的说明：
+
+\begin{itemize}
+\item [-] Name：Cookie 的名称。
+\item [-] Value：Cookie 的值。
+\item [-] Domain：Cookie 所属的域。
+\item [-] Path：Cookie 来源的网址路径。
+\item [-] Expires / Max-Age：Cookie 的 expires 或 max-age 属性的值。
+\item [-] Size：Cookie 的大小 (以字节为单位)。
+\item [-] HTTP：指示 Cookie 应仅由浏览器在 HTTP 请求中设置，而无法通过 JavaScript 访问。
+\item [-] Secure：如果存在此属性，则指示 Cookie 应仅通过安全连接传输。
+\end{itemize}
+
+\subsection{复制、保存和清除网络信息}
+
+右键单击 Requests Table (请求列表) 以复制、保存或删除网络信息。一些选项是上下文相关的，所以如果想在单个资源上操作，需要右键单击该资源行。下面的列表描述了每个选项。
+
+\begin{itemize}
+\item [-] Copy Response (复制响应) : 将所选资源的 HTTP 响应复制到系统剪贴板。
+\item [-] Copy as cURL (复制为 cURL) : 将所选资源的网络请求作为cURL命令字符串复制到系统剪贴板。 请参阅将复制请求为 cURL 命令。 curl 命令是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称 curl 为下载工具。作为一款强力工具，curl 支持包括 HTTP、HTTPS、ftp 等众多协议，还支持 POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl 可以祝一臂之力。
+\item [-] Copy All as HAR (全部复制为 HAR) : 将所有资源复制到系统剪贴板作为 HAR 数据。 HAR 文件包含描述网络“瀑布”的JSON数据结构。一些第三方工具可以使用HAR文件中的数据重建网络瀑布。有关详细信息，请参阅 Web 性能强大工具：HTTP 归档 (HAR)。
+\item [-] Save as HAR with Content (另存为带内容的 HAR) : 将所有网络数据与每个页面资源一起保存到 HAR 文件中。 二进制资源 (包括图像) 被编码为 Base64 编码文本。
+\item [-] Clear Browser Cache (清除浏览器缓存) : 清除浏览器高速缓存。当然也可以从 Network Conditions 的网络条件抽屉式窗格中启用或禁用浏览器缓存。
+\item [-] Clear Browser Cookies (清除浏览器 Cookie) : 清除浏览器的 Cookie。
+\item [-] Open in Sources Panel (在源文件面板中打开) : 在 Sources(源文件) 面板中打开选定的资源。
+\item [-] Open Link in New Tab (在新标签页中打开链接) : 在新标签页中打开所选资源。您还可以在 Requests Table(请求列表)中双击资源名称。
+\item [-] Copy Link Address (复制链接地址) : 将资源 URL 复制到系统剪贴板。
+\item [-] Save (保存) : 保存所选的文本资源。仅显示在文本资源上。
+\item [-] Replay XHR (重新发送 XHR) : 重新发送所选的 XMLHTTPRequest。仅显示在XHR资源上，来查看资源发起者和依赖关系，按住 Shift 并移动鼠标到资源上可查看它的发起者和依赖关系。这部分是你鼠标悬停的资源的target(目标)引用。从 target(目标)往上查找，第一个颜色编码为绿色的资源是 target(目标)的发起者。如果存在第二个颜色编码为绿色资源，那么这个是发起者的发起者。从 target(目标)向下查找，任何颜色编码为红色的资源都是 target 的依赖。
+\end{itemize}
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.80\textwidth]{img/newch1m15.png} 
+\caption{Chrome 开发者工具的 Replay XHR - 重新发送 XHR}
+\label{Test}
+\end{figure}
+
 \section{XAMPP 的 PHP 测试范例与凭证设定}
 
 此节本作业除了说明 OpenSSL 等概念，也会尝试使用 XAMPP 与 PHP 分别进行凭证设定与范例，此节本作业会写程式范例同时也会提供 CA 设定档，根据写好的地区设定，在 Apache 伺服器中执行 CA 认证。
@@ -884,3 +1049,18 @@ WiFi 是基于 IEEE 802.11a/b/g/n 协议而成，在标准协议中，定义了�
 WiFi 探针设备和普通的无线路由器很接近，实际普通路由器就能做，只修改无线路由器的驱动部分，直接在驱动中抓取周边手机的信息。同时许多厂商也推出了专用的 WiFi 探针设备，集成为管理平台，更方便的管理收集的信息等特性。
 
 \section{WiFi 探针与移动轨迹}
+
+根据 Martin W. et al. 等人所提出针对数字足迹使用 WiFi 探针和位置数据分析城市中的人类移动轨迹，其主因在于界各地的城市政府都面临着以高时空分辨率理解密集城市环境中的移动模式的挑战。虽然这些措施对于深入了解城市的功能模式很重要，但需要源自无处不在的移动连接的新颖量化方法，为决策者提供更好的洞察力，以改善城市管理和规划决策。
+
+在本文中，研究者开发了一个模型，该模型使用大规模 WiFi 探测请求数据来模拟密集城市环境中的城市移动轨迹。并在在一周内从纽约市曼哈顿下城部分具有 54 个接入点的公共 Wifi 网络收集探测请求数据，包含超过 3000 万次观察和超过 800,000 台独特设备。第一的，我们汇总每个接入点和每小时的唯一条目，展示了使用 WiFi 数据按用户类型估算当地人口数量的潜力。
+
+\begin{figure}[htb]
+\centering 
+\includegraphics[width=0.70\textwidth]{img/newch1m16.png} 
+\caption{每个 WiFi AP 的每日客户端频率，以圆圈大小表示。}
+\label{Test}
+\end{figure}
+
+而后，研究者使用空间网络分析来识别网络节点之间的边缘频率和行程方向，并将结果应用于道路和人行道网络，以识别各个街道段的使用强度水平和轨迹。研究者展示了使用 WiFi 探测请求数据来了解城市移动模式的巨大潜力，同时强调了公共 WiFi 网络日益普及所引发的数据隐私问题。
+
+然后，该研究使用空间网络分析来识别网络节点之间的边缘频率和行程方向，并将结果应用于道路和人行道网络，以识别各个街道段的使用强度水平和轨迹。该研究展示了使用 WiFi 探测请求数据来了解城市移动模式的巨大潜力，同时强调了公共 WiFi 网络日益普及所引发的数据隐私问题。使用空间网络分析来识别网络节点之间的边缘频率和行程方向，并将结果应用于道路和人行道网络，以识别各个街道段的使用强度水平和轨迹。同时展示了使用 WiFi 探测请求数据来了解城市移动模式的巨大潜力，同时强调了公共 WiFi 网络日益普及所引发的数据隐私问题。
