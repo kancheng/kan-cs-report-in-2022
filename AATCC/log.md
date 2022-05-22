@@ -384,4 +384,21 @@ BFS and DFS LC 102、LC 104、LC 111.
 
 - LeetCode :
 
+LeetCode 692. Top K Frequent Words 前K个高频单词
+
+LeetCode 743. Network Delay Time 网络延迟时间
+
+LeetCode 787. Cheapest Flights Within K Stops, K 站中转内最便宜的航班
+
+LeetCode 847. Shortest Path Visiting All Nodes 访问所有节点的最短路径
+
+LeetCode 934. Shortest Bridge 最短的桥
+
 - Knowledge Point :
+
+最短路径问题
+
+狄克斯特拉（Dijkstra）算法
+
+贝尔曼-福特（Bellman-Ford）算法
+
