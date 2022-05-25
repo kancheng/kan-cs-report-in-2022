@@ -22,3 +22,5 @@ PKU 2022 個人實驗報告作業
 5. 精选 30 道 C++ 面试题（含解析） : https://zhuanlan.zhihu.com/p/472726416
 
 6. 如何高效深入的阅读 Redis 的源码？ : https://www.zhihu.com/question/28677076/answer/2482048354
+
+7. 回溯法套路模板刷通 Leetcode : https://zhuanlan.zhihu.com/p/112926891 
