@@ -39,3 +39,15 @@ PKU 2022 個人實驗報告作業
 
 12. 算法由浅入深 - 希尔排序算法 (Shell Sort) : https://zhuanlan.zhihu.com/p/409836908
 
+13. 归并排序 : https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/1639015
+
+14. Python 算法：约瑟夫环 : https://zhuanlan.zhihu.com/p/520065136
+
+15. 认识 ARM：汇编、架构、异常级别和安全状态 : https://zhuanlan.zhihu.com/p/492718441
+
+16. Python 能否进行大规模数值计算？ https://www.zhihu.com/question/68171807/answer/2186194693
+
+17. 如何通俗易懂地解释卷积 : https://www.zhihu.com/question/22298352/answer/637156871
+
+18. GitHub 上最大的算法开源库：The Algorithms : https://zhuanlan.zhihu.com/p/427505438
+
