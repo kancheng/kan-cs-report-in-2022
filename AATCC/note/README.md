@@ -24,3 +24,18 @@ PKU 2022 個人實驗報告作業
 6. 如何高效深入的阅读 Redis 的源码？ : https://www.zhihu.com/question/28677076/answer/2482048354
 
 7. 回溯法套路模板刷通 Leetcode : https://zhuanlan.zhihu.com/p/112926891 
+
+8. CUDA 编程笔记概述 : https://zhuanlan.zhihu.com/p/355958209
+
+9. 电路学不精，原理难成图 : https://zhuanlan.zhihu.com/p/520039029
+
+- https://mp.weixin.qq.com/s/sVO3J1uFB4Q_TVBTz4GDyQ
+
+- https://mp.weixin.qq.com/s/foSISszm3HUgLbtx7czO9Q
+
+10. C++ 实现中缀表达式到后缀表达式的转换 : https://zhuanlan.zhihu.com/p/444470843
+
+11. 图的十大经典算法 : https://zhuanlan.zhihu.com/p/478202932
+
+12. 算法由浅入深—希尔排序算法 (Shell Sort) : https://zhuanlan.zhihu.com/p/409836908
+
