@@ -37,5 +37,5 @@ PKU 2022 個人實驗報告作業
 
 11. 图的十大经典算法 : https://zhuanlan.zhihu.com/p/478202932
 
-12. 算法由浅入深—希尔排序算法 (Shell Sort) : https://zhuanlan.zhihu.com/p/409836908
+12. 算法由浅入深 - 希尔排序算法 (Shell Sort) : https://zhuanlan.zhihu.com/p/409836908
 
