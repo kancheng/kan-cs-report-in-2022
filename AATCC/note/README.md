@@ -9,7 +9,7 @@ PKU 2022 個人實驗報告作業
 
 1. 八大经典排序算法详解 : https://zhuanlan.zhihu.com/p/335048580
 
-2. AVL树，红黑树，B 树，B+ 树，Trie 树都分别应用在哪些现实场景中？ : https://www.zhihu.com/question/30527705/answer/2014288912
+2. AVL 树，红黑树，B 树，B+ 树，Trie 树都分别应用在哪些现实场景中？ : https://www.zhihu.com/question/30527705/answer/2014288912
 
 3. 十大经典排序算法（全面总结 + Java代码实现） : https://zhuanlan.zhihu.com/p/141469370
 
@@ -50,4 +50,15 @@ PKU 2022 個人實驗報告作業
 17. 如何通俗易懂地解释卷积 : https://www.zhihu.com/question/22298352/answer/637156871
 
 18. GitHub 上最大的算法开源库：The Algorithms : https://zhuanlan.zhihu.com/p/427505438
+
+19. CUDA 编程方法论之性能优化思路 : https://zhuanlan.zhihu.com/p/75720006
+
+20. C++ 为何不允许在函数中直接传递数组？ https://www.zhihu.com/question/402177743/answer/2304864695
+
+21. 戴克斯特拉演算法 : https://zh.wikipedia.org/zh-tw/%E6%88%B4%E5%85%8B%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95
+
+22. Dykstra's projection algorithm : https://en.wikipedia.org/wiki/Dykstra%27s_projection_algorithm
+
+23. Dijkstra's algorithm : https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+
 
