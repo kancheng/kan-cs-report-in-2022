@@ -61,4 +61,22 @@ PKU 2022 個人實驗報告作業
 
 23. Dijkstra's algorithm : https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
+24. “卷积”其实没那么难以理解 : https://zhuanlan.zhihu.com/p/41609577
 
+25. NumPy 和 pandas 的基本用法 : https://zhuanlan.zhihu.com/p/441453440
+
+26. 卷积(convolution)与相关(correlation) : https://zhuanlan.zhihu.com/p/196786958
+
+27. 日拱一卒，伯克利教你数据结构 : https://zhuanlan.zhihu.com/p/520807759
+
+28. 图解排序算法，这五种最热门！ : https://zhuanlan.zhihu.com/p/445888805
+
+29. CUDA入门到精通（11）CMake 编译运行 GPU 矩阵加法 CPU 和 GPU 速度对比测试 : https://zhuanlan.zhihu.com/p/406366778
+
+30. ARM Cortex-A 系列 ARMv8-A 程序员指南：第 7 章 AArch64 浮点和 NEON : https://zhuanlan.zhihu.com/p/451807182
+
+31. 四张图彻底搞懂 CNN 反向传播算法（通俗易懂）: https://zhuanlan.zhihu.com/p/81675803
+
+32. CUDA 入门到精通（12）CMake 编译运行 GPU 矢量加法 CPU 和 GPU 速度对比测试 : https://zhuanlan.zhihu.com/p/406601615
+
+33. 归并排序问题? : https://www.zhihu.com/question/29301969/answer/2326168640
