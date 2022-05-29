@@ -215,3 +215,11 @@ php -S 127.0.0.1:8989
 54. Google Chrome 抓包分析详解 : https://blog.csdn.net/a12355556/article/details/113177509
 
 55. tcpdump permissions problem : https://askubuntu.com/questions/530920/tcpdump-permissions-problem
+
+56. java GUI 文件对话框 : https://blog.csdn.net/zhouzixin053/article/details/21557039
+
+57. 在 Java 中使用單個命令編譯多個 Java 檔案 : https://www.delftstack.com/zh-tw/howto/java/compile-multiple-java-files/
+
+
+
+
