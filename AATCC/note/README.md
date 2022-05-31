@@ -80,3 +80,62 @@ PKU 2022 個人實驗報告作業
 32. CUDA 入门到精通（12）CMake 编译运行 GPU 矢量加法 CPU 和 GPU 速度对比测试 : https://zhuanlan.zhihu.com/p/406601615
 
 33. 归并排序问题? : https://www.zhihu.com/question/29301969/answer/2326168640
+
+34. GPU 硬件层次和调度方式 : https://zhuanlan.zhihu.com/p/337947104
+
+35. CPU 寄存器到底有多大 : https://www.zhihu.com/question/28611947/answer/55987003
+
+36. 如何学习自动化测试？ https://www.zhihu.com/question/22211535/answer/2426596088
+
+37. 傅里叶变换、拉普拉斯变换、Z 变换的联系是什么？为什么要进行这些变换？ https://www.zhihu.com/question/22085329/answer/2449066919
+
+38. 你们都用 Python 实现了哪些办公自动化？ https://www.zhihu.com/question/441361902/answer/1827889600
+
+39. USB 串口那些坑 : https://zhuanlan.zhihu.com/p/518933396
+
+40. python 冷兵器合集 : https://zhuanlan.zhihu.com/p/435651947
+
+41. 十大经典排序算法及动图演示 : https://zhuanlan.zhihu.com/p/449501682
+
+40. 进程和线程之间有什么根本性的区别？ https://www.zhihu.com/question/44087187/answer/2388436736
+
+41. 通过 ftrace 来分析 Linux 内核 : https://zhuanlan.zhihu.com/p/407057586
+
+42. 快速傅里叶变换 (FFT) : https://www.zhihu.com/zvideo/1514277241420312576
+
+43. 我的 PPCG 安装历程 : https://zhuanlan.zhihu.com/p/360210690
+
+44. pytorch 为 tensor 扩展一个维度 : https://zhuanlan.zhihu.com/p/445836965
+
+45. 如何阅读《深入理解计算机系统》这本书？ https://www.zhihu.com/question/20402534/answer/2422236731
+
+46. arm64 从核拉起流程笔记 https://zhuanlan.zhihu.com/p/190213819
+
+47. 排序算法详解 https://zhuanlan.zhihu.com/p/463789751
+
+48. 关于 Linux 编译优化几个必须掌握的姿势 https://zhuanlan.zhihu.com/p/440851240
+
+49. LLVM后端流程简介 https://zhuanlan.zhihu.com/p/52724656
+
+50. 一个轻量级、高性能的 C++ Web 框架 https://zhuanlan.zhihu.com/p/427714195
+
+51. printf() 等系统库函数是如何实现的？ https://www.zhihu.com/question/28749911/answer/2227556823
+
+52. 如何高效发表一篇优秀的期刊论文？ https://zhuanlan.zhihu.com/p/495004870
+
+53. 操作系统是直接运行在硬件上 : https://www.zhihu.com/question/496008644/answer/2205726731
+
+54. 如何理解数字信号处理中的离散傅立叶变换以及 FFT？ https://www.zhihu.com/question/23218891/answer/2405000990
+
+55. 如何理解动态规划？ https://www.zhihu.com/question/39948290/answer/2201190776
+
+56. 支持向量机（SVM）是什么意思？ https://www.zhihu.com/question/21094489/answer/2457269958
+
+57. 为什么傅里叶变换可以把时域信号变为频域信号？ https://www.zhihu.com/question/279808864/answer/2437640129
+
+58. 反向传播 : https://www.zhihu.com/zvideo/1514873349695627264
+
+
+
+
+
