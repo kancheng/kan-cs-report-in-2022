@@ -147,6 +147,12 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 39. 贝尔曼-福特（Bellman-Ford）算法
 
+40. 算法复杂度
+
+41. 基本函数类
+
+42. 递推方程与算法分析
+
 
 ## 平方根函數
 
@@ -5567,3 +5573,360 @@ print(visited)
 ### 含有负值权重的最短路径问题
 
 ![](w13-kp-13.png)
+
+## 算法复杂度
+
+1. 时间复杂度
+
+- 最坏情况下的时间复杂度 W(n)
+
+- 平均情况下的时间复杂度 A(n)
+
+2. 空间复杂度
+
+### 插入排序
+
+![w14-kp-1.png](attachment:w14-kp-1.png)
+
+```
+def Sort(alist):
+    for index in range(1,len(alist)):
+        currentvalue = alist[index]
+        position = index
+        while position>0 and alist[position-1]>currentvalue:
+            alist[position]=alist[position-1]
+            position = position-1
+        alist[position]=currentvalue
+```
+
+```
+def insertionSort(alist):
+    for index in range(1,len(alist)):
+        print(index)
+        currentvalue = alist[index]
+        position = index
+        while position>0 and alist[position-1]>currentvalue:
+            alist[position]=alist[position-1]
+            position = position-1
+        alist[position]=currentvalue
+        print(alist)
+print("insertionSort:")
+alist = [5,7,1,3,6,2,4]
+print(alist)
+insertionSort(alist)
+print(alist)
+```
+
+### 检索 & 顺序检索 & 平均情况时间估计
+
+1. 检索
+
+输入: 非降顺序排列的数组 L,元素数n, 数 x
+
+输出: j 若 x 在 L 中, j 是 x 首次出现的下标; 否则 j = 0
+
+基本运算: x 与 L 中元素的比较
+
+2. 顺序检索
+
+j = 1, 将 x 与 L[j] 比较. 如果 x = L[j], 则算法停止,输出 j;
+
+如果不等 , 则把 j 加 1, 继续 x 与 L[j] 的比较, 如果 j >  n , 则停机并输出 0.
+
+实例 [ [1] [2] [3] [4] [5] ]
+
+x = 4 ,需要比较 4 次
+
+x = 2.5 ,需要比较 5 次
+
+3. 平均情况时间估计
+
+输入实例的概率分布:
+
+假设 x 在 L 中概率是 p ,且每个位置概率相等
+
+$$
+\begin{aligned}
+A(n) &=\sum_{i=1}^{n} i \frac{p}{n}+(1-p) n \\
+&=\frac{p(n+1)}{2}+(1-p) n
+\end{aligned}
+$$
+当 $p = 1 / 2$ 时,
+$$
+A(n)=\frac{n+1}{4}+\frac{n}{2} \approx \frac{3 n}{4}
+$$
+
+
+### 函数的渐近的界
+
+以元素比较作基本运算
+
+
+五种表示函数的阶的符号 : $O, \Omega, o, \omega, \theta$
+
+EX : $T(n)=n^{2}+8 n-5$
+
+#### 大 O 符号
+
+定义:设 $f$ 和 $g$ 是定义域为自然数集 N 上的函数.
+
+若存在正数 c 和 $n_{0}$,使得对一切 $n \geq n_{0} $ 有
+
+$0 \leq f(n) \leq c g(n)$
+
+成立,则称 f(n) 的漸近的上界是 g(n), 记作
+
+$f(n) = O(g(n))$
+
+设 $f(n) = n^2 + n$, 则
+
+$f(n)= O(n^2)$, 取 $c=2, n_0=1$ 即可
+
+$f(n)= O(n^3)$, 取 $c=1, n_0=2$ 即可
+
+1. $f(n)=O(g(n))$, f(n) 的阶不高于 g(n) 的阶.
+
+2. 可能存在多个正数 c ,只要指出一个即可.
+
+3. 对前面有限个值可以不满足不等式.
+
+4. 常函数可以写作 O(1).
+
+#### 大 $\Omega$ 符号
+
+定义:设 f 和 g 是定义域为自然数集 N 上的函数. 
+
+若存在正数 c 和 $n_0$, 使得对一切 $n \geq n_{0}$ 有
+
+$0 \leq cg(n) \leq f(n)$
+
+成立, 则称 f(n) 的渐近的下界是 g(n), 记作
+
+$f(n)=\Omega(g(n))$
+
+设 $f(n) = n^2 + n$ , 则
+
+$f(n)=\Omega(n^{2})$, 取 $c = 1, n_{0} = 1$ 即可
+
+$f(n)=\Omega(100n)$ , 取 $c = 1/100, n_{0} = 1$ 即可
+
+1. $f(n) = \Omega(g(n)), f(n)$ 的阶不低于 g(n) 的阶.
+
+2. 可能存在多个正数 c,指出一个即可
+
+3. 对前面有限个 n 值可以不满足上述不等式.
+
+#### 小 o 符号
+
+定义: 设 f 和 g 是定义域为自然数集 N 上的函数.
+
+若对于任意正数 c 都存在 $n_{0}$, 使得对一切 $n \geq n_{0}$ 有
+
+$0 \leq f(n) \leq c g(n)$
+
+成立, 则记作
+
+$f(n)=o(g(n))$
+例子: $f(n) = n^{2} + n$, 则
+
+$f(n) = o(n^{3})$
+
+$c \geq 1$ 显然成立, 因为 $n^{2} + n < cn^{3} (n_{0} = 2)$
+
+任给 $ 1 > c > 0$, 取 $n_{0} >\lceil 2 / c\rceil$ 即可。
+
+因为 $cn \geq cn_{0} >2$ (当 $n \geq n_0$)
+
+$n^{2} + n < 2 n^{2} < cn^{3}$
+
+1. $f(n)=o(g(n)), f(n)$ 的阶低于 $g(n)$ 的阶
+
+2. 对不同正数 $c, n_{0}$ 不一样. c 越小 $n_{0}$ 越大.
+
+3. 对前面有限个 n 值可以不满足不等式.
+
+
+### 小 $\omega$ 符号
+
+定义: 设 f 和 g 是定义域为自然数集 N 上的函数。
+
+若对于任意正数 c 都存在 $n_{0}$。, 使得对一切 $n \geq n_{0}$ 有
+
+$$0 \leq \operatorname{cg}(n) < f(n)$$
+
+成立, 则记作
+
+$f(n)= \omega(g(n))$
+
+设 $f(n) = n^{2} + n$ , 则 $f(n) = \omega(n)$,
+不能写 $f(n)=\omega(n^{2})$, 因为取 $c = 2$, 不存在 $n_{0}$ 使得对一切 $n \geq n_{0}$ 有下式成立
+
+$c n^{2}=2 n^{2} < n^{2}+n $ (錯誤示範)
+
+1. $f(n)=\omega(g(n)), f(n)$ 的阶高于 $g(n)$ 的阶.
+
+2. 对不同的正数 $c$, $n_{0}$ 不等, $c$ 越大 $n_{0}$ 越大.
+
+3. 对前面有限个 n 值可以不满足不等式.
+
+#### $\Theta$ 符号
+
+若 $f(n)=O(g(n))$ 且 $f(n)=\Omega(g(n))$, 则记作
+
+$f(n)=\Theta(g(n))$
+
+例子: $f(n)=n^{2} + n$ , g(n) = 10 0n^{2}, 那么有
+
+$f(n)=\Theta(g(n))$
+
+1.$f(n)$ 的阶与 $g(n)$ 的阶相等。
+
+2.对前面有限个 $n$ 值可以不满足条件.
+
+
+#### 例子 : 素数测试
+
+算法 Primality Test(n)
+输入: n,大于 2 的奇整数
+输出: true 或者 false
+
+ $\left.s \leftarrow \lfloor n^{1 / 2}\right\rfloor$
+ 
+ for $j \leftarrow 2$ to s
+ 
+     if j 整除 n
+     
+     then return false
+     
+ return true
+
+问题:
+
+若 $n^{1/2}$ 可在 $O(1)$ 计算 , 基本运算是整除 , 以下表示是否正确?
+
+$W(n)=O(n^{1/2})$(正確)
+
+$W(n)=\Theta(n^{1/2})$(錯誤)
+
+Why!?
+
+#### 有关函数渐近的界的定理
+
+![](attachment:w14-kp-3.png)
+
+![](attachment:w14-kp-4.png)
+
+![](attachment:w14-kp-5.png)
+
+![](attachment:w14-kp-6.png)
+
+![](attachment:w14-kp-7.png)
+
+![](attachment:w14-kp-8.png)
+
+![](attachment:w14-kp-9.png)
+
+![](attachment:w14-kp-10.png)
+
+#### 小结
+
+1. 估计函数的阶的方法：
+
+- 计算极限
+
+- 阶具有传递性
+
+2. 对数函数的阶低于幂函数的阶，多项式函数的阶低于指数函数的阶。
+
+3. 算法的时间复杂度是各步操作时间之和，在常数步的情况下取最高阶的函数即可。
+
+## 基本函数类
+
+![](w14-kp-11.png)
+
+
+### 对数函数
+
+![](w14-kp-12.png)
+
+### 有关性质的说明
+
+![](w14-kp-13.png)
+
+### 指数函数与阶乘
+
+![](w14-kp-14.png)
+
+### 应用：估计搜索空间大小
+
+![](w14-kp-15.png)
+
+### $\log (n !) ?(n \log n)$
+
+$\log (n !)=\Theta(n \log n)$
+
+![](w14-kp-16.png)
+
+### 取整函数 & 性質
+
+![](w14-kp-17.png)
+
+![](w14-kp-18.png)
+
+### 按照阶排序
+
+![](w14-kp-19.png)
+
+### 序列求和的方法
+
+![](w14-kp-20.png)
+
+### 二分检索算法 & 运行实例 & 平均时间复杂度
+
+![](w14-kp-21.png)
+
+### 估计和式上界的放大法 & 举例 & 估计和式渐近的界
+
+![](w14-kp-22.png)
+
+### 小結
+
+1. 序列求和基本公式:
+
+- 等差数列
+
+- 等比数列
+
+- 调和级数
+
+2. 估计序列和:
+
+- 放大法求上界
+
+- 用积分做和式的渐近的界
+
+3. 应用: 计数循环过程的基本运算次数
+
+## 递推方程与算法分析
+
+![](w14-kp-23.png)
+
+## 迭代法求解递推方程
+
+- 不断用递推方程的右部替换左部
+
+- 每次替换，随着n的降低在和式中多出一项
+
+- 直到出现初值停止迭代
+
+- 将初值代入并对和式求和
+
+- 可用数学归纳法验证解的正确性
+
+![](w14-kp-24.png)
+
+![](w14-kp-25.png)
+
+![](w14-kp-26.png)
+
+![](w14-kp-27.png)
