@@ -153,6 +153,8 @@ https://github.com/kancheng/kan-cs-report-in-2022/blob/main/AATCC/log.md
 
 42. 递推方程与算法分析
 
+43. 蒙地卡羅
+
 
 ## 平方根函數
 
@@ -5930,3 +5932,74 @@ $\log (n !)=\Theta(n \log n)$
 ![](w14-kp-26.png)
 
 ![](w14-kp-27.png)
+
+## 蒙地卡羅
+
+### 1. Monte Carlo
+
+The term "Monte Carlo method" was firstly introduced in 1947 by Nicholas Metropolis.
+
+### 2. Reference
+
+Metropolis. The beginning of the Monte Carlo method. Los Alamos Science, 125–130, 1987.
+
+1. MIT 6.0002 Introduction to Computational Thinking and Data - Monte Carlo Simulation : https://www.youtube.com/watch?v=OgO1gpXSUzU
+
+2. 蒙特卡洛原理代码 monte carlo : https://blog.csdn.net/yjinyyzyq/article/details/86600393
+
+3. 蒙特卡洛法高维数值积分： Vegas : https://zhuanlan.zhihu.com/p/264315872
+
+4. 一文详解蒙特卡洛（Monte Carlo）法及其应用 : https://blog.csdn.net/qq_39521554/article/details/79046646
+
+### 3. Monte Carlo Algorithms
+
+Monte Carlo refers to algorithms that rely on repeated random sampling to obtain numerical results.
+
+The output of Monte Carlo algorithms can be incorrect.
+
+ - In all of our examples, the algorithms' outputs are incorrect.
+
+ - But they are close to the correct solution.
+
+
+### 4. Application 1: Calculating Pi
+
+We already know $\pi \approx 3.141592653589$ ...
+
+Pretend we do not know the value of $\pi$.
+
+Can we find it out (approximately) using a random number generator?
+
+![](w15-kp-1.png)
+
+### 5. Application 2: Buffon's Needle Problem
+
+![](w15-kp-2.png)
+
+### 6. Application 3: Area of A Region
+
+![](w15-kp-3.png)
+
+### 7. Application 4: Integration
+
+- Integration
+
+- Monte Carlo Integration (Univariate)
+
+- Monte Carlo Integration (Univariate): Example
+
+- Monte Carlo Integration (Multivariate)
+
+- Monte Carlo Integration: Bivariate Example
+
+![](w15-kp-4.png)
+
+![](w15-kp-5.png)
+
+### 8. Application 5: Estimate of Expectation
+
+![](w15-kp-6.png)
+
+
+
+
