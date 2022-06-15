@@ -35,7 +35,7 @@ public class Mondecaro extends JFrame implements ActionListener {
         paper.setColor(Color.black);
         int px = width, py = height / 2;
         Random random = new Random ();
-        int n = width / 2, in = 0, N = 1000;
+        int n = width / 2, in = 0, N = 10000;
         for (int i = 1; i <= N; i++) {
             int x = random.nextInt(width);
             int y = random.nextInt(width);
