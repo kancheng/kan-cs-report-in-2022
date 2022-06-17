@@ -6,7 +6,7 @@ PKU 2022 個人實驗報告作業
 
 ## Details
 
-近期知乎的算法跟計算機相關的內容都整理如下 :
+近期知乎的算法跟計算機相關的內容都整理如下，純粹興趣。
 
 ## Links
 
@@ -327,3 +327,136 @@ PKU 2022 個人實驗報告作業
 152. 有没通俗易懂地解释这几个基础的算法，讲给小学生都能听得懂的？ https://www.zhihu.com/question/481697870/answer/2130395688
 
 153. 汇编语言入门四：打通C和汇编语言 https://zhuanlan.zhihu.com/p/23779935
+
+154. 用Linux5.0的视角看《Linux内核设计与实现》——（四）内存管理 https://zhuanlan.zhihu.com/p/425237628
+
+155. 简单的算法问题6——罗马数字转换成整数 https://zhuanlan.zhihu.com/p/463769263
+
+156. 原来 mmap 这么简单 https://zhuanlan.zhihu.com/p/429455424
+
+157. 类的static成员变量以及成员函数 https://zhuanlan.zhihu.com/p/462630330
+
+158. 编译优化概念：Canonicalization https://zhuanlan.zhihu.com/p/524541992
+
+159. 机器学习：使用 Python 进行预测 https://zhuanlan.zhihu.com/p/526261624
+
+160. 现代 C++ 开发(1)：线程安全注解 https://zhuanlan.zhihu.com/p/47837673
+
+161. 针对神经网络的编译器和传统编译器的区别和联系是什么？ https://www.zhihu.com/question/396105855/answer/1239396394
+
+162. 通俗理解快速排序 https://zhuanlan.zhihu.com/p/425086074
+
+163. 微内核和宏内核 https://zhuanlan.zhihu.com/p/53612117
+
+164. 高并发场景下，三种锁方案 互斥锁，自旋锁，原子操作的优缺点 (2)  https://www.zhihu.com/zvideo/1518264642686509056
+
+165. How Linux Works - II 基础命令与目录结构 笔记(1) https://zhuanlan.zhihu.com/p/398729320
+
+166. Linux的系统调用机制 https://zhuanlan.zhihu.com/p/406388613
+
+167. 什么是“页表自映射”？ https://zhuanlan.zhihu.com/p/452598045
+
+168. 能否不用visual studio学习c++图像处理？ https://www.zhihu.com/question/391817236/answer/1218979444
+
+169. Linux内核应该怎么去学习？ https://www.zhihu.com/question/58121772/answer/1928109822
+
+170. 排序算法那么多，都要自己动手写代码实现一遍吗？ https://www.zhihu.com/question/66205442/answer/2291071443
+
+171. C++实现线程池 https://zhuanlan.zhihu.com/p/416804003
+
+172. 堆排序有没快速排序快？ https://zhuanlan.zhihu.com/p/424045845
+
+173. C++异步从理论到实践总览篇 https://zhuanlan.zhihu.com/p/526664797
+
+174. 矩阵模板类 https://zhuanlan.zhihu.com/p/449130272
+
+175. 如何解决GPU集群的资源碎片问题？ https://www.zhihu.com/question/438452545/answer/1684565514
+
+176. 进入内核态究竟是什么意思？ https://www.zhihu.com/question/306127044/answer/1669958953
+
+177. 如何使用C++11实现跨平台的定时器timer？ https://www.zhihu.com/question/38427301/answer/2292652292
+
+178. Glibc-2.23 源码分析——malloc部分上 https://zhuanlan.zhihu.com/p/410188677
+
+179. 你学习嵌入式linux时有哪些经典书籍让你相见恨晚？ https://www.zhihu.com/question/32294064/answer/2171761103
+
+180. 操作系统能不能继续分两部分：硬件相关和硬件无关？并且让驱动只依赖硬件相关部分而不依赖操作系统？ https://www.zhihu.com/question/436389148/answer/1648317160
+
+181. C语言内存管理：malloc、calloc、free的实现 https://zhuanlan.zhihu.com/p/463377412
+
+182. 谈谈C++新标准带来的属性（Attribute） https://zhuanlan.zhihu.com/p/392460397
+
+183. 常见排序算法有哪些？ https://zhuanlan.zhihu.com/p/386120228
+
+184. 简单的算法问题7 https://zhuanlan.zhihu.com/p/463769708
+
+185. Linux内核内存管理之《高速缓存》 (1) https://www.zhihu.com/zvideo/1518969517091237888
+
+186. Linux内核调整watermark_scale_factor以缓解direct reclaim https://zhuanlan.zhihu.com/p/440688960
+
+187. 基于C++11实现线程池 https://zhuanlan.zhihu.com/p/367309864
+
+188. Linux驱动实践：中断处理函数如何【发送信号】给应用层？ https://zhuanlan.zhihu.com/p/455631228
+
+189. 一个处理器只有一个浮点寄存器，如果线程A正在浮点运算，这时线程B也执行到了需要浮点运算的地方，咋办？ https://www.zhihu.com/question/435848037/answer/1639356833
+
+190. 从零开始掌握 tensorflow 算子开发 (1)：tensorflow 架构以及编译构建 https://zhuanlan.zhihu.com/p/423413103
+
+191. 王者荣耀如何处理海量定时任务（1）https://www.zhihu.com/zvideo/1520054153887510528
+
+192. Linux 的资源控制监测 https://zhuanlan.zhihu.com/p/523554299
+
+193. PageRank小而美的民主排序算法 https://zhuanlan.zhihu.com/p/376438237
+
+194. PageRank算法原理与实现 https://zhuanlan.zhihu.com/p/86004363
+
+195. 传统编译器与神经网络编译器 https://zhuanlan.zhihu.com/p/400886767
+
+196. 第五章：排序算法 https://zhuanlan.zhihu.com/p/452603267
+
+197. RISC-V汇编和ARM汇编语法 https://www.zhihu.com/question/431924608/answer/2519164801
+
+198. Python学习总结 https://zhuanlan.zhihu.com/p/394979558
+
+199. Linux进程间的通信方式和原理 https://zhuanlan.zhihu.com/p/428549388
+
+200. 为什么一个用户级线程被阻塞就相当于整个进程被阻塞？ https://www.zhihu.com/question/528076353/answer/2440722690
+
+201. 可不可以写一个操作系统，用汇编和 C 写内核和驱动，用 HTML 和 JS 通过浏览器内核实现GUI? https://www.zhihu.com/question/520479824/answer/2427475657
+
+202. GPU中如何实现软件流水？ https://www.zhihu.com/question/529903246/answer/2461962068
+
+203. linux之yum下载rpm包离线安装 https://zhuanlan.zhihu.com/p/426525391
+
+204. （六）LLVM IR语法——链接类型 https://zhuanlan.zhihu.com/p/388548724
+
+205. 【教程】从零开始，写个编译器！ https://zhuanlan.zhihu.com/p/471250907
+
+206. Linux中的Anonymous Pages和Swap [一] https://zhuanlan.zhihu.com/p/70964551
+
+207. 【从零开始学深度学习编译器】十五，MLIR Toy Tutorials学习笔记之Lowering到LLVM IR https://zhuanlan.zhihu.com/p/434561499
+
+208. linux Auxiliary Bus详解 https://zhuanlan.zhihu.com/p/447286744 
+
+209. clang挂了，探寻Illegal instruction: 4背后的秘密 https://zhuanlan.zhihu.com/p/398121154
+
+210. Linux内存回收之drop cache https://zhuanlan.zhihu.com/p/93962657
+
+211.
+
+212.
+
+213.
+
+214.
+
+215.
+
+216.
+
+
+
+
+
+
+
