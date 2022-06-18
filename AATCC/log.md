@@ -417,3 +417,9 @@ LeetCode 934. Shortest Bridge 最短的桥
 - Knowledge Point : 
 
 蒙地卡羅
+
+### 15. W16 :
+
+- Knowledge Point : 
+
+近似算法
