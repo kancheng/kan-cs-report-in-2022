@@ -442,17 +442,60 @@ PKU 2022 個人實驗報告作業
 
 210. Linux内存回收之drop cache https://zhuanlan.zhihu.com/p/93962657
 
-211.
+211. 1.4.A　最简单的C语言程序背后的故事——它的汇编代码是如何被执行的 https://zhuanlan.zhihu.com/p/434786789
 
-212.
+212. C++11多线程 内存序(std::memory_order_acquire/release) https://zhuanlan.zhihu.com/p/455147892
 
-213.
+213. 三段式 LLVM 编译器 https://zhuanlan.zhihu.com/p/438599547
 
-214.
+214. ARM Cortex-A 系列ARMv8-A程序员指南：第9章 ARM 64位架构的ABI https://zhuanlan.zhihu.com/p/452339230
 
-215.
+215. NDCG 及实现 https://zhuanlan.zhihu.com/p/84206752
 
-216.
+216. Linux内核中断 https://zhuanlan.zhihu.com/p/464011660
+
+217. 操作系统里的进程和线程 https://zhuanlan.zhihu.com/p/415005546
+
+218. max <uint64> 的实现与编译器优化 https://zhuanlan.zhihu.com/p/387794521
+
+219. 非递归归并排序的效率很高，为什么快排仍然是普遍认为最好的排序算法呢？ https://www.zhihu.com/question/392076186/answer/2472963085
+
+220. 如何找出一个数组中两个不相邻元素的和的最大值? https://www.zhihu.com/question/461772111/answer/2521715609
+
+221. 死锁形成的原因，死锁的检测方案-linux服务器开发（2）https://www.zhihu.com/zvideo/1521490281328959489
+
+222. 如何看待开源指令集RISC-V ? https://www.zhihu.com/question/28368960/answer/712229961
+
+223. linux内核内存管理（物理内存管理--伙伴系统） https://zhuanlan.zhihu.com/p/443817114
+
+224. 内存泄漏检测 kmemleak 示例 https://zhuanlan.zhihu.com/p/451706028
+
+225. 怎么通俗易懂地解释EM算法并且举个例子? https://www.zhihu.com/question/27976634/answer/2328517026
+
+226. 如何评价 MLIR 项目中 Linalg Dialect 的设计思想？ https://www.zhihu.com/question/442964082/answer/1724777213
+
+227. Ariane处理器源码剖析（二）：Frontend https://zhuanlan.zhihu.com/p/444398350
+
+228. 操作系统中断和时间片的关系？ https://www.zhihu.com/question/466111510/answer/1950751233
+
+229. 对数组排序的方法有哪些？ https://www.zhihu.com/question/26497511/answer/2333938498
+
+230. 一个处理器只有一个浮点寄存器，如果线程A正在浮点运算，这时线程B也执行到了需要浮点运算的地方，咋办？ https://www.zhihu.com/question/435848037/answer/1639615911
+
+231. Linux后台任务管理：jobs、nohup、disown与& https://zhuanlan.zhihu.com/p/446891442
+
+232. Linux 内存调节之 zone watermark https://zhuanlan.zhihu.com/p/73539328
+
+233. 学习不一样的 Array.sort https://zhuanlan.zhihu.com/p/89206501
+
+234. 选择排序、冒泡排序、插入排序，时间复杂度都是nXn，但是实际排序性能差别很大，为什么？ https://www.zhihu.com/question/23572363/answer/2529692145
+
+235. 进程管理：从零开始学Linux——进程调度器设计 https://zhuanlan.zhihu.com/p/442788972 
+
+236. 十大经典排序（一）：冒泡排序 https://zhuanlan.zhihu.com/p/417620764
+
+237.
+
 
 
 
