@@ -1474,6 +1474,34 @@ Constraints:
 - 需要注意的一种情况是，起点就是障碍物，那么这种情况直接输出 0 。
 
 
+```
+class Solution(object):
+    def uniquePathsWithObstacles(self, obstacleGrid):
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
+        dp = [[0 for _ in range(n)] for _ in range(m)]
+
+        if obstacleGrid[0][0] == 1 or obstacleGrid[m-1][n-1] == 1: 
+            return 0
+        dp[0][0] = 1
+        for index in range(1, m):
+            if obstacleGrid[index][0] == 1:
+                dp[index][0] = 0
+            else:
+                dp[index][0] = dp[index-1][0]
+        for index in range(1, n):
+            if obstacleGrid[0][index] == 1:
+                dp[0][index] = 0
+            else:
+                dp[0][index] = dp[0][index-1]
+        for index_i in range(1, m):
+            for index_j in range(1, n):
+                if obstacleGrid[index_i][index_j] == 1:
+                    dp[index_i][index_j] = 0
+                else:
+                    dp[index_i][index_j] = dp[index_i-1][index_j] + dp[index_i][index_j-1] 
+        return dp[m-1][n-1]
+```
+
 ## LeetCode 64. Minimum Path Sum 最小路径和
 
 Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
@@ -2044,7 +2072,7 @@ Two binary trees are considered the same if they are structurally identical, and
 
 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
 
-![lc-100-p-example.png](attachment:lc-100-p-example.png)
+![](lc-100-p-example.png)
 
 Example 1:
 
@@ -4708,7 +4736,7 @@ You are also given three integers src, dst, and k, return the cheapest price fro
 
 现在给定所有的城市和航班，以及出发城市 src 和目的地 dst，你的任务是找到出一条最多经过 k 站中转的路线，使得从 src 到 dst 的 价格最便宜 ，并返回该价格。 如果不存在这样的路线，则输出 -1。
 
-![lc-787-p-example.png](attachment:lc-787-p-example.png)
+![](lc-787-p-example.png)
 
 Example 1:
 
