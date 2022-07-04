@@ -494,12 +494,231 @@ PKU 2022 個人實驗報告作業
 
 236. 十大经典排序（一）：冒泡排序 https://zhuanlan.zhihu.com/p/417620764
 
-237.
+237. 算法之12 快速排序 https://zhuanlan.zhihu.com/p/443930179
 
+238. TOPSIS(逼近理想解)算法原理详解与代码实现 https://zhuanlan.zhihu.com/p/266689519
 
+239. 数组与二分的算法问题 https://zhuanlan.zhihu.com/p/442866660
 
+240. 无序桶归并排序与有序桶快速排序（C++） https://zhuanlan.zhihu.com/p/434549298
 
+241. LLVM一些编程语法语义特性 https://zhuanlan.zhihu.com/p/413344198
 
+242. 进入内核态究竟是什么意思？ https://www.zhihu.com/question/306127044/answer/2389615412
 
+243. 5.LeetCode刷题记录[排序]排序部分题目 https://zhuanlan.zhihu.com/p/448708640
 
+244. Linux内核源码之进程间通信：共享内存 https://zhuanlan.zhihu.com/p/458192792
+
+245. Linux中常见同步和互斥机制设计原理 https://zhuanlan.zhihu.com/p/103726103
+
+246. Hulu内容召回与排序实践 https://zhuanlan.zhihu.com/p/447376333
+
+247. 线程安全的队列---C++17 多线程 https://zhuanlan.zhihu.com/p/465093426
+
+248. 团队处理器系列（二）：木心处理器核-需求设计 https://zhuanlan.zhihu.com/p/345379213
+
+249. 排序-part1 (Sort) https://zhuanlan.zhihu.com/p/445521053
+
+250. 编译器设计（翻译）https://zhuanlan.zhihu.com/p/47470457
+
+251. Linux性能优化：CPU篇 https://zhuanlan.zhihu.com/p/180402964
+
+252. 最短路径算法-迪杰斯特拉(Dijkstra)算法 https://zhuanlan.zhihu.com/p/346558578
+
+253. CPU架构的llvm后端 https://zhuanlan.zhihu.com/p/415973252
+
+254. 阅微堂  《深入理解计算机系统》读书笔记-3 https://zhuanlan.zhihu.com/p/449867094
+
+255. Linux虚拟内存这样理解就到位了 https://zhuanlan.zhihu.com/p/446972259
+
+256. LLVM IR 的第二个 Pass：上手官方文档 New Pass Manager HelloWorld Pass https://zhuanlan.zhihu.com/p/416754155
+
+257. 计算机自制操作系统（一）：最小操作系统 https://zhuanlan.zhihu.com/p/99467926
+
+258. Hot Chips 33(2021)--Esperanto千核RISC-V芯片分析及同NV芯片的对比 https://zhuanlan.zhihu.com/p/427753794
+
+259. LeetCode（力扣）有那些让你直呼内行的算法题解? https://www.zhihu.com/question/496760758/answer/2414591629
+
+260. 计算机组成原理公开课 https://www.zhihu.com/question/533450134/answer/2494328790
+
+261. devm_add_action_or_reset函数介绍 https://zhuanlan.zhihu.com/p/441294178
+
+262. 为什么把内核镜像放在u盘里，电脑(BIOS)加载失败? https://www.zhihu.com/question/442422915/answer/1718720159
+
+263. 用 C++ 写线程池是怎样一种体验？ https://www.zhihu.com/question/27908489/answer/2020848570
+
+264. CPU中，类似x86/64架构中的cmpxchg指令是如何实现并保证原子性的？ https://www.zhihu.com/question/492576993/answer/2176135973
+
+265. 什么是「滑动窗口算法」（sliding window algorithm），有哪些应用场景？ https://www.zhihu.com/question/314669016/answer/2311985006
+
+266. Linux中的mmap映射 [二] https://zhuanlan.zhihu.com/p/71517406
+
+267. 【目录序言翻译】多核心缓存层次结构《Multi-Core Cache Hierarchies》 https://zhuanlan.zhihu.com/p/374496519
+
+268. 排序的稳定性是指什么?(查到了两种说法)？ https://www.zhihu.com/question/507310804/answer/2522189478
+
+269. Linux 内核内存管理之硬件原理与分页管理 https://zhuanlan.zhihu.com/p/441002357
+
+270. 收作业，要按学号排序，用什么排序方法最快呢？ https://www.zhihu.com/question/27133446/answer/1639576862
+
+271. 推荐系统召回层是否应该做排序相关的工作？ https://www.zhihu.com/question/484873738/answer/2128783315
+
+272. 互斥锁（mutex）的底层原理是什么？ 操作系统具体是怎么实现的？ https://www.zhihu.com/question/332113890/answer/2530010902
+
+273. 除了经典和常用的排序算法外，还有哪些奇葩而有趣的排序算法？ https://www.zhihu.com/question/31387715/answer/2435722268 
+
+274. GCC 编译器对 FSGSBASE 特性的支持 https://zhuanlan.zhihu.com/p/435758039
+
+275. 算法A时间复杂度O(n²)，算法B时间复杂度为O(n³)，为什么选择算法B而不选算法A的6个理由? https://www.zhihu.com/question/441486709/answer/1701544371
+
+276. Linux中SLUB的调试 [一] https://zhuanlan.zhihu.com/p/136280739
+
+277. 如何看待开源指令集RISC-V ? https://www.zhihu.com/question/28368960/answer/2528180727
+
+278. 如何设置CUDA Kernel中的grid_size和block_size？ https://zhuanlan.zhihu.com/p/442304996
+
+279. 快速排序平均O(nlogn)，别的排序也能稳定实现，而最差却有O(n2)，却还是作为一般最快的排序? https://www.zhihu.com/question/537656713/answer/2529052897
+
+280. HPC 中kernel fusion是什么，该怎么学习呢? https://www.zhihu.com/question/514144710/answer/2491596085
+
+281. 为什么Redis作者说多线程IO更大程度上是为了提升写的性能， 而对读没什么大帮助？ https://www.zhihu.com/question/487432951/answer/2126885433
+
+282. 中断上下文是指什么？ https://www.zhihu.com/question/538799962/answer/2538761197
+
+283. 归并排序复杂度 想了好几天了? https://www.zhihu.com/question/38101141/answer/2326167794
+
+284. Cache 组织方式 https://zhuanlan.zhihu.com/p/107096130
+
+285. 算法在软件工程师学习中到底起什么作用？ https://www.zhihu.com/question/53611068/answer/2328319187
+
+286. linux 内核中读一次磁盘的具体过程是什么？ https://www.zhihu.com/question/265882128/answer/2251111717
+
+287. 深入理解浏览器中的进程与线程 https://zhuanlan.zhihu.com/p/416161636
+
+288. 为什么 ARM 汇编中压栈是用 LR 寄存器和出栈使用 PC 寄存器？ https://www.zhihu.com/question/523453550/answer/2402923122
+
+289. 如何理解快速排序的效率高于归并排序、堆排序，如何根据不同使用场景考虑需要采用的算法？ https://www.zhihu.com/question/37840337/answer/2303839852
+
+290. 汇编中的内中断 https://zhuanlan.zhihu.com/p/413833092
+
+291. 当目标CPU具有乱序执行的能力时，编译器做指令重排序优化的意义有多大？ https://www.zhihu.com/question/36293510/answer/2145672573
+
+292. Linux内核应该怎么去学习？ https://www.zhihu.com/question/58121772/answer/2289371030
+
+293. 很多高效排序算法的代价是 nlogn，难道这是排序算法的极限了吗？ https://www.zhihu.com/question/24516934/answer/1627253578
+
+294. 如何从零开始写一个简单的操作系统？ https://www.zhihu.com/question/25628124/answer/2308945192
+
+295. Rocket Core核心结构剖析--指令译码站台（Decode站台）https://zhuanlan.zhihu.com/p/433116391
+
+296. 协程为什么适合IO密集操作？ https://www.zhihu.com/question/457945574/answer/1870790281
+
+297. 为什么没有普及128位操纵系统的计算机? https://www.zhihu.com/question/320332089/answer/1605362449
+
+298. ARM汇编和X86汇编哪个难？ https://www.zhihu.com/question/40102579/answer/1588178892
+
+299. 如何从linux内核基础上开发系统，不是GNU？ https://www.zhihu.com/question/533174273/answer/2488919508
+
+300. Windows和 macOS 及 Unix 的核心区别是什么？ https://www.zhihu.com/question/27672668/answer/2096274999
+
+301. x86-64的探索（1）：大白话解说16位CPU内存寻址的分段原理 https://zhuanlan.zhihu.com/p/463690379
+
+302. Linux的中断处理机制 [五] - softirq(2) https://zhuanlan.zhihu.com/p/80680484
+
+303. 当我谈线程池时我谈些什么——线程池学习笔记 https://zhuanlan.zhihu.com/p/444375447
+
+304. CS107E笔记-ARM汇编 https://zhuanlan.zhihu.com/p/431327824
+
+305. LVM 相比于 JVM，有哪些技术优势？ https://www.zhihu.com/question/47819047/answer/2551607220
+
+306. 十大基本算法 https://zhuanlan.zhihu.com/p/446918184
+
+307. TF 2.3 Keras 实现 DeepFM https://zhuanlan.zhihu.com/p/136479360
+
+308. 线程和进程切换的细节？ https://www.zhihu.com/question/26505892/answer/2523163227
+
+309. MLIR中Dialects分类及关联 https://zhuanlan.zhihu.com/p/446836964
+
+310. ARM 汇编指令小结 https://zhuanlan.zhihu.com/p/367576411
+
+311. 特征工程到底是什么？ https://www.zhihu.com/question/29316149/answer/2473141967
+
+312. 浅谈线程池内部工作原理 https://zhuanlan.zhihu.com/p/394885758
+
+313. 什么是协程？ https://zhuanlan.zhihu.com/p/172471249
+
+314. 深入理解Linux内存管理（二）初期物理内存管理 https://zhuanlan.zhihu.com/p/444511088
+
+315. 寄存器会比用库开发，程序运行更快吗？ https://www.zhihu.com/question/360194574/answer/2173091484
+
+316. UEFI 引导与 BIOS 引导在原理上有什么区别？  https://www.zhihu.com/question/360194574/answer/2173091484
+
+317. Redis 6.0 多线程IO处理过程详解 https://zhuanlan.zhihu.com/p/144805500
+
+318. 为什么java线程池的submit的不抛出异常 https://zhuanlan.zhihu.com/p/452901428
+
+319. 自己写一个RTOS系统 https://zhuanlan.zhihu.com/p/464475986
+
+320. CPU检测到中断信号时，怎么知道是发给哪个进程的？ https://www.zhihu.com/question/47862508/answer/2447468650
+
+321. Linux中的物理内存管理 [一] https://zhuanlan.zhihu.com/p/68465952
+
+322. Redis是否要设置内存大小限制？ https://www.zhihu.com/question/31102463/answer/2553177843
+
+323. Linux重定位，cpu启动过程 https://zhuanlan.zhihu.com/p/462566326
+
+324. 线程也不是越多越好，多少是好？ https://zhuanlan.zhihu.com/p/442597366
+
+325. Rocket Core核心结构剖析--转移预测部件 https://zhuanlan.zhihu.com/p/420118585
+
+326. 每天刷算法，但你还不会六种常见排序算法？ https://zhuanlan.zhihu.com/p/438337818
+
+327. OS笔记-李治军 https://zhuanlan.zhihu.com/p/455163498
+
+328. MFC 线程的优先级 https://zhuanlan.zhihu.com/p/470054844
+
+329. AI与传统编译器 https://zhuanlan.zhihu.com/p/412578327
+
+330. 归并排序 https://zhuanlan.zhihu.com/p/409009251
+
+331. 单周期指令能被中断吗？ https://www.zhihu.com/question/466945000/answer/1957459743 
+
+332. 浅谈Cache Memory--Cache不可不察也 https://zhuanlan.zhihu.com/p/457597537
+
+333. C++11多线程 内存序(std::memory_order_consume) https://zhuanlan.zhihu.com/p/457839518
+
+334. LLVM IR in Action:Define Function https://zhuanlan.zhihu.com/p/451425126
+
+335. Rocket Core核心结构剖析--整数乘除法部件 https://zhuanlan.zhihu.com/p/441420953
+
+336. IC设计工程师该如何学习ARM架构？https://www.zhihu.com/question/39683427/answer/2423368673 
+
+337. netlink 是 Go 和内核模块之间优秀的通信兵 https://zhuanlan.zhihu.com/p/386405400
+
+338. 理解Tensor Core https://zhuanlan.zhihu.com/p/75753718
+
+339. C语言编程必掌握的两种排序方法：冒泡排序法和选择排序法 https://zhuanlan.zhihu.com/p/340460005
+
+340.
+
+341.
+
+342.
+
+343.
+
+344.
+
+345.
+
+346.
+
+347.
+
+348.
+
+349.
+
+350.
 
